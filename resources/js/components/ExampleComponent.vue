@@ -16,6 +16,8 @@
 
 <script lang="ts">
   import { Component, Vue, Watch } from "vue-property-decorator";
+
+  @Component
   export default class ExampleComponent extends Vue {
     mounted() {
       console.log('Component mounted.')

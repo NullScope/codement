@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'userable_id', 'userable_type', 'disciplinas', 'comentarios', 'ficheiros'
     ];
 
     /**
@@ -36,4 +36,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function userable()
+    {
+        return $this->morphTo();
+    }
+
+    public function disciplinas()
+    {
+        return $this->belongsToMany('App\Disciplina');
+    }
+
+    public function comentarios()
+    {
+        return $this->belongsToMany('App\Comentarios');
+    }
+
+    public function ficheiros()
+    {
+        return $this->belongsToMany('App\Ficheiros');
+    }
 }

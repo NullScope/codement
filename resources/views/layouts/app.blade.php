@@ -21,7 +21,7 @@
 </head>
 <body>
   <div id="app">
-    <sidebar></sidebar>
+    <!-- <sidebar></sidebar> -->
     <router-view></router-view>
   </div>
 </body>

@@ -10,6 +10,7 @@ import router from "./router";
 import store from "./store";
 
 import ExampleComponent from "./components/ExampleComponent.vue";
+import CodeHighlighter from "./components/CodeHighlighter.vue";
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,6 +21,7 @@ import ExampleComponent from "./components/ExampleComponent.vue";
  */
 
 Vue.component('example-component', ExampleComponent);
+Vue.component('code-highlighter', CodeHighlighter);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

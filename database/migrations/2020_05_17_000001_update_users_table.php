@@ -21,7 +21,8 @@ class UpdateUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function($table) {
-            $table->enum('user_type', ["aluno", "professor"]);
+            $table->bigInteger('userable_id')->nullable();
+            $table->string('userable_type')->nullable();
         });
     }
 
@@ -33,7 +34,8 @@ class UpdateUsersTable extends Migration
      public function down()
      {
         Schema::table('users', function($table) {
-            $table->dropColumn('user_type');
+            $table->dropColumn('userable_id');
+            $table->dropColumn('userable_type');
         });
      }
 }
