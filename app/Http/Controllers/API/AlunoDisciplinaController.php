@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Aluno;
 use App\Disciplina;
@@ -47,10 +48,20 @@ class AlunoDisciplinaController extends Controller
     public function store(Request $request, $id)
     {
         try {
-            $aluno = Aluno::findOrFail($id);
-            $disciplina = Disciplina::findOrFail($request->input("disciplina_id"));
+            $validator = Validator::make($request->all(), [
+                'disciplina_id' => ['required', 'int'],
+            ]);
 
-            $aluno->disciplinas->attach($disciplina);
+            if ($validator->fails()) {
+                return $validator->messages();
+            } else {
+                $aluno = Aluno::findOrFail($id);
+                $disciplina = Disciplina::findOrFail($request->input('disciplina_id'));
+
+                $aluno->user->disciplinas()->attach($disciplina);
+
+                return new DisciplinaResource($disciplina);
+            }
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
@@ -108,7 +119,14 @@ class AlunoDisciplinaController extends Controller
             $aluno = Aluno::findOrFail($id);
             $disciplina = Disciplina::findOrFail($disciplina_id);
 
-            $aluno->disciplinas->attach($disciplina);
+            $aluno->disciplinas()->detach($disciplina);
+
+            /* Return Success Response */
+            return response()->json(array(
+                'error' => false,
+                'status_code' => 200,
+                'response' => 'disciplina_removed',
+            ));
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(

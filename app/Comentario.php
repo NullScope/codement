@@ -4,26 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ficheiro extends Model
+class Comentario extends Model
 {
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'url', 'extensao'];
-
-    public function ficheiroable()
-    {
-        return $this->morphTo();
-    }
+    protected $fillable = ['user_id', 'ficheiro_id', 'comentario', 'audio_url', 'linha_inicio', 'linha_fim'];
 
     public function user()
     {
         return $this->belongsTo('App\User');
     }
 
-    public function comentarios() {
-        $this->hasMany('App\Comentario');
+    public function ficheiro()
+    {
+        return $this->belongsTo('App\Ficheiro');
     }
 }

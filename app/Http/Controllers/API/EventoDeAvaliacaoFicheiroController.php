@@ -3,57 +3,53 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
-use App\Disciplina;
-use App\Aula;
+use App\EventoDeAvaliacao;
 use App\Ficheiro;
 use App\Http\Resources\FicheiroResource;
 
 /**
- * @group Aula management
+ * @group Eventos de Avaliação management
  *
- * APIs for managing Aulas
+ * APIs for managing Eventos de Avaliação
  */
-class AulaFicheiroController extends Controller
+class EventoDeAvaliacaoFicheiroController extends Controller
 {
     /**
-     * Display all Ficheiros of Aula.
+     * Display all Ficheiros of Evento de Avaliação.
      *
-     * @param  int  $disciplina_id
-     * @param  int  $aula_id
+     * @param  int  $evento_de_avaliacao_id
      * @return \Illuminate\Http\Response
      */
-    public function index($disciplina_id, $aula_id)
+    public function index($evento_de_avaliacao_id)
     {
         try {
-            return FicheiroResource::collection(Disciplina::findOrFail($disciplina_id)->aulas()->findOrFail($aula_id)->ficheiros);
+            return FicheiroResource::collection(EventoDeAvaliacao::findOrFail($evento_de_avaliacao_id)->ficheiros);
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
                 'error' => true,
                 'status_code' => 404,
-                'response' => 'id_not_found',
+                'response' => 'evento_de_avaliacao_id_not_found',
             ));
         }
     }
 
     /**
-     * Create a Ficheiro of Aula.
+     * Create a Ficheiro of Evento de Avaliação.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $disciplina_id
-     * @param  int  $aula_id
+     * @param  int  $evento_de_avaliacao_id
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $disciplina_id, $aula_id)
+    public function store(Request $request, $evento_de_avaliacao_id)
     {
         try {
-            $aula = Disciplina::findOrFail($disciplina_id)->aulas()->findOrFail($aula_id);
+            $evento_de_avaliacao = EventoDeAvaliacao::findOrFail($evento_de_avaliacao_id);
             $ficheiro = Ficheiro::create($request->all());
 
-            $aula->ficheiros()->save($ficheiro);
+            $evento_de_avaliacao->ficheiros()->save($ficheiro);
 
             return new FicheiroResource($aula);
         } catch (ModelNotFoundException $e) {
@@ -61,24 +57,23 @@ class AulaFicheiroController extends Controller
             return response()->json(array(
                 'error' => true,
                 'status_code' => 404,
-                'response' => 'id_not_found',
+                'response' => 'evento_de_avaliacao_id_not_found',
             ));
         }
     }
 
     /**
-     * Display a Ficheiro of Aula.
+     * Display a Ficheiro of Evento de Avaliação.
      *
-     * @param  int  $disciplina_id
-     * @param  int  $aula_id
+     * @param  int  $evento_de_avaliacao_id
      * @param  int  $ficheiro_id
      * @return \Illuminate\Http\Response
      */
-    public function show($disciplina_id, $aula_id, $ficheiro_id)
+    public function show($evento_de_avaliacao_id, $ficheiro_id)
     {
         try {
-            $aula = Disciplina::findOrFail($disciplina_id)->aulas()->findOrFail($aula_id);
-            return new FicheiroResource($aula->ficheiros()->findOrFail($ficheiro_id));
+            $evento_de_avaliacao = EventoDeAvaliacao::findOrFail($evento_de_avaliacao_id);
+            return new FicheiroResource($evento_de_avaliacao->ficheiros()->findOrFail($ficheiro_id));
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
@@ -90,19 +85,18 @@ class AulaFicheiroController extends Controller
     }
 
     /**
-     * Update a Ficheiro of Aula.
+     * Update a Ficheiro of Evento de Avaliação.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $disciplina_id
-     * @param  int  $aula_id
+     * @param  int  $evento_de_avaliacao_id
      * @param  int  $ficheiro_id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $disciplina_id, $aula_id, $ficheiro_id)
+    public function update(Request $request, $evento_de_avaliacao_id, $ficheiro_id)
     {
         try {
-            $aula = Disciplina::findOrFail($disciplina_id)->aulas()->findOrFail($aula_id);
-            $ficheiro = $aula->ficheiros()->findOrFail($ficheiro_id);
+            $evento_de_avaliacao = EventoDeAvaliacao::findOrFail($evento_de_avaliacao_id);
+            $ficheiro = $evento_de_avaliacao->ficheiros()->findOrFail($ficheiro_id);
             $ficheiro->update($request->all());
 
             return new FicheiroResource($ficheiro);
@@ -117,18 +111,17 @@ class AulaFicheiroController extends Controller
     }
 
     /**
-     * Remove a Ficheiro of Aula.
+     * Remove the specified resource from storage.
      *
-     * @param  int  $disciplina_id
-     * @param  int  $aula_id
+     * @param  int  $evento_de_avaliacao_id
      * @param  int  $ficheiro_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($disciplina_id, $aula_id, $ficheiro_id)
+    public function destroy($evento_de_avaliacao_id, $ficheiro_id)
     {
         try {
-            $aula = Disciplina::findOrFail($disciplina_id)->aulas()->findOrFail($aula_id);
-            $ficheiro = $aula->ficheiros()->findOrFail($ficheiro_id);
+            $evento_de_avaliacao = EventoDeAvaliacao::findOrFail($evento_de_avaliacao_id);
+            $ficheiro = $evento_de_avaliacao->ficheiros()->findOrFail($ficheiro_id);
             $ficheiro->delete();
 
             /* Return Success Response */

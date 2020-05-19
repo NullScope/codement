@@ -17,4 +17,9 @@ class Aluno extends Model
     {
         return $this->morphOne('App\User', 'userable');
     }
+
+    public function duvidas()
+    {
+        return $this->hasMany('App\Duvida');
+    }
 }

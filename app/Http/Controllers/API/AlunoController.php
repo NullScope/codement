@@ -40,6 +40,9 @@ class AlunoController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'aluno_id' => ['required', 'string', 'max:255'],
+            'curso' => ['required', 'string', 'max:255'],
+            'data_de_matricula_inicial' => ['required', 'date'],
+            'ano_curricular' => ['required', 'int'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -49,7 +52,10 @@ class AlunoController extends Controller
             return $validator->messages();
         } else {
             $aluno = Aluno::create([
-                'aluno_id' => $request->input('aluno_id')
+                'aluno_id' => $request->input('aluno_id'),
+                'curso' => $request->input('curso'),
+                'data_de_matricula_inicial' => $request->input('data_de_matricula_inicial'),
+                'ano_curricular' => $request->input('ano_curricular'),
             ]);
 
             $aluno->user()->create([

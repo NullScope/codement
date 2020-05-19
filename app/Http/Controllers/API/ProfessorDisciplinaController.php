@@ -50,7 +50,7 @@ class ProfessorDisciplinaController extends Controller
             $professor = Professor::findOrFail($id);
             $disciplina = Disciplina::findOrFail($request->input("disciplina_id"));
 
-            $professor->disciplinas->attach($disciplina);
+            $professor->disciplinas()->attach($disciplina);
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
@@ -108,7 +108,14 @@ class ProfessorDisciplinaController extends Controller
             $professor = Professor::findOrFail($id);
             $disciplina = Disciplina::findOrFail($disciplina_id);
 
-            $professor->disciplinas->attach($disciplina);
+            $professor->disciplinas()->detach($disciplina);
+
+            /* Return Success Response */
+            return response()->json(array(
+                'error' => false,
+                'status_code' => 200,
+                'response' => 'disciplina_removed',
+            ));
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(

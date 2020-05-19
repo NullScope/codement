@@ -5,89 +5,30 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 use App\Disciplina;
-use App\Aula;
-use App\Http\Resources\AulaResource;
+use App\Duvida;
+use App\Ficheiro;
+use App\Http\Resources\FicheiroResource;
 
 /**
- * @group Aula management
+ * @group Duvida management
  *
- * APIs for managing Aulas
+ * APIs for managing Disciplinas
  */
-class AulaController extends Controller
+class DuvidaFicheiroController extends Controller
 {
     /**
-     * Display all Aulas of Disciplina.
+     * Display all Ficheiros of Duvida.
      *
      * @param  int  $disciplina_id
+     * @param  int  $duvida_id
      * @return \Illuminate\Http\Response
      */
-    public function index($disciplina_id)
+    public function index($disciplina_id, $duvida_id)
     {
         try {
-            return AulaResource::collection(Disciplina::findOrFail($disciplina_id)->aulas);
-        } catch (ModelNotFoundException $e) {
-            /* Return Error Response */
-            return response()->json(array(
-                'error' => true,
-                'status_code' => 404,
-                'response' => 'disciplina_id_not_found',
-            ));
-        }
-    }
-
-    /**
-     * Create a Aula of Disciplina.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $disciplina_id
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request, $disciplina_id)
-    {
-        try {
-            $validator = Validator::make($request->all(), [
-                'descricao' => ['required', 'string', 'max:255']
-            ]);
-
-            if ($validator->fails()) {
-                return $validator->messages();
-            } else {
-                $disciplina = Disciplina::findOrFail($disciplina_id);
-
-                $aula = Aula::create([
-                    'disciplina_id' => $disciplina_id,
-                    'descricao' => $request->input('descricao')
-                ]);
-
-                $disciplina->aulas()->save($aula);
-
-                return new AulaResource($aula);
-            }
-        } catch (ModelNotFoundException $e) {
-            /* Return Error Response */
-            return response()->json(array(
-                'error' => true,
-                'status_code' => 404,
-                'response' => 'disciplina_id_not_found',
-            ));
-        }
-    }
-
-    /**
-     * Display a Aula of Disciplina.
-     *
-     * @param  int  $disciplina_id
-     * @param  int  $aula_id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($disciplina_id, $aula_id)
-    {
-        try {
-            $disciplina = Disciplina::findOrFail($disciplina_id);
-            return new AulaResource($disciplina->aulas()->findOrFail($aula_id));
+            return FicheiroResource::collection(Disciplina::findOrFail($disciplina_id)->duvidas()->findOrFail($duvida_id)->ficheiros);
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
@@ -99,21 +40,22 @@ class AulaController extends Controller
     }
 
     /**
-     * Update a Aula of Disciplina
+     * Create a Ficheiro of Duvida.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $disciplina_id
-     * @param  int  $aula_id
+     * @param  int  $duvida_id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $disciplina_id, $aula_id)
+    public function store(Request $request, $disciplina_id, $duvida_id)
     {
         try {
-            $disciplina = Disciplina::findOrFail($disciplina_id);
-            $aula = $disciplina->aulas()->findOrFail($aula_id);
-            $aula->update($request->all());
+            $duvida = Disciplina::findOrFail($disciplina_id)->duvidas()->findOrFail($duvida_id);
+            $ficheiro = Ficheiro::create($request->all());
 
-            return new AulaResource($aula);
+            $duvida->ficheiros()->save($ficheiro);
+
+            return new FicheiroResource($duvida);
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
@@ -125,24 +67,75 @@ class AulaController extends Controller
     }
 
     /**
-     * Remove a Aula of Disciplina
+     * Display a Ficheiro of Duvida.
      *
      * @param  int  $disciplina_id
-     * @param  int  $aula_id
+     * @param  int  $duvida_id
+     * @param  int  $ficheiro_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($disciplina_id, $aula_id)
+    public function show($disciplina_id, $duvida_id, $ficheiro_id)
     {
         try {
-            $disciplina = Disciplina::findOrFail($disciplina_id);
-            $aula = $disciplina->aulas()->findOrFail($aula_id);
-            $aula->delete();
+            $duvida = Disciplina::findOrFail($disciplina_id)->duvidas()->findOrFail($duvida_id);
+            return new FicheiroResource($duvida->ficheiros()->findOrFail($ficheiro_id));
+        } catch (ModelNotFoundException $e) {
+            /* Return Error Response */
+            return response()->json(array(
+                'error' => true,
+                'status_code' => 404,
+                'response' => 'id_not_found',
+            ));
+        }
+    }
+
+    /**
+     * Update a Ficheiro of Duvida.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $disciplina_id
+     * @param  int  $duvida_id
+     * @param  int  $ficheiro_id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $disciplina_id, $duvida_id, $ficheiro_id)
+    {
+        try {
+            $duvida = Disciplina::findOrFail($disciplina_id)->duvidas()->findOrFail($duvida_id);
+            $ficheiro = $duvida->ficheiros()->findOrFail($ficheiro_id);
+            $ficheiro->update($request->all());
+
+            return new FicheiroResource($ficheiro);
+        } catch (ModelNotFoundException $e) {
+            /* Return Error Response */
+            return response()->json(array(
+                'error' => true,
+                'status_code' => 404,
+                'response' => 'id_not_found',
+            ));
+        }
+    }
+
+    /**
+     * Remove a Ficheiro of Duvida.
+     *
+     * @param  int  $disciplina_id
+     * @param  int  $duvida_id
+     * @param  int  $ficheiro_id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($disciplina_id, $duvida_id, $ficheiro_id)
+    {
+        try {
+            $duvida = Disciplina::findOrFail($disciplina_id)->duvidas()->findOrFail($duvida_id);
+            $ficheiro = $duvida->ficheiros()->findOrFail($ficheiro_id);
+            $ficheiro->delete();
 
             /* Return Success Response */
             return response()->json(array(
                 'error' => false,
                 'status_code' => 200,
-                'response' => 'aula_destroyed',
+                'response' => 'ficheiro_destroyed',
             ));
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */

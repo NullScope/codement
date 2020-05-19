@@ -49,11 +49,11 @@ class User extends Authenticatable
 
     public function comentarios()
     {
-        return $this->belongsToMany('App\Comentarios');
+        return $this->hasMany('App\Comentario');
     }
 
     public function ficheiros()
     {
-        return $this->belongsToMany('App\Ficheiros');
+        return $this->hasMany('App\Ficheiro');
     }
 }

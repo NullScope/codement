@@ -16,6 +16,7 @@ class FicheiroResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'user' => $this->user,
             'url' => $this->url,
             'extensao' => $this->extensao,
             'comentarios' => $this->comentarios,

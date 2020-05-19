@@ -2268,31 +2268,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   methods: {
-    login: function login() {
+    login: function login() {// await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+      // await axios.post('http://localhost:8000/login', {
+      //   email: "brunoribeiro095@gmail.com",
+      //   password: "12345678"
+      // });
+      // let response = await axios.post('http://localhost:8000/api/disciplinas/1/duvidas', {
+      // });
+      // console.log(response);
+
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/sanctum/csrf-cookie');
-
-              case 2:
-                _context.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8000/api/alunos', {
-                  aluno_id: "a2082214"
-                });
-
-              case 4:
-                _context.next = 6;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/api/user');
-
-              case 6:
-                response = _context.sent;
-                console.log(response);
-
-              case 8:
               case "end":
                 return _context.stop();
             }

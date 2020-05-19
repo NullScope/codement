@@ -19,6 +19,9 @@ class AlunoResource extends JsonResource
             'aluno_id' => $this->aluno_id,
             'profile' => $this->user,
             'disciplinas' => $this->user->disciplinas,
+            'comentarios' => $this->user->comentarios,
+            'ficheiros' => $this->user->ficheiros,
+            'duvidas' => $this->duvidas,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

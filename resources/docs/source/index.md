@@ -59,30 +59,7 @@ fetch(url, {
 
 ```json
 {
-    "data": [
-        {
-            "id": 7,
-            "aluno_id": "a2082214",
-            "profile": {
-                "id": 5,
-                "name": "Bruno Ribeiro",
-                "email": "testt@gmail.com",
-                "email_verified_at": null,
-                "created_at": "2020-05-17T18:20:56.000000Z",
-                "updated_at": "2020-05-17T19:08:24.000000Z"
-            },
-            "disciplinas": [
-                {
-                    "id": 1,
-                    "nome": "Engenharia de Requisitos",
-                    "created_at": "2020-05-17T20:26:57.000000Z",
-                    "updated_at": "2020-05-17T20:26:57.000000Z"
-                }
-            ],
-            "created_at": "2020-05-17T18:20:56.000000Z",
-            "updated_at": "2020-05-17T19:08:23.000000Z"
-        }
-    ]
+    "data": []
 }
 ```
 
@@ -387,46 +364,6 @@ fetch(url, {
 
 <!-- END_55e0ba5fb16e543a0db984a32d840728 -->
 
-<!-- START_76c14bf2f6816e114ba19b5f1dd68080 -->
-## Update the Disciplina of Aluno (NOT IMPLEMENTED).
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://localhost/api/alunos/1/disciplinas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/api/alunos/1/disciplinas/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT api/alunos/{aluno}/disciplinas/{disciplina}`
-
-`PATCH api/alunos/{aluno}/disciplinas/{disciplina}`
-
-
-<!-- END_76c14bf2f6816e114ba19b5f1dd68080 -->
-
 <!-- START_896724ba6fd3f5f94e935bcdbf77900f -->
 ## Remove a Disciplina from Aluno.
 
@@ -504,7 +441,22 @@ fetch(url, {
 
 ```json
 {
-    "data": []
+    "data": [
+        {
+            "id": 2,
+            "descricao": "blabla",
+            "disciplina": {
+                "id": 1,
+                "nome": "Processos e Métricas de Software",
+                "created_at": "2020-05-18T22:57:25.000000Z",
+                "updated_at": "2020-05-18T22:57:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            },
+            "created_at": "2020-05-19T00:13:18.000000Z",
+            "updated_at": "2020-05-19T00:13:18.000000Z"
+        }
+    ]
 }
 ```
 
@@ -515,7 +467,7 @@ fetch(url, {
 <!-- END_5652a16509c3614d3d81b303ffa3415d -->
 
 <!-- START_6528ef4d32874d33281b3edb7ae1950e -->
-## Create Aula
+## Create a Aula of Disciplina.
 
 > Example request:
 
@@ -725,7 +677,7 @@ fetch(url, {
 <!-- END_f6c8e734cb4162537925e75f221df301 -->
 
 <!-- START_d059d3dfbf4b24db6f97a6437a2cc696 -->
-## Create Ficheiro.
+## Create a Ficheiro of Aula.
 
 > Example request:
 
@@ -887,6 +839,216 @@ fetch(url, {
 
 <!-- END_206d345b485200b12ff354747a6eb933 -->
 
+#Comentario management
+
+
+APIs for managing Comentarios
+<!-- START_a3b990496821f1a00f2fd46d4aaad11e -->
+## Display all Comentarios of Ficheiro.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/ficheiros/1/comentarios" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/ficheiros/1/comentarios"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (404):
+
+```json
+{
+    "message": "No query results for model [App\\Ficheiro] 1"
+}
+```
+
+### HTTP Request
+`GET api/ficheiros/{ficheiro}/comentarios`
+
+
+<!-- END_a3b990496821f1a00f2fd46d4aaad11e -->
+
+<!-- START_cce995b33c3c7af1a6bbc8e691637358 -->
+## Create Comentario.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/api/ficheiros/1/comentarios" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/ficheiros/1/comentarios"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/ficheiros/{ficheiro}/comentarios`
+
+
+<!-- END_cce995b33c3c7af1a6bbc8e691637358 -->
+
+<!-- START_02ff6f0482d8470700657bc85fe2bafe -->
+## Display a Comentario of Ficheiro.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/ficheiros/1/comentarios/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/ficheiros/1/comentarios/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (404):
+
+```json
+{
+    "message": "No query results for model [App\\Ficheiro] 1"
+}
+```
+
+### HTTP Request
+`GET api/ficheiros/{ficheiro}/comentarios/{comentario}`
+
+
+<!-- END_02ff6f0482d8470700657bc85fe2bafe -->
+
+<!-- START_7e4c93eba63a4fe58d4e3e3fa4e84a0a -->
+## Update a Comentario of Ficheiro.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/api/ficheiros/1/comentarios/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/ficheiros/1/comentarios/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/ficheiros/{ficheiro}/comentarios/{comentario}`
+
+`PATCH api/ficheiros/{ficheiro}/comentarios/{comentario}`
+
+
+<!-- END_7e4c93eba63a4fe58d4e3e3fa4e84a0a -->
+
+<!-- START_2b3111d9fcedf033808e719e9d4c9063 -->
+## Remove a Comentario of Ficheiro.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/api/ficheiros/1/comentarios/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/ficheiros/1/comentarios/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/ficheiros/{ficheiro}/comentarios/{comentario}`
+
+
+<!-- END_2b3111d9fcedf033808e719e9d4c9063 -->
+
 #Disciplina management
 
 
@@ -929,65 +1091,56 @@ fetch(url, {
     "data": [
         {
             "id": 1,
-            "nome": "Engenharia de Requisitos",
-            "alunos": [
+            "nome": "Processos e Métricas de Software",
+            "alunos": [],
+            "regente": {
+                "id": 1,
+                "professor_id": "a2082214",
+                "created_at": "2020-05-18T22:53:16.000000Z",
+                "updated_at": "2020-05-18T22:53:16.000000Z"
+            },
+            "assistentes": [
                 {
-                    "id": 7,
-                    "aluno_id": "a2082214",
-                    "profile": {
-                        "id": 5,
+                    "id": 1,
+                    "professor_id": null,
+                    "user": {
+                        "id": 1,
                         "name": "Bruno Ribeiro",
-                        "email": "testt@gmail.com",
+                        "email": "brunoribeiro095@gmail.com",
                         "email_verified_at": null,
-                        "created_at": "2020-05-17T18:20:56.000000Z",
-                        "updated_at": "2020-05-17T19:08:24.000000Z"
+                        "created_at": "2020-05-18T22:53:16.000000Z",
+                        "updated_at": "2020-05-18T22:53:16.000000Z"
                     },
                     "disciplinas": [
                         {
                             "id": 1,
-                            "nome": "Engenharia de Requisitos",
-                            "created_at": "2020-05-17T20:26:57.000000Z",
-                            "updated_at": "2020-05-17T20:26:57.000000Z"
+                            "nome": "Processos e Métricas de Software",
+                            "created_at": "2020-05-18T22:57:25.000000Z",
+                            "updated_at": "2020-05-18T22:57:25.000000Z",
+                            "semestre_curricular": "2020-05-18 00:00:00",
+                            "professor_id": 1
                         }
                     ],
-                    "created_at": "2020-05-17T18:20:56.000000Z",
-                    "updated_at": "2020-05-17T19:08:23.000000Z"
+                    "created_at": "2020-05-18T22:53:16.000000Z",
+                    "updated_at": "2020-05-18T22:53:16.000000Z"
                 }
             ],
-            "professores": [],
-            "created_at": "2020-05-17T20:26:57.000000Z",
-            "updated_at": "2020-05-17T20:26:57.000000Z"
+            "created_at": "2020-05-18T22:57:25.000000Z",
+            "updated_at": "2020-05-18T22:57:25.000000Z"
         },
         {
             "id": 2,
             "nome": "Processos e Métricas de Software",
-            "alunos": [
-                {
-                    "id": 7,
-                    "aluno_id": "a2082214",
-                    "profile": {
-                        "id": 5,
-                        "name": "Bruno Ribeiro",
-                        "email": "testt@gmail.com",
-                        "email_verified_at": null,
-                        "created_at": "2020-05-17T18:20:56.000000Z",
-                        "updated_at": "2020-05-17T19:08:24.000000Z"
-                    },
-                    "disciplinas": [
-                        {
-                            "id": 1,
-                            "nome": "Engenharia de Requisitos",
-                            "created_at": "2020-05-17T20:26:57.000000Z",
-                            "updated_at": "2020-05-17T20:26:57.000000Z"
-                        }
-                    ],
-                    "created_at": "2020-05-17T18:20:56.000000Z",
-                    "updated_at": "2020-05-17T19:08:23.000000Z"
-                }
-            ],
-            "professores": [],
-            "created_at": null,
-            "updated_at": null
+            "alunos": [],
+            "regente": {
+                "id": 1,
+                "professor_id": "a2082214",
+                "created_at": "2020-05-18T22:53:16.000000Z",
+                "updated_at": "2020-05-18T22:53:16.000000Z"
+            },
+            "assistentes": [],
+            "created_at": "2020-05-18T23:02:59.000000Z",
+            "updated_at": "2020-05-18T23:02:59.000000Z"
         }
     ]
 }
@@ -1074,34 +1227,42 @@ fetch(url, {
 {
     "data": {
         "id": 1,
-        "nome": "Engenharia de Requisitos",
-        "alunos": [
+        "nome": "Processos e Métricas de Software",
+        "alunos": [],
+        "regente": {
+            "id": 1,
+            "professor_id": "a2082214",
+            "created_at": "2020-05-18T22:53:16.000000Z",
+            "updated_at": "2020-05-18T22:53:16.000000Z"
+        },
+        "assistentes": [
             {
-                "id": 7,
-                "aluno_id": "a2082214",
-                "profile": {
-                    "id": 5,
+                "id": 1,
+                "professor_id": null,
+                "user": {
+                    "id": 1,
                     "name": "Bruno Ribeiro",
-                    "email": "testt@gmail.com",
+                    "email": "brunoribeiro095@gmail.com",
                     "email_verified_at": null,
-                    "created_at": "2020-05-17T18:20:56.000000Z",
-                    "updated_at": "2020-05-17T19:08:24.000000Z"
+                    "created_at": "2020-05-18T22:53:16.000000Z",
+                    "updated_at": "2020-05-18T22:53:16.000000Z"
                 },
                 "disciplinas": [
                     {
                         "id": 1,
-                        "nome": "Engenharia de Requisitos",
-                        "created_at": "2020-05-17T20:26:57.000000Z",
-                        "updated_at": "2020-05-17T20:26:57.000000Z"
+                        "nome": "Processos e Métricas de Software",
+                        "created_at": "2020-05-18T22:57:25.000000Z",
+                        "updated_at": "2020-05-18T22:57:25.000000Z",
+                        "semestre_curricular": "2020-05-18 00:00:00",
+                        "professor_id": 1
                     }
                 ],
-                "created_at": "2020-05-17T18:20:56.000000Z",
-                "updated_at": "2020-05-17T19:08:23.000000Z"
+                "created_at": "2020-05-18T22:53:16.000000Z",
+                "updated_at": "2020-05-18T22:53:16.000000Z"
             }
         ],
-        "professores": [],
-        "created_at": "2020-05-17T20:26:57.000000Z",
-        "updated_at": "2020-05-17T20:26:57.000000Z"
+        "created_at": "2020-05-18T22:57:25.000000Z",
+        "updated_at": "2020-05-18T22:57:25.000000Z"
     }
 }
 ```
@@ -1190,6 +1351,1020 @@ fetch(url, {
 
 <!-- END_08d0dbe102eb5fb5efa7c9df4cd35265 -->
 
+#Duvida management
+
+
+APIs for managing Disciplinas
+<!-- START_41e6c67bacd5993b456c7f3382dfef84 -->
+## Display all Duvidas of Disciplina.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/duvidas" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/duvidas"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": []
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/duvidas`
+
+
+<!-- END_41e6c67bacd5993b456c7f3382dfef84 -->
+
+<!-- START_f06a7b83c84cc379f18b41553d79bcf9 -->
+## Create a Duvida of Disciplina.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/api/disciplinas/1/duvidas" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/duvidas"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/disciplinas/{disciplina}/duvidas`
+
+
+<!-- END_f06a7b83c84cc379f18b41553d79bcf9 -->
+
+<!-- START_33d46b7d7dce0758edd9e60b96fb06fe -->
+## Display a Duvida of Disciplina.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/duvidas/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/duvidas/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": true,
+    "status_code": 404,
+    "response": "id_not_found"
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/duvidas/{duvida}`
+
+
+<!-- END_33d46b7d7dce0758edd9e60b96fb06fe -->
+
+<!-- START_cb8bee5e9c88b11f6daf015221c9925e -->
+## Update a Duvida of Disciplina.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/api/disciplinas/1/duvidas/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/duvidas/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/disciplinas/{disciplina}/duvidas/{duvida}`
+
+`PATCH api/disciplinas/{disciplina}/duvidas/{duvida}`
+
+
+<!-- END_cb8bee5e9c88b11f6daf015221c9925e -->
+
+<!-- START_c64229b342a652bcdd36792860c7b612 -->
+## Remove a Duvida of Disciplina.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/api/disciplinas/1/duvidas/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/duvidas/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/disciplinas/{disciplina}/duvidas/{duvida}`
+
+
+<!-- END_c64229b342a652bcdd36792860c7b612 -->
+
+<!-- START_35f3e4adb4dbb90604df550c19f0b110 -->
+## Display all Ficheiros of Duvida.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/duvidas/1/ficheiros" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/duvidas/1/ficheiros"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": true,
+    "status_code": 404,
+    "response": "id_not_found"
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros`
+
+
+<!-- END_35f3e4adb4dbb90604df550c19f0b110 -->
+
+<!-- START_34f811b383b2b4d00f63a7451871d8a6 -->
+## Create a Ficheiro of Duvida.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/api/disciplinas/1/duvidas/1/ficheiros" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/duvidas/1/ficheiros"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros`
+
+
+<!-- END_34f811b383b2b4d00f63a7451871d8a6 -->
+
+<!-- START_554660e48859582da781e177d745995f -->
+## Display a Ficheiro of Duvida.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/duvidas/1/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/duvidas/1/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": true,
+    "status_code": 404,
+    "response": "id_not_found"
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros/{ficheiro}`
+
+
+<!-- END_554660e48859582da781e177d745995f -->
+
+<!-- START_a30cfc9029ac3e861ee5c1cc0c351b7f -->
+## Update a Ficheiro of Duvida.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/api/disciplinas/1/duvidas/1/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/duvidas/1/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros/{ficheiro}`
+
+`PATCH api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros/{ficheiro}`
+
+
+<!-- END_a30cfc9029ac3e861ee5c1cc0c351b7f -->
+
+<!-- START_076d84034dbb7ea4588d425c74fe5736 -->
+## Remove a Ficheiro of Duvida.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/api/disciplinas/1/duvidas/1/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/duvidas/1/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros/{ficheiro}`
+
+
+<!-- END_076d84034dbb7ea4588d425c74fe5736 -->
+
+#Eventos de Avaliação management
+
+
+APIs for managing Eventos de Avaliação
+<!-- START_a5a71ee70e07ad727284087575070965 -->
+## Display all Eventos de Avaliação.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/eventos-de-avaliacao" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": []
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/eventos-de-avaliacao`
+
+
+<!-- END_a5a71ee70e07ad727284087575070965 -->
+
+<!-- START_aead4d5c94d433772349744d92c21de3 -->
+## Create an Evento de Avaliação.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/disciplinas/{disciplina}/eventos-de-avaliacao`
+
+
+<!-- END_aead4d5c94d433772349744d92c21de3 -->
+
+<!-- START_5aa7187dc5109f7986c18139243afd07 -->
+## Display an Evento de Avaliação.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": true,
+    "status_code": 404,
+    "response": "evento_de_avaliacao_id_not_found"
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}`
+
+
+<!-- END_5aa7187dc5109f7986c18139243afd07 -->
+
+<!-- START_1c16eb10634a2778ff6ac112fc0dab53 -->
+## Update an Evento de Avaliação.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}`
+
+`PATCH api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}`
+
+
+<!-- END_1c16eb10634a2778ff6ac112fc0dab53 -->
+
+<!-- START_aa75a90513f73061fb246d9c34328878 -->
+## Remove an Evento de Avaliação.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}`
+
+
+<!-- END_aa75a90513f73061fb246d9c34328878 -->
+
+<!-- START_aa9ef7109c36accfac70987604bb7e04 -->
+## Display all Ficheiros of Evento de Avaliação.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (404):
+
+```json
+{
+    "message": "No query results for model [App\\EventoDeAvaliacao] 1"
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros`
+
+
+<!-- END_aa9ef7109c36accfac70987604bb7e04 -->
+
+<!-- START_e6a918cd136f194f4b6f0a9a3d34e9da -->
+## Create a Ficheiro of Evento de Avaliação.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros`
+
+
+<!-- END_e6a918cd136f194f4b6f0a9a3d34e9da -->
+
+<!-- START_8aeb7203d4e31933ba7e81763ab0e870 -->
+## Display a Ficheiro of Evento de Avaliação.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (404):
+
+```json
+{
+    "message": "No query results for model [App\\EventoDeAvaliacao] 1"
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros/{ficheiro}`
+
+
+<!-- END_8aeb7203d4e31933ba7e81763ab0e870 -->
+
+<!-- START_fa7b3546b3e409a7c9b66977d3d6eb50 -->
+## Update a Ficheiro of Evento de Avaliação.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros/{ficheiro}`
+
+`PATCH api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros/{ficheiro}`
+
+
+<!-- END_fa7b3546b3e409a7c9b66977d3d6eb50 -->
+
+<!-- START_5610f50214fb70f6292932c26271c442 -->
+## Remove the specified resource from storage.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros/{ficheiro}`
+
+
+<!-- END_5610f50214fb70f6292932c26271c442 -->
+
+#Ficheiro management
+
+
+APIs for managing Ficheiros
+<!-- START_0492f500ad6414d89ce86b6f3fb41c81 -->
+## Display all Ficheiros.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/ficheiros" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/ficheiros"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": []
+}
+```
+
+### HTTP Request
+`GET api/ficheiros`
+
+
+<!-- END_0492f500ad6414d89ce86b6f3fb41c81 -->
+
+<!-- START_30f6a70f1a3e30e5cb0306a07a885458 -->
+## Display a Ficheiro.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": true,
+    "status_code": 404,
+    "response": "ficheiro_id_not_found"
+}
+```
+
+### HTTP Request
+`GET api/ficheiros/{ficheiro}`
+
+
+<!-- END_30f6a70f1a3e30e5cb0306a07a885458 -->
+
+<!-- START_038fc5a7cfef9b868d006758d386b4e0 -->
+## Update a Ficheiro.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/api/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/ficheiros/{ficheiro}`
+
+`PATCH api/ficheiros/{ficheiro}`
+
+
+<!-- END_038fc5a7cfef9b868d006758d386b4e0 -->
+
+<!-- START_53683cfe4f7d0076ddb112e734d5c33b -->
+## Remove a Ficheiro.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/api/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/ficheiros/{ficheiro}`
+
+
+<!-- END_53683cfe4f7d0076ddb112e734d5c33b -->
+
 #Professor management
 
 
@@ -1229,7 +2404,32 @@ fetch(url, {
 
 ```json
 {
-    "data": []
+    "data": [
+        {
+            "id": 1,
+            "professor_id": null,
+            "user": {
+                "id": 1,
+                "name": "Bruno Ribeiro",
+                "email": "brunoribeiro095@gmail.com",
+                "email_verified_at": null,
+                "created_at": "2020-05-18T22:53:16.000000Z",
+                "updated_at": "2020-05-18T22:53:16.000000Z"
+            },
+            "disciplinas": [
+                {
+                    "id": 1,
+                    "nome": "Processos e Métricas de Software",
+                    "created_at": "2020-05-18T22:57:25.000000Z",
+                    "updated_at": "2020-05-18T22:57:25.000000Z",
+                    "semestre_curricular": "2020-05-18 00:00:00",
+                    "professor_id": 1
+                }
+            ],
+            "created_at": "2020-05-18T22:53:16.000000Z",
+            "updated_at": "2020-05-18T22:53:16.000000Z"
+        }
+    ]
 }
 ```
 
@@ -1312,9 +2512,30 @@ fetch(url, {
 
 ```json
 {
-    "error": true,
-    "status_code": 404,
-    "response": "professor_id_not_found"
+    "data": {
+        "id": 1,
+        "professor_id": null,
+        "user": {
+            "id": 1,
+            "name": "Bruno Ribeiro",
+            "email": "brunoribeiro095@gmail.com",
+            "email_verified_at": null,
+            "created_at": "2020-05-18T22:53:16.000000Z",
+            "updated_at": "2020-05-18T22:53:16.000000Z"
+        },
+        "disciplinas": [
+            {
+                "id": 1,
+                "nome": "Processos e Métricas de Software",
+                "created_at": "2020-05-18T22:57:25.000000Z",
+                "updated_at": "2020-05-18T22:57:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            }
+        ],
+        "created_at": "2020-05-18T22:53:16.000000Z",
+        "updated_at": "2020-05-18T22:53:16.000000Z"
+    }
 }
 ```
 
@@ -1437,9 +2658,47 @@ fetch(url, {
 
 ```json
 {
-    "error": true,
-    "status_code": 404,
-    "response": "professor_id_not_found"
+    "data": [
+        {
+            "id": 1,
+            "nome": "Processos e Métricas de Software",
+            "alunos": [],
+            "regente": {
+                "id": 1,
+                "professor_id": "a2082214",
+                "created_at": "2020-05-18T22:53:16.000000Z",
+                "updated_at": "2020-05-18T22:53:16.000000Z"
+            },
+            "assistentes": [
+                {
+                    "id": 1,
+                    "professor_id": null,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "brunoribeiro095@gmail.com",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-18T22:53:16.000000Z",
+                        "updated_at": "2020-05-18T22:53:16.000000Z"
+                    },
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Processos e Métricas de Software",
+                            "created_at": "2020-05-18T22:57:25.000000Z",
+                            "updated_at": "2020-05-18T22:57:25.000000Z",
+                            "semestre_curricular": "2020-05-18 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "created_at": "2020-05-18T22:53:16.000000Z",
+                    "updated_at": "2020-05-18T22:53:16.000000Z"
+                }
+            ],
+            "created_at": "2020-05-18T22:57:25.000000Z",
+            "updated_at": "2020-05-18T22:57:25.000000Z"
+        }
+    ]
 }
 ```
 
@@ -1522,9 +2781,45 @@ fetch(url, {
 
 ```json
 {
-    "error": true,
-    "status_code": 404,
-    "response": "id_not_found"
+    "data": {
+        "id": 1,
+        "nome": "Processos e Métricas de Software",
+        "alunos": [],
+        "regente": {
+            "id": 1,
+            "professor_id": "a2082214",
+            "created_at": "2020-05-18T22:53:16.000000Z",
+            "updated_at": "2020-05-18T22:53:16.000000Z"
+        },
+        "assistentes": [
+            {
+                "id": 1,
+                "professor_id": null,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "brunoribeiro095@gmail.com",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-18T22:53:16.000000Z",
+                    "updated_at": "2020-05-18T22:53:16.000000Z"
+                },
+                "disciplinas": [
+                    {
+                        "id": 1,
+                        "nome": "Processos e Métricas de Software",
+                        "created_at": "2020-05-18T22:57:25.000000Z",
+                        "updated_at": "2020-05-18T22:57:25.000000Z",
+                        "semestre_curricular": "2020-05-18 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "created_at": "2020-05-18T22:53:16.000000Z",
+                "updated_at": "2020-05-18T22:53:16.000000Z"
+            }
+        ],
+        "created_at": "2020-05-18T22:57:25.000000Z",
+        "updated_at": "2020-05-18T22:57:25.000000Z"
+    }
 }
 ```
 
@@ -1533,46 +2828,6 @@ fetch(url, {
 
 
 <!-- END_4c516fde04d4eb478959b722510d2f72 -->
-
-<!-- START_096e93771c844815bb6047c857ab5d18 -->
-## Update the Disciplina of Professor (NOT IMPLEMENTED).
-
-> Example request:
-
-```bash
-curl -X PUT \
-    "http://localhost/api/professores/1/disciplinas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/api/professores/1/disciplinas/1"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PUT",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-
-### HTTP Request
-`PUT api/professores/{professore}/disciplinas/{disciplina}`
-
-`PATCH api/professores/{professore}/disciplinas/{disciplina}`
-
-
-<!-- END_096e93771c844815bb6047c857ab5d18 -->
 
 <!-- START_64209165961a34416881ce3e46732927 -->
 ## Remove a Disciplina from Professor.
@@ -1611,6 +2866,430 @@ fetch(url, {
 
 
 <!-- END_64209165961a34416881ce3e46732927 -->
+
+#Resolução management
+
+
+APIs for managing Resolucões
+<!-- START_8f273ed5d18bdcb66b2e2b3126b41c57 -->
+## Display all Resolucões of Evento de Resolução.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": true,
+    "status_code": 404,
+    "response": "id_not_found"
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes`
+
+
+<!-- END_8f273ed5d18bdcb66b2e2b3126b41c57 -->
+
+<!-- START_70b2e0befeb60703c6bf8a2d91b73797 -->
+## Create a Resolução of Evento de Resolução.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes`
+
+
+<!-- END_70b2e0befeb60703c6bf8a2d91b73797 -->
+
+<!-- START_5db1893e5b1afcf9687b2259f206098a -->
+## Display a Resolução of Evento de Resolução.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": true,
+    "status_code": 404,
+    "response": "id_not_found"
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}`
+
+
+<!-- END_5db1893e5b1afcf9687b2259f206098a -->
+
+<!-- START_8fb87ec0d67758056cab91acc218cdd1 -->
+## Update a Resolução of Evento de Resolução.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}`
+
+`PATCH api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}`
+
+
+<!-- END_8fb87ec0d67758056cab91acc218cdd1 -->
+
+<!-- START_1a6640681a9d5bb23a630d9223d0ea8d -->
+## Remove a Resolução of Evento de Resolução.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}`
+
+
+<!-- END_1a6640681a9d5bb23a630d9223d0ea8d -->
+
+<!-- START_d459258e6b894bf811f195aadcb2a060 -->
+## Display all Ficheiros of Resolucões.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": true,
+    "status_code": 404,
+    "response": "id_not_found"
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros`
+
+
+<!-- END_d459258e6b894bf811f195aadcb2a060 -->
+
+<!-- START_60598f759432cf3f03c396dde7f91165 -->
+## Create a Ficheiro of Resolução.
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`POST api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros`
+
+
+<!-- END_60598f759432cf3f03c396dde7f91165 -->
+
+<!-- START_e4606509f15659a252a43c7c78118618 -->
+## Display a Ficheiro of Resolução.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": true,
+    "status_code": 404,
+    "response": "id_not_found"
+}
+```
+
+### HTTP Request
+`GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros/{ficheiro}`
+
+
+<!-- END_e4606509f15659a252a43c7c78118618 -->
+
+<!-- START_f3afba28d20c0eb0ed4b39e7f3e4993d -->
+## Update a Ficheiro of Resolução.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`PUT api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros/{ficheiro}`
+
+`PATCH api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros/{ficheiro}`
+
+
+<!-- END_f3afba28d20c0eb0ed4b39e7f3e4993d -->
+
+<!-- START_8399ae8a5231808ce35cda8acfc825fe -->
+## Remove a Ficheiro of Resolução.
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+
+### HTTP Request
+`DELETE api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros/{ficheiro}`
+
+
+<!-- END_8399ae8a5231808ce35cda8acfc825fe -->
 
 #general
 
@@ -1652,6 +3331,53 @@ fetch(url, {
 
 
 <!-- END_4dfafe7f87ec132be3c8990dd1fa9078 -->
+
+<!-- START_b19e2ecbb41b5fa6802edaf581aab5f6 -->
+## Display a listing of the resource.
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "http://localhost/api/me" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost/api/me"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "error": true,
+    "status_code": 401,
+    "response": "not_authorized"
+}
+```
+
+### HTTP Request
+`GET api/me`
+
+
+<!-- END_b19e2ecbb41b5fa6802edaf581aab5f6 -->
 
 <!-- START_66e08d3cc8222573018fed49e121e96d -->
 ## Show the application&#039;s login form.

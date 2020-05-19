@@ -18,20 +18,18 @@
     },
     methods: {
       async login() {
-        await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+        // await axios.get('http://localhost:8000/sanctum/csrf-cookie');
 
         // await axios.post('http://localhost:8000/login', {
         //   email: "brunoribeiro095@gmail.com",
-        //   password: "123456"
+        //   password: "12345678"
         // });
 
-        await axios.post('http://localhost:8000/api/alunos', {
-          aluno_id: "a2082214"
-        });
+        // let response = await axios.post('http://localhost:8000/api/disciplinas/1/duvidas', {
 
-        let response = await axios.get('http://localhost:8000/api/user');
+        // });
 
-        console.log(response);
+        // console.log(response);
       }
     },
     computed: {

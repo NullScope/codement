@@ -5,33 +5,30 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Response;
 
-use App\User;
-use App\Professor;
-use App\Http\Resources\ProfessorResource;
+use App\EventoDeAvaliacao;
+use App\Http\Resources\EventoDeAvaliacaoResource;
 
 /**
- * @group Professor management
+ * @group Eventos de Avaliação management
  *
- * APIs for managing Professores
+ * APIs for managing Eventos de Avaliação
  */
-class ProfessorController extends Controller
+class EventoDeAvaliacaoController extends Controller
 {
     /**
-     * Display all Professores.
+     * Display all Eventos de Avaliação.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return ProfessorResource::collection(Professor::all());
+        return EventoDeAvaliacaoResource::collection(EventoDeAvaliacao::all());
     }
 
     /**
-     * Create a Professor and the associated user.
+     * Create an Evento de Avaliação.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -39,31 +36,26 @@ class ProfessorController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'professor_id' => ['required', 'string', 'max:255'],
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'disciplina_id' => ['required', 'string', 'max:255'],
+            'data_inicio' => ['required', 'date'],
+            'data_fim' => ['required', 'date'],
         ]);
 
         if ($validator->fails()) {
             return $validator->messages();
         } else {
-            $professor = Professor::create([
-                'professor_id' => $request->input('professor_id')
+            $eventoDeAvaliacao = EventoDeAvaliacao::create([
+                'disciplina_id' => $request->input('disciplina_id'),
+                'data_inicio' => $request->input('data_inicio'),
+                'data_fim' => $request->input('data_fim'),
             ]);
 
-            $professor->user()->create([
-                'name' => $request->input('name'),
-                'email' => $request->input('email'),
-                'password' => Hash::make($request->input('password'))
-            ]);
-
-            return new ProfessorResource($professor);
+            return new EventoDeAvaliacaoResource($eventoDeAvaliacao);
         }
     }
 
     /**
-     * Display a Professor.
+     * Display an Evento de Avaliação.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -71,19 +63,19 @@ class ProfessorController extends Controller
     public function show($id)
     {
         try {
-            return new ProfessorResource(Professor::findOrFail($id));
+            return new EventoDeAvaliacaoResource(EventoDeAvaliacao::findOrFail($id));
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
                 'error' => true,
                 'status_code' => 404,
-                'response' => 'professor_id_not_found',
+                'response' => 'evento_de_avaliacao_id_not_found',
             ));
         }
     }
 
     /**
-     * Update a Professor.
+     * Update an Evento de Avaliação.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -92,24 +84,22 @@ class ProfessorController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $professor = Professor::findOrFail($id);
-            $professor->update($request->all());
+            $eventoDeAvaliacao = EventoDeAvaliacao::findOrFail($id);
+            $eventoDeAvaliacao->update($request->all());
 
-            $professor->user->update($request->all());
-
-            return new ProfessorResource($professor);
+            return new EventoDeAvaliacaoResource($eventoDeAvaliacao);
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
                 'error' => true,
                 'status_code' => 404,
-                'response' => 'professor_id_not_found',
+                'response' => 'evento_de_avaliacao_id_not_found',
             ));
         }
     }
 
     /**
-     * Remove a Professor.
+     * Remove an Evento de Avaliação.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -117,22 +107,21 @@ class ProfessorController extends Controller
     public function destroy($id)
     {
         try {
-            $professor = Professor::findOrFail($id);
-            $professor->user->delete();
-            $professor->delete();
+            $eventoDeAvaliacao = EventoDeAvaliacao::findOrFail($id);
+            $eventoDeAvaliacao->delete();
 
             /* Return Success Response */
             return response()->json(array(
                 'error' => false,
                 'status_code' => 200,
-                'response' => 'professor_destroyed',
+                'response' => 'evento_destroyed',
             ));
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
                 'error' => true,
                 'status_code' => 404,
-                'response' => 'professor_id_not_found',
+                'response' => 'evento_de_avaliacao_id_not_found',
             ));
         }
     }

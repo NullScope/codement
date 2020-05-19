@@ -20,7 +20,7 @@ class UpdateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function($table) {
+        Schema::table($this->tableName, function($table) {
             $table->bigInteger('userable_id')->nullable();
             $table->string('userable_type')->nullable();
         });
@@ -33,7 +33,7 @@ class UpdateUsersTable extends Migration
      */
      public function down()
      {
-        Schema::table('users', function($table) {
+        Schema::table($this->tableName, function($table) {
             $table->dropColumn('userable_id');
             $table->dropColumn('userable_type');
         });
