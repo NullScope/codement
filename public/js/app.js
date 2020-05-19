@@ -22636,6 +22636,7 @@ axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.withCredentials = true;
  * a simple convenience so we don't have to attach every token manually.
  */
 var token = document.head.querySelector('meta[name="csrf-token"]');
+axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:8000/sanctum/csrf-cookie');
 if (token) {
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 }

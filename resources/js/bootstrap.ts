@@ -17,6 +17,8 @@ axios.defaults.withCredentials = true;
 
 let token: HTMLMetaElement | null = document.head.querySelector('meta[name="csrf-token"]');
 
+axios.get('http://localhost:8000/sanctum/csrf-cookie');
+
 if (token) {
   axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
