@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Codement API",
-        "_postman_id": "253b2966-2fb8-4286-b6fa-b70a8bdbdc3a",
+        "_postman_id": "817c4a84-6bff-45a3-9eb9-37e01c235353",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"aluno_id\": \"et\",\n    \"curso\": \"excepturi\",\n    \"data_de_matricula_inicial\": \"quo\",\n    \"name\": \"commodi\",\n    \"email\": \"voluptate\",\n    \"password\": \"fuga\",\n    \"password_confirmation\": \"dolor\"\n}"
+                            "raw": "{\n    \"aluno_id\": \"nihil\",\n    \"curso\": \"recusandae\",\n    \"data_de_matricula_inicial\": \"quis\",\n    \"name\": \"ex\",\n    \"email\": \"perferendis\",\n    \"password\": \"et\",\n    \"password_confirmation\": \"quibusdam\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -241,7 +241,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"disciplina_id\": \"repudiandae\"\n}"
+                            "raw": "{\n    \"disciplina_id\": \"veniam\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -403,7 +403,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"descricao\": \"culpa\"\n}"
+                            "raw": "{\n    \"descricao\": \"repellendus\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -877,7 +877,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nome\": \"dolore\",\n    \"semestre_curricular\": \"eius\"\n}"
+                            "raw": "{\n    \"nome\": \"ratione\",\n    \"semestre_curricular\": \"voluptatum\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1407,7 +1407,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"data_inicio\": \"facilis\",\n    \"data_fim\": \"beatae\"\n}"
+                            "raw": "{\n    \"data_inicio\": \"sint\",\n    \"data_fim\": \"non\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1853,7 +1853,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"professor_id\": \"id\",\n    \"name\": \"maxime\",\n    \"email\": \"earum\",\n    \"password\": \"officiis\",\n    \"password_confirmation\": \"et\"\n}"
+                            "raw": "{\n    \"professor_id\": \"aperiam\",\n    \"name\": \"maiores\",\n    \"email\": \"expedita\",\n    \"password\": \"aut\",\n    \"password_confirmation\": \"reiciendis\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1993,7 +1993,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"disciplina_id\": \"quo\"\n}"
+                            "raw": "{\n    \"disciplina_id\": \"temporibus\"\n}"
                         },
                         "description": "",
                         "response": []

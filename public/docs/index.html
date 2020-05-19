@@ -184,13 +184,13 @@ let headers = {
 };
 
 let body = {
-    "aluno_id": "et",
-    "curso": "excepturi",
-    "data_de_matricula_inicial": "quo",
-    "name": "commodi",
-    "email": "voluptate",
-    "password": "fuga",
-    "password_confirmation": "dolor"
+    "aluno_id": "nihil",
+    "curso": "recusandae",
+    "data_de_matricula_inicial": "quis",
+    "name": "ex",
+    "email": "perferendis",
+    "password": "et",
+    "password_confirmation": "quibusdam"
 }
 
 fetch(url, {
@@ -210,13 +210,13 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'aluno_id' =&gt; 'et',
-            'curso' =&gt; 'excepturi',
-            'data_de_matricula_inicial' =&gt; 'quo',
-            'name' =&gt; 'commodi',
-            'email' =&gt; 'voluptate',
-            'password' =&gt; 'fuga',
-            'password_confirmation' =&gt; 'dolor',
+            'aluno_id' =&gt; 'nihil',
+            'curso' =&gt; 'recusandae',
+            'data_de_matricula_inicial' =&gt; 'quis',
+            'name' =&gt; 'ex',
+            'email' =&gt; 'perferendis',
+            'password' =&gt; 'et',
+            'password_confirmation' =&gt; 'quibusdam',
         ],
     ]
 );
@@ -736,7 +736,7 @@ let headers = {
 };
 
 let body = {
-    "disciplina_id": "repudiandae"
+    "disciplina_id": "veniam"
 }
 
 fetch(url, {
@@ -756,7 +756,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'disciplina_id' =&gt; 'repudiandae',
+            'disciplina_id' =&gt; 'veniam',
         ],
     ]
 );
@@ -1093,7 +1093,7 @@ let headers = {
 };
 
 let body = {
-    "descricao": "culpa"
+    "descricao": "repellendus"
 }
 
 fetch(url, {
@@ -1113,7 +1113,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'descricao' =&gt; 'culpa',
+            'descricao' =&gt; 'repellendus',
         ],
     ]
 );
@@ -1901,8 +1901,8 @@ let headers = {
 };
 
 let body = {
-    "nome": "dolore",
-    "semestre_curricular": "eius"
+    "nome": "ratione",
+    "semestre_curricular": "voluptatum"
 }
 
 fetch(url, {
@@ -1922,8 +1922,8 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'nome' =&gt; 'dolore',
-            'semestre_curricular' =&gt; 'eius',
+            'nome' =&gt; 'ratione',
+            'semestre_curricular' =&gt; 'voluptatum',
         ],
     ]
 );
@@ -3179,8 +3179,8 @@ let headers = {
 };
 
 let body = {
-    "data_inicio": "facilis",
-    "data_fim": "beatae"
+    "data_inicio": "sint",
+    "data_fim": "non"
 }
 
 fetch(url, {
@@ -3200,8 +3200,8 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'data_inicio' =&gt; 'facilis',
-            'data_fim' =&gt; 'beatae',
+            'data_inicio' =&gt; 'sint',
+            'data_fim' =&gt; 'non',
         ],
     ]
 );
@@ -4021,11 +4021,11 @@ let headers = {
 };
 
 let body = {
-    "professor_id": "id",
-    "name": "maxime",
-    "email": "earum",
-    "password": "officiis",
-    "password_confirmation": "et"
+    "professor_id": "aperiam",
+    "name": "maiores",
+    "email": "expedita",
+    "password": "aut",
+    "password_confirmation": "reiciendis"
 }
 
 fetch(url, {
@@ -4045,11 +4045,11 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'professor_id' =&gt; 'id',
-            'name' =&gt; 'maxime',
-            'email' =&gt; 'earum',
-            'password' =&gt; 'officiis',
-            'password_confirmation' =&gt; 'et',
+            'professor_id' =&gt; 'aperiam',
+            'name' =&gt; 'maiores',
+            'email' =&gt; 'expedita',
+            'password' =&gt; 'aut',
+            'password_confirmation' =&gt; 'reiciendis',
         ],
     ]
 );
@@ -4520,7 +4520,7 @@ let headers = {
 };
 
 let body = {
-    "disciplina_id": "quo"
+    "disciplina_id": "temporibus"
 }
 
 fetch(url, {
@@ -4540,7 +4540,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'disciplina_id' =&gt; 'quo',
+            'disciplina_id' =&gt; 'temporibus',
         ],
     ]
 );
@@ -4827,6 +4827,7 @@ print_r(json_decode((string) $body));</code></pre>
 <p>APIs for getting the logged in user</p>
 <!-- START_b19e2ecbb41b5fa6802edaf581aab5f6 -->
 <h2>Display information about the logged in user.</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>

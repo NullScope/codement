@@ -18,6 +18,7 @@ class ProfileController extends Controller
     /**
      * Display information about the logged in user.
      *
+     * @authenticated
      * @return \Illuminate\Http\Response
      */
     public function index()
