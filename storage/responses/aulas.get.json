@@ -1,0 +1,16 @@
+{
+    "data": {
+        "id": 1,
+        "descricao": "Introdução",
+        "disciplina": {
+            "id": 1,
+            "nome": "Processos e Métricas de Software",
+            "created_at": "2020-05-18T22:57:25.000000Z",
+            "updated_at": "2020-05-18T22:57:25.000000Z",
+            "semestre_curricular": "2020-05-18 00:00:00",
+            "professor_id": 1
+        },
+        "created_at": "2020-05-19T12:59:29.000000Z",
+        "updated_at": "2020-05-19T12:59:29.000000Z"
+    }
+}

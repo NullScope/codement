@@ -1,0 +1,28 @@
+{
+    "data": {
+        "id": 1,
+        "disciplina": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "created_at": "2020-05-18T22:57:25.000000Z",
+            "updated_at": "2020-05-18T22:57:25.000000Z",
+            "semestre_curricular": "2020-05-18 00:00:00",
+            "professor_id": 1
+        },
+        "resolucoes": [
+            {
+                "id": 1,
+                "evento_de_avaliacao_id": 1,
+                "aluno_id": 1,
+                "nota": null,
+                "created_at": "2020-05-19T14:32:10.000000Z",
+                "updated_at": "2020-05-19T14:32:10.000000Z"
+            }
+        ],
+        "ficheiros": [],
+        "data_inicio": "2020-01-01",
+        "data_fim": "2020-01-01",
+        "created_at": "2020-05-19T14:17:27.000000Z",
+        "updated_at": "2020-05-19T14:17:27.000000Z"
+    }
+}

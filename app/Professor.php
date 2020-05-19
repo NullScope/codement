@@ -19,4 +19,9 @@ class Professor extends Model
     {
         return $this->morphOne('App\User', 'userable');
     }
+
+    public function regente()
+    {
+        return $this->hasMany('App\Disciplina', 'professor_id');
+    }
 }

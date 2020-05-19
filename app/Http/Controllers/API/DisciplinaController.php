@@ -20,6 +20,9 @@ class DisciplinaController extends Controller
     /**
      * Display all Disciplinas.
      *
+     * @apiResourceCollection App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @responseFile responses/disciplinas.index.json
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -30,32 +33,50 @@ class DisciplinaController extends Controller
     /**
      * Create a Disciplina.
      *
+     * @apiResourceCollection App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @bodyParam nome string required
+     * @bodyParam semestre_curricular date required
+     * @authenticated
+     * @responseFile responses/disciplinas.get.json
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'nome' => ['required', 'string', 'max:255'],
-            'semestre_curricular' => ['required', 'date'],
-        ]);
-
-        if ($validator->fails()) {
-            return $validator->messages();
-        } else {
-            $disciplina = Disciplina::create([
-                'professor_id' => auth()->user()->userable->id,
-                'nome' => $request->input('nome'),
-                'semestre_curricular' => $request->input('semestre_curricular')
+        if (auth()->user()) {
+            $validator = Validator::make($request->all(), [
+                'nome' => ['required', 'string', 'max:255'],
+                'semestre_curricular' => ['required', 'date'],
             ]);
 
-            return new DisciplinaResource($disciplina);
+            if ($validator->fails()) {
+                return $validator->messages();
+            } else {
+                $disciplina = Disciplina::create([
+                    'professor_id' => auth()->user()->userable->id,
+                    'nome' => $request->input('nome'),
+                    'semestre_curricular' => $request->input('semestre_curricular')
+                ]);
+
+                return new DisciplinaResource($disciplina);
+            }
+        } else {
+            return response()->json(array(
+                'error' => true,
+                'status_code' => 401,
+                'response' => 'not_authorized',
+            ));
         }
     }
 
     /**
      * Display a Disciplina.
      *
+     * @apiResourceCollection App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @urlParam disciplina required Example: 1
+     * @responseFile responses/disciplinas.get.json
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -76,6 +97,10 @@ class DisciplinaController extends Controller
     /**
      * Update a Disciplina.
      *
+     * @apiResourceCollection App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @urlParam disciplina required Example: 1
+     * @responseFile responses/disciplinas.get.json
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -100,6 +125,14 @@ class DisciplinaController extends Controller
     /**
      * Remove a Disciplina.
      *
+     * @apiResourceCollection App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @urlParam disciplina required Example: 1
+     * @response {
+     *  "error": false,
+     *  "status_code": 200,
+     *  "response": "disciplina_destroyed"
+     * }
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

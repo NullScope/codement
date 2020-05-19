@@ -1,0 +1,58 @@
+{
+    "data": [
+        {
+            "data": {
+                "id": 1,
+                "professor_id": "p2827464",
+                "user": {
+                    "id": 3,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-19T12:40:25.000000Z",
+                    "updated_at": "2020-05-19T12:40:25.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-19T12:49:12.000000Z",
+                        "updated_at": "2020-05-19T12:49:12.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z"
+            }
+        },
+        {
+            "data": {
+                "id": 2,
+                "professor_id": "pr43523",
+                "user": {
+                    "id": 4,
+                    "name": "Duarte Paulo",
+                    "email": "duarte.paulo@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-19T12:40:25.000000Z",
+                    "updated_at": "2020-05-19T12:40:25.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 2,
+                        "nome": "Processos e Métricas de Software",
+                        "created_at": "2020-05-19T12:49:12.000000Z",
+                        "updated_at": "2020-05-19T12:49:12.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z"
+            }
+        }
+    ]
+}

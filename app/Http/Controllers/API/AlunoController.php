@@ -23,6 +23,9 @@ class AlunoController extends Controller
     /**
      * Display all Alunos.
      *
+     * @apiResourceCollection App\Http\Resources\AlunoResource
+     * @apiResourceModel App\Aluno
+     * @responseFile responses/alunos.index.json
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -33,6 +36,16 @@ class AlunoController extends Controller
     /**
      * Create a Aluno and the associated user.
      *
+     * @apiResource App\Http\Resources\AlunoResource
+     * @apiResourceModel App\Aluno
+     * @bodyParam aluno_id string required
+     * @bodyParam curso string required
+     * @bodyParam data_de_matricula_inicial date required
+     * @bodyParam name string required
+     * @bodyParam email string required
+     * @bodyParam password string required
+     * @bodyParam password_confirmation string required
+     * @responseFile responses/alunos.get.json
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -71,6 +84,10 @@ class AlunoController extends Controller
     /**
      * Display a Aluno.
      *
+     * @apiResource App\Http\Resources\AlunoResource
+     * @apiResourceModel App\Aluno
+     * @urlParam aluno required Example: 1
+     * @responseFile responses/alunos.get.json
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -91,6 +108,10 @@ class AlunoController extends Controller
     /**
      * Update a Aluno.
      *
+     * @apiResource App\Http\Resources\AlunoResource
+     * @apiResourceModel App\Aluno
+     * @urlParam aluno required Example: 1
+     * @responseFile responses/alunos.get.json
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -117,6 +138,14 @@ class AlunoController extends Controller
     /**
      * Remove a Aluno.
      *
+     * @apiResource App\Http\Resources\AlunoResource
+     * @apiResourceModel App\Aluno
+     * @urlParam aluno required Example: 1
+     * @response {
+     *  "error": false,
+     *  "status_code": 200,
+     *  "response": "aluno_destroyed"
+     * }
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

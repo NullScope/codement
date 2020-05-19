@@ -16,9 +16,10 @@ class ProfessorResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'professor_id' => $this->aluno_id,
+            'professor_id' => $this->professor_id,
             'user' => $this->user,
             'disciplinas' => $this->user->disciplinas,
+            'regente' => $this->regente,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

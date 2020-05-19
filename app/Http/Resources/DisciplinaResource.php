@@ -20,6 +20,7 @@ class DisciplinaResource extends JsonResource
             'alunos' => $this->alunos,
             'regente' => $this->regente,
             'assistentes' => $this->assistentes,
+            'semestre_curricular' => $this->semestre_curricular,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

@@ -1,8 +1,8 @@
 {
     "variables": [],
     "info": {
-        "name": "Laravel API",
-        "_postman_id": "79ee9a81-a0c9-4695-a3f9-601c63563085",
+        "name": "Codement API",
+        "_postman_id": "964bf282-c4a5-4977-b8aa-263679ecbfef",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -16,7 +16,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/alunos",
                             "query": []
                         },
@@ -44,7 +44,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/alunos",
                             "query": []
                         },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"aluno_id\": \"omnis\",\n    \"curso\": \"sit\",\n    \"data_de_matricula_inicial\": \"pariatur\",\n    \"name\": \"aut\",\n    \"email\": \"sunt\",\n    \"password\": \"nihil\",\n    \"password_confirmation\": \"velit\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -72,9 +72,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/alunos\/:aluno",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "aluno",
+                                    "key": "aluno",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -100,9 +108,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/alunos\/:aluno",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "aluno",
+                                    "key": "aluno",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "PUT",
                         "header": [
@@ -128,9 +144,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/alunos\/:aluno",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "aluno",
+                                    "key": "aluno",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "DELETE",
                         "header": [
@@ -156,9 +180,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/alunos\/:aluno\/disciplinas",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "aluno",
+                                    "key": "aluno",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -184,9 +216,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/alunos\/:aluno\/disciplinas",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "aluno",
+                                    "key": "aluno",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "POST",
                         "header": [
@@ -201,7 +241,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"disciplina_id\": \"nobis\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -212,9 +252,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/alunos\/:aluno\/disciplinas\/:disciplina",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "aluno",
+                                    "key": "aluno",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -240,9 +294,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/alunos\/:aluno\/disciplinas\/:disciplina",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "aluno",
+                                    "key": "aluno",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "DELETE",
                         "header": [
@@ -274,9 +342,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/aulas",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -302,9 +378,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/aulas",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "POST",
                         "header": [
@@ -319,7 +403,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"descricao\": \"commodi\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -330,9 +414,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/aulas\/:aula",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "aula",
+                                    "key": "aula",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -358,9 +456,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/aulas\/:aula",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "aula",
+                                    "key": "aula",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "PUT",
                         "header": [
@@ -386,9 +498,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/aulas\/:aula",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "aula",
+                                    "key": "aula",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "DELETE",
                         "header": [
@@ -414,7 +540,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/aulas\/:aula\/ficheiros",
                             "query": []
                         },
@@ -442,7 +568,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/aulas\/:aula\/ficheiros",
                             "query": []
                         },
@@ -470,7 +596,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/aulas\/:aula\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -498,7 +624,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/aulas\/:aula\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -526,7 +652,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/aulas\/:aula\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -560,7 +686,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/ficheiros\/:ficheiro\/comentarios",
                             "query": []
                         },
@@ -588,7 +714,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/ficheiros\/:ficheiro\/comentarios",
                             "query": []
                         },
@@ -616,7 +742,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/ficheiros\/:ficheiro\/comentarios\/:comentario",
                             "query": []
                         },
@@ -644,7 +770,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/ficheiros\/:ficheiro\/comentarios\/:comentario",
                             "query": []
                         },
@@ -672,7 +798,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/ficheiros\/:ficheiro\/comentarios\/:comentario",
                             "query": []
                         },
@@ -706,7 +832,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas",
                             "query": []
                         },
@@ -734,7 +860,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas",
                             "query": []
                         },
@@ -751,7 +877,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"nome\": \"eligendi\",\n    \"semestre_curricular\": \"excepturi\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -762,9 +888,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -790,9 +924,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "PUT",
                         "header": [
@@ -818,9 +960,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "DELETE",
                         "header": [
@@ -852,9 +1002,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/duvidas",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -880,9 +1038,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/duvidas",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "POST",
                         "header": [
@@ -908,9 +1074,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/duvidas\/:duvida",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "duvida",
+                                    "key": "duvida",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -936,9 +1116,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/duvidas\/:duvida",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "duvida",
+                                    "key": "duvida",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "PUT",
                         "header": [
@@ -964,9 +1158,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/duvidas\/:duvida",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "duvida",
+                                    "key": "duvida",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "DELETE",
                         "header": [
@@ -992,7 +1200,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/duvidas\/:duvida\/ficheiros",
                             "query": []
                         },
@@ -1020,7 +1228,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/duvidas\/:duvida\/ficheiros",
                             "query": []
                         },
@@ -1048,7 +1256,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/duvidas\/:duvida\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -1076,7 +1284,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/duvidas\/:duvida\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -1104,7 +1312,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/duvidas\/:duvida\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -1138,9 +1346,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -1166,9 +1382,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "POST",
                         "header": [
@@ -1183,7 +1407,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"data_inicio\": \"et\",\n    \"data_fim\": \"totam\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1194,9 +1418,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "eventos_de_avaliacao",
+                                    "key": "eventos_de_avaliacao",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -1222,9 +1460,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "eventos_de_avaliacao",
+                                    "key": "eventos_de_avaliacao",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "PUT",
                         "header": [
@@ -1250,9 +1502,23 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "eventos_de_avaliacao",
+                                    "key": "eventos_de_avaliacao",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "DELETE",
                         "header": [
@@ -1278,7 +1544,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/ficheiros",
                             "query": []
                         },
@@ -1306,7 +1572,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/ficheiros",
                             "query": []
                         },
@@ -1334,7 +1600,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -1362,7 +1628,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -1390,7 +1656,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -1424,7 +1690,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/ficheiros",
                             "query": []
                         },
@@ -1452,7 +1718,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -1480,7 +1746,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -1508,7 +1774,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -1542,7 +1808,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/professores",
                             "query": []
                         },
@@ -1570,7 +1836,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/professores",
                             "query": []
                         },
@@ -1587,7 +1853,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"professor_id\": \"labore\",\n    \"name\": \"molestiae\",\n    \"email\": \"aut\",\n    \"password\": \"commodi\",\n    \"password_confirmation\": \"iusto\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1598,7 +1864,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/professores\/:professore",
                             "query": []
                         },
@@ -1626,7 +1892,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/professores\/:professore",
                             "query": []
                         },
@@ -1654,7 +1920,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/professores\/:professore",
                             "query": []
                         },
@@ -1682,7 +1948,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/professores\/:professore\/disciplinas",
                             "query": []
                         },
@@ -1710,7 +1976,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/professores\/:professore\/disciplinas",
                             "query": []
                         },
@@ -1727,7 +1993,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "[]"
+                            "raw": "{\n    \"disciplina_id\": \"explicabo\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1738,9 +2004,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/professores\/:professore\/disciplinas\/:disciplina",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -1766,11 +2040,53 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/professores\/:professore\/disciplinas\/:disciplina",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Profile management",
+            "description": "\nAPIs for getting the logged in user",
+            "item": [
+                {
+                    "name": "Display information about the logged in user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost:8000",
+                            "path": "api\/me",
+                            "query": []
+                        },
+                        "method": "GET",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -1800,9 +2116,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/resolucoes",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -1828,9 +2152,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/resolucoes",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "POST",
                         "header": [
@@ -1856,9 +2188,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/resolucoes\/:resoluco",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -1884,9 +2224,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/resolucoes\/:resoluco",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "PUT",
                         "header": [
@@ -1912,9 +2260,17 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/resolucoes\/:resoluco",
-                            "query": []
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "disciplina",
+                                    "key": "disciplina",
+                                    "value": "1",
+                                    "description": ""
+                                }
+                            ]
                         },
                         "method": "DELETE",
                         "header": [
@@ -1940,7 +2296,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/resolucoes\/:resoluco\/ficheiros",
                             "query": []
                         },
@@ -1968,7 +2324,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/resolucoes\/:resoluco\/ficheiros",
                             "query": []
                         },
@@ -1996,7 +2352,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/resolucoes\/:resoluco\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -2024,7 +2380,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/resolucoes\/:resoluco\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -2052,7 +2408,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "api\/disciplinas\/:disciplina\/eventos-de-avaliacao\/:eventos_de_avaliacao\/resolucoes\/:resoluco\/ficheiros\/:ficheiro",
                             "query": []
                         },
@@ -2086,36 +2442,8 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "sanctum\/csrf-cookie",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "http",
-                            "host": "localhost",
-                            "path": "api\/me",
                             "query": []
                         },
                         "method": "GET",
@@ -2142,7 +2470,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "login",
                             "query": []
                         },
@@ -2170,7 +2498,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "login",
                             "query": []
                         },
@@ -2198,7 +2526,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "logout",
                             "query": []
                         },
@@ -2226,7 +2554,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "register",
                             "query": []
                         },
@@ -2254,7 +2582,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "register",
                             "query": []
                         },
@@ -2282,7 +2610,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "password\/reset",
                             "query": []
                         },
@@ -2310,7 +2638,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "password\/email",
                             "query": []
                         },
@@ -2338,7 +2666,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "password\/reset\/:token",
                             "query": []
                         },
@@ -2366,7 +2694,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "password\/reset",
                             "query": []
                         },
@@ -2394,7 +2722,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "password\/confirm",
                             "query": []
                         },
@@ -2422,7 +2750,7 @@
                     "request": {
                         "url": {
                             "protocol": "http",
-                            "host": "localhost",
+                            "host": "localhost:8000",
                             "path": "password\/confirm",
                             "query": []
                         },

@@ -21,6 +21,10 @@ class AlunoDisciplinaController extends Controller
     /**
      * Display all Disciplinas of Aluno.
      *
+     * @apiResourceCollection App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @responseFile responses/disciplinas.index.json
+     * @urlParam aluno required Example: 1
      * @param  int  $aluno_id
      * @return \Illuminate\Http\Response
      */
@@ -41,11 +45,15 @@ class AlunoDisciplinaController extends Controller
     /**
      * Add a Disciplina to Aluno.
      *
+     * @apiResource App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @urlParam aluno required Example: 1
+     * @bodyParam disciplina_id string required
      * @param  int  $id
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request, $aluno_id)
     {
         try {
             $validator = Validator::make($request->all(), [
@@ -55,7 +63,7 @@ class AlunoDisciplinaController extends Controller
             if ($validator->fails()) {
                 return $validator->messages();
             } else {
-                $aluno = Aluno::findOrFail($id);
+                $aluno = Aluno::findOrFail($aluno_id);
                 $disciplina = Disciplina::findOrFail($request->input('disciplina_id'));
 
                 $aluno->user->disciplinas()->attach($disciplina);
@@ -75,6 +83,10 @@ class AlunoDisciplinaController extends Controller
     /**
      * Display a Disciplina of Aluno.
      *
+     * @apiResource App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @urlParam aluno required Example: 1
+     * @urlParam disciplina required Example: 1
      * @param  int  $aluno_id
      * @param  int  $disciplina_id
      * @return \Illuminate\Http\Response
@@ -109,6 +121,15 @@ class AlunoDisciplinaController extends Controller
     /**
      * Remove a Disciplina from Aluno.
      *
+     * @apiResource App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @urlParam aluno required Example: 1
+     * @urlParam disciplina required Example: 1
+     * @response {
+     *  "error": false,
+     *  "status_code": 200,
+     *  "response": "disciplina_removed"
+     * }
      * @param  int  $aluno_id
      * @param  int  $disciplina_id
      * @return \Illuminate\Http\Response

@@ -23,6 +23,9 @@ class ProfessorController extends Controller
     /**
      * Display all Professores.
      *
+     * @apiResourceCollection App\Http\Resources\ProfessorResource
+     * @apiResourceModel App\Professor
+     * @responseFile responses/professores.index.json
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -33,6 +36,14 @@ class ProfessorController extends Controller
     /**
      * Create a Professor and the associated user.
      *
+     * @apiResource App\Http\Resources\ProfessorResource
+     * @apiResourceModel App\Professor
+     * @bodyParam professor_id string required
+     * @bodyParam name string required
+     * @bodyParam email string required
+     * @bodyParam password string required
+     * @bodyParam password_confirmation string required
+     * @responseFile responses/professores.get.json
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -65,6 +76,10 @@ class ProfessorController extends Controller
     /**
      * Display a Professor.
      *
+     * @apiResource App\Http\Resources\ProfessorResource
+     * @apiResourceModel App\Professor
+     * @urlParam professor required Example: 1
+     * @responseFile responses/professores.get.json
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -85,6 +100,10 @@ class ProfessorController extends Controller
     /**
      * Update a Professor.
      *
+     * @apiResource App\Http\Resources\ProfessorResource
+     * @apiResourceModel App\Professor
+     * @urlParam professor required Example: 1
+     * @responseFile responses/professores.get.json
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -111,6 +130,14 @@ class ProfessorController extends Controller
     /**
      * Remove a Professor.
      *
+     * @apiResource App\Http\Resources\ProfessorResource
+     * @apiResourceModel App\Professor
+     * @urlParam professor required Example: 1
+     * @response {
+     *  "error": false,
+     *  "status_code": 200,
+     *  "response": "professor_destroyed"
+     * }
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

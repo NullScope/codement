@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Professor;
 use App\Disciplina;
@@ -20,6 +21,10 @@ class ProfessorDisciplinaController extends Controller
     /**
      * Display all Disciplinas of Professor.
      *
+     * @apiResourceCollection App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @responseFile responses/disciplinas.index.json
+     * @urlParam professor required Example: 1
      * @param  int  $professor_id
      * @return \Illuminate\Http\Response
      */
@@ -40,17 +45,33 @@ class ProfessorDisciplinaController extends Controller
     /**
      * Add a Disciplina to Professor
      *
+     * @apiResource App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @responseFile responses/disciplinas.index.json
+     * @urlParam professor required Example: 1
+     * @bodyParam disciplina_id string required
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $professor_id
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request, $professor_id)
     {
         try {
-            $professor = Professor::findOrFail($id);
-            $disciplina = Disciplina::findOrFail($request->input("disciplina_id"));
+            $validator = Validator::make($request->all(), [
+                'disciplina_id' => ['required', 'int'],
+            ]);
 
-            $professor->disciplinas()->attach($disciplina);
+            if ($validator->fails()) {
+                return $validator->messages();
+            } else {
+                $professor = Professor::findOrFail($professor_id);
+                $disciplina = Disciplina::findOrFail($request->input("disciplina_id"));
+
+                $professor->disciplinas()->attach($disciplina);
+
+                return new DisciplinaResource($disciplina);
+
+            }
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
@@ -64,6 +85,10 @@ class ProfessorDisciplinaController extends Controller
     /**
      * Display a Disciplina of Professor.
      *
+     * @apiResource App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @urlParam professor required Example: 1
+     * @urlParam disciplina required Example: 1
      * @param  int  $professor_id
      * @param  int  $disciplina_id
      * @return \Illuminate\Http\Response
@@ -98,6 +123,15 @@ class ProfessorDisciplinaController extends Controller
     /**
      * Remove a Disciplina from Professor.
      *
+     * @apiResource App\Http\Resources\DisciplinaResource
+     * @apiResourceModel App\Disciplina
+     * @urlParam professor required Example: 1
+     * @urlParam disciplina required Example: 1
+     * @response {
+     *  "error": false,
+     *  "status_code": 200,
+     *  "response": "disciplina_removed"
+     * }
      * @param  int  $professor_id
      * @param  int  $disciplina_id
      * @return \Illuminate\Http\Response

@@ -22,7 +22,7 @@ class EventoDeAvaliacao extends Model
 
     public function resolucoes()
     {
-        return $this->hasMany('App\Resolucoes');
+        return $this->hasMany('App\Resolucao', 'evento_de_avaliacao_id', 'id');
     }
 
     public function ficheiros()

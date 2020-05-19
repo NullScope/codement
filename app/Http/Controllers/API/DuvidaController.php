@@ -20,6 +20,10 @@ class DuvidaController extends Controller
     /**
      * Display all Duvidas of Disciplina.
      *
+     * @apiResourceCollection App\Http\Resources\DuvidaResource
+     * @apiResourceModel App\Duvida
+     * @responseFile responses/duvidas.index.json
+     * @urlParam disciplina required Example: 1
      * @param int $disciplina_id
      * @return \Illuminate\Http\Response
      */
@@ -40,27 +44,53 @@ class DuvidaController extends Controller
     /**
      * Create a Duvida of Disciplina.
      *
+     * @apiResource App\Http\Resources\DuvidaResource
+     * @apiResourceModel App\Duvida
+     * @responseFile responses/duvidas.get.json
+     * @urlParam disciplina required Example: 1
      * @param  \Illuminate\Http\Request  $request
      * @param int $disciplina_id
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, $disciplina_id)
     {
-        $disciplina = Disciplina::findOrFail($disciplina_id);
+        if (auth()->user()) {
+            try {
+                $disciplina = Disciplina::findOrFail($disciplina_id);
 
-        $duvida = Duvida::create([
-            'aluno_id' => auth()->user()->userable->id,
-            'disciplina_id' => $disciplina_id
-        ]);
+                $duvida = Duvida::create([
+                    'aluno_id' => auth()->user()->userable->id,
+                    'disciplina_id' => $disciplina_id
+                ]);
 
-        $disciplina->duvidas()->attach($duvida);
+                $disciplina->duvidas()->save($duvida);
 
-        return new DuvidaResource($duvida);
+                return new DuvidaResource($duvida);
+            } catch (ModelNotFoundException $e) {
+                /* Return Error Response */
+                return response()->json(array(
+                    'error' => true,
+                    'status_code' => 404,
+                    'response' => 'id_not_found',
+                ));
+            }
+        } else {
+            return response()->json(array(
+                'error' => true,
+                'status_code' => 401,
+                'response' => 'not_authorized',
+            ));
+        }
     }
 
     /**
      * Display a Duvida of Disciplina.
      *
+     * @apiResource App\Http\Resources\DuvidaResource
+     * @apiResourceModel App\Duvida
+     * @responseFile responses/duvidas.get.json
+     * @urlParam disciplina required Example: 1
+     * @urlParam duvida required Example: 1
      * @param int $disciplina_id
      * @param int $duvida_id
      * @return \Illuminate\Http\Response
@@ -83,6 +113,11 @@ class DuvidaController extends Controller
     /**
      * Update a Duvida of Disciplina.
      *
+     * @apiResource App\Http\Resources\DuvidaResource
+     * @apiResourceModel App\Duvida
+     * @responseFile responses/duvidas.get.json
+     * @urlParam disciplina required Example: 1
+     * @urlParam duvida required Example: 1
      * @param  \Illuminate\Http\Request  $request
      * @param int $disciplina_id
      * @param int $duvida_id
@@ -109,6 +144,15 @@ class DuvidaController extends Controller
     /**
      * Remove a Duvida of Disciplina.
      *
+     * @apiResource App\Http\Resources\DuvidaResource
+     * @apiResourceModel App\Duvida
+     * @urlParam disciplina required Example: 1
+     * @urlParam duvida required Example: 1
+     * @response {
+     *  "error": false,
+     *  "status_code": 200,
+     *  "response": "duvida_destroyed"
+     * }
      * @param int $disciplina_id
      * @param int $duvida_id
      * @return \Illuminate\Http\Response

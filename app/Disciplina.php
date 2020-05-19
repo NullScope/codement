@@ -66,7 +66,7 @@ class Disciplina extends Model
             return $user->userable;
         });
 
-        return AlunoResource::collection($alunos);
+        return $alunos;
     }
 
     public function getAssistentesAttribute()
@@ -84,6 +84,6 @@ class Disciplina extends Model
             return $user->userable;
         });
 
-        return ProfessorResource::collection($auxiliares);
+        return $auxiliares;
     }
 }

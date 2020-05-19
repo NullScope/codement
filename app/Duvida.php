@@ -11,11 +11,16 @@ class Duvida extends Model
      *
      * @var array
      */
-    protected $fillable = ['aluno_id', 'ficheiro_id', 'comentario', 'audio_url', 'linha_inicio', 'linha_fim'];
+    protected $fillable = ['aluno_id', 'disciplina_id'];
 
     public function aluno()
     {
         return $this->belongsTo('App\Aluno');
+    }
+
+    public function disciplina()
+    {
+        return $this->belongsTo('App\Disciplina');
     }
 
     public function ficheiros()

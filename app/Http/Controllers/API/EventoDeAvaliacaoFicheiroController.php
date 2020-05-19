@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Disciplina;
 use App\EventoDeAvaliacao;
 use App\Ficheiro;
 use App\Http\Resources\FicheiroResource;
@@ -19,13 +20,14 @@ class EventoDeAvaliacaoFicheiroController extends Controller
     /**
      * Display all Ficheiros of Evento de Avaliação.
      *
+     * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id
      * @return \Illuminate\Http\Response
      */
-    public function index($evento_de_avaliacao_id)
+    public function index($disciplina_id, $evento_de_avaliacao_id)
     {
         try {
-            return FicheiroResource::collection(EventoDeAvaliacao::findOrFail($evento_de_avaliacao_id)->ficheiros);
+            return FicheiroResource::collection(Disciplina::findOrFail($disciplina_id)->eventosDeAvaliacao()->findOrFail($evento_de_avaliacao_id)->ficheiros);
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
@@ -40,13 +42,14 @@ class EventoDeAvaliacaoFicheiroController extends Controller
      * Create a Ficheiro of Evento de Avaliação.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $evento_de_avaliacao_id)
+    public function store(Request $request, $disciplina_id, $evento_de_avaliacao_id)
     {
         try {
-            $evento_de_avaliacao = EventoDeAvaliacao::findOrFail($evento_de_avaliacao_id);
+            $evento_de_avaliacao = Disciplina::findOrFail($disciplina_id)->eventosDeAvaliacao()->findOrFail($evento_de_avaliacao_id);
             $ficheiro = Ficheiro::create($request->all());
 
             $evento_de_avaliacao->ficheiros()->save($ficheiro);
@@ -65,14 +68,15 @@ class EventoDeAvaliacaoFicheiroController extends Controller
     /**
      * Display a Ficheiro of Evento de Avaliação.
      *
+     * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id
      * @param  int  $ficheiro_id
      * @return \Illuminate\Http\Response
      */
-    public function show($evento_de_avaliacao_id, $ficheiro_id)
+    public function show($disciplina_id, $evento_de_avaliacao_id, $ficheiro_id)
     {
         try {
-            $evento_de_avaliacao = EventoDeAvaliacao::findOrFail($evento_de_avaliacao_id);
+            $evento_de_avaliacao = Disciplina::findOrFail($disciplina_id)->eventosDeAvaliacao()->findOrFail($evento_de_avaliacao_id);
             return new FicheiroResource($evento_de_avaliacao->ficheiros()->findOrFail($ficheiro_id));
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
@@ -88,14 +92,15 @@ class EventoDeAvaliacaoFicheiroController extends Controller
      * Update a Ficheiro of Evento de Avaliação.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id
      * @param  int  $ficheiro_id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $evento_de_avaliacao_id, $ficheiro_id)
+    public function update(Request $request, $disciplina_id, $evento_de_avaliacao_id, $ficheiro_id)
     {
         try {
-            $evento_de_avaliacao = EventoDeAvaliacao::findOrFail($evento_de_avaliacao_id);
+            $evento_de_avaliacao = Disciplina::findOrFail($disciplina_id)->eventosDeAvaliacao()->findOrFail($evento_de_avaliacao_id);
             $ficheiro = $evento_de_avaliacao->ficheiros()->findOrFail($ficheiro_id);
             $ficheiro->update($request->all());
 
@@ -113,14 +118,15 @@ class EventoDeAvaliacaoFicheiroController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id
      * @param  int  $ficheiro_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($evento_de_avaliacao_id, $ficheiro_id)
+    public function destroy($disciplina_id, $evento_de_avaliacao_id, $ficheiro_id)
     {
         try {
-            $evento_de_avaliacao = EventoDeAvaliacao::findOrFail($evento_de_avaliacao_id);
+            $evento_de_avaliacao = Disciplina::findOrFail($disciplina_id)->eventosDeAvaliacao()->findOrFail($evento_de_avaliacao_id);
             $ficheiro = $evento_de_avaliacao->ficheiros()->findOrFail($ficheiro_id);
             $ficheiro->delete();
 

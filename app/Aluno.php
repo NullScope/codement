@@ -11,7 +11,7 @@ class Aluno extends Model
      *
      * @var array
      */
-    protected $fillable = ['aluno_id'];
+    protected $fillable = ['aluno_id', 'curso', 'data_de_matricula_inicial', 'ano_curricular'];
 
     public function user()
     {

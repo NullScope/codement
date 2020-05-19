@@ -22,6 +22,11 @@ class ResolucaoController extends Controller
     /**
      * Display all Resolucões of Evento de Resolução.
      *
+     * @apiResourceCollection App\Http\Resources\ResolucaoResource
+     * @apiResourceModel App\Resolucao
+     * @responseFile responses/resolucoes.index.json
+     * @urlParam disciplina required Example: 1
+     * @urlParam evento_de_avaliacao required Example: 1
      * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id
      * @return \Illuminate\Http\Response
@@ -43,6 +48,11 @@ class ResolucaoController extends Controller
     /**
      * Create a Resolução of Evento de Resolução.
      *
+     * @apiResourceCollection App\Http\Resources\ResolucaoResource
+     * @apiResourceModel App\Resolucao
+     * @responseFile responses/resolucoes.get.json
+     * @urlParam disciplina required Example: 1
+     * @urlParam evento_de_avaliacao required Example: 1
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id
@@ -58,7 +68,7 @@ class ResolucaoController extends Controller
                 'aluno_id' => auth()->user()->userable->id,
             ]);
 
-            $evento_de_avaliacao->resolucoes()->attach($resolucao);
+            $evento_de_avaliacao->resolucoes()->save($resolucao);
 
             return new ResolucaoResource($resolucao);
         } catch (ModelNotFoundException $e) {
@@ -74,6 +84,12 @@ class ResolucaoController extends Controller
     /**
      * Display a Resolução of Evento de Resolução.
      *
+     * @apiResourceCollection App\Http\Resources\ResolucaoResource
+     * @apiResourceModel App\Resolucao
+     * @responseFile responses/resolucoes.get.json
+     * @urlParam disciplina required Example: 1
+     * @urlParam evento_de_avaliacao required Example: 1
+     * @urlParam resolucao_id required Example: 1
      * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id
      * @param  int  $resolucao_id
@@ -97,6 +113,12 @@ class ResolucaoController extends Controller
     /**
      * Update a Resolução of Evento de Resolução.
      *
+     * @apiResourceCollection App\Http\Resources\ResolucaoResource
+     * @apiResourceModel App\Resolucao
+     * @responseFile responses/resolucoes.get.json
+     * @urlParam disciplina required Example: 1
+     * @urlParam evento_de_avaliacao required Example: 1
+     * @urlParam resolucao_id required Example: 1
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id
@@ -124,6 +146,16 @@ class ResolucaoController extends Controller
     /**
      * Remove a Resolução of Evento de Resolução.
      *
+     * @apiResourceCollection App\Http\Resources\ResolucaoResource
+     * @apiResourceModel App\Resolucao
+     * @urlParam disciplina required Example: 1
+     * @urlParam evento_de_avaliacao required Example: 1
+     * @urlParam resolucao_id required Example: 1
+     * @response {
+     *  "error": false,
+     *  "status_code": 200,
+     *  "response": "resolucao_destroyed"
+     * }
      * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id
      * @param  int  $resolucao_id

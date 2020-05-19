@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Resolucao extends Model
 {
+    protected $table = 'resolucoes';
+
     /**
      * The attributes that are mass assignable.
      *

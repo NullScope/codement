@@ -21,6 +21,10 @@ class AulaController extends Controller
     /**
      * Display all Aulas of Disciplina.
      *
+     * @apiResourceCollection App\Http\Resources\AulaResource
+     * @apiResourceModel App\Aula
+     * @responseFile responses/aulas.index.json
+     * @urlParam disciplina required Example: 1
      * @param  int  $disciplina_id
      * @return \Illuminate\Http\Response
      */
@@ -41,6 +45,10 @@ class AulaController extends Controller
     /**
      * Create a Aula of Disciplina.
      *
+     * @apiResource App\Http\Resources\AulaResource
+     * @apiResourceModel App\Aula
+     * @urlParam disciplina required Example: 1
+     * @bodyParam descricao string required
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $disciplina_id
      * @return \Illuminate\Http\Response
@@ -79,6 +87,10 @@ class AulaController extends Controller
     /**
      * Display a Aula of Disciplina.
      *
+     * @apiResource App\Http\Resources\AulaResource
+     * @apiResourceModel App\Aula
+     * @urlParam disciplina required Example: 1
+     * @urlParam aula required Example: 1
      * @param  int  $disciplina_id
      * @param  int  $aula_id
      * @return \Illuminate\Http\Response
@@ -101,6 +113,10 @@ class AulaController extends Controller
     /**
      * Update a Aula of Disciplina
      *
+     * @apiResource App\Http\Resources\AulaResource
+     * @apiResourceModel App\Aula
+     * @urlParam disciplina required Example: 1
+     * @urlParam aula required Example: 1
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $disciplina_id
      * @param  int  $aula_id
@@ -127,6 +143,15 @@ class AulaController extends Controller
     /**
      * Remove a Aula of Disciplina
      *
+     * @apiResource App\Http\Resources\AulaResource
+     * @apiResourceModel App\Aula
+     * @urlParam disciplina required Example: 1
+     * @urlParam aula required Example: 1
+     * @response {
+     *  "error": false,
+     *  "status_code": 200,
+     *  "response": "aula_destroyed"
+     * }
      * @param  int  $disciplina_id
      * @param  int  $aula_id
      * @return \Illuminate\Http\Response

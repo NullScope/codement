@@ -8,10 +8,15 @@ use Illuminate\Http\Request;
 use App\Http\Resources\AlunoResource;
 use App\Http\Resources\ProfessorResource;
 
+/**
+ * @group Profile management
+ *
+ * APIs for getting the logged in user
+ */
 class ProfileController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display information about the logged in user.
      *
      * @return \Illuminate\Http\Response
      */

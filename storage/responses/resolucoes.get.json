@@ -1,0 +1,25 @@
+{
+    "data": {
+        "id": 1,
+        "aluno": {
+            "id": 1,
+            "aluno_id": "a2082214",
+            "created_at": "2020-05-19T12:26:22.000000Z",
+            "updated_at": "2020-05-19T12:26:22.000000Z",
+            "curso": "Engenharia Informática",
+            "data_de_matricula_inicial": "2020-10-10 00:00:00",
+            "ano_curricular": 3
+        },
+        "evento_de_avaliacao": {
+            "id": 1,
+            "disciplina_id": 1,
+            "data_inicio": "2020-01-01 00:00:00",
+            "data_fim": "2020-01-01 00:00:00",
+            "created_at": "2020-05-19T14:04:40.000000Z",
+            "updated_at": "2020-05-19T14:04:40.000000Z"
+        },
+        "nota": null,
+        "created_at": "2020-05-19T14:32:10.000000Z",
+        "updated_at": "2020-05-19T14:32:10.000000Z"
+    }
+}
