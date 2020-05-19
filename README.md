@@ -16,7 +16,7 @@ Geralmente o caminho para o executável de PHP é `C:\xampp\php`, mas irá depen
 
 ## Como Instalar
 
-Primeiro é necessário instalar o *Laravel Instaler* pelo composer, ou seja, pelo terminal de linha de comandos executar `composer global require laravel/installer`.
+Primeiro é necessário instalar o *Laravel Instaler* pelo Composer, ou seja, pelo terminal de linha de comandos executar `composer global require laravel/installer`.
 
 Depois, no mesmo terminal de linha de comandos, executa `npm install` para instalar todos os *packages* do NodeJS.
 
@@ -24,7 +24,7 @@ Cria uma cópia do `.env.example` que se situa na pasta inicial e muda o nome pa
 
 Depois, no mesmo terminal executa `php artisan key:generate` para gerar a chave de encriptação do Laravel.
 
-Abre o XAMPP e clica `start` em ambos o *Apache* e o *MySQL* para poder gerir as base de dados.
+Abre o XAMPP e clica `start` em ambos o Apache e o MySQL para poder gerir as base de dados.
 
 No `http://localhost/phpmyadmin/` cria uma nova base de dados chamada `codement`.
 
@@ -32,7 +32,7 @@ Depois, no mesmo terminal executa `php artisan migrate` para importar todas as t
 
 ## Como executar
 
-Abre o XAMPP e clica `start` no *MySQL* para o *backend* poder conectar-se à base de dados.
+Abre o XAMPP e clica `start` no MySQL para o *backend* poder conectar-se à base de dados.
 
 É necessário 2 terminais de linha de comandos, um para correr o *backend* que deverá estar sempre correr em produção ou durante desenvolvimento, e outro para automáticamente compilar o *frontend* automáticamente que é só necessário para desenvolvimento do *frontend*.
 
