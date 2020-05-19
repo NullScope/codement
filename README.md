@@ -10,7 +10,7 @@ Para Windows:
 
 [NodeJS LTS](https://nodejs.org/en/)
 
-PHP adicionado no variável de ambiente do windows, tutoriais [aqui](https://stackoverflow.com/questions/10753024/how-to-access-the-command-line-for-xampp-on-windows/46408671#46408671) ou [aqui](https://www.java.com/pt_BR/download/help/path.xml) ou [aqui](https://pt.stackoverflow.com/questions/5024/como-mudar-o-path-nos-windows)
+PHP adicionado como variável de ambiente do Windows, tutoriais [aqui](https://stackoverflow.com/questions/10753024/how-to-access-the-command-line-for-xampp-on-windows/46408671#46408671), ou [aqui](https://www.java.com/pt_BR/download/help/path.xml), ou [aqui](https://pt.stackoverflow.com/questions/5024/como-mudar-o-path-nos-windows)
 
 Geralmente o caminho para o executável de PHP é `C:\xampp\php`, mas irá depender se usaram o caminho por defeito de instalação, modificaram ou por algum outro motivo está situado noutra localização.
 
