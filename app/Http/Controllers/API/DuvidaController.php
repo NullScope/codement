@@ -48,6 +48,7 @@ class DuvidaController extends Controller
      * @apiResourceModel App\Duvida
      * @responseFile responses/duvidas.get.json
      * @urlParam disciplina required Example: 1
+     * @authenticated
      * @param  \Illuminate\Http\Request  $request
      * @param int $disciplina_id
      * @return \Illuminate\Http\Response

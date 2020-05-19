@@ -53,6 +53,7 @@ class ResolucaoController extends Controller
      * @responseFile responses/resolucoes.get.json
      * @urlParam disciplina required Example: 1
      * @urlParam evento_de_avaliacao required Example: 1
+     * @authenticated
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $disciplina_id
      * @param  int  $evento_de_avaliacao_id

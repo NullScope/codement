@@ -12,7 +12,7 @@
 
           <script>
         $(function() {
-            setupLanguages(["bash","javascript"]);
+            setupLanguages(["javascript","php"]);
         });
       </script>
       </head>
@@ -27,8 +27,8 @@
     <div class="tocify-wrapper">
         <img src="images/logo.png" />
                     <div class="lang-selector">
-                                  <a href="#" data-language-name="bash">bash</a>
                                   <a href="#" data-language-name="javascript">javascript</a>
+                                  <a href="#" data-language-name="php">php</a>
                             </div>
                             <div class="search">
               <input type="text" class="search" id="input-search" placeholder="Search">
@@ -55,10 +55,6 @@
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/alunos" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/alunos"
 );
@@ -74,6 +70,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/alunos',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -165,12 +174,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/alunos" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"aluno_id":"omnis","curso":"sit","data_de_matricula_inicial":"pariatur","name":"aut","email":"sunt","password":"nihil","password_confirmation":"velit"}'
-</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/alunos"
 );
@@ -181,13 +184,13 @@ let headers = {
 };
 
 let body = {
-    "aluno_id": "omnis",
-    "curso": "sit",
-    "data_de_matricula_inicial": "pariatur",
-    "name": "aut",
-    "email": "sunt",
-    "password": "nihil",
-    "password_confirmation": "velit"
+    "aluno_id": "et",
+    "curso": "excepturi",
+    "data_de_matricula_inicial": "quo",
+    "name": "commodi",
+    "email": "voluptate",
+    "password": "fuga",
+    "password_confirmation": "dolor"
 }
 
 fetch(url, {
@@ -197,6 +200,28 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/alunos',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'aluno_id' =&gt; 'et',
+            'curso' =&gt; 'excepturi',
+            'data_de_matricula_inicial' =&gt; 'quo',
+            'name' =&gt; 'commodi',
+            'email' =&gt; 'voluptate',
+            'password' =&gt; 'fuga',
+            'password_confirmation' =&gt; 'dolor',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -296,10 +321,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/alunos/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/alunos/1"
 );
@@ -315,6 +336,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/alunos/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -382,10 +416,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/alunos/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/alunos/1"
 );
@@ -401,6 +431,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/alunos/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -469,10 +512,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/alunos/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/alunos/1"
 );
@@ -488,6 +527,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/alunos/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -520,10 +572,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/alunos/1/disciplinas" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/alunos/1/disciplinas"
 );
@@ -539,6 +587,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/alunos/1/disciplinas',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -665,12 +726,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/alunos/1/disciplinas" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"disciplina_id":"nobis"}'
-</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/alunos/1/disciplinas"
 );
@@ -681,7 +736,7 @@ let headers = {
 };
 
 let body = {
-    "disciplina_id": "nobis"
+    "disciplina_id": "repudiandae"
 }
 
 fetch(url, {
@@ -691,6 +746,22 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/alunos/1/disciplinas',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'disciplina_id' =&gt; 'repudiandae',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -748,10 +819,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/alunos/1/disciplinas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/alunos/1/disciplinas/1"
 );
@@ -767,6 +834,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/alunos/1/disciplinas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -810,10 +890,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/alunos/1/disciplinas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/alunos/1/disciplinas/1"
 );
@@ -829,6 +905,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/alunos/1/disciplinas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -882,10 +971,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/aulas" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/aulas"
 );
@@ -901,6 +986,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/aulas',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -985,12 +1083,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/disciplinas/1/aulas" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"descricao":"commodi"}'
-</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/aulas"
 );
@@ -1001,7 +1093,7 @@ let headers = {
 };
 
 let body = {
-    "descricao": "commodi"
+    "descricao": "culpa"
 }
 
 fetch(url, {
@@ -1011,6 +1103,22 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/disciplinas/1/aulas',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'descricao' =&gt; 'culpa',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -1065,10 +1173,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/aulas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/aulas/1"
 );
@@ -1084,6 +1188,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/aulas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -1124,10 +1241,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/disciplinas/1/aulas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/aulas/1"
 );
@@ -1143,6 +1256,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/disciplinas/1/aulas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -1184,10 +1310,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/disciplinas/1/aulas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/aulas/1"
 );
@@ -1203,6 +1325,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/disciplinas/1/aulas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -1251,10 +1386,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros"
 );
@@ -1270,6 +1401,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/disciplinas/{disciplina}/aulas/{aula}/ficheiros</code></p>
 <!-- END_f6c8e734cb4162537925e75f221df301 -->
@@ -1278,10 +1422,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros"
 );
@@ -1297,6 +1437,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/disciplinas/{disciplina}/aulas/{aula}/ficheiros</code></p>
 <!-- END_d059d3dfbf4b24db6f97a6437a2cc696 -->
@@ -1305,10 +1458,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros/1"
 );
@@ -1324,6 +1473,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/disciplinas/{disciplina}/aulas/{aula}/ficheiros/{ficheiro}</code></p>
 <!-- END_b9546b4b1a816019f9cf9fd751e969ac -->
@@ -1332,10 +1494,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros/1"
 );
@@ -1351,6 +1509,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>PUT api/disciplinas/{disciplina}/aulas/{aula}/ficheiros/{ficheiro}</code></p>
 <p><code>PATCH api/disciplinas/{disciplina}/aulas/{aula}/ficheiros/{ficheiro}</code></p>
@@ -1360,10 +1531,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros/1"
 );
@@ -1379,6 +1546,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/disciplinas/1/aulas/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/disciplinas/{disciplina}/aulas/{aula}/ficheiros/{ficheiro}</code></p>
 <!-- END_206d345b485200b12ff354747a6eb933 -->
@@ -1389,10 +1569,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/ficheiros/1/comentarios" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/ficheiros/1/comentarios"
 );
@@ -1408,6 +1584,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/ficheiros/1/comentarios',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/ficheiros/{ficheiro}/comentarios</code></p>
 <!-- END_a3b990496821f1a00f2fd46d4aaad11e -->
@@ -1416,10 +1605,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/ficheiros/1/comentarios" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/ficheiros/1/comentarios"
 );
@@ -1435,6 +1620,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/ficheiros/1/comentarios',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/ficheiros/{ficheiro}/comentarios</code></p>
 <!-- END_cce995b33c3c7af1a6bbc8e691637358 -->
@@ -1443,10 +1641,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/ficheiros/1/comentarios/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/ficheiros/1/comentarios/1"
 );
@@ -1462,6 +1656,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/ficheiros/1/comentarios/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/ficheiros/{ficheiro}/comentarios/{comentario}</code></p>
 <!-- END_02ff6f0482d8470700657bc85fe2bafe -->
@@ -1470,10 +1677,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/ficheiros/1/comentarios/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/ficheiros/1/comentarios/1"
 );
@@ -1489,6 +1692,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/ficheiros/1/comentarios/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>PUT api/ficheiros/{ficheiro}/comentarios/{comentario}</code></p>
 <p><code>PATCH api/ficheiros/{ficheiro}/comentarios/{comentario}</code></p>
@@ -1498,10 +1714,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/ficheiros/1/comentarios/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/ficheiros/1/comentarios/1"
 );
@@ -1517,6 +1729,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/ficheiros/1/comentarios/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/ficheiros/{ficheiro}/comentarios/{comentario}</code></p>
 <!-- END_2b3111d9fcedf033808e719e9d4c9063 -->
@@ -1527,10 +1752,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas"
 );
@@ -1546,6 +1767,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -1657,12 +1891,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/disciplinas" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"nome":"eligendi","semestre_curricular":"excepturi"}'
-</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas"
 );
@@ -1673,8 +1901,8 @@ let headers = {
 };
 
 let body = {
-    "nome": "eligendi",
-    "semestre_curricular": "excepturi"
+    "nome": "dolore",
+    "semestre_curricular": "eius"
 }
 
 fetch(url, {
@@ -1684,6 +1912,23 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/disciplinas',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'nome' =&gt; 'dolore',
+            'semestre_curricular' =&gt; 'eius',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -1779,10 +2024,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1"
 );
@@ -1798,6 +2039,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -1886,10 +2140,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/disciplinas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1"
 );
@@ -1905,6 +2155,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/disciplinas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -1994,10 +2257,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/disciplinas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1"
 );
@@ -2013,6 +2272,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/disciplinas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -2074,10 +2346,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/duvidas" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/duvidas"
 );
@@ -2093,6 +2361,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/duvidas',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -2194,13 +2475,10 @@ fetch(url, {
 <!-- END_41e6c67bacd5993b456c7f3382dfef84 -->
 <!-- START_f06a7b83c84cc379f18b41553d79bcf9 -->
 <h2>Create a Duvida of Disciplina.</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/disciplinas/1/duvidas" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/duvidas"
 );
@@ -2216,6 +2494,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/disciplinas/1/duvidas',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -2281,10 +2572,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/duvidas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/duvidas/1"
 );
@@ -2300,6 +2587,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/duvidas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -2369,10 +2669,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/disciplinas/1/duvidas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/duvidas/1"
 );
@@ -2388,6 +2684,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/disciplinas/1/duvidas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -2458,10 +2767,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/disciplinas/1/duvidas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/duvidas/1"
 );
@@ -2477,6 +2782,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/disciplinas/1/duvidas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -2526,10 +2844,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros"
 );
@@ -2545,6 +2859,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros</code></p>
 <!-- END_35f3e4adb4dbb90604df550c19f0b110 -->
@@ -2553,10 +2880,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros"
 );
@@ -2572,6 +2895,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros</code></p>
 <!-- END_34f811b383b2b4d00f63a7451871d8a6 -->
@@ -2580,10 +2916,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros/1"
 );
@@ -2599,6 +2931,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros/{ficheiro}</code></p>
 <!-- END_554660e48859582da781e177d745995f -->
@@ -2607,10 +2952,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros/1"
 );
@@ -2626,6 +2967,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>PUT api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros/{ficheiro}</code></p>
 <p><code>PATCH api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros/{ficheiro}</code></p>
@@ -2635,10 +2989,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros/1"
 );
@@ -2654,6 +3004,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/disciplinas/1/duvidas/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/disciplinas/{disciplina}/duvidas/{duvida}/ficheiros/{ficheiro}</code></p>
 <!-- END_076d84034dbb7ea4588d425c74fe5736 -->
@@ -2664,10 +3027,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao"
 );
@@ -2683,6 +3042,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -2797,12 +3169,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"data_inicio":"et","data_fim":"totam"}'
-</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao"
 );
@@ -2813,8 +3179,8 @@ let headers = {
 };
 
 let body = {
-    "data_inicio": "et",
-    "data_fim": "totam"
+    "data_inicio": "facilis",
+    "data_fim": "beatae"
 }
 
 fetch(url, {
@@ -2824,6 +3190,23 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'data_inicio' =&gt; 'facilis',
+            'data_fim' =&gt; 'beatae',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -2917,10 +3300,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1"
 );
@@ -2936,6 +3315,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -3010,10 +3402,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1"
 );
@@ -3029,6 +3417,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -3104,10 +3505,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1"
 );
@@ -3123,6 +3520,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -3174,10 +3584,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros"
 );
@@ -3193,6 +3599,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros</code></p>
 <!-- END_aa9ef7109c36accfac70987604bb7e04 -->
@@ -3201,10 +3620,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros"
 );
@@ -3220,6 +3635,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros</code></p>
 <!-- END_e6a918cd136f194f4b6f0a9a3d34e9da -->
@@ -3228,10 +3656,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1"
 );
@@ -3247,6 +3671,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros/{ficheiro}</code></p>
 <!-- END_8aeb7203d4e31933ba7e81763ab0e870 -->
@@ -3255,10 +3692,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1"
 );
@@ -3274,6 +3707,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>PUT api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros/{ficheiro}</code></p>
 <p><code>PATCH api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros/{ficheiro}</code></p>
@@ -3283,10 +3729,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1"
 );
@@ -3302,6 +3744,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/ficheiros/{ficheiro}</code></p>
 <!-- END_5610f50214fb70f6292932c26271c442 -->
@@ -3312,10 +3767,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/ficheiros" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/ficheiros"
 );
@@ -3331,6 +3782,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/ficheiros',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/ficheiros</code></p>
 <!-- END_0492f500ad6414d89ce86b6f3fb41c81 -->
@@ -3339,10 +3803,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/ficheiros/1"
 );
@@ -3358,6 +3818,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/ficheiros/{ficheiro}</code></p>
 <!-- END_30f6a70f1a3e30e5cb0306a07a885458 -->
@@ -3366,10 +3839,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/ficheiros/1"
 );
@@ -3385,6 +3854,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>PUT api/ficheiros/{ficheiro}</code></p>
 <p><code>PATCH api/ficheiros/{ficheiro}</code></p>
@@ -3394,10 +3876,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/ficheiros/1"
 );
@@ -3413,6 +3891,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/ficheiros/{ficheiro}</code></p>
 <!-- END_53683cfe4f7d0076ddb112e734d5c33b -->
@@ -3423,10 +3914,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/professores" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/professores"
 );
@@ -3442,6 +3929,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/professores',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -3511,12 +4011,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/professores" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"professor_id":"labore","name":"molestiae","email":"aut","password":"commodi","password_confirmation":"iusto"}'
-</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/professores"
 );
@@ -3527,11 +4021,11 @@ let headers = {
 };
 
 let body = {
-    "professor_id": "labore",
-    "name": "molestiae",
-    "email": "aut",
-    "password": "commodi",
-    "password_confirmation": "iusto"
+    "professor_id": "id",
+    "name": "maxime",
+    "email": "earum",
+    "password": "officiis",
+    "password_confirmation": "et"
 }
 
 fetch(url, {
@@ -3541,6 +4035,26 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/professores',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'professor_id' =&gt; 'id',
+            'name' =&gt; 'maxime',
+            'email' =&gt; 'earum',
+            'password' =&gt; 'officiis',
+            'password_confirmation' =&gt; 'et',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -3617,10 +4131,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/professores/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/professores/1"
 );
@@ -3636,6 +4146,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/professores/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -3690,10 +4213,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/professores/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/professores/1"
 );
@@ -3709,6 +4228,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/professores/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -3764,10 +4296,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/professores/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/professores/1"
 );
@@ -3783,6 +4311,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/professores/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -3815,10 +4356,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/professores/1/disciplinas" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/professores/1/disciplinas"
 );
@@ -3834,6 +4371,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/professores/1/disciplinas',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -3960,12 +4510,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/professores/1/disciplinas" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"disciplina_id":"explicabo"}'
-</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/professores/1/disciplinas"
 );
@@ -3976,7 +4520,7 @@ let headers = {
 };
 
 let body = {
-    "disciplina_id": "explicabo"
+    "disciplina_id": "quo"
 }
 
 fetch(url, {
@@ -3986,6 +4530,22 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/professores/1/disciplinas',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'disciplina_id' =&gt; 'quo',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -4118,10 +4678,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/professores/1/disciplinas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/professores/1/disciplinas/1"
 );
@@ -4137,6 +4693,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/professores/1/disciplinas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -4180,10 +4749,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/professores/1/disciplinas/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/professores/1/disciplinas/1"
 );
@@ -4199,6 +4764,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/professores/1/disciplinas/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -4252,10 +4830,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/me" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/me"
 );
@@ -4271,6 +4845,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/me',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/me</code></p>
 <!-- END_b19e2ecbb41b5fa6802edaf581aab5f6 -->
@@ -4281,10 +4868,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes"
 );
@@ -4300,6 +4883,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -4405,13 +5001,10 @@ fetch(url, {
 <!-- END_8f273ed5d18bdcb66b2e2b3126b41c57 -->
 <!-- START_70b2e0befeb60703c6bf8a2d91b73797 -->
 <h2>Create a Resolução of Evento de Resolução.</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes"
 );
@@ -4427,6 +5020,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -4506,10 +5112,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1"
 );
@@ -4525,6 +5127,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -4608,10 +5223,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1"
 );
@@ -4627,6 +5238,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -4711,10 +5335,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1"
 );
@@ -4730,6 +5350,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
@@ -4793,10 +5426,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros"
 );
@@ -4812,6 +5441,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros</code></p>
 <!-- END_d459258e6b894bf811f195aadcb2a060 -->
@@ -4820,10 +5462,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros"
 );
@@ -4839,6 +5477,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros</code></p>
 <!-- END_60598f759432cf3f03c396dde7f91165 -->
@@ -4847,10 +5498,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1"
 );
@@ -4866,6 +5513,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros/{ficheiro}</code></p>
 <!-- END_e4606509f15659a252a43c7c78118618 -->
@@ -4874,10 +5534,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1"
 );
@@ -4893,6 +5549,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;put(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>PUT api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros/{ficheiro}</code></p>
 <p><code>PATCH api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros/{ficheiro}</code></p>
@@ -4902,10 +5571,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1"
 );
@@ -4921,6 +5586,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete(
+    'http://localhost:8000/api/disciplinas/1/eventos-de-avaliacao/1/resolucoes/1/ficheiros/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/disciplinas/{disciplina}/eventos-de-avaliacao/{eventos_de_avaliacao}/resolucoes/{resoluco}/ficheiros/{ficheiro}</code></p>
 <!-- END_8399ae8a5231808ce35cda8acfc825fe -->
@@ -4930,10 +5608,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/sanctum/csrf-cookie" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/sanctum/csrf-cookie"
 );
@@ -4949,6 +5623,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/sanctum/csrf-cookie',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET sanctum/csrf-cookie</code></p>
 <!-- END_4dfafe7f87ec132be3c8990dd1fa9078 -->
@@ -4957,10 +5644,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/login"
 );
@@ -4976,6 +5659,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/login',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET login</code></p>
 <!-- END_66e08d3cc8222573018fed49e121e96d -->
@@ -4984,10 +5680,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/login"
 );
@@ -5003,6 +5695,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/login',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST login</code></p>
 <!-- END_ba35aa39474cb98cfb31829e70eb8b74 -->
@@ -5011,10 +5716,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/logout" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/logout"
 );
@@ -5030,6 +5731,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/logout',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST logout</code></p>
 <!-- END_e65925f23b9bc6b93d9356895f29f80c -->
@@ -5038,10 +5752,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/register" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/register"
 );
@@ -5057,6 +5767,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/register',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET register</code></p>
 <!-- END_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
@@ -5065,10 +5788,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/register" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/register"
 );
@@ -5084,6 +5803,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/register',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST register</code></p>
 <!-- END_d7aad7b5ac127700500280d511a3db01 -->
@@ -5092,10 +5824,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/password/reset" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/password/reset"
 );
@@ -5111,6 +5839,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/password/reset',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET password/reset</code></p>
 <!-- END_d72797bae6d0b1f3a341ebb1f8900441 -->
@@ -5119,10 +5860,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/password/email" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/password/email"
 );
@@ -5138,6 +5875,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/password/email',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST password/email</code></p>
 <!-- END_feb40f06a93c80d742181b6ffb6b734e -->
@@ -5147,10 +5897,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/password/reset/1" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/password/reset/1"
 );
@@ -5166,6 +5912,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/password/reset/1',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET password/reset/{token}</code></p>
 <!-- END_e1605a6e5ceee9d1aeb7729216635fd7 -->
@@ -5174,10 +5933,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/password/reset" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/password/reset"
 );
@@ -5193,6 +5948,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/password/reset',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST password/reset</code></p>
 <!-- END_cafb407b7a846b31491f97719bb15aef -->
@@ -5201,10 +5969,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/password/confirm" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/password/confirm"
 );
@@ -5220,6 +5984,19 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    'http://localhost:8000/password/confirm',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET password/confirm</code></p>
 <!-- END_b77aedc454e9471a35dcb175278ec997 -->
@@ -5228,10 +6005,6 @@ fetch(url, {
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/password/confirm" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/password/confirm"
 );
@@ -5247,14 +6020,27 @@ fetch(url, {
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
+<pre><code class="language-php">
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;post(
+    'http://localhost:8000/password/confirm',
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST password/confirm</code></p>
 <!-- END_54462d3613f2262e741142161c0e6fea -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">
-                                    <a href="#" data-language-name="bash">bash</a>
                                     <a href="#" data-language-name="javascript">javascript</a>
+                                    <a href="#" data-language-name="php">php</a>
                               </div>
                 </div>
     </div>
