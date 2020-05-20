@@ -6,11 +6,12 @@
 
 import Vue from "vue";
 import "./bootstrap.ts";
-import router from "./router";
+import { router } from "./router";
 import store from "./store";
 
 import ExampleComponent from "./components/ExampleComponent.vue";
 import CodeHighlighter from "./components/CodeHighlighter.vue";
+import Sidebar from "./components/Sidebar.vue";
 
 /**
  * The following block of code may be used to automatically register your
@@ -22,6 +23,7 @@ import CodeHighlighter from "./components/CodeHighlighter.vue";
 
 Vue.component('example-component', ExampleComponent);
 Vue.component('code-highlighter', CodeHighlighter);
+Vue.component('sidebar', Sidebar);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

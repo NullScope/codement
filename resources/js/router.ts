@@ -1,17 +1,21 @@
 import Vue from "vue"
-import VueRouter from "vue-router"
-import IndexPage from "./views/index.vue"
+import VueRouter, { RouteConfig } from "vue-router"
+import HomePage from "./views/home.vue"
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-export default new VueRouter({
-  mode: 'history',
-
-  routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: IndexPage
+export const routes: RouteConfig[] = [
+  {
+    path: '/home',
+    name: 'Home',
+    component: HomePage,
+    meta: {
+      icon: 'menu-icon'
     }
-  ]
+  }
+];
+
+export const router = new VueRouter({
+  mode: 'history',
+  routes: routes
 });

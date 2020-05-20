@@ -52,6 +52,8 @@ Os ficheiros de frontend estão situados em `resources\js`, é feito em [VueJS](
 }
 ```
 
+Mais informação sobre encaminhamento de páginas pode ser visualizado [aqui](https://router.vuejs.org/guide/)
+
 ## Backend
 
 Os modelos estão situados em `app`, os controladores e recursos estão todos situados em `app\Http`, os endpoints estão situados em `routes\api.php` e podem ser consultados por `php artisan route:list`, ou na documentação situada em `public\docs\index.html` arrastando o ficheiro para o browser, ou pela coleção do postman em `public\docs\collection.json`
