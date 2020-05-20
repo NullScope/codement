@@ -18,6 +18,7 @@ class ProfileController extends Controller
     /**
      * Display information about the logged in user.
      *
+     * @responseFile responses/profile.index.json
      * @authenticated
      * @return \Illuminate\Http\Response
      */

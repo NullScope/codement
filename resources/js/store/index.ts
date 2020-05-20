@@ -1,24 +1,24 @@
 import Vue from "vue"
 import Vuex, { StoreOptions } from "vuex"
-import { RootState, Todo } from "../types/store";
+import { RootState, Profile } from "../types/store";
 import axios from "axios"
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    todos: []
+    profile: {}
   },
 
   actions: {
-    async fetchTodos({ commit }) {
-      return commit('setTodos', await axios.get('/api/todos'))
+    async fetchProfile({ commit }) {
+      return commit('setProfile', await axios.get('/api/me'))
     }
   },
 
   mutations: {
-    setTodos(state: RootState, todos: Todo[]) {
-      state.todos = todos
+    setProfile(state: RootState, profile: Profile) {
+      state.profile = profile
     }
   }
 } as StoreOptions<RootState>)

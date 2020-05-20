@@ -23166,10 +23166,10 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     state: {
-        todos: []
+        profile: {}
     },
     actions: {
-        fetchTodos: function (_a) {
+        fetchProfile: function (_a) {
             var commit = _a.commit;
             return __awaiter(this, void 0, void 0, function () {
                 var _b, _c;
@@ -23177,8 +23177,8 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
                     switch (_d.label) {
                         case 0:
                             _b = commit;
-                            _c = ['setTodos'];
-                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/todos')];
+                            _c = ['setProfile'];
+                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/me')];
                         case 1: return [2 /*return*/, _b.apply(void 0, _c.concat([_d.sent()]))];
                     }
                 });
@@ -23186,8 +23186,8 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
         }
     },
     mutations: {
-        setTodos: function (state, todos) {
-            state.todos = todos;
+        setProfile: function (state, profile) {
+            state.profile = profile;
         }
     }
 }));

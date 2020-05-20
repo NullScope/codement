@@ -41,6 +41,7 @@ class AlunoController extends Controller
      * @bodyParam aluno_id string required
      * @bodyParam curso string required
      * @bodyParam data_de_matricula_inicial date required
+     * @bodyParam ano_curricular int required
      * @bodyParam name string required
      * @bodyParam email string required
      * @bodyParam password string required

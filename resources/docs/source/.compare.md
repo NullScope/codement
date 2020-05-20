@@ -171,13 +171,14 @@ let headers = {
 };
 
 let body = {
-    "aluno_id": "nihil",
-    "curso": "recusandae",
-    "data_de_matricula_inicial": "quis",
-    "name": "ex",
-    "email": "perferendis",
-    "password": "et",
-    "password_confirmation": "quibusdam"
+    "aluno_id": "excepturi",
+    "curso": "sint",
+    "data_de_matricula_inicial": "veniam",
+    "ano_curricular": 5,
+    "name": "veniam",
+    "email": "doloribus",
+    "password": "dolor",
+    "password_confirmation": "accusamus"
 }
 
 fetch(url, {
@@ -200,13 +201,14 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'aluno_id' => 'nihil',
-            'curso' => 'recusandae',
-            'data_de_matricula_inicial' => 'quis',
-            'name' => 'ex',
-            'email' => 'perferendis',
-            'password' => 'et',
-            'password_confirmation' => 'quibusdam',
+            'aluno_id' => 'excepturi',
+            'curso' => 'sint',
+            'data_de_matricula_inicial' => 'veniam',
+            'ano_curricular' => 5,
+            'name' => 'veniam',
+            'email' => 'doloribus',
+            'password' => 'dolor',
+            'password_confirmation' => 'accusamus',
         ],
     ]
 );
@@ -269,6 +271,7 @@ Parameter | Type | Status | Description
     `aluno_id` | string |  required  | 
         `curso` | string |  required  | 
         `data_de_matricula_inicial` | date |  required  | 
+        `ano_curricular` | integer |  required  | 
         `name` | string |  required  | 
         `email` | string |  required  | 
         `password` | string |  required  | 
@@ -703,7 +706,7 @@ let headers = {
 };
 
 let body = {
-    "disciplina_id": "veniam"
+    "disciplina_id": "quas"
 }
 
 fetch(url, {
@@ -726,7 +729,7 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'disciplina_id' => 'veniam',
+            'disciplina_id' => 'quas',
         ],
     ]
 );
@@ -1048,7 +1051,7 @@ let headers = {
 };
 
 let body = {
-    "descricao": "repellendus"
+    "descricao": "cum"
 }
 
 fetch(url, {
@@ -1071,7 +1074,7 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'descricao' => 'repellendus',
+            'descricao' => 'cum',
         ],
     ]
 );
@@ -1968,8 +1971,8 @@ let headers = {
 };
 
 let body = {
-    "nome": "ratione",
-    "semestre_curricular": "voluptatum"
+    "nome": "atque",
+    "semestre_curricular": "tenetur"
 }
 
 fetch(url, {
@@ -1992,8 +1995,8 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'nome' => 'ratione',
-            'semestre_curricular' => 'voluptatum',
+            'nome' => 'atque',
+            'semestre_curricular' => 'tenetur',
         ],
     ]
 );
@@ -3312,8 +3315,8 @@ let headers = {
 };
 
 let body = {
-    "data_inicio": "sint",
-    "data_fim": "non"
+    "data_inicio": "et",
+    "data_fim": "aut"
 }
 
 fetch(url, {
@@ -3336,8 +3339,8 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'data_inicio' => 'sint',
-            'data_fim' => 'non',
+            'data_inicio' => 'et',
+            'data_fim' => 'aut',
         ],
     ]
 );
@@ -4253,11 +4256,11 @@ let headers = {
 };
 
 let body = {
-    "professor_id": "aperiam",
-    "name": "maiores",
-    "email": "expedita",
-    "password": "aut",
-    "password_confirmation": "reiciendis"
+    "professor_id": "omnis",
+    "name": "illo",
+    "email": "eos",
+    "password": "nulla",
+    "password_confirmation": "est"
 }
 
 fetch(url, {
@@ -4280,11 +4283,11 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'professor_id' => 'aperiam',
-            'name' => 'maiores',
-            'email' => 'expedita',
-            'password' => 'aut',
-            'password_confirmation' => 'reiciendis',
+            'professor_id' => 'omnis',
+            'name' => 'illo',
+            'email' => 'eos',
+            'password' => 'nulla',
+            'password_confirmation' => 'est',
         ],
     ]
 );
@@ -4740,7 +4743,7 @@ let headers = {
 };
 
 let body = {
-    "disciplina_id": "temporibus"
+    "disciplina_id": "et"
 }
 
 fetch(url, {
@@ -4763,7 +4766,7 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'disciplina_id' => 'temporibus',
+            'disciplina_id' => 'et',
         ],
     ]
 );
@@ -5072,6 +5075,50 @@ print_r(json_decode((string) $body));
 ```
 
 
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "aluno_id": "a2082214",
+        "profile": {
+            "id": 2,
+            "name": "Bruno Ribeiro",
+            "email": "2082214@student.uma.pt",
+            "email_verified_at": null,
+            "created_at": "2020-05-19T12:26:23.000000Z",
+            "updated_at": "2020-05-19T12:26:23.000000Z"
+        },
+        "curso": "Engenharia Informática",
+        "data_de_matricula_inicial": "2020-05-18 00:00:00",
+        "ano_curricular": 3,
+        "disciplinas": [
+            {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-18T22:57:25.000000Z",
+                "updated_at": "2020-05-18T22:57:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            }
+        ],
+        "comentarios": [],
+        "ficheiros": [],
+        "duvidas": [
+            {
+                "id": 1,
+                "aluno_id": 1,
+                "disciplina_id": 1,
+                "created_at": "2020-05-19T13:46:02.000000Z",
+                "updated_at": "2020-05-19T13:46:02.000000Z"
+            }
+        ],
+        "created_at": "2020-05-19T12:26:22.000000Z",
+        "updated_at": "2020-05-19T12:26:22.000000Z"
+    }
+}
+```
 
 ### HTTP Request
 `GET api/me`

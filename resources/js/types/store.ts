@@ -1,8 +1,7 @@
 export interface RootState {
-  todos: Todo[]
+  profile: Profile
 }
 
-export interface Todo {
-  done: boolean
-  name: string
+export interface Profile {
+
 }
