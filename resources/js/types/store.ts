@@ -2,6 +2,6 @@ export interface RootState {
   profile: Profile
 }
 
-export interface Profile {
-
+export class Profile {
+  id?: number
 }

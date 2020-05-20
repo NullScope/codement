@@ -23095,7 +23095,7 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var routes = [
     {
-        path: '/home',
+        path: '/',
         name: 'Home',
         component: _views_home_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
         meta: {
@@ -23122,8 +23122,9 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _types_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../types/store */ "./resources/js/types/store.ts");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -23163,10 +23164,11 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
+
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     state: {
-        profile: {}
+        profile: new _types_store__WEBPACK_IMPORTED_MODULE_2__["Profile"]()
     },
     actions: {
         fetchProfile: function (_a) {
@@ -23178,7 +23180,7 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
                         case 0:
                             _b = commit;
                             _c = ['setProfile'];
-                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/api/me')];
+                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/api/me')];
                         case 1: return [2 /*return*/, _b.apply(void 0, _c.concat([_d.sent()]))];
                     }
                 });
@@ -23191,6 +23193,26 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
         }
     }
 }));
+
+
+/***/ }),
+
+/***/ "./resources/js/types/store.ts":
+/*!*************************************!*\
+  !*** ./resources/js/types/store.ts ***!
+  \*************************************/
+/*! exports provided: Profile */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Profile", function() { return Profile; });
+var Profile = /** @class */ (function () {
+    function Profile() {
+    }
+    return Profile;
+}());
+
 
 
 /***/ }),

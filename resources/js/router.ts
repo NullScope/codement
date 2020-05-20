@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 export const routes: RouteConfig[] = [
   {
-    path: '/home',
+    path: '/',
     name: 'Home',
     component: HomePage,
     meta: {
@@ -17,5 +17,5 @@ export const routes: RouteConfig[] = [
 
 export const router = new VueRouter({
   mode: 'history',
-  routes: routes
+  routes
 });

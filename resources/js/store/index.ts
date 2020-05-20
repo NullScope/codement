@@ -7,7 +7,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    profile: {}
+    profile: new Profile()
   },
 
   actions: {
@@ -18,7 +18,7 @@ export default new Vuex.Store({
 
   mutations: {
     setProfile(state: RootState, profile: Profile) {
-      state.profile = profile
+      state.profile = profile;
     }
   }
 } as StoreOptions<RootState>)
