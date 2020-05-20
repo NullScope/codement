@@ -18,7 +18,7 @@ Geralmente o caminho para o executável de PHP é `C:\xampp\php`, mas irá depen
 
 Primeiro é necessário instalar o *Laravel Instaler* pelo Composer, ou seja, pelo terminal de linha de comandos executar `composer global require laravel/installer`.
 
-Depois, no mesmo terminal de linha de comandos, executa `npm install` para instalar todos os *packages* do NodeJS.
+Depois, no mesmo terminal, executa `composer install` para instalar todas as dependências do Composer e em seguida executa `npm install` para instalar todos os *packages* do NodeJS.
 
 Cria uma cópia do `.env.example` que se situa na pasta inicial e muda o nome para `.env`.
 
