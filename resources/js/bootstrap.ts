@@ -18,4 +18,4 @@ axios.defaults.withCredentials = true;
  * a simple convenience so we don't have to attach every token manually.
  */
 
-axios.get('http://localhost:8000/sanctum/csrf-cookie');
+axios.get('/sanctum/csrf-cookie');

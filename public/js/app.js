@@ -68756,7 +68756,7 @@ axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.withCredentials = true;
  * all outgoing HTTP requests automatically have it attached. This is just
  * a simple convenience so we don't have to attach every token manually.
  */
-axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/sanctum/csrf-cookie');
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/sanctum/csrf-cookie');
 
 
 /***/ }),
