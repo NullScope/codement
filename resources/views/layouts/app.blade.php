@@ -31,12 +31,19 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <!-- End layout styles -->
   <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" />
+
+  <script>
+    window.Prism = window.Prism || {};
+    window.Prism.manual = true;
+  </script>
 </head>
 <body>
   <div id="app" class="container-scroller">
-      <navbar></navbar>
+    <navbar></navbar>
+
     <div class="container-fluid page-body-wrapper">
       <sidebar></sidebar>
+
       <div class="main-panel">
         <div class="content-wrapper">
           <router-view></router-view>

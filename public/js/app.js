@@ -2064,7 +2064,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         return;
       }
 
-      clearTimeout(_this.fakeTimer);
       var hasLineNumbers = Prism.plugins.lineNumbers;
       var isLineNumbersLoaded = env.plugins && env.plugins.lineNumbers;
 
@@ -2074,12 +2073,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var mutateDom = _this.highlightLines(pre, lines);
 
         mutateDom();
-        _this.fakeTimer = setTimeout(_this.applyHash, 1);
       }
     };
 
     Prism.hooks.add('complete', completeHook);
-    window.addEventListener('hashchange', this.applyHash);
     window.addEventListener('resize', function () {
       var actions = [];
 
@@ -2159,6 +2156,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         }
       }, 100);
     });
+    Prism.highlightAll();
   },
   watch: {
     dataLine: function dataLine(newDataLine, oldDataLine) {
@@ -2178,8 +2176,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       isCommentModalOpened: false,
       isRecordingComment: false,
       comments: [],
-      fakeTimer: 0,
-      // Hack to limit the number of times applyHash() runs
       code: _exampleCode__WEBPACK_IMPORTED_MODULE_8__["exampleCode"],
       speechRecognition: null,
       language: 'pt-PT',
@@ -2413,33 +2409,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         mutateActions.forEach(_this4.callFunction);
       };
     },
-    applyHash: function applyHash() {
-      var hash = location.hash.slice(1); // Remove pre-existing temporary lines
-
-      this.$$('.temporary.line-highlight').forEach(function (line) {
-        line.parentNode.removeChild(line);
-      });
-      var range = (hash.match(/\.([\d,-]+)$/) || [, ''])[1];
-
-      if (!range || document.getElementById(hash)) {
-        return;
-      }
-
-      var id = hash.slice(0, hash.lastIndexOf('.')),
-          pre = document.getElementById(id);
-
-      if (!pre) {
-        return;
-      }
-
-      if (!pre.hasAttribute('data-line')) {
-        pre.setAttribute('data-line', '');
-      }
-
-      var mutateDom = this.highlightLines(pre, range, 'temporary ');
-      mutateDom();
-      document.querySelector('.temporary.line-highlight').scrollIntoView();
-    },
     removeHighlightlines: function removeHighlightlines(pre) {
       var lines = pre.querySelectorAll('.line-highlight');
       lines.forEach(function (line) {
@@ -2656,12 +2625,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   methods: {
-    login: function login() {// await axios.get('http://localhost:8000/sanctum/csrf-cookie');
-      // await axios.post('http://localhost:8000/login', {
-      //   email: "brunoribeiro095@gmail.com",
+    login: function login() {// await axios.get('/sanctum/csrf-cookie');
+      // await axios.post('/login', {
+      //   email: "2082214@student.uma.pt",
       //   password: "12345678"
       // });
-      // let response = await axios.post('http://localhost:8000/api/disciplinas/1/duvidas', {
+      // let response = await axios.post('/api/disciplinas/1/duvidas', {
       // });
       // console.log(response);
 
@@ -51065,8 +51034,8 @@ var render = function() {
                 {
                   staticClass: "line-numbers",
                   attrs: {
-                    language: "javascript",
                     id: "prism",
+                    language: "javascript",
                     "data-line": _vm.dataLine
                   }
                 },
@@ -51922,14 +51891,19 @@ function normalizeComponent (
 "use strict";
 
 
-function assign(obj) {
-  var arguments$1 = arguments;
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var Prism = _interopDefault(__webpack_require__(/*! prismjs */ "./node_modules/prismjs/prism.js"));
+
+function assign(obj) {
   for (var i = 1; i < arguments.length; i++) {
     // eslint-disable-next-line guard-for-in, prefer-rest-params
-    for (var p in arguments[i]) { obj[p] = arguments$1[i][p]; }
+    for (var p in arguments[i]) {
+      obj[p] = arguments[i][p];
+    }
   }
-  return obj
+
+  return obj;
 }
 
 var index = {
@@ -51940,54 +51914,41 @@ var index = {
     },
     inline: {
       type: Boolean,
-      default: false
+      "default": false
     },
     language: {
       type: String,
-      default: 'markup'
+      "default": 'markup'
     }
   },
   render: function render(h, ctx) {
-    var code =
-      ctx.props.code ||
-      (ctx.children && ctx.children.length > 0 ? ctx.children[0].text : '');
+    var code = ctx.props.code || (ctx.children && ctx.children.length > 0 ? ctx.children[0].text : '');
     var inline = ctx.props.inline;
     var language = ctx.props.language;
     var prismLanguage = Prism.languages[language];
-    var className = "language-" + language;
+    var className = "language-".concat(language);
 
     if ( true && !prismLanguage) {
-      throw new Error(
-        ("Prism component for language \"" + language + "\" was not found, did you forget to register it? See all available ones: https://cdn.jsdelivr.net/npm/prismjs/components/")
-      )
+      throw new Error("Prism component for language \"".concat(language, "\" was not found, did you forget to register it? See all available ones: https://cdn.jsdelivr.net/npm/prismjs/components/"));
     }
 
     if (inline) {
-      return h(
-        'code',
-        assign({}, ctx.data, {
-          class: [ctx.data.class, className],
-          domProps: assign({}, ctx.data.domProps, {
-            innerHTML: Prism.highlight(code, prismLanguage)
-          })
+      return h('code', assign({}, ctx.data, {
+        "class": [ctx.data["class"], className],
+        domProps: assign({}, ctx.data.domProps, {
+          innerHTML: Prism.highlight(code, prismLanguage)
         })
-      )
+      }));
     }
 
-    return h(
-      'pre',
-      assign({}, ctx.data, {
-        class: [ctx.data.class, className]
-      }),
-      [
-        h('code', {
-          class: className,
-          domProps: {
-            innerHTML: Prism.highlight(code, prismLanguage)
-          }
-        })
-      ]
-    )
+    return h('pre', assign({}, ctx.data, {
+      "class": [ctx.data["class"], className]
+    }), [h('code', {
+      "class": className,
+      domProps: {
+        innerHTML: Prism.highlight(code, prismLanguage)
+      }
+    })]);
   }
 };
 
@@ -68777,8 +68738,8 @@ axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.withCredentials = true;
  * all outgoing HTTP requests automatically have it attached. This is just
  * a simple convenience so we don't have to attach every token manually.
  */
-var token = document.head.querySelector('meta[name="csrf-token"]');
 axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/sanctum/csrf-cookie');
+var token = document.head.querySelector('meta[name="csrf-token"]');
 if (token) {
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 }

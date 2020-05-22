@@ -18,9 +18,9 @@ axios.defaults.withCredentials = true;
  * a simple convenience so we don't have to attach every token manually.
  */
 
-let token: HTMLMetaElement | null = document.head.querySelector('meta[name="csrf-token"]');
-
 axios.get('http://localhost:8000/sanctum/csrf-cookie');
+
+let token: HTMLMetaElement | null = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
   axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;

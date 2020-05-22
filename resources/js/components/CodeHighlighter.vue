@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class="col-lg-7 grid-margin">
-      <prism-component v-if="code !== ''" language="javascript" id="prism" :data-line="dataLine" class="line-numbers">
+      <prism-component v-if="code !== ''" id="prism" language="javascript" :data-line="dataLine" class="line-numbers">
         {{ code }}
       </prism-component>
     </div>
@@ -74,6 +74,7 @@
       window.addEventListener('scroll', () => {
         // this.$forceUpdate();
       });
+
       this.setupSpeechRecognition();
 
       Prism.hooks.add('before-sanity-check', env => {
@@ -110,8 +111,6 @@
           return;
         }
 
-        clearTimeout(this.fakeTimer);
-
         var hasLineNumbers = Prism.plugins.lineNumbers;
         var isLineNumbersLoaded = env.plugins && env.plugins.lineNumbers;
 
@@ -120,13 +119,11 @@
         } else {
           var mutateDom = this.highlightLines(pre, lines);
           mutateDom();
-          this.fakeTimer = setTimeout(this.applyHash, 1);
         }
       }
 
       Prism.hooks.add('complete', completeHook);
 
-      window.addEventListener('hashchange', this.applyHash);
       window.addEventListener('resize', () => {
         var actions = [];
         this.$$('pre[data-line]').forEach((pre) => {
@@ -190,6 +187,8 @@
           }
         }, 100)
       });
+
+      Prism.highlightAll();
     },
     watch: {
       dataLine: function(newDataLine, oldDataLine) {
@@ -210,7 +209,6 @@
         isCommentModalOpened: false,
         isRecordingComment: false,
         comments: [],
-        fakeTimer: 0, // Hack to limit the number of times applyHash() runs
         code: exampleCode,
         speechRecognition: null,
         language: 'pt-PT',
@@ -460,37 +458,6 @@
         return () => {
           mutateActions.forEach(this.callFunction);
         };
-      },
-
-      applyHash() {
-        var hash = location.hash.slice(1);
-
-        // Remove pre-existing temporary lines
-        this.$$('.temporary.line-highlight').forEach(function (line) {
-          line.parentNode.removeChild(line);
-        });
-
-        var range = (hash.match(/\.([\d,-]+)$/) || [, ''])[1];
-
-        if (!range || document.getElementById(hash)) {
-          return;
-        }
-
-        var id = hash.slice(0, hash.lastIndexOf('.')),
-          pre = document.getElementById(id);
-
-        if (!pre) {
-          return;
-        }
-
-        if (!pre.hasAttribute('data-line')) {
-          pre.setAttribute('data-line', '');
-        }
-
-        var mutateDom = this.highlightLines(pre, range, 'temporary ');
-        mutateDom();
-
-        document.querySelector('.temporary.line-highlight').scrollIntoView();
       },
 
       removeHighlightlines(pre) {

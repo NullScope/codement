@@ -16,14 +16,14 @@
     },
     methods: {
       async login() {
-        // await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+        // await axios.get('/sanctum/csrf-cookie');
 
-        // await axios.post('http://localhost:8000/login', {
-        //   email: "brunoribeiro095@gmail.com",
+        // await axios.post('/login', {
+        //   email: "2082214@student.uma.pt",
         //   password: "12345678"
         // });
 
-        // let response = await axios.post('http://localhost:8000/api/disciplinas/1/duvidas', {
+        // let response = await axios.post('/api/disciplinas/1/duvidas', {
 
         // });
 
