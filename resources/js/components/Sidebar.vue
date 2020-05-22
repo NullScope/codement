@@ -16,7 +16,7 @@
         <!-- <i class="mdi mdi-school text-success nav-profile-badge"></i> -->
       </a>
     </li>
-    <li class="nav-item" v-for="route in routes" v-bind:key="route.name">
+    <li class="nav-item" v-for="route in filteredRoutes" v-bind:key="route.name">
       <router-link class="nav-link" v-if="!route.children" :to="route.path">
         <span class="menu-title">{{route.name}}</span>
         <i class="mdi menu-icon" :class="route.meta.icon"></i>
@@ -46,5 +46,20 @@ import { RouteConfig } from 'vue-router';
 @Component
 export default class Sidebar extends Vue {
   routes = routes;
+
+  get filteredRoutes() {
+    return routes.filter((route) => !route.meta.hidden);
+  }
 }
 </script>
+
+<style>
+  .router-link-active > .menu-title{
+    color: #b66dff !important;
+    font-family: "ubuntu-medium", sans-serif;
+  }
+
+  .router-link-active > i{
+    color: #b66dff !important;
+  }
+</style>

@@ -34,7 +34,7 @@ Depois, no mesmo terminal executa `php artisan migrate` para importar todas as t
 
 Abre o XAMPP e clica `start` no MySQL para o *backend* poder conectar-se à base de dados.
 
-É necessário 2 terminais de linha de comandos, um para correr o *backend* que deverá estar sempre correr em produção ou durante desenvolvimento, e outro para automáticamente compilar o *frontend* automáticamente que é só necessário para desenvolvimento do *frontend*.
+É necessário 2 terminais de linha de comandos, um para correr o *backend* que deverá estar sempre correr em produção ou durante desenvolvimento, e outro para automáticamente compilar o *frontend* que é só necessário para desenvolvimento do *frontend*.
 
 Num terminal executa `php artisan serve`, o servidor estará disponível no URL que o terminal mencionar.
 

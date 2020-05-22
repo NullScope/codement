@@ -8,6 +8,13 @@ Vue.use(VueRouter);
 export const routes: RouteConfig[] = [
   {
     path: '/',
+    redirect: '/home',
+    meta: {
+      hidden: true
+    }
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: HomePage,
     meta: {
@@ -15,9 +22,12 @@ export const routes: RouteConfig[] = [
     }
   },
   {
-    path:'/',
+    path:'/disciplina',
     name: 'Disciplina',
     component: DisciplinaPage,
+    meta: {
+      icon: 'mdi-home'
+    }
   }
 ];
 

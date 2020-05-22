@@ -34,6 +34,7 @@
 </head>
 <body>
   <div id="app" class="container-scroller">
+      <navbar></navbar>
     <div class="container-fluid page-body-wrapper">
       <sidebar></sidebar>
       <div class="main-panel">
