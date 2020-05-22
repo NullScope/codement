@@ -1,6 +1,7 @@
 import Vue from "vue"
 import VueRouter, { RouteConfig } from "vue-router"
 import HomePage from "./views/home.vue"
+import DisciplinaPage from "./views/disciplina.vue"
 
 Vue.use(VueRouter);
 
@@ -12,6 +13,11 @@ export const routes: RouteConfig[] = [
     meta: {
       icon: 'menu-icon'
     }
+  },
+  {
+    path:'/',
+    name: 'Disciplina',
+    component: DisciplinaPage,
   }
 ];
 
