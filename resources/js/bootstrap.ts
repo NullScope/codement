@@ -19,11 +19,3 @@ axios.defaults.withCredentials = true;
  */
 
 axios.get('http://localhost:8000/sanctum/csrf-cookie');
-
-let token: HTMLMetaElement | null = document.head.querySelector('meta[name="csrf-token"]');
-
-if (token) {
-  axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
