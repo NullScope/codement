@@ -11,7 +11,7 @@ export const routes: RouteConfig[] = [
     name: 'Home',
     component: HomePage,
     meta: {
-      icon: 'menu-icon'
+      icon: 'mdi-home'
     }
   },
   {

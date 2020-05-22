@@ -19,12 +19,12 @@
     <li class="nav-item" v-for="route in routes" v-bind:key="route.name">
       <router-link class="nav-link" v-if="!route.children" :to="route.path">
         <span class="menu-title">{{route.name}}</span>
-        <i class="mdi mdi-home" :class="route.meta.icon"></i>
+        <i class="mdi menu-icon" :class="route.meta.icon"></i>
       </router-link>
       <a class="nav-link" v-if="route.children" :href="'#ui-'+route.name" aria-expanded="false" data-toggle="collapse" :aria-controls="'ui-'+route.name">
         <span class="menu-title">{{route.name}}</span>
         <i class="menu-arrow"></i>
-        <i class="mdi mdi-home" :class="route.meta.icon"></i>
+        <i class="mdi menu-icon" :class="route.meta.icon"></i>
       </a>
       <div class="collapse" :id="'ui-'+route.name" v-if="route.children">
         <ul class="nav flex-column sub-menu">
