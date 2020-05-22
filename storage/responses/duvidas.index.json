@@ -1,54 +1,50 @@
 {
     "data": [
         {
-            "data": {
+            "id": 1,
+            "aluno": {
                 "id": 1,
-                "aluno": {
-                    "id": 1,
-                    "aluno_id": "a2082214",
-                    "created_at": "2020-05-19T12:26:22.000000Z",
-                    "updated_at": "2020-05-19T12:26:22.000000Z",
-                    "curso": "Engenharia Informática",
-                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                    "ano_curricular": 3
-                },
-                "disciplina": {
-                    "id": 1,
-                    "nome": "Engenharia de Requisitos",
-                    "created_at": "2020-05-19T12:40:25.000000Z",
-                    "updated_at": "2020-05-19T12:40:25.000000Z",
-                    "semestre_curricular": "2020-05-18 00:00:00",
-                    "professor_id": 1
-                },
-                "ficheiros": [],
-                "created_at": "2020-05-19T13:46:02.000000Z",
-                "updated_at": "2020-05-19T13:46:02.000000Z"
-            }
+                "aluno_id": "a2082214",
+                "created_at": "2020-05-19T12:26:22.000000Z",
+                "updated_at": "2020-05-19T12:26:22.000000Z",
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                "ano_curricular": 3
+            },
+            "disciplina": {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            },
+            "ficheiros": [],
+            "created_at": "2020-05-19T13:46:02.000000Z",
+            "updated_at": "2020-05-19T13:46:02.000000Z"
         },
         {
-            "data": {
+            "id": 2,
+            "aluno": {
+                "id": 1,
+                "aluno_id": "a2082214",
+                "created_at": "2020-05-19T12:26:22.000000Z",
+                "updated_at": "2020-05-19T12:26:22.000000Z",
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                "ano_curricular": 3
+            },
+            "disciplina": {
                 "id": 2,
-                "aluno": {
-                    "id": 1,
-                    "aluno_id": "a2082214",
-                    "created_at": "2020-05-19T12:26:22.000000Z",
-                    "updated_at": "2020-05-19T12:26:22.000000Z",
-                    "curso": "Engenharia Informática",
-                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                    "ano_curricular": 3
-                },
-                "disciplina": {
-                    "id": 2,
-                    "nome": "Processos e Métricas de Software",
-                    "created_at": "2020-05-18T22:57:25.000000Z",
-                    "updated_at": "2020-05-18T22:57:25.000000Z",
-                    "semestre_curricular": "2020-05-18 00:00:00",
-                    "professor_id": 1
-                },
-                "ficheiros": [],
-                "created_at": "2020-05-19T13:46:02.000000Z",
-                "updated_at": "2020-05-19T13:46:02.000000Z"
-            }
+                "nome": "Processos e Métricas de Software",
+                "created_at": "2020-05-18T22:57:25.000000Z",
+                "updated_at": "2020-05-18T22:57:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            },
+            "ficheiros": [],
+            "created_at": "2020-05-19T13:46:02.000000Z",
+            "updated_at": "2020-05-19T13:46:02.000000Z"
         }
     ]
 }

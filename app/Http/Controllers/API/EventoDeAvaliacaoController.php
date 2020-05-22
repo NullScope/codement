@@ -27,7 +27,7 @@ class EventoDeAvaliacaoController extends Controller
      * @urlParam disciplina required Example: 1
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($disciplina_id)
     {
         try {
             return EventoDeAvaliacaoResource::collection(Disciplina::findOrFail($disciplina_id)->eventosDeAvaliacao);

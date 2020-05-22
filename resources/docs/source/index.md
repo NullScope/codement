@@ -171,14 +171,14 @@ let headers = {
 };
 
 let body = {
-    "aluno_id": "excepturi",
-    "curso": "sint",
-    "data_de_matricula_inicial": "veniam",
-    "ano_curricular": 5,
-    "name": "veniam",
-    "email": "doloribus",
-    "password": "dolor",
-    "password_confirmation": "accusamus"
+    "aluno_id": "hic",
+    "curso": "quia",
+    "data_de_matricula_inicial": "voluptatum",
+    "ano_curricular": 8,
+    "name": "modi",
+    "email": "est",
+    "password": "ut",
+    "password_confirmation": "qui"
 }
 
 fetch(url, {
@@ -201,14 +201,14 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'aluno_id' => 'excepturi',
-            'curso' => 'sint',
-            'data_de_matricula_inicial' => 'veniam',
-            'ano_curricular' => 5,
-            'name' => 'veniam',
-            'email' => 'doloribus',
-            'password' => 'dolor',
-            'password_confirmation' => 'accusamus',
+            'aluno_id' => 'hic',
+            'curso' => 'quia',
+            'data_de_matricula_inicial' => 'voluptatum',
+            'ano_curricular' => 8,
+            'name' => 'modi',
+            'email' => 'est',
+            'password' => 'ut',
+            'password_confirmation' => 'qui',
         ],
     ]
 );
@@ -580,72 +580,68 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "data": {
-                "id": 1,
-                "nome": "Engenharia de Requisitos",
-                "alunos": [
-                    {
-                        "id": 1,
-                        "aluno_id": "a2082214",
-                        "created_at": "2020-05-19T12:26:22.000000Z",
-                        "updated_at": "2020-05-19T12:26:22.000000Z",
-                        "curso": "Engenharia Informática",
-                        "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                        "ano_curricular": 3
-                    }
-                ],
-                "regente": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "alunos": [
+                {
                     "id": 1,
-                    "professor_id": "p2827464",
+                    "aluno_id": "a2082214",
+                    "created_at": "2020-05-19T12:26:22.000000Z",
+                    "updated_at": "2020-05-19T12:26:22.000000Z",
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                    "ano_curricular": 3
+                }
+            ],
+            "regente": {
+                "id": 1,
+                "professor_id": "p2827464",
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z"
+            },
+            "assistentes": [
+                {
+                    "id": 2,
+                    "professor_id": "p4365476",
                     "created_at": "2020-05-19T12:40:25.000000Z",
                     "updated_at": "2020-05-19T12:40:25.000000Z"
-                },
-                "assistentes": [
-                    {
-                        "id": 2,
-                        "professor_id": "p4365476",
-                        "created_at": "2020-05-19T12:40:25.000000Z",
-                        "updated_at": "2020-05-19T12:40:25.000000Z"
-                    }
-                ],
-                "semestre_curricular": "2020-05-18 00:00:00",
-                "created_at": "2020-05-19T12:49:12.000000Z",
-                "updated_at": "2020-05-19T12:49:12.000000Z"
-            }
+                }
+            ],
+            "semestre_curricular": "2020-05-18 00:00:00",
+            "created_at": "2020-05-19T12:49:12.000000Z",
+            "updated_at": "2020-05-19T12:49:12.000000Z"
         },
         {
-            "data": {
+            "id": 2,
+            "nome": "Processos e Métricas de Software",
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "created_at": "2020-05-19T12:26:22.000000Z",
+                    "updated_at": "2020-05-19T12:26:22.000000Z",
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                    "ano_curricular": 3
+                }
+            ],
+            "regente": {
                 "id": 2,
-                "nome": "Processos e Métricas de Software",
-                "alunos": [
-                    {
-                        "id": 1,
-                        "aluno_id": "a2082214",
-                        "created_at": "2020-05-19T12:26:22.000000Z",
-                        "updated_at": "2020-05-19T12:26:22.000000Z",
-                        "curso": "Engenharia Informática",
-                        "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                        "ano_curricular": 3
-                    }
-                ],
-                "regente": {
+                "professor_id": "pr43523",
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z"
+            },
+            "assistentes": [
+                {
                     "id": 2,
-                    "professor_id": "pr43523",
+                    "professor_id": "p4365476",
                     "created_at": "2020-05-19T12:40:25.000000Z",
                     "updated_at": "2020-05-19T12:40:25.000000Z"
-                },
-                "assistentes": [
-                    {
-                        "id": 2,
-                        "professor_id": "p4365476",
-                        "created_at": "2020-05-19T12:40:25.000000Z",
-                        "updated_at": "2020-05-19T12:40:25.000000Z"
-                    }
-                ],
-                "semestre_curricular": "2020-05-18 00:00:00",
-                "created_at": "2020-05-19T12:49:12.000000Z",
-                "updated_at": "2020-05-19T12:49:12.000000Z"
-            }
+                }
+            ],
+            "semestre_curricular": "2020-05-18 00:00:00",
+            "created_at": "2020-05-19T12:49:12.000000Z",
+            "updated_at": "2020-05-19T12:49:12.000000Z"
         }
     ]
 }
@@ -656,24 +652,34 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         },
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         }
     ]
 }
@@ -706,7 +712,7 @@ let headers = {
 };
 
 let body = {
-    "disciplina_id": "quas"
+    "disciplina_id": "quisquam"
 }
 
 fetch(url, {
@@ -729,7 +735,7 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'disciplina_id' => 'quas',
+            'disciplina_id' => 'quisquam',
         ],
     ]
 );
@@ -743,14 +749,19 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "nome": null,
+        "id": 1,
+        "nome": "Engenharia de Requisitos",
         "alunos": [],
-        "regente": null,
+        "regente": {
+            "id": 1,
+            "professor_id": "p2984573",
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
         "assistentes": [],
-        "semestre_curricular": null,
-        "created_at": null,
-        "updated_at": null
+        "semestre_curricular": "2020-10-10 00:00:00",
+        "created_at": "2020-05-22T13:39:18.000000Z",
+        "updated_at": "2020-05-22T13:39:18.000000Z"
     }
 }
 ```
@@ -815,14 +826,19 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "nome": null,
+        "id": 1,
+        "nome": "Engenharia de Requisitos",
         "alunos": [],
-        "regente": null,
+        "regente": {
+            "id": 1,
+            "professor_id": "p2984573",
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
         "assistentes": [],
-        "semestre_curricular": null,
-        "created_at": null,
-        "updated_at": null
+        "semestre_curricular": "2020-10-10 00:00:00",
+        "created_at": "2020-05-22T13:39:18.000000Z",
+        "updated_at": "2020-05-22T13:39:18.000000Z"
     }
 }
 ```
@@ -893,14 +909,19 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "nome": null,
+        "id": 1,
+        "nome": "Engenharia de Requisitos",
         "alunos": [],
-        "regente": null,
+        "regente": {
+            "id": 1,
+            "professor_id": "p2984573",
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
         "assistentes": [],
-        "semestre_curricular": null,
-        "created_at": null,
-        "updated_at": null
+        "semestre_curricular": "2020-10-10 00:00:00",
+        "created_at": "2020-05-22T13:39:18.000000Z",
+        "updated_at": "2020-05-22T13:39:18.000000Z"
     }
 }
 ```
@@ -967,36 +988,32 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "data": [
-                {
-                    "id": 1,
-                    "descricao": "Introdução",
-                    "disciplina": {
-                        "id": 1,
-                        "nome": "Processos e Métricas de Software",
-                        "created_at": "2020-05-18T22:57:25.000000Z",
-                        "updated_at": "2020-05-18T22:57:25.000000Z",
-                        "semestre_curricular": "2020-05-18 00:00:00",
-                        "professor_id": 1
-                    },
-                    "created_at": "2020-05-19T00:13:18.000000Z",
-                    "updated_at": "2020-05-19T00:13:18.000000Z"
-                },
-                {
-                    "id": 2,
-                    "descricao": "Use Cases",
-                    "disciplina": {
-                        "id": 1,
-                        "nome": "Processos e Métricas de Software",
-                        "created_at": "2020-05-18T22:57:25.000000Z",
-                        "updated_at": "2020-05-18T22:57:25.000000Z",
-                        "semestre_curricular": "2020-05-18 00:00:00",
-                        "professor_id": 1
-                    },
-                    "created_at": "2020-05-19T12:59:29.000000Z",
-                    "updated_at": "2020-05-19T12:59:29.000000Z"
-                }
-            ]
+            "id": 1,
+            "descricao": "Introdução",
+            "disciplina": {
+                "id": 1,
+                "nome": "Processos e Métricas de Software",
+                "created_at": "2020-05-18T22:57:25.000000Z",
+                "updated_at": "2020-05-18T22:57:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            },
+            "created_at": "2020-05-19T00:13:18.000000Z",
+            "updated_at": "2020-05-19T00:13:18.000000Z"
+        },
+        {
+            "id": 2,
+            "descricao": "Use Cases",
+            "disciplina": {
+                "id": 1,
+                "nome": "Processos e Métricas de Software",
+                "created_at": "2020-05-18T22:57:25.000000Z",
+                "updated_at": "2020-05-18T22:57:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            },
+            "created_at": "2020-05-19T12:59:29.000000Z",
+            "updated_at": "2020-05-19T12:59:29.000000Z"
         }
     ]
 }
@@ -1051,7 +1068,7 @@ let headers = {
 };
 
 let body = {
-    "descricao": "cum"
+    "descricao": "maiores"
 }
 
 fetch(url, {
@@ -1074,7 +1091,7 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'descricao' => 'cum',
+            'descricao' => 'maiores',
         ],
     ]
 );
@@ -1849,72 +1866,68 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "data": {
-                "id": 1,
-                "nome": "Engenharia de Requisitos",
-                "alunos": [
-                    {
-                        "id": 1,
-                        "aluno_id": "a2082214",
-                        "created_at": "2020-05-19T12:26:22.000000Z",
-                        "updated_at": "2020-05-19T12:26:22.000000Z",
-                        "curso": "Engenharia Informática",
-                        "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                        "ano_curricular": 3
-                    }
-                ],
-                "regente": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "alunos": [
+                {
                     "id": 1,
-                    "professor_id": "p2827464",
+                    "aluno_id": "a2082214",
+                    "created_at": "2020-05-19T12:26:22.000000Z",
+                    "updated_at": "2020-05-19T12:26:22.000000Z",
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                    "ano_curricular": 3
+                }
+            ],
+            "regente": {
+                "id": 1,
+                "professor_id": "p2827464",
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z"
+            },
+            "assistentes": [
+                {
+                    "id": 2,
+                    "professor_id": "p4365476",
                     "created_at": "2020-05-19T12:40:25.000000Z",
                     "updated_at": "2020-05-19T12:40:25.000000Z"
-                },
-                "assistentes": [
-                    {
-                        "id": 2,
-                        "professor_id": "p4365476",
-                        "created_at": "2020-05-19T12:40:25.000000Z",
-                        "updated_at": "2020-05-19T12:40:25.000000Z"
-                    }
-                ],
-                "semestre_curricular": "2020-05-18 00:00:00",
-                "created_at": "2020-05-19T12:49:12.000000Z",
-                "updated_at": "2020-05-19T12:49:12.000000Z"
-            }
+                }
+            ],
+            "semestre_curricular": "2020-05-18 00:00:00",
+            "created_at": "2020-05-19T12:49:12.000000Z",
+            "updated_at": "2020-05-19T12:49:12.000000Z"
         },
         {
-            "data": {
+            "id": 2,
+            "nome": "Processos e Métricas de Software",
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "created_at": "2020-05-19T12:26:22.000000Z",
+                    "updated_at": "2020-05-19T12:26:22.000000Z",
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                    "ano_curricular": 3
+                }
+            ],
+            "regente": {
                 "id": 2,
-                "nome": "Processos e Métricas de Software",
-                "alunos": [
-                    {
-                        "id": 1,
-                        "aluno_id": "a2082214",
-                        "created_at": "2020-05-19T12:26:22.000000Z",
-                        "updated_at": "2020-05-19T12:26:22.000000Z",
-                        "curso": "Engenharia Informática",
-                        "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                        "ano_curricular": 3
-                    }
-                ],
-                "regente": {
+                "professor_id": "pr43523",
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z"
+            },
+            "assistentes": [
+                {
                     "id": 2,
-                    "professor_id": "pr43523",
+                    "professor_id": "p4365476",
                     "created_at": "2020-05-19T12:40:25.000000Z",
                     "updated_at": "2020-05-19T12:40:25.000000Z"
-                },
-                "assistentes": [
-                    {
-                        "id": 2,
-                        "professor_id": "p4365476",
-                        "created_at": "2020-05-19T12:40:25.000000Z",
-                        "updated_at": "2020-05-19T12:40:25.000000Z"
-                    }
-                ],
-                "semestre_curricular": "2020-05-18 00:00:00",
-                "created_at": "2020-05-19T12:49:12.000000Z",
-                "updated_at": "2020-05-19T12:49:12.000000Z"
-            }
+                }
+            ],
+            "semestre_curricular": "2020-05-18 00:00:00",
+            "created_at": "2020-05-19T12:49:12.000000Z",
+            "updated_at": "2020-05-19T12:49:12.000000Z"
         }
     ]
 }
@@ -1925,24 +1938,34 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         },
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         }
     ]
 }
@@ -1971,8 +1994,8 @@ let headers = {
 };
 
 let body = {
-    "nome": "atque",
-    "semestre_curricular": "tenetur"
+    "nome": "et",
+    "semestre_curricular": "velit"
 }
 
 fetch(url, {
@@ -1995,8 +2018,8 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'nome' => 'atque',
-            'semestre_curricular' => 'tenetur',
+            'nome' => 'et',
+            'semestre_curricular' => 'velit',
         ],
     ]
 );
@@ -2049,24 +2072,34 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         },
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         }
     ]
 }
@@ -2167,24 +2200,34 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         },
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         }
     ]
 }
@@ -2285,24 +2328,34 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         },
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         }
     ]
 }
@@ -2376,24 +2429,34 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         },
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         }
     ]
 }
@@ -2460,54 +2523,50 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "data": {
+            "id": 1,
+            "aluno": {
                 "id": 1,
-                "aluno": {
-                    "id": 1,
-                    "aluno_id": "a2082214",
-                    "created_at": "2020-05-19T12:26:22.000000Z",
-                    "updated_at": "2020-05-19T12:26:22.000000Z",
-                    "curso": "Engenharia Informática",
-                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                    "ano_curricular": 3
-                },
-                "disciplina": {
-                    "id": 1,
-                    "nome": "Engenharia de Requisitos",
-                    "created_at": "2020-05-19T12:40:25.000000Z",
-                    "updated_at": "2020-05-19T12:40:25.000000Z",
-                    "semestre_curricular": "2020-05-18 00:00:00",
-                    "professor_id": 1
-                },
-                "ficheiros": [],
-                "created_at": "2020-05-19T13:46:02.000000Z",
-                "updated_at": "2020-05-19T13:46:02.000000Z"
-            }
+                "aluno_id": "a2082214",
+                "created_at": "2020-05-19T12:26:22.000000Z",
+                "updated_at": "2020-05-19T12:26:22.000000Z",
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                "ano_curricular": 3
+            },
+            "disciplina": {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            },
+            "ficheiros": [],
+            "created_at": "2020-05-19T13:46:02.000000Z",
+            "updated_at": "2020-05-19T13:46:02.000000Z"
         },
         {
-            "data": {
+            "id": 2,
+            "aluno": {
+                "id": 1,
+                "aluno_id": "a2082214",
+                "created_at": "2020-05-19T12:26:22.000000Z",
+                "updated_at": "2020-05-19T12:26:22.000000Z",
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                "ano_curricular": 3
+            },
+            "disciplina": {
                 "id": 2,
-                "aluno": {
-                    "id": 1,
-                    "aluno_id": "a2082214",
-                    "created_at": "2020-05-19T12:26:22.000000Z",
-                    "updated_at": "2020-05-19T12:26:22.000000Z",
-                    "curso": "Engenharia Informática",
-                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                    "ano_curricular": 3
-                },
-                "disciplina": {
-                    "id": 2,
-                    "nome": "Processos e Métricas de Software",
-                    "created_at": "2020-05-18T22:57:25.000000Z",
-                    "updated_at": "2020-05-18T22:57:25.000000Z",
-                    "semestre_curricular": "2020-05-18 00:00:00",
-                    "professor_id": 1
-                },
-                "ficheiros": [],
-                "created_at": "2020-05-19T13:46:02.000000Z",
-                "updated_at": "2020-05-19T13:46:02.000000Z"
-            }
+                "nome": "Processos e Métricas de Software",
+                "created_at": "2020-05-18T22:57:25.000000Z",
+                "updated_at": "2020-05-18T22:57:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            },
+            "ficheiros": [],
+            "created_at": "2020-05-19T13:46:02.000000Z",
+            "updated_at": "2020-05-19T13:46:02.000000Z"
         }
     ]
 }
@@ -3201,60 +3260,56 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "data": {
+            "id": 1,
+            "disciplina": {
                 "id": 1,
-                "disciplina": {
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-18T22:57:25.000000Z",
+                "updated_at": "2020-05-18T22:57:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            },
+            "resolucoes": [
+                {
                     "id": 1,
-                    "nome": "Engenharia de Requisitos",
-                    "created_at": "2020-05-18T22:57:25.000000Z",
-                    "updated_at": "2020-05-18T22:57:25.000000Z",
-                    "semestre_curricular": "2020-05-18 00:00:00",
-                    "professor_id": 1
-                },
-                "resolucoes": [
-                    {
-                        "id": 1,
-                        "evento_de_avaliacao_id": 1,
-                        "aluno_id": 1,
-                        "nota": null,
-                        "created_at": "2020-05-19T14:32:10.000000Z",
-                        "updated_at": "2020-05-19T14:32:10.000000Z"
-                    }
-                ],
-                "ficheiros": [],
-                "data_inicio": "2020-01-01",
-                "data_fim": "2020-01-01",
-                "created_at": "2020-05-19T14:17:27.000000Z",
-                "updated_at": "2020-05-19T14:17:27.000000Z"
-            }
+                    "evento_de_avaliacao_id": 1,
+                    "aluno_id": 1,
+                    "nota": null,
+                    "created_at": "2020-05-19T14:32:10.000000Z",
+                    "updated_at": "2020-05-19T14:32:10.000000Z"
+                }
+            ],
+            "ficheiros": [],
+            "data_inicio": "2020-01-01",
+            "data_fim": "2020-01-01",
+            "created_at": "2020-05-19T14:17:27.000000Z",
+            "updated_at": "2020-05-19T14:17:27.000000Z"
         },
         {
-            "data": {
-                "id": 2,
-                "disciplina": {
+            "id": 2,
+            "disciplina": {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-18T22:57:25.000000Z",
+                "updated_at": "2020-05-18T22:57:25.000000Z",
+                "semestre_curricular": "2020-05-18 00:00:00",
+                "professor_id": 1
+            },
+            "resolucoes": [
+                {
                     "id": 1,
-                    "nome": "Engenharia de Requisitos",
-                    "created_at": "2020-05-18T22:57:25.000000Z",
-                    "updated_at": "2020-05-18T22:57:25.000000Z",
-                    "semestre_curricular": "2020-05-18 00:00:00",
-                    "professor_id": 1
-                },
-                "resolucoes": [
-                    {
-                        "id": 1,
-                        "evento_de_avaliacao_id": 1,
-                        "aluno_id": 1,
-                        "nota": null,
-                        "created_at": "2020-05-19T14:32:10.000000Z",
-                        "updated_at": "2020-05-19T14:32:10.000000Z"
-                    }
-                ],
-                "ficheiros": [],
-                "data_inicio": "2020-03-01",
-                "data_fim": "2020-03-01",
-                "created_at": "2020-05-19T14:17:27.000000Z",
-                "updated_at": "2020-05-19T14:17:27.000000Z"
-            }
+                    "evento_de_avaliacao_id": 1,
+                    "aluno_id": 1,
+                    "nota": null,
+                    "created_at": "2020-05-19T14:32:10.000000Z",
+                    "updated_at": "2020-05-19T14:32:10.000000Z"
+                }
+            ],
+            "ficheiros": [],
+            "data_inicio": "2020-03-01",
+            "data_fim": "2020-03-01",
+            "created_at": "2020-05-19T14:17:27.000000Z",
+            "updated_at": "2020-05-19T14:17:27.000000Z"
         }
     ]
 }
@@ -3265,24 +3320,38 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "id": null,
-            "disciplina": null,
+            "id": 1,
+            "disciplina": {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-22T13:39:18.000000Z",
+                "updated_at": "2020-05-22T13:39:18.000000Z",
+                "semestre_curricular": "2020-10-10 00:00:00",
+                "professor_id": 1
+            },
             "resolucoes": [],
             "ficheiros": [],
-            "data_inicio": null,
-            "data_fim": null,
-            "created_at": null,
-            "updated_at": null
+            "data_inicio": "2020-10-10 00:00:00",
+            "data_fim": "2020-10-11 00:00:00",
+            "created_at": "2020-05-22T13:44:01.000000Z",
+            "updated_at": "2020-05-22T13:44:01.000000Z"
         },
         {
-            "id": null,
-            "disciplina": null,
+            "id": 1,
+            "disciplina": {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-22T13:39:18.000000Z",
+                "updated_at": "2020-05-22T13:39:18.000000Z",
+                "semestre_curricular": "2020-10-10 00:00:00",
+                "professor_id": 1
+            },
             "resolucoes": [],
             "ficheiros": [],
-            "data_inicio": null,
-            "data_fim": null,
-            "created_at": null,
-            "updated_at": null
+            "data_inicio": "2020-10-10 00:00:00",
+            "data_fim": "2020-10-11 00:00:00",
+            "created_at": "2020-05-22T13:44:01.000000Z",
+            "updated_at": "2020-05-22T13:44:01.000000Z"
         }
     ]
 }
@@ -3315,8 +3384,8 @@ let headers = {
 };
 
 let body = {
-    "data_inicio": "et",
-    "data_fim": "aut"
+    "data_inicio": "quia",
+    "data_fim": "et"
 }
 
 fetch(url, {
@@ -3339,8 +3408,8 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'data_inicio' => 'et',
-            'data_fim' => 'aut',
+            'data_inicio' => 'quia',
+            'data_fim' => 'et',
         ],
     ]
 );
@@ -3386,14 +3455,21 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "disciplina": null,
+        "id": 1,
+        "disciplina": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z",
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "professor_id": 1
+        },
         "resolucoes": [],
         "ficheiros": [],
-        "data_inicio": null,
-        "data_fim": null,
-        "created_at": null,
-        "updated_at": null
+        "data_inicio": "2020-10-10 00:00:00",
+        "data_fim": "2020-10-11 00:00:00",
+        "created_at": "2020-05-22T13:44:01.000000Z",
+        "updated_at": "2020-05-22T13:44:01.000000Z"
     }
 }
 ```
@@ -3491,14 +3567,21 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "disciplina": null,
+        "id": 1,
+        "disciplina": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z",
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "professor_id": 1
+        },
         "resolucoes": [],
         "ficheiros": [],
-        "data_inicio": null,
-        "data_fim": null,
-        "created_at": null,
-        "updated_at": null
+        "data_inicio": "2020-10-10 00:00:00",
+        "data_fim": "2020-10-11 00:00:00",
+        "created_at": "2020-05-22T13:44:01.000000Z",
+        "updated_at": "2020-05-22T13:44:01.000000Z"
     }
 }
 ```
@@ -3592,14 +3675,21 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "disciplina": null,
+        "id": 1,
+        "disciplina": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z",
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "professor_id": 1
+        },
         "resolucoes": [],
         "ficheiros": [],
-        "data_inicio": null,
-        "data_fim": null,
-        "created_at": null,
-        "updated_at": null
+        "data_inicio": "2020-10-10 00:00:00",
+        "data_fim": "2020-10-11 00:00:00",
+        "created_at": "2020-05-22T13:44:01.000000Z",
+        "updated_at": "2020-05-22T13:44:01.000000Z"
     }
 }
 ```
@@ -3672,14 +3762,21 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "disciplina": null,
+        "id": 1,
+        "disciplina": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z",
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "professor_id": 1
+        },
         "resolucoes": [],
         "ficheiros": [],
-        "data_inicio": null,
-        "data_fim": null,
-        "created_at": null,
-        "updated_at": null
+        "data_inicio": "2020-10-10 00:00:00",
+        "data_fim": "2020-10-11 00:00:00",
+        "created_at": "2020-05-22T13:44:01.000000Z",
+        "updated_at": "2020-05-22T13:44:01.000000Z"
     }
 }
 ```
@@ -4177,58 +4274,112 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "data": {
-                "id": 1,
-                "professor_id": "p2827464",
-                "user": {
-                    "id": 3,
-                    "name": "Filipe Quintal",
-                    "email": "filipe.quintal@staff.uma.pt",
-                    "email_verified_at": null,
-                    "created_at": "2020-05-19T12:40:25.000000Z",
-                    "updated_at": "2020-05-19T12:40:25.000000Z"
-                },
-                "disciplinas": [],
-                "regente": [
-                    {
-                        "id": 1,
-                        "nome": "Engenharia de Requisitos",
-                        "created_at": "2020-05-19T12:49:12.000000Z",
-                        "updated_at": "2020-05-19T12:49:12.000000Z",
-                        "semestre_curricular": "2020-10-10 00:00:00",
-                        "professor_id": 1
-                    }
-                ],
+            "id": 1,
+            "professor_id": "p2827464",
+            "user": {
+                "id": 3,
+                "name": "Filipe Quintal",
+                "email": "filipe.quintal@staff.uma.pt",
+                "email_verified_at": null,
                 "created_at": "2020-05-19T12:40:25.000000Z",
                 "updated_at": "2020-05-19T12:40:25.000000Z"
-            }
+            },
+            "disciplinas": [],
+            "regente": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-19T12:49:12.000000Z",
+                    "updated_at": "2020-05-19T12:49:12.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
+            "created_at": "2020-05-19T12:40:25.000000Z",
+            "updated_at": "2020-05-19T12:40:25.000000Z"
         },
         {
-            "data": {
-                "id": 2,
-                "professor_id": "pr43523",
-                "user": {
-                    "id": 4,
-                    "name": "Duarte Paulo",
-                    "email": "duarte.paulo@staff.uma.pt",
-                    "email_verified_at": null,
-                    "created_at": "2020-05-19T12:40:25.000000Z",
-                    "updated_at": "2020-05-19T12:40:25.000000Z"
-                },
-                "disciplinas": [],
-                "regente": [
-                    {
-                        "id": 2,
-                        "nome": "Processos e Métricas de Software",
-                        "created_at": "2020-05-19T12:49:12.000000Z",
-                        "updated_at": "2020-05-19T12:49:12.000000Z",
-                        "semestre_curricular": "2020-10-10 00:00:00",
-                        "professor_id": 1
-                    }
-                ],
+            "id": 2,
+            "professor_id": "pr43523",
+            "user": {
+                "id": 4,
+                "name": "Duarte Paulo",
+                "email": "duarte.paulo@staff.uma.pt",
+                "email_verified_at": null,
                 "created_at": "2020-05-19T12:40:25.000000Z",
                 "updated_at": "2020-05-19T12:40:25.000000Z"
-            }
+            },
+            "disciplinas": [],
+            "regente": [
+                {
+                    "id": 2,
+                    "nome": "Processos e Métricas de Software",
+                    "created_at": "2020-05-19T12:49:12.000000Z",
+                    "updated_at": "2020-05-19T12:49:12.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
+            "created_at": "2020-05-19T12:40:25.000000Z",
+            "updated_at": "2020-05-19T12:40:25.000000Z"
+        }
+    ]
+}
+```
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "professor_id": "p2984573",
+            "user": {
+                "id": 2,
+                "name": "Filipe Quintal",
+                "email": "filipe.quintal@staff.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "disciplinas": [],
+            "regente": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
+        {
+            "id": 1,
+            "professor_id": "p2984573",
+            "user": {
+                "id": 2,
+                "name": "Filipe Quintal",
+                "email": "filipe.quintal@staff.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "disciplinas": [],
+            "regente": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
         }
     ]
 }
@@ -4256,11 +4407,11 @@ let headers = {
 };
 
 let body = {
-    "professor_id": "omnis",
-    "name": "illo",
-    "email": "eos",
-    "password": "nulla",
-    "password_confirmation": "est"
+    "professor_id": "cupiditate",
+    "name": "consequatur",
+    "email": "incidunt",
+    "password": "voluptate",
+    "password_confirmation": "voluptas"
 }
 
 fetch(url, {
@@ -4283,11 +4434,11 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'professor_id' => 'omnis',
-            'name' => 'illo',
-            'email' => 'eos',
-            'password' => 'nulla',
-            'password_confirmation' => 'est',
+            'professor_id' => 'cupiditate',
+            'name' => 'consequatur',
+            'email' => 'incidunt',
+            'password' => 'voluptate',
+            'password_confirmation' => 'voluptas',
         ],
     ]
 );
@@ -4324,6 +4475,37 @@ print_r(json_decode((string) $body));
         ],
         "created_at": "2020-05-19T12:40:25.000000Z",
         "updated_at": "2020-05-19T12:40:25.000000Z"
+    }
+}
+```
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "professor_id": "p2984573",
+        "user": {
+            "id": 2,
+            "name": "Filipe Quintal",
+            "email": "filipe.quintal@staff.uma.pt",
+            "email_verified_at": null,
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
+        "disciplinas": [],
+        "regente": [
+            {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-22T13:39:18.000000Z",
+                "updated_at": "2020-05-22T13:39:18.000000Z",
+                "semestre_curricular": "2020-10-10 00:00:00",
+                "professor_id": 1
+            }
+        ],
+        "created_at": "2020-05-22T13:34:29.000000Z",
+        "updated_at": "2020-05-22T13:34:29.000000Z"
     }
 }
 ```
@@ -4413,6 +4595,37 @@ print_r(json_decode((string) $body));
     }
 }
 ```
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "professor_id": "p2984573",
+        "user": {
+            "id": 2,
+            "name": "Filipe Quintal",
+            "email": "filipe.quintal@staff.uma.pt",
+            "email_verified_at": null,
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
+        "disciplinas": [],
+        "regente": [
+            {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-22T13:39:18.000000Z",
+                "updated_at": "2020-05-22T13:39:18.000000Z",
+                "semestre_curricular": "2020-10-10 00:00:00",
+                "professor_id": 1
+            }
+        ],
+        "created_at": "2020-05-22T13:34:29.000000Z",
+        "updated_at": "2020-05-22T13:34:29.000000Z"
+    }
+}
+```
 
 ### HTTP Request
 `GET api/professores/{professore}`
@@ -4496,6 +4709,37 @@ print_r(json_decode((string) $body));
     }
 }
 ```
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "professor_id": "p2984573",
+        "user": {
+            "id": 2,
+            "name": "Filipe Quintal",
+            "email": "filipe.quintal@staff.uma.pt",
+            "email_verified_at": null,
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
+        "disciplinas": [],
+        "regente": [
+            {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-22T13:39:18.000000Z",
+                "updated_at": "2020-05-22T13:39:18.000000Z",
+                "semestre_curricular": "2020-10-10 00:00:00",
+                "professor_id": 1
+            }
+        ],
+        "created_at": "2020-05-22T13:34:29.000000Z",
+        "updated_at": "2020-05-22T13:34:29.000000Z"
+    }
+}
+```
 
 ### HTTP Request
 `PUT api/professores/{professore}`
@@ -4559,6 +4803,37 @@ print_r(json_decode((string) $body));
     "response": "professor_destroyed"
 }
 ```
+> Example response (200):
+
+```json
+{
+    "data": {
+        "id": 1,
+        "professor_id": "p2984573",
+        "user": {
+            "id": 2,
+            "name": "Filipe Quintal",
+            "email": "filipe.quintal@staff.uma.pt",
+            "email_verified_at": null,
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
+        "disciplinas": [],
+        "regente": [
+            {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "created_at": "2020-05-22T13:39:18.000000Z",
+                "updated_at": "2020-05-22T13:39:18.000000Z",
+                "semestre_curricular": "2020-10-10 00:00:00",
+                "professor_id": 1
+            }
+        ],
+        "created_at": "2020-05-22T13:34:29.000000Z",
+        "updated_at": "2020-05-22T13:34:29.000000Z"
+    }
+}
+```
 
 ### HTTP Request
 `DELETE api/professores/{professore}`
@@ -4617,72 +4892,68 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "data": {
-                "id": 1,
-                "nome": "Engenharia de Requisitos",
-                "alunos": [
-                    {
-                        "id": 1,
-                        "aluno_id": "a2082214",
-                        "created_at": "2020-05-19T12:26:22.000000Z",
-                        "updated_at": "2020-05-19T12:26:22.000000Z",
-                        "curso": "Engenharia Informática",
-                        "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                        "ano_curricular": 3
-                    }
-                ],
-                "regente": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "alunos": [
+                {
                     "id": 1,
-                    "professor_id": "p2827464",
+                    "aluno_id": "a2082214",
+                    "created_at": "2020-05-19T12:26:22.000000Z",
+                    "updated_at": "2020-05-19T12:26:22.000000Z",
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                    "ano_curricular": 3
+                }
+            ],
+            "regente": {
+                "id": 1,
+                "professor_id": "p2827464",
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z"
+            },
+            "assistentes": [
+                {
+                    "id": 2,
+                    "professor_id": "p4365476",
                     "created_at": "2020-05-19T12:40:25.000000Z",
                     "updated_at": "2020-05-19T12:40:25.000000Z"
-                },
-                "assistentes": [
-                    {
-                        "id": 2,
-                        "professor_id": "p4365476",
-                        "created_at": "2020-05-19T12:40:25.000000Z",
-                        "updated_at": "2020-05-19T12:40:25.000000Z"
-                    }
-                ],
-                "semestre_curricular": "2020-05-18 00:00:00",
-                "created_at": "2020-05-19T12:49:12.000000Z",
-                "updated_at": "2020-05-19T12:49:12.000000Z"
-            }
+                }
+            ],
+            "semestre_curricular": "2020-05-18 00:00:00",
+            "created_at": "2020-05-19T12:49:12.000000Z",
+            "updated_at": "2020-05-19T12:49:12.000000Z"
         },
         {
-            "data": {
+            "id": 2,
+            "nome": "Processos e Métricas de Software",
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "created_at": "2020-05-19T12:26:22.000000Z",
+                    "updated_at": "2020-05-19T12:26:22.000000Z",
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                    "ano_curricular": 3
+                }
+            ],
+            "regente": {
                 "id": 2,
-                "nome": "Processos e Métricas de Software",
-                "alunos": [
-                    {
-                        "id": 1,
-                        "aluno_id": "a2082214",
-                        "created_at": "2020-05-19T12:26:22.000000Z",
-                        "updated_at": "2020-05-19T12:26:22.000000Z",
-                        "curso": "Engenharia Informática",
-                        "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                        "ano_curricular": 3
-                    }
-                ],
-                "regente": {
+                "professor_id": "pr43523",
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z"
+            },
+            "assistentes": [
+                {
                     "id": 2,
-                    "professor_id": "pr43523",
+                    "professor_id": "p4365476",
                     "created_at": "2020-05-19T12:40:25.000000Z",
                     "updated_at": "2020-05-19T12:40:25.000000Z"
-                },
-                "assistentes": [
-                    {
-                        "id": 2,
-                        "professor_id": "p4365476",
-                        "created_at": "2020-05-19T12:40:25.000000Z",
-                        "updated_at": "2020-05-19T12:40:25.000000Z"
-                    }
-                ],
-                "semestre_curricular": "2020-05-18 00:00:00",
-                "created_at": "2020-05-19T12:49:12.000000Z",
-                "updated_at": "2020-05-19T12:49:12.000000Z"
-            }
+                }
+            ],
+            "semestre_curricular": "2020-05-18 00:00:00",
+            "created_at": "2020-05-19T12:49:12.000000Z",
+            "updated_at": "2020-05-19T12:49:12.000000Z"
         }
     ]
 }
@@ -4693,24 +4964,34 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         },
         {
-            "id": null,
-            "nome": null,
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
             "alunos": [],
-            "regente": null,
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
             "assistentes": [],
-            "semestre_curricular": null,
-            "created_at": null,
-            "updated_at": null
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
         }
     ]
 }
@@ -4743,7 +5024,7 @@ let headers = {
 };
 
 let body = {
-    "disciplina_id": "et"
+    "disciplina_id": "similique"
 }
 
 fetch(url, {
@@ -4766,7 +5047,7 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'disciplina_id' => 'et',
+            'disciplina_id' => 'similique',
         ],
     ]
 );
@@ -4781,72 +5062,68 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "data": {
-                "id": 1,
-                "nome": "Engenharia de Requisitos",
-                "alunos": [
-                    {
-                        "id": 1,
-                        "aluno_id": "a2082214",
-                        "created_at": "2020-05-19T12:26:22.000000Z",
-                        "updated_at": "2020-05-19T12:26:22.000000Z",
-                        "curso": "Engenharia Informática",
-                        "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                        "ano_curricular": 3
-                    }
-                ],
-                "regente": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "alunos": [
+                {
                     "id": 1,
-                    "professor_id": "p2827464",
+                    "aluno_id": "a2082214",
+                    "created_at": "2020-05-19T12:26:22.000000Z",
+                    "updated_at": "2020-05-19T12:26:22.000000Z",
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                    "ano_curricular": 3
+                }
+            ],
+            "regente": {
+                "id": 1,
+                "professor_id": "p2827464",
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z"
+            },
+            "assistentes": [
+                {
+                    "id": 2,
+                    "professor_id": "p4365476",
                     "created_at": "2020-05-19T12:40:25.000000Z",
                     "updated_at": "2020-05-19T12:40:25.000000Z"
-                },
-                "assistentes": [
-                    {
-                        "id": 2,
-                        "professor_id": "p4365476",
-                        "created_at": "2020-05-19T12:40:25.000000Z",
-                        "updated_at": "2020-05-19T12:40:25.000000Z"
-                    }
-                ],
-                "semestre_curricular": "2020-05-18 00:00:00",
-                "created_at": "2020-05-19T12:49:12.000000Z",
-                "updated_at": "2020-05-19T12:49:12.000000Z"
-            }
+                }
+            ],
+            "semestre_curricular": "2020-05-18 00:00:00",
+            "created_at": "2020-05-19T12:49:12.000000Z",
+            "updated_at": "2020-05-19T12:49:12.000000Z"
         },
         {
-            "data": {
+            "id": 2,
+            "nome": "Processos e Métricas de Software",
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "created_at": "2020-05-19T12:26:22.000000Z",
+                    "updated_at": "2020-05-19T12:26:22.000000Z",
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                    "ano_curricular": 3
+                }
+            ],
+            "regente": {
                 "id": 2,
-                "nome": "Processos e Métricas de Software",
-                "alunos": [
-                    {
-                        "id": 1,
-                        "aluno_id": "a2082214",
-                        "created_at": "2020-05-19T12:26:22.000000Z",
-                        "updated_at": "2020-05-19T12:26:22.000000Z",
-                        "curso": "Engenharia Informática",
-                        "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                        "ano_curricular": 3
-                    }
-                ],
-                "regente": {
+                "professor_id": "pr43523",
+                "created_at": "2020-05-19T12:40:25.000000Z",
+                "updated_at": "2020-05-19T12:40:25.000000Z"
+            },
+            "assistentes": [
+                {
                     "id": 2,
-                    "professor_id": "pr43523",
+                    "professor_id": "p4365476",
                     "created_at": "2020-05-19T12:40:25.000000Z",
                     "updated_at": "2020-05-19T12:40:25.000000Z"
-                },
-                "assistentes": [
-                    {
-                        "id": 2,
-                        "professor_id": "p4365476",
-                        "created_at": "2020-05-19T12:40:25.000000Z",
-                        "updated_at": "2020-05-19T12:40:25.000000Z"
-                    }
-                ],
-                "semestre_curricular": "2020-05-18 00:00:00",
-                "created_at": "2020-05-19T12:49:12.000000Z",
-                "updated_at": "2020-05-19T12:49:12.000000Z"
-            }
+                }
+            ],
+            "semestre_curricular": "2020-05-18 00:00:00",
+            "created_at": "2020-05-19T12:49:12.000000Z",
+            "updated_at": "2020-05-19T12:49:12.000000Z"
         }
     ]
 }
@@ -4856,14 +5133,19 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "nome": null,
+        "id": 1,
+        "nome": "Engenharia de Requisitos",
         "alunos": [],
-        "regente": null,
+        "regente": {
+            "id": 1,
+            "professor_id": "p2984573",
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
         "assistentes": [],
-        "semestre_curricular": null,
-        "created_at": null,
-        "updated_at": null
+        "semestre_curricular": "2020-10-10 00:00:00",
+        "created_at": "2020-05-22T13:39:18.000000Z",
+        "updated_at": "2020-05-22T13:39:18.000000Z"
     }
 }
 ```
@@ -4928,14 +5210,19 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "nome": null,
+        "id": 1,
+        "nome": "Engenharia de Requisitos",
         "alunos": [],
-        "regente": null,
+        "regente": {
+            "id": 1,
+            "professor_id": "p2984573",
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
         "assistentes": [],
-        "semestre_curricular": null,
-        "created_at": null,
-        "updated_at": null
+        "semestre_curricular": "2020-10-10 00:00:00",
+        "created_at": "2020-05-22T13:39:18.000000Z",
+        "updated_at": "2020-05-22T13:39:18.000000Z"
     }
 }
 ```
@@ -5006,14 +5293,19 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "nome": null,
+        "id": 1,
+        "nome": "Engenharia de Requisitos",
         "alunos": [],
-        "regente": null,
+        "regente": {
+            "id": 1,
+            "professor_id": "p2984573",
+            "created_at": "2020-05-22T13:34:29.000000Z",
+            "updated_at": "2020-05-22T13:34:29.000000Z"
+        },
         "assistentes": [],
-        "semestre_curricular": null,
-        "created_at": null,
-        "updated_at": null
+        "semestre_curricular": "2020-10-10 00:00:00",
+        "created_at": "2020-05-22T13:39:18.000000Z",
+        "updated_at": "2020-05-22T13:39:18.000000Z"
     }
 }
 ```
@@ -5176,54 +5468,50 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "data": {
+            "id": 1,
+            "aluno": {
                 "id": 1,
-                "aluno": {
-                    "id": 1,
-                    "aluno_id": "a2082214",
-                    "created_at": "2020-05-19T12:26:22.000000Z",
-                    "updated_at": "2020-05-19T12:26:22.000000Z",
-                    "curso": "Engenharia Informática",
-                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                    "ano_curricular": 3
-                },
-                "evento_de_avaliacao": {
-                    "id": 1,
-                    "disciplina_id": 1,
-                    "data_inicio": "2020-01-01 00:00:00",
-                    "data_fim": "2020-01-01 00:00:00",
-                    "created_at": "2020-05-19T14:04:40.000000Z",
-                    "updated_at": "2020-05-19T14:04:40.000000Z"
-                },
-                "nota": null,
-                "created_at": "2020-05-19T14:32:10.000000Z",
-                "updated_at": "2020-05-19T14:32:10.000000Z"
-            }
+                "aluno_id": "a2082214",
+                "created_at": "2020-05-19T12:26:22.000000Z",
+                "updated_at": "2020-05-19T12:26:22.000000Z",
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                "ano_curricular": 3
+            },
+            "evento_de_avaliacao": {
+                "id": 1,
+                "disciplina_id": 1,
+                "data_inicio": "2020-01-01 00:00:00",
+                "data_fim": "2020-01-01 00:00:00",
+                "created_at": "2020-05-19T14:04:40.000000Z",
+                "updated_at": "2020-05-19T14:04:40.000000Z"
+            },
+            "nota": null,
+            "created_at": "2020-05-19T14:32:10.000000Z",
+            "updated_at": "2020-05-19T14:32:10.000000Z"
         },
         {
-            "data": {
+            "id": 2,
+            "aluno": {
                 "id": 2,
-                "aluno": {
-                    "id": 2,
-                    "aluno_id": "a208557",
-                    "created_at": "2020-05-19T12:26:22.000000Z",
-                    "updated_at": "2020-05-19T12:26:22.000000Z",
-                    "curso": "Engenharia Informática",
-                    "data_de_matricula_inicial": "2020-10-10 00:00:00",
-                    "ano_curricular": 3
-                },
-                "evento_de_avaliacao": {
-                    "id": 1,
-                    "disciplina_id": 1,
-                    "data_inicio": "2020-01-01 00:00:00",
-                    "data_fim": "2020-01-01 00:00:00",
-                    "created_at": "2020-05-19T14:04:40.000000Z",
-                    "updated_at": "2020-05-19T14:04:40.000000Z"
-                },
-                "nota": null,
-                "created_at": "2020-05-19T14:32:10.000000Z",
-                "updated_at": "2020-05-19T14:32:10.000000Z"
-            }
+                "aluno_id": "a208557",
+                "created_at": "2020-05-19T12:26:22.000000Z",
+                "updated_at": "2020-05-19T12:26:22.000000Z",
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-10-10 00:00:00",
+                "ano_curricular": 3
+            },
+            "evento_de_avaliacao": {
+                "id": 1,
+                "disciplina_id": 1,
+                "data_inicio": "2020-01-01 00:00:00",
+                "data_fim": "2020-01-01 00:00:00",
+                "created_at": "2020-05-19T14:04:40.000000Z",
+                "updated_at": "2020-05-19T14:04:40.000000Z"
+            },
+            "nota": null,
+            "created_at": "2020-05-19T14:32:10.000000Z",
+            "updated_at": "2020-05-19T14:32:10.000000Z"
         }
     ]
 }

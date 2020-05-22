@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Codement API",
-        "_postman_id": "97e02e98-a8a2-4f0c-89d8-bac58607b88a",
+        "_postman_id": "ce90ebef-eef2-4aa6-b145-30feb4803438",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"aluno_id\": \"excepturi\",\n    \"curso\": \"sint\",\n    \"data_de_matricula_inicial\": \"veniam\",\n    \"ano_curricular\": 5,\n    \"name\": \"veniam\",\n    \"email\": \"doloribus\",\n    \"password\": \"dolor\",\n    \"password_confirmation\": \"accusamus\"\n}"
+                            "raw": "{\n    \"aluno_id\": \"hic\",\n    \"curso\": \"quia\",\n    \"data_de_matricula_inicial\": \"voluptatum\",\n    \"ano_curricular\": 8,\n    \"name\": \"modi\",\n    \"email\": \"est\",\n    \"password\": \"ut\",\n    \"password_confirmation\": \"qui\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -241,7 +241,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"disciplina_id\": \"quas\"\n}"
+                            "raw": "{\n    \"disciplina_id\": \"quisquam\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -403,7 +403,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"descricao\": \"cum\"\n}"
+                            "raw": "{\n    \"descricao\": \"maiores\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -877,7 +877,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nome\": \"atque\",\n    \"semestre_curricular\": \"tenetur\"\n}"
+                            "raw": "{\n    \"nome\": \"et\",\n    \"semestre_curricular\": \"velit\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1407,7 +1407,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"data_inicio\": \"et\",\n    \"data_fim\": \"aut\"\n}"
+                            "raw": "{\n    \"data_inicio\": \"quia\",\n    \"data_fim\": \"et\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1853,7 +1853,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"professor_id\": \"omnis\",\n    \"name\": \"illo\",\n    \"email\": \"eos\",\n    \"password\": \"nulla\",\n    \"password_confirmation\": \"est\"\n}"
+                            "raw": "{\n    \"professor_id\": \"cupiditate\",\n    \"name\": \"consequatur\",\n    \"email\": \"incidunt\",\n    \"password\": \"voluptate\",\n    \"password_confirmation\": \"voluptas\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1993,7 +1993,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"disciplina_id\": \"et\"\n}"
+                            "raw": "{\n    \"disciplina_id\": \"similique\"\n}"
                         },
                         "description": "",
                         "response": []
