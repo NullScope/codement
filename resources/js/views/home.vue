@@ -1,11 +1,9 @@
 <template>
   <div>
     <a href="" @click.prevent="login">Login</a>
-    <div class="test">
-      <example-component></example-component>
+    <div>
       <code-highlighter></code-highlighter>
     </div>
-
   </div>
 </template>
 
@@ -50,19 +48,5 @@
 </script>
 
 <style>
-  .test {
-    width: 70%;
-    margin: 0 auto;
-  }
-  #prism {
-    pointer-events: none;
-  }
-  .line-numbers-rows {
-    pointer-events: none;
-  }
 
-  .line-numbers-rows > * {
-    pointer-events: all !important;
-    cursor: pointer;
-  }
 </style>
