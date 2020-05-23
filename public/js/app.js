@@ -2659,6 +2659,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -51834,7 +51837,9 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("th", [_vm._v("Aula")]),
                   _vm._v(" "),
-                  _c("th", [_vm._v("Ficheiros")]),
+                  _c("th", [_vm._v("Nº de Ficheiros")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Link")]),
                   _vm._v(" "),
                   _c("th", [_vm._v("Data de criação")]),
                   _vm._v(" "),
@@ -51846,7 +51851,9 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td", [_vm._v("Introdução")]),
                   _vm._v(" "),
-                  _c("td", [_vm._v("«Ficheiros»")]),
+                  _c("td", [_vm._v("2")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("«Link à aula»")]),
                   _vm._v(" "),
                   _c("td", [_vm._v("2020-04-13")]),
                   _vm._v(" "),
@@ -51856,7 +51863,9 @@ var staticRenderFns = [
                 _c("tr", [
                   _c("td", [_vm._v("Use Cases")]),
                   _vm._v(" "),
-                  _c("td", [_vm._v("«Ficheiros»")]),
+                  _c("td", [_vm._v("3")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("«Link à aula»")]),
                   _vm._v(" "),
                   _c("td", [_vm._v("2020-05-05")]),
                   _vm._v(" "),
