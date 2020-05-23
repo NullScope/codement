@@ -1,4 +1,3 @@
-
 <template>
     <div>
       <form @submit.prevent="logout" class="mb-3">
@@ -10,7 +9,6 @@
 <script lang="ts">
 import axios from "axios";
   export default {
-
     mounted()
     {
       /*axios.post('http://127.0.0.1:8000/login', {
@@ -20,14 +18,14 @@ import axios from "axios";
     },
     methods: {
       logout() {
-
         axios.post('http://localhost:8000/logout',{})
         .then((response) => {
             alert("Saiu macarrao");
+            var x = document.getElementById("login");
+            x.style.display = "block";
         }, (error) => {
           alert("nao saiu macarrao");
         });
-
       /*  alert(JSON.stringify(this.Conta));
         axios.post('api/alunos', {
           "aluno_id": this.Conta.aluno_id,
@@ -39,7 +37,6 @@ import axios from "axios";
           "password": this.Conta.password,
           "password_confirmation": this.Conta.password_confirmation
         });*/
-
       /*  axios.post('http://localhost:8000/register', {
           "aluno_id": "jorge",
           "curso": "sint",
@@ -73,9 +70,7 @@ import axios from "axios";
           "password": "accusamus",
           "password_confirmation": "accusamus"
       });*/
-
-
-
     },
   }
+}
 </script>

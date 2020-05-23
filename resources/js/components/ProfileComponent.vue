@@ -13,10 +13,26 @@ import axios from "axios";
 
     mounted()
     {
-      /*axios.post('http://127.0.0.1:8000/login', {
-      email: "email@gmail.com",
-      password: "12345678"
-      });*/
+      axios.get('api/me', {})
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+        try {
+          if(JSON.stringify(response.data.error)=="true")
+          {
+            var x = document.getElementById("login");
+            x.style.display = "block";
+          }
+          else
+          {
+            var x = document.getElementById("login");
+            x.style.display = "none";
+          }
+        }
+        catch(err) {
+        }
+      }, (error) => {
+        alert(error);
+      });
     },
     methods: {
       me(){
@@ -27,12 +43,17 @@ import axios from "axios";
             alert(JSON.stringify(response.data.data.profile.email)+" id: "+JSON.stringify(response.data.data.profile.id));
           }
           catch(err) {
-            alert(JSON.stringify(response.data.data.user.email)+" id: "+JSON.stringify(response.data.data.user.id));
-          }
+            try {
+              alert(JSON.stringify(response.data.data.user.email)+" id: "+JSON.stringify(response.data.data.user.id));
+            }
+            catch(err) {
+              alert("ninguem logado"));
+            }
 
+          }
           //alert(JSON.stringify(response.data.data.profile.email)+" id: "+JSON.stringify(response.data.data.profile.id));
         }, (error) => {
-          console.log(error);
+          alert(error);
         });
       }
     }

@@ -1,4 +1,3 @@
-
 <template>
     <div>
 
@@ -17,10 +16,6 @@
 <script lang="ts">
 import axios from "axios";
   export default {
-
-    mounted()
-    {
-    },
     data()
     {
       return {

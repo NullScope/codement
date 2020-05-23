@@ -2725,9 +2725,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function () {
@@ -6027,8 +6024,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function () {
-    },
     data: function () {
         return {
             Disciplina: {
@@ -6137,57 +6132,26 @@ __webpack_require__.r(__webpack_exports__);
         login: function () {
             axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('http://localhost:8000/login', { "email": this.Conta.email, "password": this.Conta.password, })
                 .then(function (response) {
+                var x = document.getElementById("login");
+                x.style.display = "none";
                 alert("Entrou macarrao");
             }, function (error) {
                 alert("nao entrou macarrao");
             });
-            /*  alert(JSON.stringify(this.Conta));
-              axios.post('api/alunos', {
-                "aluno_id": this.Conta.aluno_id,
-                "curso": this.Conta.curso,
-                "data_de_matricula_inicial": this.Conta.data_de_matricula_inicial,
-                "ano_curricular": this.Conta.ano_curricular,
-                "name": this.Conta.name,
-                "email": this.Conta.email,
-                "password": this.Conta.password,
-                "password_confirmation": this.Conta.password_confirmation
-              });*/
-            /*  axios.post('http://localhost:8000/register', {
-                "aluno_id": "jorge",
-                "curso": "sint",
-                "data_de_matricula_inicial": "2020-04-04 23:45:58",
-                "ano_curricular": 5,
-                "name": "jorge",
-                "email": "jorge@gmail.com",
-                "password": "1234312312",
-                "password_confirmation": "1234312312"
-            });*/
-            // Add
-            //  alert(JSON.stringify(this.Conta));
-            /*axios.post('http://localhost:8000/login', {
-              "email": "ddsas@gmail.com",
-              "password": "accusamus",
-          });*/
-            /*  axios.post('api/professores', {
-                "professor_id": "excepturi",
-                "name": "veniam",
-                "email": "d2s@gmail.com",
-                "password": "accusamus",
-                "password_confirmation": "accusamus"
-            });*/
-            /*axios.post('api/alunos', {
-              "aluno_id": "excepturi",
-              "curso": "sint",
-              "data_de_matricula_inicial": "2020-05-05 23:45:58",
-              "ano_curricular": 5,
-              "name": "veniam",
-              "email": "doloribus@gmail.com",
-              "password": "accusamus",
-              "password_confirmation": "accusamus"
-          });*/
+        },
+        showReg: function () {
+            var x = document.getElementById("login");
+            x.style.display = "none";
+            var y = document.getElementById("register");
+            y.style.display = "block";
         },
         me: function () {
-            axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/me', {});
+            axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/me', {})
+                .then(function (response) {
+                alert(JSON.stringify(response));
+            }, function (error) {
+                alert("nao entrou macarrao");
+            });
         }
     }
 });
@@ -6219,6 +6183,8 @@ __webpack_require__.r(__webpack_exports__);
             axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('http://localhost:8000/logout', {})
                 .then(function (response) {
                 alert("Saiu macarrao");
+                var x = document.getElementById("login");
+                x.style.display = "block";
             }, function (error) {
                 alert("nao saiu macarrao");
             });
@@ -6287,10 +6253,24 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function () {
-        /*axios.post('http://127.0.0.1:8000/login', {
-        email: "email@gmail.com",
-        password: "12345678"
-        });*/
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/me', {})
+            .then(function (response) {
+            console.log(JSON.stringify(response.data));
+            try {
+                if (JSON.stringify(response.data.error) == "true") {
+                    var x = document.getElementById("login");
+                    x.style.display = "block";
+                }
+                else {
+                    var x = document.getElementById("login");
+                    x.style.display = "none";
+                }
+            }
+            catch (err) {
+            }
+        }, function (error) {
+            alert(error);
+        });
     },
     methods: {
         me: function () {
@@ -6301,15 +6281,22 @@ __webpack_require__.r(__webpack_exports__);
                     alert(JSON.stringify(response.data.data.profile.email) + " id: " + JSON.stringify(response.data.data.profile.id));
                 }
                 catch (err) {
-                    alert(JSON.stringify(response.data.data.user.email) + " id: " + JSON.stringify(response.data.data.user.id));
+                    try {
+                        alert(JSON.stringify(response.data.data.user.email) + " id: " + JSON.stringify(response.data.data.user.id));
+                    }
+                    catch (err) {
+                        alert("ninguem logado");
+                    }
                 }
-                //alert(JSON.stringify(response.data.data.profile.email)+" id: "+JSON.stringify(response.data.data.profile.id));
-            }, function (error) {
-                console.log(error);
             });
         }
     }
+    //alert(JSON.stringify(response.data.data.profile.email)+" id: "+JSON.stringify(response.data.data.profile.id));
 });
+(function (error) {
+    alert(error);
+});
+;
 
 
 /***/ }),
@@ -6372,6 +6359,12 @@ __webpack_require__.r(__webpack_exports__);
             });
             ;
         },
+        showProfReg: function () {
+            var x = document.getElementById("register");
+            x.style.display = "none";
+            var y = document.getElementById("registerProf");
+            y.style.display = "block";
+        }
     }
 });
 
@@ -7104,76 +7097,155 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "form",
-      {
-        staticClass: "mb-3",
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-            return _vm.login($event)
-          }
-        }
-      },
-      [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Conta.email,
-                expression: "Conta.email"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "email", placeholder: "Email" },
-            domProps: { value: _vm.Conta.email },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.Conta, "email", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Conta.password,
-                expression: "Conta.password"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "password", placeholder: "Password" },
-            domProps: { value: _vm.Conta.password },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.Conta, "password", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-light btn-block", attrs: { type: "submit" } },
-          [_vm._v("Login")]
-        )
-      ]
-    )
+    _c("div", { staticClass: "container-scroller", attrs: { id: "login" } }, [
+      _c(
+        "div",
+        { staticClass: "container-fluid page-body-wrapper full-page-wrapper" },
+        [
+          _c(
+            "div",
+            { staticClass: "content-wrapper d-flex align-items-center auth" },
+            [
+              _c("div", { staticClass: "row flex-grow" }, [
+                _c("div", { staticClass: "col-lg-4 mx-auto" }, [
+                  _c("div", { staticClass: "auth-form-light text-left p-5" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("h4", [_vm._v("Hello! let's get started")]),
+                    _vm._v(" "),
+                    _c("h6", { staticClass: "font-weight-light" }, [
+                      _vm._v("Sign in to continue.")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "form",
+                      {
+                        staticClass: "pt-3",
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            return _vm.login($event)
+                          }
+                        }
+                      },
+                      [
+                        _c("div", { staticClass: "form-group" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.Conta.email,
+                                expression: "Conta.email"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { type: "email", placeholder: "Email" },
+                            domProps: { value: _vm.Conta.email },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.Conta,
+                                  "email",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form-group" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.Conta.password,
+                                expression: "Conta.password"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "password",
+                              placeholder: "Password"
+                            },
+                            domProps: { value: _vm.Conta.password },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.Conta,
+                                  "password",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "text-center mt-4 font-weight-light" },
+                          [
+                            _vm._v(" Don't have an account? "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "text-primary",
+                                attrs: { href: "#register" },
+                                on: { click: _vm.showReg }
+                              },
+                              [_vm._v("Criar conta")]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ]
+          )
+        ]
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "brand-logo" }, [
+      _c("img", {
+        attrs: { src: __webpack_require__(/*! ../../../public/docs/images/logo.png */ "./public/docs/images/logo.png") }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-3" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn",
+          attrs: { type: "submit" }
+        },
+        [_vm._v("Login")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -7757,371 +7829,570 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c(
-      "form",
+      "div",
       {
-        staticClass: "mb-3",
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-            return _vm.addContaAluno($event)
-          }
-        }
+        staticClass: "container-scroller",
+        staticStyle: { display: "none" },
+        attrs: { id: "register" }
       },
       [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Conta.aluno_id,
-                expression: "Conta.aluno_id"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", placeholder: "Username" },
-            domProps: { value: _vm.Conta.aluno_id },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.Conta, "aluno_id", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Conta.curso,
-                expression: "Conta.curso"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", placeholder: "Curso" },
-            domProps: { value: _vm.Conta.curso },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.Conta, "curso", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Conta.data_de_matricula_inicial,
-                expression: "Conta.data_de_matricula_inicial"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "date", placeholder: "Data da matricula" },
-            domProps: { value: _vm.Conta.data_de_matricula_inicial },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(
-                  _vm.Conta,
-                  "data_de_matricula_inicial",
-                  $event.target.value
-                )
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Conta.ano_curricular,
-                expression: "Conta.ano_curricular"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "number", placeholder: "Ano Curricular" },
-            domProps: { value: _vm.Conta.ano_curricular },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.Conta, "ano_curricular", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Conta.name,
-                expression: "Conta.name"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", placeholder: "Nome" },
-            domProps: { value: _vm.Conta.name },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.Conta, "name", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Conta.email,
-                expression: "Conta.email"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "email", placeholder: "Email" },
-            domProps: { value: _vm.Conta.email },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.Conta, "email", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Conta.password,
-                expression: "Conta.password"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "password", placeholder: "Password" },
-            domProps: { value: _vm.Conta.password },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.Conta, "password", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Conta.password_confirmation,
-                expression: "Conta.password_confirmation"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "password", placeholder: "Confirmar Password" },
-            domProps: { value: _vm.Conta.password_confirmation },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(
-                  _vm.Conta,
-                  "password_confirmation",
-                  $event.target.value
-                )
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
         _c(
-          "button",
-          { staticClass: "btn btn-light btn-block", attrs: { type: "submit" } },
-          [_vm._v("Criar conta de Aluno")]
+          "div",
+          {
+            staticClass: "container-fluid page-body-wrapper full-page-wrapper"
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "content-wrapper d-flex align-items-center auth" },
+              [
+                _c("div", { staticClass: "row flex-grow" }, [
+                  _c("div", { staticClass: "col-lg-4 mx-auto" }, [
+                    _c(
+                      "div",
+                      { staticClass: "auth-form-light text-left p-5" },
+                      [
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Create aluno")]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "font-weight-light" }, [
+                          _vm._v(
+                            "Signing up is easy. It only takes a few steps"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "form",
+                          {
+                            staticClass: "pt-3",
+                            on: {
+                              submit: function($event) {
+                                $event.preventDefault()
+                                return _vm.addContaAluno($event)
+                              }
+                            }
+                          },
+                          [
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.Conta.aluno_id,
+                                    expression: "Conta.aluno_id"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "Username"
+                                },
+                                domProps: { value: _vm.Conta.aluno_id },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.Conta,
+                                      "aluno_id",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.Conta.curso,
+                                    expression: "Conta.curso"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { type: "text", placeholder: "Curso" },
+                                domProps: { value: _vm.Conta.curso },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.Conta,
+                                      "curso",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.Conta.data_de_matricula_inicial,
+                                    expression:
+                                      "Conta.data_de_matricula_inicial"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "date",
+                                  placeholder: "Data da matricula"
+                                },
+                                domProps: {
+                                  value: _vm.Conta.data_de_matricula_inicial
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.Conta,
+                                      "data_de_matricula_inicial",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.Conta.ano_curricular,
+                                    expression: "Conta.ano_curricular"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "number",
+                                  placeholder: "Ano Curricular"
+                                },
+                                domProps: { value: _vm.Conta.ano_curricular },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.Conta,
+                                      "ano_curricular",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.Conta.name,
+                                    expression: "Conta.name"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { type: "text", placeholder: "Nome" },
+                                domProps: { value: _vm.Conta.name },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.Conta,
+                                      "name",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.Conta.email,
+                                    expression: "Conta.email"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { type: "email", placeholder: "Email" },
+                                domProps: { value: _vm.Conta.email },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.Conta,
+                                      "email",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.Conta.password,
+                                    expression: "Conta.password"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "password",
+                                  placeholder: "Password"
+                                },
+                                domProps: { value: _vm.Conta.password },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.Conta,
+                                      "password",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.Conta.password_confirmation,
+                                    expression: "Conta.password_confirmation"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "password",
+                                  placeholder: "Confirmar Password"
+                                },
+                                domProps: {
+                                  value: _vm.Conta.password_confirmation
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.Conta,
+                                      "password_confirmation",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn",
+                                attrs: { type: "submit" }
+                              },
+                              [_vm._v("Criar conta de Aluno")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "text-primary",
+                                attrs: { href: "#registerProf" },
+                                on: { click: _vm.showProfReg }
+                              },
+                              [_vm._v("Criar conta de Professor")]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ]
+            )
+          ]
         )
       ]
     ),
     _vm._v(" "),
     _c(
-      "form",
+      "div",
       {
-        staticClass: "mb-3",
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-            return _vm.addContaProf($event)
-          }
-        }
+        staticClass: "container-scroller",
+        staticStyle: { display: "none" },
+        attrs: { id: "registerProf" }
       },
       [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.ContaProf.professor_id,
-                expression: "ContaProf.professor_id"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", placeholder: "Username" },
-            domProps: { value: _vm.ContaProf.professor_id },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.ContaProf, "professor_id", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.ContaProf.name,
-                expression: "ContaProf.name"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", placeholder: "Nome" },
-            domProps: { value: _vm.ContaProf.name },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.ContaProf, "name", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.ContaProf.email,
-                expression: "ContaProf.email"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "email", placeholder: "Email" },
-            domProps: { value: _vm.ContaProf.email },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.ContaProf, "email", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.ContaProf.password,
-                expression: "ContaProf.password"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "password", placeholder: "Password" },
-            domProps: { value: _vm.ContaProf.password },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.ContaProf, "password", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.ContaProf.password_confirmation,
-                expression: "ContaProf.password_confirmation"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "password", placeholder: "Confirmar Password" },
-            domProps: { value: _vm.ContaProf.password_confirmation },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(
-                  _vm.ContaProf,
-                  "password_confirmation",
-                  $event.target.value
-                )
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
         _c(
-          "button",
-          { staticClass: "btn btn-light btn-block", attrs: { type: "submit" } },
-          [_vm._v("Criar conta de Professor")]
+          "div",
+          {
+            staticClass: "container-fluid page-body-wrapper full-page-wrapper"
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "content-wrapper d-flex align-items-center auth" },
+              [
+                _c("div", { staticClass: "row flex-grow" }, [
+                  _c("div", { staticClass: "col-lg-4 mx-auto" }, [
+                    _c(
+                      "div",
+                      { staticClass: "auth-form-light text-left p-5" },
+                      [
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _c("h4", [_vm._v("Create Professor")]),
+                        _vm._v(" "),
+                        _c("h6", { staticClass: "font-weight-light" }, [
+                          _vm._v(
+                            "Signing up is easy. It only takes a few steps"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "form",
+                          {
+                            staticClass: "pt-3",
+                            on: {
+                              submit: function($event) {
+                                $event.preventDefault()
+                                return _vm.addContaProf($event)
+                              }
+                            }
+                          },
+                          [
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.ContaProf.professor_id,
+                                    expression: "ContaProf.professor_id"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "Username"
+                                },
+                                domProps: { value: _vm.ContaProf.professor_id },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.ContaProf,
+                                      "professor_id",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.ContaProf.name,
+                                    expression: "ContaProf.name"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { type: "text", placeholder: "Nome" },
+                                domProps: { value: _vm.ContaProf.name },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.ContaProf,
+                                      "name",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.ContaProf.email,
+                                    expression: "ContaProf.email"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { type: "email", placeholder: "Email" },
+                                domProps: { value: _vm.ContaProf.email },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.ContaProf,
+                                      "email",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.ContaProf.password,
+                                    expression: "ContaProf.password"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "password",
+                                  placeholder: "Password"
+                                },
+                                domProps: { value: _vm.ContaProf.password },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.ContaProf,
+                                      "password",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.ContaProf.password_confirmation,
+                                    expression:
+                                      "ContaProf.password_confirmation"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "password",
+                                  placeholder: "Confirmar Password"
+                                },
+                                domProps: {
+                                  value: _vm.ContaProf.password_confirmation
+                                },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.ContaProf,
+                                      "password_confirmation",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn",
+                                attrs: { type: "submit" }
+                              },
+                              [_vm._v("Criar conta de Professor")]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              ]
+            )
+          ]
         )
       ]
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "brand-logo" }, [
+      _c("img", {
+        attrs: { src: __webpack_require__(/*! ../../../public/docs/images/logo.png */ "./public/docs/images/logo.png") }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "brand-logo" }, [
+      _c("img", {
+        attrs: { src: __webpack_require__(/*! ../../../public/docs/images/logo.png */ "./public/docs/images/logo.png") }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -8355,27 +8626,9 @@ var render = function() {
       [
         _c("profile-component"),
         _vm._v(" "),
-        _c("h3", { staticStyle: { "text-align": "center" } }, [
-          _vm._v(
-            "--------------------------------------------------------------------------------------------------------"
-          )
-        ]),
-        _vm._v(" "),
         _c("logout-component"),
         _vm._v(" "),
-        _c("h3", { staticStyle: { "text-align": "center" } }, [
-          _vm._v(
-            "--------------------------------------------------------------------------------------------------------"
-          )
-        ]),
-        _vm._v(" "),
         _c("login-component"),
-        _vm._v(" "),
-        _c("h3", { staticStyle: { "text-align": "center" } }, [
-          _vm._v(
-            "--------------------------------------------------------------------------------------------------------"
-          )
-        ]),
         _vm._v(" "),
         _c("register-component")
       ],
@@ -8507,14 +8760,19 @@ function normalizeComponent (
 "use strict";
 
 
-function assign(obj) {
-  var arguments$1 = arguments;
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var Prism = _interopDefault(__webpack_require__(/*! prismjs */ "./node_modules/prismjs/prism.js"));
+
+function assign(obj) {
   for (var i = 1; i < arguments.length; i++) {
     // eslint-disable-next-line guard-for-in, prefer-rest-params
-    for (var p in arguments[i]) { obj[p] = arguments$1[i][p]; }
+    for (var p in arguments[i]) {
+      obj[p] = arguments[i][p];
+    }
   }
-  return obj
+
+  return obj;
 }
 
 var index = {
@@ -8525,54 +8783,41 @@ var index = {
     },
     inline: {
       type: Boolean,
-      default: false
+      "default": false
     },
     language: {
       type: String,
-      default: 'markup'
+      "default": 'markup'
     }
   },
   render: function render(h, ctx) {
-    var code =
-      ctx.props.code ||
-      (ctx.children && ctx.children.length > 0 ? ctx.children[0].text : '');
+    var code = ctx.props.code || (ctx.children && ctx.children.length > 0 ? ctx.children[0].text : '');
     var inline = ctx.props.inline;
     var language = ctx.props.language;
     var prismLanguage = Prism.languages[language];
-    var className = "language-" + language;
+    var className = "language-".concat(language);
 
     if ( true && !prismLanguage) {
-      throw new Error(
-        ("Prism component for language \"" + language + "\" was not found, did you forget to register it? See all available ones: https://cdn.jsdelivr.net/npm/prismjs/components/")
-      )
+      throw new Error("Prism component for language \"".concat(language, "\" was not found, did you forget to register it? See all available ones: https://cdn.jsdelivr.net/npm/prismjs/components/"));
     }
 
     if (inline) {
-      return h(
-        'code',
-        assign({}, ctx.data, {
-          class: [ctx.data.class, className],
-          domProps: assign({}, ctx.data.domProps, {
-            innerHTML: Prism.highlight(code, prismLanguage)
-          })
+      return h('code', assign({}, ctx.data, {
+        "class": [ctx.data["class"], className],
+        domProps: assign({}, ctx.data.domProps, {
+          innerHTML: Prism.highlight(code, prismLanguage)
         })
-      )
+      }));
     }
 
-    return h(
-      'pre',
-      assign({}, ctx.data, {
-        class: [ctx.data.class, className]
-      }),
-      [
-        h('code', {
-          class: className,
-          domProps: {
-            innerHTML: Prism.highlight(code, prismLanguage)
-          }
-        })
-      ]
-    )
+    return h('pre', assign({}, ctx.data, {
+      "class": [ctx.data["class"], className]
+    }), [h('code', {
+      "class": className,
+      domProps: {
+        innerHTML: Prism.highlight(code, prismLanguage)
+      }
+    })]);
   }
 };
 
@@ -24921,6 +25166,17 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+
+/***/ "./public/docs/images/logo.png":
+/*!*************************************!*\
+  !*** ./public/docs/images/logo.png ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo.png?1371a97570b986206f9682e517ad06f8";
 
 /***/ }),
 
