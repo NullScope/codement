@@ -41,7 +41,6 @@
 <script lang="ts">
 import { routes } from '../router';
 import { Vue, Component, Prop } from 'vue-property-decorator';
-import { RouteConfig } from 'vue-router';
 
 @Component
 export default class Sidebar extends Vue {

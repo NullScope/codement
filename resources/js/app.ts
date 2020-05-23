@@ -14,6 +14,8 @@ import VueSpeech from 'vue-speech';
 
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+import AppView from './views/app.vue';
+
 import ExampleComponent from './components/ExampleComponent.vue';
 import CodeHighlighter from './components/CodeHighlighter.vue';
 import Navbar from './components/Navbar.vue';
@@ -36,6 +38,8 @@ Vue.use(VueSpeech);
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
+// Necessário registar isto para o routing desejado
+Vue.component('app', AppView);
 Vue.component('example-component', ExampleComponent);
 Vue.component('code-highlighter', CodeHighlighter);
 Vue.component('navbar', Navbar);
