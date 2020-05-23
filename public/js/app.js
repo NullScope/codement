@@ -2616,10 +2616,50 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -51772,9 +51812,64 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "content-wrapper" }, [
+      _c("div", { staticClass: "page-header" }, [
+        _c("h3", { staticClass: "page-tittle" }, [_vm._v("Disciplina")]),
+        _vm._v(" "),
+        _c("nav", { attrs: { "aria-label": "breadcrumb" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-12-margin stretch-card" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("table", { staticClass: "table table-striped" }, [
+              _c("thead", [
+                _c("tr", [
+                  _c("th", [_vm._v("Aula")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Ficheiros")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Data de criação")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("Última atualização")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("tbody", [
+                _c("tr", [
+                  _c("td", [_vm._v("Introdução")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("«Ficheiros»")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("2020-04-13")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("2020-05-02")])
+                ]),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("td", [_vm._v("Use Cases")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("«Ficheiros»")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("2020-05-05")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("2020-05-05")])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -69430,8 +69525,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\codement\resources\js\app.ts */"./resources/js/app.ts");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\codement\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Utilizador\Desktop\codement\resources\js\app.ts */"./resources/js/app.ts");
+module.exports = __webpack_require__(/*! C:\Users\Utilizador\Desktop\codement\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

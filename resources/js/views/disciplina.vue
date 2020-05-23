@@ -1,24 +1,50 @@
 <template>
-    <div>
-      <div class="main-panel">
-          <div class="content-wrapper">
-            <div>
-                <h1>Nome da disciplina</h1>
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-tittle">Disciplina</h3>
+            <nav aria-label="breadcrumb">
+            </nav>
+        </div>
+    <!-- Área das matérias e aulas da disciplina -->
+        <div class="col-lg-12-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Aula</th>
+                                <th>Ficheiros</th>
+                                <th>Data de criação</th>
+                                <th>Última atualização</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Introdução</td>
+                                <td>«Ficheiros»</td>
+                                <td>2020-04-13</td>
+                                <td>2020-05-02</td>
+                            </tr>
+                            <tr>
+                                <td>Use Cases</td>
+                                <td>«Ficheiros»</td>
+                                <td>2020-05-05</td>
+                                <td>2020-05-05</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="section">
-                <h3>Informações gerais</h3>
-                <p>Texto da descrição da disciplina</p>
-            </div>
-            <div class="section">
-                <h2>Últimas atualizações</h2> 
-            </div>    
-        </div> 
+        </div>
     </div>
 </template>
 
 <script>
-export default {
+
+    import axios from "axios";
+
+
+    export default {
     
-}
+    }
 </script>
-        
