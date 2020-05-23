@@ -41,12 +41,12 @@ import axios from "axios";
     },
     methods: {
       login() {
-
-        axios.post('http://localhost:8000/login',
-        {
-          "email": this.Conta.email,
-          "password": this.Conta.password,
-        }).then(alert(JSON.stringify(response)+"s"));
+        axios.post('http://localhost:8000/login',{ "email": this.Conta.email,"password": this.Conta.password,})
+        .then((response) => {
+            alert("Entrou macarrao");
+        }, (error) => {
+          alert("nao entrou macarrao");
+        });
 
       /*  alert(JSON.stringify(this.Conta));
         axios.post('api/alunos', {
@@ -99,8 +99,7 @@ import axios from "axios";
     },
     me(){
       axios.get('api/me', {})
-      .then(response => response.json())
-      .then(json => alert(json));
+
     }
 
     }

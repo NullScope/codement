@@ -20,7 +20,9 @@ import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
 import LoginComponent from './components/LoginComponent.vue';
 import RegisterComponent from './components/RegisterComponent.vue';
+import ProfileComponent from './components/ProfileComponent.vue';
 import LogoutComponent from './components/LogoutComponent.vue';
+import CriarDisciplinaComponent from './components/CriarDisciplinaComponent.vue';
 
 // Install BootstrapVue
 //Vue.use(BootstrapVue)
@@ -39,7 +41,9 @@ import LogoutComponent from './components/LogoutComponent.vue';
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
+Vue.component('criardisciplina-component', CriarDisciplinaComponent);
 Vue.component('example-component', ExampleComponent);
+Vue.component('profile-component', ProfileComponent);
 Vue.component('login-component', LoginComponent);
 Vue.component('register-component', RegisterComponent);
 Vue.component('logout-component', LogoutComponent);

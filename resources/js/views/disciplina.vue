@@ -1,5 +1,5 @@
 <template>
-
+<criardisciplina-component></criardisciplina-component>
 </template>
 
 <script>

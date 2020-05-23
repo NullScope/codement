@@ -2,10 +2,10 @@
   <div>
     <!-- <a href="" @click.prevent="login">Login</a> -->
     <div>
-      <a href="" @click.prevent="login">Login</a>
+    <!--  <a href="" @click.prevent="login">Login</a>
       <register-component></register-component>
       <login-component></login-component>
-      <code-highlighter></code-highlighter>
+      <code-highlighter></code-highlighter>-->
 
     </div>
   </div>
@@ -37,10 +37,10 @@
       "password_confirmation": "megajorge123"
     });*/
 
-        await axios.post('http://localhost:8000/login', {
+      /*  await axios.post('http://localhost:8000/login', {
       "email": "felizberto@gmail.com",
       "password": "felizberto",
-        });
+    });*/
         // await axios.get('/sanctum/csrf-cookie');
 
         // await axios.post('/login', {

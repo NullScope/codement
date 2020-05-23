@@ -2,9 +2,9 @@
 <template>
     <div>
 
-      <form @submit.prevent="addConta" class="mb-3">
+      <form @submit.prevent="addContaAluno" class="mb-3">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Curso" v-model="Conta.aluno_id">
+          <input type="text" class="form-control" placeholder="Username" v-model="Conta.aluno_id">
         </div>
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Curso" v-model="Conta.curso">
@@ -27,13 +27,27 @@
         <div class="form-group">
           <input type="password" class="form-control" placeholder="Confirmar Password" v-model="Conta.password_confirmation">
         </div>
-      <button type="submit" class="btn btn-light btn-block">Criar conta</button>
+        <button type="submit" class="btn btn-light btn-block">Criar conta de Aluno</button>
       </form>
 
 
-
-      <form @submit.prevent="me" class="mb-3">
-        <button type="submit" class="btn btn-light btn-block">Ver perfil</button>
+      <form @submit.prevent="addContaProf" class="mb-3">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Username" v-model="ContaProf.professor_id">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Nome" v-model="ContaProf.name">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email" v-model="ContaProf.email">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" v-model="ContaProf.password">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Confirmar Password" v-model="ContaProf.password_confirmation">
+        </div>
+        <button type="submit" class="btn btn-light btn-block">Criar conta de Professor</button>
       </form>
     </div>
 </template>
@@ -61,73 +75,34 @@ import axios from "axios";
           "email": "",
           "passwordpassword": "",
           "password_confirmation": "",
+        },
+        ContaProf: {
+          "professor_id": "",
+          "name": "",
+          "email": "",
+          "password": "",
+          "password_confirmation": ""
         }
       };
     },
     methods: {
-      addConta() {
-        alert(JSON.stringify(this.Conta));
-        axios.post('api/alunos', {
-          "aluno_id": this.Conta.aluno_id,
-          "curso": this.Conta.curso,
-          "data_de_matricula_inicial": this.Conta.data_de_matricula_inicial,
-          "ano_curricular": this.Conta.ano_curricular,
-          "name": this.Conta.name,
-          "email": this.Conta.email,
-          "password": this.Conta.password,
-          "password_confirmation": this.Conta.password_confirmation
+      addContaAluno() {
+        axios.post('api/alunos', {"aluno_id": this.Conta.aluno_id,"curso": this.Conta.curso,"data_de_matricula_inicial": this.Conta.data_de_matricula_inicial,"ano_curricular": this.Conta.ano_curricular,"name": this.Conta.name,"email": this.Conta.email,"password": this.Conta.password,"password_confirmation": this.Conta.password_confirmation})
+        .then((response) => {
+            alert(JSON.stringify(response));
+        }, (error) => {
+          alert("nao criou macarrao");
         });
-
-      /*  axios.post('http://localhost:8000/register', {
-          "aluno_id": "jorge",
-          "curso": "sint",
-          "data_de_matricula_inicial": "2020-04-04 23:45:58",
-          "ano_curricular": 5,
-          "name": "jorge",
-          "email": "jorge@gmail.com",
-          "password": "1234312312",
-          "password_confirmation": "1234312312"
-      });*/
-        // Add
-      //  alert(JSON.stringify(this.Conta));
-        /*axios.post('http://localhost:8000/login', {
-          "email": "ddsas@gmail.com",
-          "password": "accusamus",
-      });*/
-    /*  axios.post('api/professores', {
-        "professor_id": "excepturi",
-        "name": "veniam",
-        "email": "d2s@gmail.com",
-        "password": "accusamus",
-        "password_confirmation": "accusamus"
-    });*/
-        /*axios.post('api/alunos', {
-          "aluno_id": "excepturi",
-          "curso": "sint",
-          "data_de_matricula_inicial": "2020-05-05 23:45:58",
-          "ano_curricular": 5,
-          "name": "veniam",
-          "email": "doloribus@gmail.com",
-          "password": "accusamus",
-          "password_confirmation": "accusamus"
-      });*/
-
-
-
-    },
-    me(){
-      axios.get('api/me', {});
+      },
+      addContaProf() {
+          axios.post('api/professores', {"professor_id": this.ContaProf.professor_id,"name": this.ContaProf.name,"email": this.ContaProf.email,"password": this.ContaProf.password,"password_confirmation": this.ContaProf.password_confirmation})
+          .then((response) => {
+              alert(JSON.stringify(response));
+          }, (error) => {
+            alert("nao criou macarrao");
+          });
+          ;
+      },
     }
-    }
-
-
   }
 </script>
-
-
-
-export default {
-  methods: {
-
-  }
-};

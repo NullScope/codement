@@ -2,11 +2,15 @@
   <div>
     <!-- <a href="" @click.prevent="login">Login</a> -->
     <div>
-      <register-component></register-component>
+      <profile-component></profile-component>
+      <h3 style="text-align:center">--------------------------------------------------------------------------------------------------------</h3>
+      <logout-component></logout-component>
       <h3 style="text-align:center">--------------------------------------------------------------------------------------------------------</h3>
       <login-component></login-component>
       <h3 style="text-align:center">--------------------------------------------------------------------------------------------------------</h3>
-      <logout-component></logout-component>
+      <register-component></register-component>  
+
+
     </div>
   </div>
 </template>

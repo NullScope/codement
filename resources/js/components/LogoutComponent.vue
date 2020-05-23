@@ -21,8 +21,11 @@ import axios from "axios";
     methods: {
       logout() {
 
-        axios.post('http://localhost:8000/logout',
-        {
+        axios.post('http://localhost:8000/logout',{})
+        .then((response) => {
+            alert("Saiu macarrao");
+        }, (error) => {
+          alert("nao saiu macarrao");
         });
 
       /*  alert(JSON.stringify(this.Conta));
@@ -74,19 +77,5 @@ import axios from "axios";
 
 
     },
-    me(){
-      axios.get('api/me', {});
-    }
-    }
-
-
   }
 </script>
-
-
-
-export default {
-  methods: {
-
-  }
-};
