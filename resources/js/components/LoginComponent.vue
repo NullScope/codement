@@ -75,7 +75,7 @@ export default {
       x.style.display = "none";
       var y = document.getElementById("register");
       y.style.display = "block";
-    }
+    },
     me(){
       axios.get('api/me', {})
       .then((response) => {

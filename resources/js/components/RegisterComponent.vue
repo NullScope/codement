@@ -141,8 +141,7 @@ import axios from "axios";
           }, (error) => {
             alert("nao criou macarrao");
           });
-          ;
-      }
+      },
       showProfReg() {
        var x = document.getElementById("register");
        x.style.display = "none";

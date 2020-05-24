@@ -9,8 +9,8 @@
 
 <script lang="ts">
 import axios from "axios";
-  export default {
-
+  export default
+  {
     mounted()
     {
       axios.get('api/me', {})
@@ -34,28 +34,32 @@ import axios from "axios";
         alert(error);
       });
     },
-    methods: {
-      me(){
+    methods:
+    {
+      me()
+      {
         axios.get('api/me', {})
-        .then((response) => {
+        .then((response) =>
+        {
           console.log(JSON.stringify(response.data));
-          try {
+          try
+          {
             alert(JSON.stringify(response.data.data.profile.email)+" id: "+JSON.stringify(response.data.data.profile.id));
           }
-          catch(err) {
-            try {
+          catch(err)
+          {
+            try
+            {
               alert(JSON.stringify(response.data.data.user.email)+" id: "+JSON.stringify(response.data.data.user.id));
             }
-            catch(err) {
-              alert("ninguem logado"));
+            catch(err)
+            {
+              alert("ninguem logado");
             }
-
           }
           //alert(JSON.stringify(response.data.data.profile.email)+" id: "+JSON.stringify(response.data.data.profile.id));
-        }, (error) => {
-          alert(error);
-        });
-      }
+        }
+      },
     }
   }
 </script>

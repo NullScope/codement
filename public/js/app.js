@@ -6288,15 +6288,11 @@ __webpack_require__.r(__webpack_exports__);
                         alert("ninguem logado");
                     }
                 }
+                //alert(JSON.stringify(response.data.data.profile.email)+" id: "+JSON.stringify(response.data.data.profile.id));
             });
-        }
+        },
     }
-    //alert(JSON.stringify(response.data.data.profile.email)+" id: "+JSON.stringify(response.data.data.profile.id));
 });
-(function (error) {
-    alert(error);
-});
-;
 
 
 /***/ }),
@@ -6357,7 +6353,6 @@ __webpack_require__.r(__webpack_exports__);
             }, function (error) {
                 alert("nao criou macarrao");
             });
-            ;
         },
         showProfReg: function () {
             var x = document.getElementById("register");
@@ -6955,74 +6950,97 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c(
-      "form",
-      {
-        staticClass: "mb-3",
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-            return _vm.addDisciplina($event)
-          }
-        }
-      },
+      "div",
+      { staticClass: "col-md-6 grid-margin stretch-card col-centered" },
       [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h4", { staticClass: "card-title" }, [_vm._v("Disciplina")]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-description" }, [
+              _vm._v("Adicionar nova disciplina")
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
               {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Disciplina.nome,
-                expression: "Disciplina.nome"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", placeholder: "Nome da Disciplina" },
-            domProps: { value: _vm.Disciplina.nome },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+                staticClass: "forms-sample",
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.addDisciplina($event)
+                  }
                 }
-                _vm.$set(_vm.Disciplina, "nome", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.Disciplina.semestre_curricular,
-                expression: "Disciplina.semestre_curricular"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "date", placeholder: "Semestre Curricular" },
-            domProps: { value: _vm.Disciplina.semestre_curricular },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(
-                  _vm.Disciplina,
-                  "semestre_curricular",
-                  $event.target.value
-                )
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-light btn-block", attrs: { type: "submit" } },
-          [_vm._v("Criar Disciplina")]
-        )
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.Disciplina.nome,
+                        expression: "Disciplina.nome"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text", placeholder: "Nome da Disciplina" },
+                    domProps: { value: _vm.Disciplina.nome },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.Disciplina, "nome", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.Disciplina.semestre_curricular,
+                        expression: "Disciplina.semestre_curricular"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "date", placeholder: "Semestre Curricular" },
+                    domProps: { value: _vm.Disciplina.semestre_curricular },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.Disciplina,
+                          "semestre_curricular",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-gradient-primary mr-2",
+                    attrs: { type: "submit" }
+                  },
+                  [_vm._v("Submit")]
+                ),
+                _vm._v(" "),
+                _c("button", { staticClass: "btn btn-light" }, [
+                  _vm._v("Cancel")
+                ])
+              ]
+            )
+          ])
+        ])
       ]
     )
   ])
