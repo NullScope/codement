@@ -1,11 +1,6 @@
 <template>
   <div>
-    <!-- <a href="" @click.prevent="login">Login</a> -->
-    <div>
-      <profile-component></profile-component>
-      <login-component></login-component>
-      <register-component></register-component>
-    </div>
+    <logout-component></logout-component>
   </div>
 </template>
 

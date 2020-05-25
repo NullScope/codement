@@ -29,12 +29,7 @@
               <p class="mb-1 text-black">David Greymaax</p>
             </div>
           </a>
-          <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item" href="#">
-              <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
+          <div id="logTab" class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
           </div>
         </li>
         <li class="nav-item d-none d-lg-block full-screen-link">
@@ -139,7 +134,34 @@
 </template>
 
 <script>
-export default {
+  import axios from "axios";
+export default
+{
 
+  mounted()
+  {
+    axios.get('api/me', {})
+    .then((response) =>
+    {
+      console.log(JSON.stringify(response.data));
+      try {
+        if(JSON.stringify(response.data.error)=="true") //logged out
+        {
+          try {document.getElementById("SO").remove();}  catch(err){}
+          document.getElementById('logTab').innerHTML = '<a id="SI" class="dropdown-item" href="/login"><i  class="mdi mdi-logout mr-2 text-primary"></i> SignIn </a>';
+
+        }
+        else //logged in
+        {
+          try {document.getElementById("SI").remove();}  catch(err){}
+          document.getElementById('logTab').innerHTML = '<a id="SO" class="dropdown-item" href="/logout"><i  class="mdi mdi-logout mr-2 text-primary"></i> SignOut </a>';
+        }
+      }
+      catch(err) {
+      }
+    }, (error) => {
+      alert(error);
+    });
+  },
 }
 </script>

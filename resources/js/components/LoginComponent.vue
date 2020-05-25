@@ -65,9 +65,10 @@ export default {
       .then((response) => {
           var x = document.getElementById("login");
           x.style.display = "none";
-          alert("Entrou macarrao");
+          try {document.getElementById("SI").remove();}  catch(err){}
+          document.getElementById('logTab').innerHTML = '<a id="SO" class="dropdown-item" href="/logout"><i  class="mdi mdi-logout mr-2 text-primary"></i> SignOut </a>';
       }, (error) => {
-        alert("nao entrou macarrao");
+        alert("erro");
       });
     },
      showReg() {
@@ -81,7 +82,7 @@ export default {
       .then((response) => {
           alert(JSON.stringify(response));
       }, (error) => {
-        alert("nao entrou macarrao");
+        alert("erro");
       });
     }
   }

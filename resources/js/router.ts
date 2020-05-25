@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from "vue-router"
 import HomePage from "./views/home.vue"
 import DisciplinaPage from "./views/disciplina.vue"
 import LoginPage from "./views/login.vue"
+import LogoutPage from "./views/logout.vue"
 
 Vue.use(VueRouter);
 
@@ -26,6 +27,14 @@ export const routes: RouteConfig[] = [
     path:'/disciplina',
     name: 'Disciplina',
     component: DisciplinaPage,
+    meta: {
+      icon: 'mdi-home'
+    }
+  },
+  {
+    path:'/logout',
+    name: 'Logout',
+    component: LogoutPage,
     meta: {
       icon: 'mdi-home'
     }
