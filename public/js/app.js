@@ -2824,17 +2824,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -2907,6 +2896,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 5:
+                _this2.$router.push({
+                  path: "/eventosAvaliacao"
+                });
+
+              case 6:
               case "end":
                 return _context3.stop();
             }
@@ -2915,26 +2909,35 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     verificaForm: function verificaForm() {
-      var dataI = this.data_inicio + ' ' + this.hora_inicio;
-      var dataF = this.data_fim + ' ' + this.hora_fim;
+      if (this.data_inicio && this.hora_inicio) {
+        if (this.data_fim && this.hora_fim) {
+          var dataI = this.data_inicio + ' ' + this.hora_inicio;
+          var dataF = this.data_fim + ' ' + this.hora_fim;
 
-      if (dataI && dataF) {
-        if (dataI < dataF) {
-          return true;
+          if (dataF > dataI) {
+            this.criarEventoAvaliacao();
+            return true;
+          } else {
+            this.errors.push('Data de início tem de ser menor que Data Final');
+          }
         }
       }
 
-      this.errors = [];
-
-      if (!this.name) {
-        this.errors.push('Name required.');
+      if (!this.data_inicio) {
+        this.errors.push('Data de início é necessário');
       }
 
-      if (!this.age) {
-        this.errors.push('Age required.');
+      if (!this.hora_inicio) {
+        this.errors.push('Hora de início é necessário');
       }
 
-      e.preventDefault();
+      if (!this.data_fim) {
+        this.errors.push('Data Final é necessário');
+      }
+
+      if (!this.hora_fim) {
+        this.errors.push('Hora Final é necessário');
+      }
     }
   },
   computed: {},
@@ -3030,19 +3033,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.login();
-    this.getNomeDisciplina();
-    this.getEventosAvaliacaoDisciplina();
+    this.getDisciplinas();
   },
   methods: {
     login: function login() {
@@ -3069,7 +3064,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    getNomeDisciplina: function getNomeDisciplina() {
+    getDisciplinas: function getDisciplinas() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
@@ -3078,9 +3073,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                url = '/api/disciplinas/' + _this.$route.params.disciplina;
+                url = '/api/disciplinas';
                 axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
-                  _this.disciplina = response.data.data.nome;
+                  _this.opcoes = response.data.data;
                 });
 
               case 2:
@@ -3100,12 +3095,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                url = '/api/disciplinas/' + _this2.$route.params.disciplina + '/eventos-de-avaliacao';
+                url = '/api/disciplinas/' + _this2.idDisciplina + '/eventos-de-avaliacao';
                 axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+                  console.log(response.data.data);
                   _this2.eventosAvaliacao = response.data.data;
                 });
+                _this2.show = true;
 
-              case 2:
+              case 3:
               case "end":
                 return _context3.stop();
             }
@@ -3113,9 +3110,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee3);
       }))();
     },
-    criarEventoDeAvaliacao: function criarEventoDeAvaliacao() {
+    criarEventoAvaliacao: function criarEventoAvaliacao() {
       this.$router.push({
-        name: '/criarAvaliacao'
+        path: "/criarAvaliacao/".concat(this.idDisciplina)
       });
     }
   },
@@ -3123,8 +3120,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   watch: {},
   data: function data() {
     return {
-      disciplina: '',
-      eventosAvaliacao: []
+      idDisciplina: null,
+      opcoes: [],
+      eventosAvaliacao: [],
+      show: false
     };
   },
   components: {}
@@ -44600,7 +44599,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.btn-gradient-dark{\n    display:inline-block;\n    position:relative;\n}\n", ""]);
+exports.push([module.i, "\n#criar{\n    margin-bottom: 20px;\n}\n", ""]);
 
 // exports
 
@@ -52769,181 +52768,141 @@ var render = function() {
       _c("div", { staticClass: "col-12 grid-margin stretch-card" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-body" }, [
-            _c("form", [
-              _c("h4", { staticClass: "card-title" }, [
-                _vm._v("Criar evento de avaliação")
-              ]),
-              _vm._v(" "),
-              _vm.errors.length
-                ? _c("p", [
-                    _c("b", [_vm._v("Please correct the following error(s):")]),
-                    _vm._v(" "),
-                    _c(
-                      "ul",
-                      _vm._l(_vm.errors, function(error) {
-                        return _c("li", [_vm._v(_vm._s(error))])
-                      }),
-                      0
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-sm-12 col-form-label",
-                    attrs: { for: "exampleInputName1" }
-                  },
-                  [_vm._v("Data de Início")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-sm-6" },
-                  [
-                    _c("b-form-datepicker", {
-                      attrs: { id: "datepicker-inicio", required: "" },
-                      model: {
-                        value: _vm.data_inicio,
-                        callback: function($$v) {
-                          _vm.data_inicio = $$v
-                        },
-                        expression: "data_inicio"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-sm-6" },
-                  [
-                    _c("b-form-timepicker", {
-                      attrs: { locale: "de", required: "" },
-                      model: {
-                        value: _vm.hora_inicio,
-                        callback: function($$v) {
-                          _vm.hora_inicio = $$v
-                        },
-                        expression: "hora_inicio"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-sm-12 col-form-label",
-                    attrs: { for: "exampleInputName1" }
-                  },
-                  [_vm._v("Data Final")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-sm-6" },
-                  [
-                    _c("b-form-datepicker", {
-                      attrs: { id: "datepicker-fim", required: "" },
-                      model: {
-                        value: _vm.data_fim,
-                        callback: function($$v) {
-                          _vm.data_fim = $$v
-                        },
-                        expression: "data_fim"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-sm-6" },
-                  [
-                    _c("b-form-timepicker", {
-                      attrs: { locale: "de", required: "" },
-                      model: {
-                        value: _vm.hora_fim,
-                        callback: function($$v) {
-                          _vm.hora_fim = $$v
-                        },
-                        expression: "hora_fim"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
+            _c("h4", { staticClass: "card-title" }, [
+              _vm._v("Criar evento de avaliação")
+            ]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _vm.errors.length
+              ? _c("p", { staticClass: "text-danger" }, [
+                  _c("b", [_vm._v("Tenha em atenção:")]),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    _vm._l(_vm.errors, function(error) {
+                      return _c("li", [_vm._v(_vm._s(error))])
+                    }),
+                    0
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group row" }, [
               _c(
-                "button",
+                "label",
                 {
-                  staticClass: "btn btn-gradient-primary mr-2",
-                  on: {
-                    click: function($event) {
-                      return _vm.verificaForm()
-                    }
-                  }
+                  staticClass: "col-sm-12 col-form-label",
+                  attrs: { for: "exampleInputName1" }
                 },
-                [_vm._v("Criar")]
+                [_vm._v("Data de Início")]
               ),
               _vm._v(" "),
-              _c("button", { staticClass: "btn btn-light" }, [
-                _vm._v("Cancelar")
-              ])
-            ])
+              _c(
+                "div",
+                { staticClass: "col-sm-6" },
+                [
+                  _c("b-form-datepicker", {
+                    attrs: { id: "datepicker-inicio", required: "" },
+                    model: {
+                      value: _vm.data_inicio,
+                      callback: function($$v) {
+                        _vm.data_inicio = $$v
+                      },
+                      expression: "data_inicio"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-sm-6" },
+                [
+                  _c("b-form-timepicker", {
+                    attrs: { locale: "de", required: "" },
+                    model: {
+                      value: _vm.hora_inicio,
+                      callback: function($$v) {
+                        _vm.hora_inicio = $$v
+                      },
+                      expression: "hora_inicio"
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group row" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "col-sm-12 col-form-label",
+                  attrs: { for: "exampleInputName1" }
+                },
+                [_vm._v("Data Final")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-sm-6" },
+                [
+                  _c("b-form-datepicker", {
+                    attrs: { id: "datepicker-fim", required: "" },
+                    model: {
+                      value: _vm.data_fim,
+                      callback: function($$v) {
+                        _vm.data_fim = $$v
+                      },
+                      expression: "data_fim"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-sm-6" },
+                [
+                  _c("b-form-timepicker", {
+                    attrs: { locale: "de", required: "" },
+                    model: {
+                      value: _vm.hora_fim,
+                      callback: function($$v) {
+                        _vm.hora_fim = $$v
+                      },
+                      expression: "hora_fim"
+                    }
+                  })
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-gradient-primary mr-2",
+                on: {
+                  click: function($event) {
+                    return _vm.verificaForm()
+                  }
+                }
+              },
+              [_vm._v("Criar")]
+            ),
+            _vm._v(" "),
+            _c("button", { staticClass: "btn btn-light" }, [_vm._v("Cancelar")])
           ])
         ])
       ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Enunciado")]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "file-upload-default",
-        attrs: { type: "file", name: "img[]" }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "input-group col-xs-12" }, [
-        _c("input", {
-          staticClass: "form-control file-upload-info",
-          attrs: {
-            type: "text",
-            disabled: "",
-            placeholder: "Upload do enunciado"
-          }
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "input-group-append" }, [
-          _c(
-            "button",
-            {
-              staticClass: "file-upload-browse btn btn-gradient-primary",
-              attrs: { type: "button" }
-            },
-            [_vm._v("Upload")]
-          )
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -52990,58 +52949,66 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content-wrapper" }, [
-    _c("div", { staticClass: "page-header" }, [
-      _c("h3", { staticClass: "page-title" }, [_vm._v(_vm._s(_vm.disciplina))])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-4 stretch-card grid-margin" }, [
+    _c(
+      "div",
+      { staticClass: "page-header" },
+      [
         _c(
-          "div",
-          { staticClass: "card bg-gradient-danger card-img-holder text-white" },
+          "b-form-select",
+          {
+            staticClass: "mb-3",
+            on: {
+              change: function($event) {
+                return _vm.getEventosAvaliacaoDisciplina()
+              }
+            },
+            model: {
+              value: _vm.idDisciplina,
+              callback: function($$v) {
+                _vm.idDisciplina = $$v
+              },
+              expression: "idDisciplina"
+            }
+          },
           [
-            _c("div", { staticClass: "card-body" }, [
-              _c("img", {
-                staticClass: "card-img-absolute",
-                attrs: {
-                  src: "/images/dashboard/circle.svg",
-                  alt: "circle-image"
-                }
-              }),
-              _vm._v(" "),
-              _c("h4", { staticClass: "font-weight-normal mb-3" }, [
-                _vm._v("Novo evento de avaliação ")
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "btn btn-gradient-dark btn-rounded btn-icon float-right",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.criarEventoDeAvaliacao()
-                    }
-                  }
-                },
-                [
-                  _c("i", {
-                    staticClass:
-                      "mdi mdi-arrow-right-bold-circle-outline mdi-24px"
-                  })
-                ]
+            _c("b-form-select-option", { attrs: { value: null } }, [
+              _vm._v("Por favor escolha a disciplina")
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.opcoes, function(item, index) {
+              return _c(
+                "b-form-select-option",
+                { key: index, attrs: { value: item.id } },
+                [_vm._v(_vm._s(item.nome))]
               )
-            ])
-          ]
+            })
+          ],
+          2
         )
-      ])
-    ]),
+      ],
+      1
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-12 grid-margin stretch-card" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-body" }, [
+            _vm.show
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-gradient-primary btn-fw",
+                    attrs: { id: "criar" },
+                    on: {
+                      click: function($event) {
+                        return _vm.criarEventoAvaliacao()
+                      }
+                    }
+                  },
+                  [_vm._v("Novo Evento de Avaliação")]
+                )
+              : _vm._e(),
+            _vm._v(" "),
             _c("div", { staticClass: "table-responsive" }, [
               _c("table", { staticClass: "table" }, [
                 _vm._m(0),
@@ -75269,23 +75236,22 @@ var routes = [
         }
     },
     {
-        path: '/eventosAvaliacao/:disciplina',
+        path: '/eventosAvaliacao',
         name: 'Eventos de avaliação',
         component: _views_eventos_avaliacao_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
         meta: {
             icon: 'mdi-certificate'
-        },
-        children: [
-            {
-                path: '/criarAvaliacao',
-                name: 'Criar evento de avaliação',
-                component: _views_criar_avaliacao_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-                meta: {
-                    icon: 'mdi-home'
-                }
-            }
-        ]
-    }
+        }
+    },
+    {
+        path: '/criarAvaliacao/:disciplina',
+        name: 'Criar evento de avaliação',
+        component: _views_criar_avaliacao_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+        meta: {
+            icon: 'mdi-certificate',
+            hidden: true
+        }
+    },
 ];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     mode: 'history',

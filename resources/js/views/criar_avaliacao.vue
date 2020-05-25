@@ -7,10 +7,10 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <form>
                             <h4 class="card-title">Criar evento de avaliação</h4>
-                            <p v-if="errors.length">
-                                <b>Please correct the following error(s):</b>
+                            <hr>
+                            <p v-if="errors.length" class="text-danger">
+                                <b>Tenha em atenção:</b>
                                 <ul>
                                     <li v-for="error in errors">{{ error }}</li>
                                 </ul>
@@ -33,19 +33,8 @@
                                     <b-form-timepicker v-model="hora_fim" locale="de" required></b-form-timepicker>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label>Enunciado</label>
-                                <input type="file" name="img[]" class="file-upload-default">
-                                <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload do enunciado">
-                                    <span class="input-group-append">
-                                    <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
-                                    </span>
-                                </div>
-                            </div>
                             <button @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
                             <button class="btn btn-light">Cancelar</button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -86,27 +75,35 @@
                 data_inicio: dataI,
                 data_fim: dataF
             });
+            this.$router.push({ path: `/eventosAvaliacao` })
         },
         verificaForm(){
-            let dataI = this.data_inicio + ' ' + this.hora_inicio;
-            let dataF = this.data_fim + ' ' + this.hora_fim;
+            if (this.data_inicio && this.hora_inicio) {
+                if (this.data_fim && this.hora_fim) {
+                    let dataI = this.data_inicio + ' ' + this.hora_inicio;
+                    let dataF = this.data_fim + ' ' + this.hora_fim;
 
-            if (dataI && dataF) {
-                if (dataI < dataF) {
-                    return true;
+                    if(dataF > dataI){
+                        this.criarEventoAvaliacao();
+                        return true;
+                    }else{
+                         this.errors.push('Data de início tem de ser menor que Data Final');
+                    }
                 }
             }
 
-            this.errors = [];
-
-            if (!this.name) {
-                this.errors.push('Name required.');
+            if (!this.data_inicio) {
+                this.errors.push('Data de início é necessário');
             }
-            if (!this.age) {
-                this.errors.push('Age required.');
+            if (!this.hora_inicio) {
+                this.errors.push('Hora de início é necessário');
             }
-
-            e.preventDefault();
+            if (!this.data_fim) {
+                this.errors.push('Data Final é necessário');
+            }
+            if (!this.hora_fim) {
+                this.errors.push('Hora Final é necessário');
+            }
         }
     },
     computed: {

@@ -1,23 +1,16 @@
 <template>
     <div class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-title">{{disciplina}}</h3>
-        </div>
-        <div class="row">
-            <div class="col-md-4 stretch-card grid-margin">
-                <div class="card bg-gradient-danger card-img-holder text-white">
-                    <div class="card-body">
-                        <img src="/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                        <h4 class="font-weight-normal mb-3">Novo evento de avaliação </h4>
-                        <button type="button" class="btn btn-gradient-dark btn-rounded btn-icon float-right" @click="criarEventoDeAvaliacao()"><i class="mdi mdi-arrow-right-bold-circle-outline mdi-24px"></i></button>
-                    </div>
-                </div>
-            </div>
+            <b-form-select v-model="idDisciplina" @change="getEventosAvaliacaoDisciplina()" class="mb-3">
+                <b-form-select-option :value="null">Por favor escolha a disciplina</b-form-select-option>
+                <b-form-select-option v-for="(item, index) in opcoes" :key="index" :value="item.id">{{item.nome}}</b-form-select-option>
+            </b-form-select>
         </div>
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
+                        <button id="criar" v-if="show" @click="criarEventoAvaliacao()" class="btn btn-gradient-primary btn-fw">Novo Evento de Avaliação</button>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -51,8 +44,7 @@
     export default {
         mounted: function () {
             this.login()
-            this.getNomeDisciplina()
-            this.getEventosAvaliacaoDisciplina()
+            this.getDisciplinas()
         },
         methods: {
             async login() {
@@ -63,22 +55,24 @@
                     password: "12345678"
                 });
             },
-            async getNomeDisciplina() {
-                let url = '/api/disciplinas/' + this.$route.params.disciplina;
+            async getDisciplinas() {
+                let url = '/api/disciplinas';
                 axios.get(url)
                     .then((response) => {
-                        this.disciplina = response.data.data.nome;
+                        this.opcoes = response.data.data;
                     });
             },
             async getEventosAvaliacaoDisciplina() {
-                let url = '/api/disciplinas/' + this.$route.params.disciplina + '/eventos-de-avaliacao';
+                let url = '/api/disciplinas/' + this.idDisciplina + '/eventos-de-avaliacao';
                 axios.get(url)
                     .then((response) => {
+                        console.log(response.data.data)
                         this.eventosAvaliacao = response.data.data;
                     });
+                this.show = true;
             },
-            criarEventoDeAvaliacao(){
-                this.$router.push({ name: '/criarAvaliacao'})
+            criarEventoAvaliacao() {
+                this.$router.push({ path: `/criarAvaliacao/${this.idDisciplina}` })
             }
         },
         computed: {
@@ -89,8 +83,10 @@
         },
         data() {
             return {
-            disciplina: '',
-            eventosAvaliacao: []
+                idDisciplina: null,
+                opcoes: [],
+                eventosAvaliacao: [],
+                show: false
             }
         },
         components: {
@@ -100,8 +96,7 @@
 </script>
 
 <style>
-    .btn-gradient-dark{
-        display:inline-block;
-        position:relative;
+    #criar{
+        margin-bottom: 20px;
     }
 </style>
