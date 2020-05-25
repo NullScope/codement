@@ -32,6 +32,7 @@
         "bootstrap-vue": "^2.14.0",
         "prismjs": "^1.20.0",
         "vue-audio-recorder": "^3.0.1",
+        "vue-moment": "^4.1.0",
         "vue-prism-component": "^1.2.0",
         "vue-property-decorator": "^8.4.2",
         "vue-speech": "^0.1.0"

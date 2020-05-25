@@ -11,6 +11,7 @@ import store from './store';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import AudioRecorder from 'vue-audio-recorder';
 import VueSpeech from 'vue-speech';
+import Moment from 'vue-moment';
 
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
@@ -29,6 +30,8 @@ Vue.use(IconsPlugin)
 Vue.use(AudioRecorder);
 
 Vue.use(VueSpeech);
+
+Vue.use(Moment);
 
 /**
  * The following block of code may be used to automatically register your

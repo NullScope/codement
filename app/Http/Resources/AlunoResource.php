@@ -17,7 +17,7 @@ class AlunoResource extends JsonResource
         return [
             'id' => $this->id,
             'aluno_id' => $this->aluno_id,
-            'profile' => $this->user,
+            'user' => $this->user,
             'curso' => $this->curso,
             'data_de_matricula_inicial' => $this->data_de_matricula_inicial,
             'ano_curricular' => $this->ano_curricular,
