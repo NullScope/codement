@@ -2824,10 +2824,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.login();
+    this.getTipoDeUtilizador();
     this.getNomeDisciplina();
   },
   methods: {
@@ -2938,6 +2956,36 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       if (!this.hora_fim) {
         this.errors.push('Hora Final é necessário');
       }
+    },
+    getTipoDeUtilizador: function getTipoDeUtilizador() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
+                  console.log(response.data.data);
+
+                  if ("professor_id" in response.data.data) {
+                    _this3.professor = true;
+                  } else if ("aluno_id" in response.data.data) {
+                    _this3.professor = false;
+                  }
+                });
+
+              case 2:
+                ;
+
+              case 3:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }))();
     }
   },
   computed: {},
@@ -2949,7 +2997,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       data_fim: '',
       hora_fim: '',
       disciplina: '',
-      errors: []
+      errors: [],
+      professor: false
     };
   },
   components: {}
@@ -3037,6 +3086,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.login();
+    this.getTipoDeUtilizador();
     this.getDisciplinas();
   },
   methods: {
@@ -3097,10 +3147,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 url = '/api/disciplinas/' + _this2.idDisciplina + '/eventos-de-avaliacao';
                 axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
-                  console.log(response.data.data);
                   _this2.eventosAvaliacao = response.data.data;
                 });
-                _this2.show = true;
+                if (_this2.professor) _this2.show = true;
 
               case 3:
               case "end":
@@ -3114,6 +3163,36 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.$router.push({
         path: "/criarAvaliacao/".concat(this.idDisciplina)
       });
+    },
+    getTipoDeUtilizador: function getTipoDeUtilizador() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
+                  console.log(response.data.data);
+
+                  if ("professor_id" in response.data.data) {
+                    _this3.professor = true;
+                  } else if ("aluno_id" in response.data.data) {
+                    _this3.professor = false;
+                  }
+                });
+
+              case 2:
+                ;
+
+              case 3:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }))();
     }
   },
   computed: {},
@@ -3123,6 +3202,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       idDisciplina: null,
       opcoes: [],
       eventosAvaliacao: [],
+      professor: false,
       show: false
     };
   },
@@ -52778,150 +52858,205 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "content-wrapper" }, [
-    _c("div", { staticClass: "page-header" }, [
-      _c("h3", { staticClass: "page-title" }, [_vm._v(_vm._s(_vm.disciplina))])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 grid-margin stretch-card" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("h4", { staticClass: "card-title" }, [
-              _vm._v("Criar evento de avaliação")
-            ]),
-            _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _vm.errors.length
-              ? _c("p", { staticClass: "text-danger" }, [
-                  _c("b", [_vm._v("Tenha em atenção:")]),
+  return _vm.professor
+    ? _c("div", { staticClass: "content-wrapper" }, [
+        _c("div", { staticClass: "page-header" }, [
+          _c("h3", { staticClass: "page-title" }, [
+            _vm._v(_vm._s(_vm.disciplina))
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12 grid-margin stretch-card" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("h4", { staticClass: "card-title" }, [
+                  _vm._v("Criar evento de avaliação")
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _vm.errors.length
+                  ? _c("p", { staticClass: "text-danger" }, [
+                      _c("b", [_vm._v("Tenha em atenção:")]),
+                      _vm._v(" "),
+                      _c(
+                        "ul",
+                        _vm._l(_vm.errors, function(error) {
+                          return _c("li", { key: error }, [
+                            _vm._v(_vm._s(error))
+                          ])
+                        }),
+                        0
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group row" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-sm-12 col-form-label",
+                      attrs: { for: "exampleInputName1" }
+                    },
+                    [_vm._v("Data de Início")]
+                  ),
                   _vm._v(" "),
                   _c(
-                    "ul",
-                    _vm._l(_vm.errors, function(error) {
-                      return _c("li", [_vm._v(_vm._s(error))])
-                    }),
-                    0
+                    "div",
+                    { staticClass: "col-sm-6" },
+                    [
+                      _c("b-form-datepicker", {
+                        attrs: { id: "datepicker-inicio", required: "" },
+                        model: {
+                          value: _vm.data_inicio,
+                          callback: function($$v) {
+                            _vm.data_inicio = $$v
+                          },
+                          expression: "data_inicio"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-sm-6" },
+                    [
+                      _c("b-form-timepicker", {
+                        attrs: { locale: "de", required: "" },
+                        model: {
+                          value: _vm.hora_inicio,
+                          callback: function($$v) {
+                            _vm.hora_inicio = $$v
+                          },
+                          expression: "hora_inicio"
+                        }
+                      })
+                    ],
+                    1
                   )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group row" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "col-sm-12 col-form-label",
+                      attrs: { for: "exampleInputName1" }
+                    },
+                    [_vm._v("Data Final")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-sm-6" },
+                    [
+                      _c("b-form-datepicker", {
+                        attrs: { id: "datepicker-fim", required: "" },
+                        model: {
+                          value: _vm.data_fim,
+                          callback: function($$v) {
+                            _vm.data_fim = $$v
+                          },
+                          expression: "data_fim"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-sm-6" },
+                    [
+                      _c("b-form-timepicker", {
+                        attrs: { locale: "de", required: "" },
+                        model: {
+                          value: _vm.hora_fim,
+                          callback: function($$v) {
+                            _vm.hora_fim = $$v
+                          },
+                          expression: "hora_fim"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-gradient-primary mr-2",
+                    on: {
+                      click: function($event) {
+                        return _vm.verificaForm()
+                      }
+                    }
+                  },
+                  [_vm._v("Criar")]
+                ),
+                _vm._v(" "),
+                _c("button", { staticClass: "btn btn-light" }, [
+                  _vm._v("Cancelar")
                 ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "col-sm-12 col-form-label",
-                  attrs: { for: "exampleInputName1" }
-                },
-                [_vm._v("Data de Início")]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-sm-6" },
-                [
-                  _c("b-form-datepicker", {
-                    attrs: { id: "datepicker-inicio", required: "" },
-                    model: {
-                      value: _vm.data_inicio,
-                      callback: function($$v) {
-                        _vm.data_inicio = $$v
-                      },
-                      expression: "data_inicio"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-sm-6" },
-                [
-                  _c("b-form-timepicker", {
-                    attrs: { locale: "de", required: "" },
-                    model: {
-                      value: _vm.hora_inicio,
-                      callback: function($$v) {
-                        _vm.hora_inicio = $$v
-                      },
-                      expression: "hora_inicio"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "col-sm-12 col-form-label",
-                  attrs: { for: "exampleInputName1" }
-                },
-                [_vm._v("Data Final")]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-sm-6" },
-                [
-                  _c("b-form-datepicker", {
-                    attrs: { id: "datepicker-fim", required: "" },
-                    model: {
-                      value: _vm.data_fim,
-                      callback: function($$v) {
-                        _vm.data_fim = $$v
-                      },
-                      expression: "data_fim"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-sm-6" },
-                [
-                  _c("b-form-timepicker", {
-                    attrs: { locale: "de", required: "" },
-                    model: {
-                      value: _vm.hora_fim,
-                      callback: function($$v) {
-                        _vm.hora_fim = $$v
-                      },
-                      expression: "hora_fim"
-                    }
-                  })
-                ],
-                1
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-gradient-primary mr-2",
-                on: {
-                  click: function($event) {
-                    return _vm.verificaForm()
-                  }
-                }
-              },
-              [_vm._v("Criar")]
-            ),
-            _vm._v(" "),
-            _c("button", { staticClass: "btn btn-light" }, [_vm._v("Cancelar")])
+              ])
+            ])
           ])
         ])
       ])
-    ])
-  ])
+    : _c(
+        "div",
+        { staticClass: "container-fluid page-body-wrapper full-page-wrapper" },
+        [_vm._m(0)]
+      )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "content-wrapper d-flex align-items-center text-center error-page bg-primary"
+      },
+      [
+        _c("div", { staticClass: "row flex-grow" }, [
+          _c("div", { staticClass: "col-lg-7 mx-auto text-white" }, [
+            _c(
+              "div",
+              { staticClass: "row align-items-center d-flex flex-row" },
+              [
+                _c("div", { staticClass: "col-lg-6 text-lg-right pr-lg-4" }, [
+                  _c("h1", { staticClass: "display-1 mb-0" }, [_vm._v("404")])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-lg-6 error-page-divider text-lg-left pl-lg-4"
+                  },
+                  [
+                    _c("h2", [_vm._v("DESCULPE!")]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "font-weight-light" }, [
+                      _vm._v("A página que procura não foi encontrada.")
+                    ])
+                  ]
+                )
+              ]
+            )
+          ])
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 

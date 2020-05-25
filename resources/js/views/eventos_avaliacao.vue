@@ -44,6 +44,7 @@
     export default {
         mounted: function () {
             this.login()
+            this.getTipoDeUtilizador()
             this.getDisciplinas()
         },
         methods: {
@@ -66,13 +67,25 @@
                 let url = '/api/disciplinas/' + this.idDisciplina + '/eventos-de-avaliacao';
                 axios.get(url)
                     .then((response) => {
-                        console.log(response.data.data)
                         this.eventosAvaliacao = response.data.data;
                     });
-                this.show = true;
+                
+                if(this.professor)
+                    this.show = true;
             },
             criarEventoAvaliacao() {
                 this.$router.push({ path: `/criarAvaliacao/${this.idDisciplina}` })
+            },
+            async getTipoDeUtilizador() {
+                await axios.get('/api/me').then((response) => {
+                    console.log(response.data.data)
+                    if ("professor_id" in response.data.data){
+                        this.professor = true;
+                    }
+                    else if ("aluno_id" in response.data.data){
+                        this.professor = false;
+                    }
+                });;
             }
         },
         computed: {
@@ -86,6 +99,7 @@
                 idDisciplina: null,
                 opcoes: [],
                 eventosAvaliacao: [],
+                professor: false,
                 show: false
             }
         },

@@ -1,5 +1,5 @@
 <template>
-    <div class="content-wrapper">
+    <div v-if="professor" class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">{{disciplina}}</h3>
         </div>
@@ -7,39 +7,56 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                            <h4 class="card-title">Criar evento de avaliação</h4>
-                            <hr>
-                            <p v-if="errors.length" class="text-danger">
-                                <b>Tenha em atenção:</b>
-                                <ul>
-                                    <li v-for="error in errors">{{ error }}</li>
-                                </ul>
-                            </p>
-                            <div class="form-group row">
-                                <label for="exampleInputName1" class="col-sm-12 col-form-label">Data de Início</label>
-                                <div class="col-sm-6">
-                                    <b-form-datepicker id="datepicker-inicio" v-model="data_inicio" required></b-form-datepicker>
-                                </div>
-                                <div class="col-sm-6">
-                                    <b-form-timepicker v-model="hora_inicio" locale="de" required></b-form-timepicker>
-                                </div>
+                        <h4 class="card-title">Criar evento de avaliação</h4>
+                        <hr>
+                        <p v-if="errors.length" class="text-danger">
+                            <b>Tenha em atenção:</b>
+                            <ul>
+                                <li v-for="error in errors" :key="error">{{ error }}</li>
+                            </ul>
+                        </p>
+                        <div class="form-group row">
+                            <label for="exampleInputName1" class="col-sm-12 col-form-label">Data de Início</label>
+                            <div class="col-sm-6">
+                                <b-form-datepicker id="datepicker-inicio" v-model="data_inicio" required></b-form-datepicker>
                             </div>
-                            <div class="form-group row">
-                                <label for="exampleInputName1" class="col-sm-12 col-form-label">Data Final</label>
-                                <div class="col-sm-6">
-                                    <b-form-datepicker id="datepicker-fim" v-model="data_fim" required></b-form-datepicker>
-                                </div>
-                                <div class="col-sm-6">
-                                    <b-form-timepicker v-model="hora_fim" locale="de" required></b-form-timepicker>
-                                </div>
+                            <div class="col-sm-6">
+                                <b-form-timepicker v-model="hora_inicio" locale="de" required></b-form-timepicker>
                             </div>
-                            <button @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
-                            <button class="btn btn-light">Cancelar</button>
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleInputName1" class="col-sm-12 col-form-label">Data Final</label>
+                            <div class="col-sm-6">
+                                <b-form-datepicker id="datepicker-fim" v-model="data_fim" required></b-form-datepicker>
+                            </div>
+                            <div class="col-sm-6">
+                                <b-form-timepicker v-model="hora_fim" locale="de" required></b-form-timepicker>
+                            </div>
+                        </div>
+                        <button @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
+                        <button class="btn btn-light">Cancelar</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div v-else class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center text-center error-page bg-primary">
+          <div class="row flex-grow">
+            <div class="col-lg-7 mx-auto text-white">
+              <div class="row align-items-center d-flex flex-row">
+                <div class="col-lg-6 text-lg-right pr-lg-4">
+                  <h1 class="display-1 mb-0">404</h1>
+                </div>
+                <div class="col-lg-6 error-page-divider text-lg-left pl-lg-4">
+                  <h2>DESCULPE!</h2>
+                  <h3 class="font-weight-light">A página que procura não foi encontrada.</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </template>
 
 <script>   
@@ -48,6 +65,7 @@
   export default {
     mounted: function () {
         this.login()
+        this.getTipoDeUtilizador()
         this.getNomeDisciplina()
     },
     methods: {
@@ -104,6 +122,17 @@
             if (!this.hora_fim) {
                 this.errors.push('Hora Final é necessário');
             }
+        },
+        async getTipoDeUtilizador() {
+            await axios.get('/api/me').then((response) => {
+                console.log(response.data.data)
+                if ("professor_id" in response.data.data){
+                    this.professor = true;
+                }
+                else if ("aluno_id" in response.data.data){
+                    this.professor = false;
+                }
+            });;
         }
     },
     computed: {
@@ -119,7 +148,8 @@
         data_fim: '',
         hora_fim: '',
         disciplina: '',
-        errors: []
+        errors: [],
+        professor: false
       }
     },
     components: {
