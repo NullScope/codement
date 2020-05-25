@@ -64,11 +64,34 @@ class ResolucaoFicheiroController extends Controller
                 ->resolucoes()
                 ->findOrFail($resolucao_id);
 
-            $ficheiro = Ficheiro::create($request->all());
+            $validator = Validator::make($request->all(), [
+                'nome' => ['required', 'string'],
+                'descricao' => ['required', 'string'],
+                'ficheiro' => ['required', 'file']
+            ]);
 
-            $resolucao->ficheiros()->save($ficheiro);
+            $file = $request->ficheiro;
+            $fileOriginalName = $file->getClientOriginalName();
+            $explode = explode('.', $fileOriginalName);
+            $extension = array_pop($explode);
 
-            return new FicheiroResource($ficheiro);
+            if ($validator->fails()) {
+                return $validator->messages();
+            } else {
+                $path = $file->store('files', 'public_uploads');
+
+                $ficheiro = Ficheiro::create([
+                    'user_id' => auth()->user()->id,
+                    'nome' => $request->input('nome'),
+                    'descricao' => $request->input('descricao'),
+                    'extensao' => $extension,
+                    'url' => env('APP_URL').'/uploads/'.$path
+                ]);
+
+                $resolucao->ficheiros()->save($ficheiro);
+
+                return new FicheiroResource($ficheiro);
+            }
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(

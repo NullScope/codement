@@ -2,7 +2,7 @@
   <div>
     <!-- <a href="" @click.prevent="login">Login</a> -->
     <div>
-      <code-highlighter></code-highlighter>
+      <!-- <code-highlighter uploadUrl="/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros"></code-highlighter> -->
     </div>
   </div>
 </template>
@@ -11,19 +11,27 @@
   import axios from "axios";
 
   export default {
-    mounted: function () {
+    mounted: async function () {
+      // await axios.post('/login', {
+      //   email: "2082214@student.uma.pt",
+      //   password: "12345678"
+      // });
 
+      // await axios.post('/api/disciplinas/1/eventos-de-avaliacao', {
+      //   data_inicio: "2020-10-10",
+      //   data_fim: "2020-10-11"
+      // })
     },
     methods: {
       async login() {
-        // await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+        // await axios.get('/sanctum/csrf-cookie');
 
-        // await axios.post('http://localhost:8000/login', {
-        //   email: "brunoribeiro095@gmail.com",
+        // await axios.post('/login', {
+        //   email: "2082214@student.uma.pt",
         //   password: "12345678"
         // });
 
-        // let response = await axios.post('http://localhost:8000/api/disciplinas/1/duvidas', {
+        // let response = await axios.post('/api/disciplinas/1/duvidas', {
 
         // });
 

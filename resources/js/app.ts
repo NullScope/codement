@@ -11,8 +11,11 @@ import store from './store';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import AudioRecorder from 'vue-audio-recorder';
 import VueSpeech from 'vue-speech';
+import Moment from 'vue-moment';
 
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+import AppView from './views/app.vue';
 
 import ExampleComponent from './components/ExampleComponent.vue';
 import CodeHighlighter from './components/CodeHighlighter.vue';
@@ -28,6 +31,8 @@ Vue.use(AudioRecorder);
 
 Vue.use(VueSpeech);
 
+Vue.use(Moment);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -36,6 +41,8 @@ Vue.use(VueSpeech);
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
+// Necessário registar isto para o routing desejado
+Vue.component('app', AppView);
 Vue.component('example-component', ExampleComponent);
 Vue.component('code-highlighter', CodeHighlighter);
 Vue.component('navbar', Navbar);

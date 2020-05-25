@@ -19,6 +19,7 @@ class ComentarioResource extends JsonResource
             'user' => $this->user,
             'ficheiro' => $this->ficheiro,
             'comentario' => $this->comentario,
+            'subcomentarios' => $this::collection($this->subcomentarios),
             'audio_url' => $this->audio_url,
             'linha_inicio' => $this->linha_inicio,
             'linha_fim' => $this->linha_fim,

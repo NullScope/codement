@@ -11,7 +11,7 @@ class Comentario extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'ficheiro_id', 'comentario', 'audio_url', 'linha_inicio', 'linha_fim'];
+    protected $fillable = ['user_id', 'ficheiro_id', 'comentario', 'audio_url', 'linha_inicio', 'linha_fim', 'comentario_id'];
 
     public function user()
     {
@@ -21,5 +21,10 @@ class Comentario extends Model
     public function ficheiro()
     {
         return $this->belongsTo('App\Ficheiro');
+    }
+
+    public function subcomentarios()
+    {
+        return $this->hasMany('App\Comentario');
     }
 }

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Disciplina;
 use App\EventoDeAvaliacao;
@@ -50,11 +52,35 @@ class EventoDeAvaliacaoFicheiroController extends Controller
     {
         try {
             $evento_de_avaliacao = Disciplina::findOrFail($disciplina_id)->eventosDeAvaliacao()->findOrFail($evento_de_avaliacao_id);
-            $ficheiro = Ficheiro::create($request->all());
 
-            $evento_de_avaliacao->ficheiros()->save($ficheiro);
+            $validator = Validator::make($request->all(), [
+                'nome' => ['required', 'string'],
+                'descricao' => ['required', 'string'],
+                'ficheiro' => ['required', 'file']
+            ]);
 
-            return new FicheiroResource($aula);
+            $file = $request->ficheiro;
+            $fileOriginalName = $file->getClientOriginalName();
+            $explode = explode('.', $fileOriginalName);
+            $extension = array_pop($explode);
+
+            if ($validator->fails()) {
+                return $validator->messages();
+            } else {
+                $path = $file->store('files', 'public_uploads');
+
+                $ficheiro = Ficheiro::create([
+                    'user_id' => auth()->user()->id,
+                    'nome' => $request->input('nome'),
+                    'descricao' => $request->input('descricao'),
+                    'extensao' => $extension,
+                    'url' => env('APP_URL').'/uploads/'.$path
+                ]);
+
+                $evento_de_avaliacao->ficheiros()->save($ficheiro);
+
+                return new FicheiroResource($ficheiro);
+            }
         } catch (ModelNotFoundException $e) {
             /* Return Error Response */
             return response()->json(array(
