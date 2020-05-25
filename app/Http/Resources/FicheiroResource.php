@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\ComentarioResource;
 
 class FicheiroResource extends JsonResource
 {
@@ -19,7 +20,7 @@ class FicheiroResource extends JsonResource
             'user' => $this->user,
             'url' => $this->url,
             'extensao' => $this->extensao,
-            'comentarios' => $this->comentarios,
+            'comentarios' => ComentarioResource::collection($this->comentarios),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

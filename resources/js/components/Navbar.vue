@@ -138,8 +138,12 @@
   </nav>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator';
+
+@Component
+export default class Sidebar extends Vue {
 
 }
+
 </script>

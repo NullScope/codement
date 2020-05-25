@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use App\Ficheiro;
 use App\Comentario;
@@ -46,23 +48,37 @@ class ComentarioController extends Controller
     public function store(Request $request, $ficheiro_id)
     {
         $validator = Validator::make($request->all(), [
-            'comentario' => ['required', 'string', 'max:255'],
+            'comentario' => ['required_without:audio', 'nullable', 'string', 'max:255'],
             'linha_inicio' => ['required', 'int', 'max:255'],
-            'linha_fim' => ['required', 'int', 'max:255']
+            'linha_fim' => ['required', 'int', 'max:255'],
+            'audio' => ['required_without:comentario', 'file']
         ]);
+
+        $file = $request->audio;
 
         if ($validator->fails()) {
             return $validator->messages();
         } else {
             $ficheiro = Ficheiro::findOrFail($ficheiro_id);
 
+            if ($file) {
+                $path = $file->store('files', 'public_uploads');
+                $url = env('APP_URL').'/uploads/'.$path;
+            } else {
+                $url = NULL;
+            }
+
             $comentario = Comentario::create([
+                'user_id' => auth()->user()->id,
+                'ficheiro_id' => $ficheiro_id,
                 'comentario' => $request->input('comentario'),
                 'linha_inicio' => $request->input('linha_inicio'),
-                'linha_fim' => $request->input('linha_fim')
+                'linha_fim' => $request->input('linha_fim'),
+                'audio_url' => $url,
+                'comentario_id' => $request->input('comentario_id')
             ]);
 
-            $ficheiro->comentarios()->attach($comentario);
+            $ficheiro->comentarios()->save($comentario);
 
             return new ComentarioResource($comentario);
         }

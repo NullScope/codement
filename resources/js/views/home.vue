@@ -2,7 +2,7 @@
   <div>
     <!-- <a href="" @click.prevent="login">Login</a> -->
     <div>
-      <code-highlighter></code-highlighter>
+      <!-- <code-highlighter uploadUrl="/api/disciplinas/1/eventos-de-avaliacao/1/ficheiros"></code-highlighter> -->
     </div>
   </div>
 </template>

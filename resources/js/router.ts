@@ -19,7 +19,9 @@ export const routes: RouteConfig[] = [
     name: 'Home',
     component: HomePage,
     meta: {
-      icon: 'mdi-home'
+      icon: 'mdi-home',
+      // hideNavbar: true,
+      // hideSidebar: true,
     }
   },
   {

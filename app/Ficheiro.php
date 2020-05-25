@@ -11,7 +11,7 @@ class Ficheiro extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'url', 'extensao'];
+    protected $fillable = ['user_id', 'url', 'extensao', 'nome', 'descricao'];
 
     public function ficheiroable()
     {
@@ -23,7 +23,8 @@ class Ficheiro extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function comentarios() {
-        $this->hasMany('App\Comentario');
+    public function comentarios()
+    {
+        return $this->hasMany('App\Comentario')->where('comentario_id', NULL);
     }
 }
