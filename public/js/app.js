@@ -2335,7 +2335,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         _this6.onRemoveRecord();
       });
       Prism.hooks.add('complete', function (env) {
-        _this6.lineNumbersRow = document.getElementsByClassName("line-numbers-rows")[0];
+        _this6.lineNumbersRow = env.element.children[env.element.children.length - 2];
         var lineNumbersChildren = Array.prototype.slice.call(_this6.lineNumbersRow.children);
 
         var _iterator = _createForOfIteratorHelper(lineNumbersChildren.entries()),

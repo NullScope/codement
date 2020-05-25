@@ -398,7 +398,7 @@
         });
 
         Prism.hooks.add('complete', (env) => {
-          this.lineNumbersRow = document.getElementsByClassName("line-numbers-rows")[0];
+          this.lineNumbersRow = env.element.children[env.element.children.length - 2];
 
           let lineNumbersChildren = Array.prototype.slice.call(this.lineNumbersRow.children);
 
