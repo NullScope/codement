@@ -51158,6 +51158,9 @@ var Sidebar = /** @class */ (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Sidebar.prototype.getSubmenuId = function (route) {
+        return 'ui-' + route.path.replace(/[\s:\/]/gi, '-');
+    };
     Sidebar = __decorate([
         vue_property_decorator__WEBPACK_IMPORTED_MODULE_1__["Component"]
     ], Sidebar);
@@ -52527,18 +52530,15 @@ var render = function() {
                         })
                       ]
                     )
-                  : _vm._e(),
-                _vm._v(" "),
-                route.children
-                  ? _c(
+                  : _c(
                       "a",
                       {
                         staticClass: "nav-link",
                         attrs: {
-                          href: "#ui-" + route.name,
+                          href: "#" + _vm.getSubmenuId(route),
                           "aria-expanded": "false",
                           "data-toggle": "collapse",
-                          "aria-controls": "ui-" + route.name
+                          "aria-controls": _vm.getSubmenuId(route)
                         }
                       },
                       [
@@ -52553,15 +52553,14 @@ var render = function() {
                           class: route.meta.icon
                         })
                       ]
-                    )
-                  : _vm._e(),
+                    ),
                 _vm._v(" "),
                 route.children
                   ? _c(
                       "div",
                       {
                         staticClass: "collapse",
-                        attrs: { id: "ui-" + route.name }
+                        attrs: { id: _vm.getSubmenuId(route) }
                       },
                       [
                         _c(
