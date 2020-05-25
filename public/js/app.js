@@ -2694,17 +2694,33 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee2);
       }))();
-    }
-    /*async criarEventoAvaliacao() {
-        let dataI = this.data_inicio + ' ' + this.hora_inicio;
-        let dataF = this.data_fim + ' ' + this.hora_fim;
-         let url = '/api/disciplinas/' + this.$route.params.disciplina + '/eventos-de-avaliacao';
-        await axios.post(url, {
-            data_inicio: dataI,
-            data_fim: dataF
-        });
-    }*/
+    },
+    criarEventoAvaliacao: function criarEventoAvaliacao() {
+      var _this2 = this;
 
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var dataI, dataF, url;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                dataI = _this2.data_inicio + ' ' + _this2.hora_inicio;
+                dataF = _this2.data_fim + ' ' + _this2.hora_fim;
+                url = '/api/disciplinas/' + _this2.$route.params.disciplina + '/eventos-de-avaliacao';
+                _context3.next = 5;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, {
+                  data_inicio: dataI,
+                  data_fim: dataF
+                });
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    }
   },
   computed: {},
   watch: {},
@@ -52014,9 +52030,18 @@ var render = function() {
             _vm._v(" "),
             _vm._m(0),
             _vm._v(" "),
-            _c("button", { staticClass: "btn btn-gradient-primary mr-2" }, [
-              _vm._v("Criar")
-            ]),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-gradient-primary mr-2",
+                on: {
+                  click: function($event) {
+                    return _vm.criarEventoAvaliacao()
+                  }
+                }
+              },
+              [_vm._v("Criar")]
+            ),
             _vm._v(" "),
             _c("button", { staticClass: "btn btn-light" }, [_vm._v("Cancelar")])
           ])

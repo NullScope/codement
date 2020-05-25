@@ -36,7 +36,7 @@
                                 </span>
                             </div>
                         </div>
-                        <button class="btn btn-gradient-primary mr-2">Criar</button>
+                        <button @click="criarEventoAvaliacao()" class="btn btn-gradient-primary mr-2">Criar</button>
                         <button class="btn btn-light">Cancelar</button>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     this.disciplina = response.data.data.nome;
                 });
         },
-        /*async criarEventoAvaliacao() {
+        async criarEventoAvaliacao() {
             let dataI = this.data_inicio + ' ' + this.hora_inicio;
             let dataF = this.data_fim + ' ' + this.hora_fim;
 
@@ -78,7 +78,7 @@
                 data_inicio: dataI,
                 data_fim: dataF
             });
-        }*/
+        }
     },
     computed: {
 
