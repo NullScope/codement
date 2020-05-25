@@ -84,6 +84,9 @@
         </div>
       </div>
     </div>
+    <div class="row justify-content-center" v-if="code">
+      <h4> Para comentar código, clique e arraste na coluna dos números de linhas </h4>
+    </div>
     <div class="row justify-content-center">
       <div class="col-lg-4 card-columns" id="comments" v-if="code && comments.length > 0">
         <div

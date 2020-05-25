@@ -2077,6 +2077,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
 
 
 
@@ -51352,6 +51355,16 @@ var render = function() {
                   )
                 ])
               ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.code
+        ? _c("div", { staticClass: "row justify-content-center" }, [
+            _c("h4", [
+              _vm._v(
+                " Para comentar código, clique e arraste na coluna dos números de linhas "
+              )
             ])
           ])
         : _vm._e(),
