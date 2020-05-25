@@ -51649,7 +51649,7 @@ var staticRenderFns = [
             _c(
               "a",
               { staticClass: "navbar-brand brand-logo", attrs: { href: "/" } },
-              [_c("img", { attrs: { src: "images/logo.svg", alt: "logo" } })]
+              [_c("img", { attrs: { src: "/images/logo.svg", alt: "logo" } })]
             ),
             _vm._v(" "),
             _c(
@@ -51660,7 +51660,7 @@ var staticRenderFns = [
               },
               [
                 _c("img", {
-                  attrs: { src: "images/logo-mini.svg", alt: "logo" }
+                  attrs: { src: "/images/logo-mini.svg", alt: "logo" }
                 })
               ]
             )
@@ -51725,7 +51725,7 @@ var staticRenderFns = [
                   [
                     _c("div", { staticClass: "nav-profile-img" }, [
                       _c("img", {
-                        attrs: { src: "images/faces/face1.jpg", alt: "image" }
+                        attrs: { src: "/images/faces/face1.jpg", alt: "image" }
                       }),
                       _vm._v(" "),
                       _c("span", { staticClass: "availability-status online" })
@@ -51821,7 +51821,10 @@ var staticRenderFns = [
                       _c("div", { staticClass: "preview-thumbnail" }, [
                         _c("img", {
                           staticClass: "profile-pic",
-                          attrs: { src: "images/faces/face4.jpg", alt: "image" }
+                          attrs: {
+                            src: "/images/faces/face4.jpg",
+                            alt: "image"
+                          }
                         })
                       ]),
                       _vm._v(" "),
@@ -51854,7 +51857,10 @@ var staticRenderFns = [
                       _c("div", { staticClass: "preview-thumbnail" }, [
                         _c("img", {
                           staticClass: "profile-pic",
-                          attrs: { src: "images/faces/face2.jpg", alt: "image" }
+                          attrs: {
+                            src: "/images/faces/face2.jpg",
+                            alt: "image"
+                          }
                         })
                       ]),
                       _vm._v(" "),
@@ -51887,7 +51893,10 @@ var staticRenderFns = [
                       _c("div", { staticClass: "preview-thumbnail" }, [
                         _c("img", {
                           staticClass: "profile-pic",
-                          attrs: { src: "images/faces/face3.jpg", alt: "image" }
+                          attrs: {
+                            src: "/images/faces/face3.jpg",
+                            alt: "image"
+                          }
                         })
                       ]),
                       _vm._v(" "),
