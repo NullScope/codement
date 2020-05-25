@@ -2,6 +2,7 @@ import Vue from "vue"
 import VueRouter, { RouteConfig } from "vue-router"
 import HomePage from "./views/home.vue"
 import DisciplinaPage from "./views/disciplina.vue"
+import AulaPage from "./views/aula.vue"
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,14 @@ export const routes: RouteConfig[] = [
     path:'/disciplina',
     name: 'Disciplina',
     component: DisciplinaPage,
+    meta: {
+      icon: 'mdi-home'
+    }
+  },
+  {
+    path:'/aula',
+    name: 'Aula',
+    component: AulaPage,
     meta: {
       icon: 'mdi-home'
     }
