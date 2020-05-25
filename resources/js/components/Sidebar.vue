@@ -21,12 +21,12 @@
         <span class="menu-title">{{route.name}}</span>
         <i class="mdi menu-icon" :class="route.meta.icon"></i>
       </router-link>
-      <a class="nav-link" v-if="route.children" :href="'#ui-'+route.name" aria-expanded="false" data-toggle="collapse" :aria-controls="'ui-'+route.name">
+      <a class="nav-link" v-else :href="'#'+getSubmenuId(route)" aria-expanded="false" data-toggle="collapse" :aria-controls="getSubmenuId(route)">
         <span class="menu-title">{{route.name}}</span>
         <i class="menu-arrow"></i>
         <i class="mdi menu-icon" :class="route.meta.icon"></i>
       </a>
-      <div class="collapse" :id="'ui-'+route.name" v-if="route.children">
+      <div class="collapse" :id="getSubmenuId(route)" v-if="route.children">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item" v-for="child in route.children" v-bind:key="child.name">
             <router-link class="nav-link" :to="child.path">{{child.name}}</router-link>
@@ -40,6 +40,7 @@
 
 <script lang="ts">
 import { routes } from '../router';
+import { Route } from 'vue-router';
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
@@ -48,6 +49,10 @@ export default class Sidebar extends Vue {
 
   get filteredRoutes() {
     return routes.filter((route) => !route.meta.hidden);
+  }
+
+  getSubmenuId(route: Route): String {
+    return 'ui-'+route.path.replace(/[\s:\/]/gi, '-');
   }
 }
 </script>
