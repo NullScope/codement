@@ -50750,11 +50750,19 @@ var Sidebar = /** @class */ (function (_super) {
     }
     Object.defineProperty(Sidebar.prototype, "filteredRoutes", {
         get: function () {
-            return _router__WEBPACK_IMPORTED_MODULE_0__["routes"].filter(function (route) { return !route.meta.hidden; });
+            return _router__WEBPACK_IMPORTED_MODULE_0__["routes"].filter(function (route) { return !route.meta || !route.meta.hidden; });
         },
         enumerable: true,
         configurable: true
     });
+    Sidebar.prototype.getFilteredNestedRoutes = function (route) {
+        if (route.children) {
+            return route.children.filter(function (subroute) { return !subroute.meta || !subroute.meta.hidden; });
+        }
+        else {
+            return [];
+        }
+    };
     Sidebar.prototype.getSubmenuId = function (route) {
         return 'ui-' + route.path.replace(/[\s:\/]/gi, '-');
     };
@@ -52172,7 +52180,9 @@ var render = function() {
                         _c(
                           "ul",
                           { staticClass: "nav flex-column sub-menu" },
-                          _vm._l(route.children, function(child) {
+                          _vm._l(_vm.getFilteredNestedRoutes(route), function(
+                            child
+                          ) {
                             return _c(
                               "li",
                               { key: child.name, staticClass: "nav-item" },
