@@ -7,37 +7,45 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Criar evento de avaliação</h4>
-                        <div class="form-group row">
-                            <label for="exampleInputName1" class="col-sm-12 col-form-label">Data de Início</label>
-                            <div class="col-sm-6">
-                                <b-form-datepicker id="datepicker-inicio" v-model="data_inicio" required></b-form-datepicker>
+                        <form>
+                            <h4 class="card-title">Criar evento de avaliação</h4>
+                            <p v-if="errors.length">
+                                <b>Please correct the following error(s):</b>
+                                <ul>
+                                    <li v-for="error in errors">{{ error }}</li>
+                                </ul>
+                            </p>
+                            <div class="form-group row">
+                                <label for="exampleInputName1" class="col-sm-12 col-form-label">Data de Início</label>
+                                <div class="col-sm-6">
+                                    <b-form-datepicker id="datepicker-inicio" v-model="data_inicio" required></b-form-datepicker>
+                                </div>
+                                <div class="col-sm-6">
+                                    <b-form-timepicker v-model="hora_inicio" locale="de" required></b-form-timepicker>
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <b-form-timepicker v-model="hora_inicio" locale="de" required></b-form-timepicker>
+                            <div class="form-group row">
+                                <label for="exampleInputName1" class="col-sm-12 col-form-label">Data Final</label>
+                                <div class="col-sm-6">
+                                    <b-form-datepicker id="datepicker-fim" v-model="data_fim" required></b-form-datepicker>
+                                </div>
+                                <div class="col-sm-6">
+                                    <b-form-timepicker v-model="hora_fim" locale="de" required></b-form-timepicker>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="exampleInputName1" class="col-sm-12 col-form-label">Data Final</label>
-                            <div class="col-sm-6">
-                                <b-form-datepicker id="datepicker-fim" v-model="data_fim" required></b-form-datepicker>
+                            <div class="form-group">
+                                <label>Enunciado</label>
+                                <input type="file" name="img[]" class="file-upload-default">
+                                <div class="input-group col-xs-12">
+                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload do enunciado">
+                                    <span class="input-group-append">
+                                    <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+                                    </span>
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <b-form-timepicker v-model="hora_fim" locale="de" required></b-form-timepicker>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Enunciado</label>
-                            <input type="file" name="img[]" class="file-upload-default">
-                            <div class="input-group col-xs-12">
-                                <input type="text" class="form-control file-upload-info" disabled placeholder="Upload do enunciado">
-                                <span class="input-group-append">
-                                <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
-                                </span>
-                            </div>
-                        </div>
-                        <button @click="criarEventoAvaliacao()" class="btn btn-gradient-primary mr-2">Criar</button>
-                        <button class="btn btn-light">Cancelar</button>
+                            <button @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
+                            <button class="btn btn-light">Cancelar</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -78,6 +86,27 @@
                 data_inicio: dataI,
                 data_fim: dataF
             });
+        },
+        verificaForm(){
+            let dataI = this.data_inicio + ' ' + this.hora_inicio;
+            let dataF = this.data_fim + ' ' + this.hora_fim;
+
+            if (dataI && dataF) {
+                if (dataI < dataF) {
+                    return true;
+                }
+            }
+
+            this.errors = [];
+
+            if (!this.name) {
+                this.errors.push('Name required.');
+            }
+            if (!this.age) {
+                this.errors.push('Age required.');
+            }
+
+            e.preventDefault();
         }
     },
     computed: {
@@ -92,7 +121,8 @@
         hora_inicio: '',
         data_fim: '',
         hora_fim: '',
-        disciplina: ''
+        disciplina: '',
+        errors: []
       }
     },
     components: {
