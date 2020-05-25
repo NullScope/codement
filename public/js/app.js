@@ -2783,22 +2783,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
-/* var aula = new Vue ({
-     el: '#aula',
-     data: {
-         nomeAula: 'Introdução'
-     }
- })*/
-
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      nomeAula: 'Introdução',
+      descricaoAula: 'Esta é uma descrição da aula.'
+    };
+  }
+});
 
 /***/ }),
 
@@ -52447,28 +52440,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content-wrapper" }, [
-      _c("div", { staticClass: "page-header" }, [
-        _c("h3", [_vm._v("nomeAula")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "section" }, [
-        _c("p", [_vm._v("Esta é uma descrição geral da aula")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "section" }, [
-        _c("p", [_c("b", [_vm._v("Ficheiros:")])])
-      ])
+  return _c("div", { staticClass: "content-wrapper" }, [
+    _c("div", { staticClass: "page-header" }, [
+      _c("h3", { staticClass: "page-tittle" }, [_vm._v(_vm._s(_vm.nomeAula))])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "section" }, [
+      _c("p", [_vm._v(_vm._s(_vm.descricaoAula))])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -74929,14 +74911,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************!*\
   !*** ./resources/js/views/aula.vue ***!
   \*************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _aula_vue_vue_type_template_id_2e8edba8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./aula.vue?vue&type=template&id=2e8edba8& */ "./resources/js/views/aula.vue?vue&type=template&id=2e8edba8&");
 /* harmony import */ var _aula_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aula.vue?vue&type=script&lang=js& */ "./resources/js/views/aula.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _aula_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _aula_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -74966,7 +74949,7 @@ component.options.__file = "resources/js/views/aula.vue"
 /*!**************************************************************!*\
   !*** ./resources/js/views/aula.vue?vue&type=script&lang=js& ***!
   \**************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
