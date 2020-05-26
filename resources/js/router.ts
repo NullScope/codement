@@ -3,7 +3,7 @@ import VueRouter, { RouteConfig } from "vue-router"
 import HomePage from "./views/home.vue"
 import DisciplinaPage from "./views/disciplina.vue"
 import AulaPage from "./views/aula.vue"
-
+import CriarAulaPage from "./views/criar_aula.vue"
 Vue.use(VueRouter);
 
 export const routes: RouteConfig[] = [
@@ -39,7 +39,16 @@ export const routes: RouteConfig[] = [
     meta: {
       icon: 'mdi-home'
     }
-  }
+  },
+  {
+    path: '/criar_aula/:disciplina',
+    name: 'Criar aula',
+    component: CriarAulaPage,
+    meta: {
+      icon: 'mdi-certificate',
+      //hidden: true
+    }
+  },
 ];
 
 export const router = new VueRouter({
