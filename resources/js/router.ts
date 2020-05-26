@@ -41,11 +41,11 @@ export const routes: RouteConfig[] = [
     }
   },
   {
-    path: '/criar_aula/:disciplina',
+    path: '/criar_aula',
     name: 'Criar aula',
     component: CriarAulaPage,
     meta: {
-      icon: 'mdi-certificate',
+      icon: 'mdi-home',
       //hidden: true
     }
   },

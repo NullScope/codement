@@ -2859,6 +2859,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -2914,9 +2922,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 2:
-                ;
-
-              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -2971,11 +2976,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     criarAula: function criarAula() {
+      var _this5 = this;
+
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+        var nomeA, descA, url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
+                nomeA = _this5.nomeAula;
+                descA = _this5.descricaoAula;
+                url = '/api/disciplinas/' + _this5.$route.params.disciplina + '/disciplina';
+                _context5.next = 5;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, {
+                  nomeAula: nomeA,
+                  descricaoAula: descA
+                });
+
+              case 5:
+                _this5.$router.push({
+                  path: "/disciplina"
+                });
+
+              case 6:
               case "end":
                 return _context5.stop();
             }
@@ -2983,11 +3006,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee5);
       }))();
     },
-    verificaForm: function verificaForm() {}
+    verificaForm: function verificaForm() {
+      if (!this.nome) {
+        this.errors.push('Nome da aula é necessário');
+      }
+    }
   },
   computed: {},
   watch: {},
-  data: function data() {},
+  data: function data() {
+    return {
+      nomeAula: '',
+      descricaoAula: '',
+      disciplina: '',
+      errors: [],
+      professor: '',
+      idUser: null
+    };
+  },
   components: {}
 });
 
@@ -52699,25 +52735,9 @@ var render = function() {
                   ])
                 : _vm._e(),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group row" },
-                [
-                  _c(
-                    "lable",
-                    {
-                      staticClass: "col-sm-12 col-form-label",
-                      attrs: { for: "exampleInputName1" }
-                    },
-                    [_vm._v("Título da aula")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", { attrs: { type: "text", id: "nomeAula" } }),
-                  _c("br"),
-                  _c("br")
-                ],
-                1
-              ),
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "button",
@@ -52742,10 +52762,48 @@ var render = function() {
     : _c(
         "div",
         { staticClass: "container-fluid page-body-wrapper full-page-wrapper" },
-        [_vm._m(0)]
+        [_vm._m(2)]
       )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group row" }, [
+      _c(
+        "label",
+        {
+          staticClass: "col-sm-12 col-form-label",
+          attrs: { for: "exampleInputName1" }
+        },
+        [_vm._v("Título da aula")]
+      ),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "text", id: "nomeAula" } }),
+      _c("br"),
+      _c("br")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group row" }, [
+      _c(
+        "label",
+        {
+          staticClass: "col-sm-12 col-form-label",
+          attrs: { for: "exampleInputName1" }
+        },
+        [_vm._v("Descrição da aula")]
+      ),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "text", id: "descricaoAula" } }),
+      _c("br"),
+      _c("br")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -75064,11 +75122,11 @@ var routes = [
         }
     },
     {
-        path: '/criar_aula/:disciplina',
+        path: '/criar_aula',
         name: 'Criar aula',
         component: _views_criar_aula_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
         meta: {
-            icon: 'mdi-certificate',
+            icon: 'mdi-home',
         }
     },
 ];

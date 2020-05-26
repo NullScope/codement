@@ -15,9 +15,17 @@
                         </ul>
                     </p>
                     <div class="form-group row">
-                        <lable for="exampleInputName1" class="col-sm-12 col-form-label">Título da aula</lable>
+                        <label for="exampleInputName1" class="col-sm-12 col-form-label">Título da aula</label>
                         <input type="text" id="nomeAula"><br><br>
                     </div>
+                    <div class="form-group row">
+                        <label for="exampleInputName1" class="col-sm-12 col-form-label">Descrição da aula</label>
+                        <input type="text" id="descricaoAula"><br><br>
+                    </div>
+                    <!--<div class="form-group row">
+                        <label for="exampleInputName1" class="col-sm-12 col-form-label">Inserir ficheiro</label>
+                        <input type="file" id="file" 
+                    </div>-->
                     <button @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
                     <button class="btn btn-light">Cancelar</button>
                 </div>
@@ -72,7 +80,7 @@ export default {
                 else if ("aluno_id" in response.data.data){
                     this.professor = false;
                 }
-            });;
+            });
         },
 
         async isRegente(){
@@ -93,11 +101,21 @@ export default {
         },
 
         async criarAula(){
+            let nomeA = this.nomeAula
+            let descA = this.descricaoAula
 
+            let url = '/api/disciplinas/' + this.$route.params.disciplina + '/disciplina';
+            await axios.post(url, {
+                nomeAula: nomeA,
+                descricaoAula: descA
+            });
+            this.$router.push({path: `/disciplina`}) 
         },
 
         verificaForm (){
-
+            if(!this.nome){
+                this.errors.push('Nome da aula é necessário')
+            }
         }, 
     },
 
@@ -110,7 +128,14 @@ export default {
     },
 
     data() {
-
+        return {
+            nomeAula: '',
+            descricaoAula: '',
+            disciplina: '',
+            errors: [],
+            professor: '',
+            idUser: null
+        }
     },
 
     components: {
@@ -118,3 +143,7 @@ export default {
     }
 }
 </script>
+
+<style>
+
+</style>
