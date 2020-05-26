@@ -61,4 +61,7 @@ const app = new Vue({
   router,
   store,
   el: '#app',
+  data: {
+    logged: false,
+  }
 });

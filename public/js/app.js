@@ -2569,28 +2569,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      logged: false
+    };
+  },
   mounted: function mounted() {
+    var _this = this;
+
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/me', {}).then(function (response) {
       console.log(JSON.stringify(response.data));
 
       try {
         if (JSON.stringify(response.data.error) == "true") //logged out
-          {
-            try {
-              document.getElementById("SO").remove();
-            } catch (err) {}
-
-            document.getElementById('logTab').innerHTML = '<a id="SI" class="dropdown-item" href="/login"><i  class="mdi mdi-logout mr-2 text-primary"></i> SignIn </a>';
-          } else //logged in
-          {
-            try {
-              document.getElementById("SI").remove();
-            } catch (err) {}
-
-            document.getElementById('logTab').innerHTML = '<a id="SO" class="dropdown-item" href="/logout"><i  class="mdi mdi-logout mr-2 text-primary"></i> SignOut </a>';
-          }
+          _this.logged = false;else //logged in
+          _this.logged = true;
       } catch (err) {}
     }, function (error) {
       alert(error);
@@ -6243,18 +6243,13 @@ __webpack_require__.r(__webpack_exports__);
     },
     methods: {
         login: function () {
+            var _this = this;
             axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('http://localhost:8000/login', { "email": this.Conta.email, "password": this.Conta.password, })
                 .then(function (response) {
                 var x = document.getElementById("login");
                 x.style.display = "none";
-                try {
-                    document.getElementById("SI").remove();
-                }
-                catch (err) { }
-                document.getElementById('logTab').innerHTML = '<a id="SO" class="dropdown-item" href="/logout"><i  class="mdi mdi-logout mr-2 text-primary"></i> SignOut </a>';
-            }, function (error) {
-                alert("erro");
-            });
+                _this.$router.go();
+            }, function (error) { alert("erro"); });
         },
         showReg: function () {
             var x = document.getElementById("login");
@@ -6266,9 +6261,7 @@ __webpack_require__.r(__webpack_exports__);
             axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/me', {})
                 .then(function (response) {
                 alert(JSON.stringify(response));
-            }, function (error) {
-                alert("erro");
-            });
+            }, function (error) { alert("erro"); });
         }
     }
 });
@@ -6290,19 +6283,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function () {
+        var _this = this;
         axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('http://localhost:8000/logout', {})
             .then(function (response) {
-            try {
-                document.getElementById("SO").remove();
-            }
-            catch (err) { }
-            document.getElementById('logTab').innerHTML = '<a id="SI" class="dropdown-item" href="/login"><i  class="mdi mdi-logout mr-2 text-primary"></i> SignIn </a>';
             var x = document.getElementById("login");
             x.style.display = "block";
-        }, function (error) {
-            alert("nao saiu macarrao (erro)");
-        });
-        window.location.href = "/login";
+            _this.$router.go();
+        }, function (error) { alert("nao saiu macarrao (erro)"); });
+        this.$router.push("/login");
     },
 });
 
@@ -7379,7 +7367,87 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { attrs: { id: "app" } }, [
+    _c(
+      "nav",
+      {
+        staticClass:
+          "navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row"
+      },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "navbar-menu-wrapper d-flex align-items-stretch" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _c("ul", { staticClass: "navbar-nav navbar-nav-right" }, [
+              _c("li", { staticClass: "nav-item nav-profile dropdown" }, [
+                _vm._m(3),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dropdown-menu navbar-dropdown",
+                    attrs: {
+                      id: "logTab",
+                      "aria-labelledby": "profileDropdown"
+                    }
+                  },
+                  [
+                    !_vm.logged
+                      ? _c(
+                          "router-link",
+                          {
+                            staticClass: "dropdown-item",
+                            attrs: { to: "/login" }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "mdi mdi-logout mr-2 text-primary"
+                            }),
+                            _vm._v(" SignIn ")
+                          ]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.logged
+                      ? _c(
+                          "router-link",
+                          {
+                            staticClass: "dropdown-item",
+                            attrs: { to: "/logout" }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "mdi mdi-logout mr-2 text-primary"
+                            }),
+                            _vm._v(" SignOut ")
+                          ]
+                        )
+                      : _vm._e()
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _vm._m(4),
+              _vm._v(" "),
+              _vm._m(5),
+              _vm._v(" "),
+              _vm._m(6)
+            ]),
+            _vm._v(" "),
+            _vm._m(7)
+          ]
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -7387,418 +7455,395 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "nav",
+      "div",
       {
         staticClass:
-          "navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row"
+          "text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
       },
       [
         _c(
-          "div",
-          {
-            staticClass:
-              "text-center navbar-brand-wrapper d-flex align-items-center justify-content-center"
-          },
-          [
-            _c(
-              "a",
-              { staticClass: "navbar-brand brand-logo", attrs: { href: "/" } },
-              [_c("img", { attrs: { src: "images/logo.svg", alt: "logo" } })]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "navbar-brand brand-logo-mini",
-                attrs: { href: "/" }
-              },
-              [
-                _c("img", {
-                  attrs: { src: "images/logo-mini.svg", alt: "logo" }
-                })
-              ]
-            )
-          ]
+          "a",
+          { staticClass: "navbar-brand brand-logo", attrs: { href: "/" } },
+          [_c("img", { attrs: { src: "images/logo.svg", alt: "logo" } })]
         ),
         _vm._v(" "),
         _c(
-          "div",
-          { staticClass: "navbar-menu-wrapper d-flex align-items-stretch" },
-          [
-            _c(
-              "button",
-              {
-                staticClass: "navbar-toggler navbar-toggler align-self-center",
-                attrs: { type: "button", "data-toggle": "minimize" }
-              },
-              [_c("span", { staticClass: "mdi mdi-menu" })]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "search-field d-none d-md-block" }, [
-              _c(
-                "form",
-                {
-                  staticClass: "d-flex align-items-center h-100",
-                  attrs: { action: "#" }
-                },
-                [
-                  _c("div", { staticClass: "input-group" }, [
-                    _c(
-                      "div",
-                      { staticClass: "input-group-prepend bg-transparent" },
-                      [
-                        _c("i", {
-                          staticClass:
-                            "input-group-text border-0 mdi mdi-magnify"
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      staticClass: "form-control bg-transparent border-0",
-                      attrs: { type: "text", placeholder: "Search projects" }
-                    })
-                  ])
-                ]
-              )
+          "a",
+          { staticClass: "navbar-brand brand-logo-mini", attrs: { href: "/" } },
+          [_c("img", { attrs: { src: "images/logo-mini.svg", alt: "logo" } })]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler navbar-toggler align-self-center",
+        attrs: { type: "button", "data-toggle": "minimize" }
+      },
+      [_c("span", { staticClass: "mdi mdi-menu" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "search-field d-none d-md-block" }, [
+      _c(
+        "form",
+        {
+          staticClass: "d-flex align-items-center h-100",
+          attrs: { action: "#" }
+        },
+        [
+          _c("div", { staticClass: "input-group" }, [
+            _c("div", { staticClass: "input-group-prepend bg-transparent" }, [
+              _c("i", {
+                staticClass: "input-group-text border-0 mdi mdi-magnify"
+              })
             ]),
             _vm._v(" "),
-            _c("ul", { staticClass: "navbar-nav navbar-nav-right" }, [
-              _c("li", { staticClass: "nav-item nav-profile dropdown" }, [
+            _c("input", {
+              staticClass: "form-control bg-transparent border-0",
+              attrs: { type: "text", placeholder: "Search projects" }
+            })
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link dropdown-toggle",
+        attrs: {
+          id: "profileDropdown",
+          href: "#",
+          "data-toggle": "dropdown",
+          "aria-expanded": "false"
+        }
+      },
+      [
+        _c("div", { staticClass: "nav-profile-img" }, [
+          _c("img", { attrs: { src: "images/faces/face1.jpg", alt: "image" } }),
+          _vm._v(" "),
+          _c("span", { staticClass: "availability-status online" })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "nav-profile-text" }, [
+          _c("p", { staticClass: "mb-1 text-black" }, [
+            _vm._v("David Greymaax")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      { staticClass: "nav-item d-none d-lg-block full-screen-link" },
+      [
+        _c("a", { staticClass: "nav-link" }, [
+          _c("i", {
+            staticClass: "mdi mdi-fullscreen",
+            attrs: { id: "fullscreen-button" }
+          })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item dropdown" }, [
+      _c(
+        "a",
+        {
+          staticClass: "nav-link count-indicator dropdown-toggle",
+          attrs: {
+            id: "messageDropdown",
+            href: "#",
+            "data-toggle": "dropdown",
+            "aria-expanded": "false"
+          }
+        },
+        [
+          _c("i", { staticClass: "mdi mdi-email-outline" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "count-symbol bg-warning" })
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "dropdown-menu dropdown-menu-right navbar-dropdown preview-list",
+          attrs: { "aria-labelledby": "messageDropdown" }
+        },
+        [
+          _c("h6", { staticClass: "p-3 mb-0" }, [_vm._v("Messages")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dropdown-divider" }),
+          _vm._v(" "),
+          _c("a", { staticClass: "dropdown-item preview-item" }, [
+            _c("div", { staticClass: "preview-thumbnail" }, [
+              _c("img", {
+                staticClass: "profile-pic",
+                attrs: { src: "images/faces/face4.jpg", alt: "image" }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "preview-item-content d-flex align-items-start flex-column justify-content-center"
+              },
+              [
                 _c(
-                  "a",
-                  {
-                    staticClass: "nav-link dropdown-toggle",
-                    attrs: {
-                      id: "profileDropdown",
-                      href: "#",
-                      "data-toggle": "dropdown",
-                      "aria-expanded": "false"
-                    }
-                  },
-                  [
-                    _c("div", { staticClass: "nav-profile-img" }, [
-                      _c("img", {
-                        attrs: { src: "images/faces/face1.jpg", alt: "image" }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "availability-status online" })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "nav-profile-text" }, [
-                      _c("p", { staticClass: "mb-1 text-black" }, [
-                        _vm._v("David Greymaax")
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "dropdown-menu navbar-dropdown",
-                  attrs: { id: "logTab", "aria-labelledby": "profileDropdown" }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "nav-item d-none d-lg-block full-screen-link" },
-                [
-                  _c("a", { staticClass: "nav-link" }, [
-                    _c("i", {
-                      staticClass: "mdi mdi-fullscreen",
-                      attrs: { id: "fullscreen-button" }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item dropdown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link count-indicator dropdown-toggle",
-                    attrs: {
-                      id: "messageDropdown",
-                      href: "#",
-                      "data-toggle": "dropdown",
-                      "aria-expanded": "false"
-                    }
-                  },
-                  [
-                    _c("i", { staticClass: "mdi mdi-email-outline" }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "count-symbol bg-warning" })
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "dropdown-menu dropdown-menu-right navbar-dropdown preview-list",
-                    attrs: { "aria-labelledby": "messageDropdown" }
-                  },
-                  [
-                    _c("h6", { staticClass: "p-3 mb-0" }, [_vm._v("Messages")]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dropdown-divider" }),
-                    _vm._v(" "),
-                    _c("a", { staticClass: "dropdown-item preview-item" }, [
-                      _c("div", { staticClass: "preview-thumbnail" }, [
-                        _c("img", {
-                          staticClass: "profile-pic",
-                          attrs: { src: "images/faces/face4.jpg", alt: "image" }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "preview-item-content d-flex align-items-start flex-column justify-content-center"
-                        },
-                        [
-                          _c(
-                            "h6",
-                            {
-                              staticClass:
-                                "preview-subject ellipsis mb-1 font-weight-normal"
-                            },
-                            [_vm._v("Mark send you a message")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-gray mb-0" }, [
-                            _vm._v(" 1 Minutes ago ")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dropdown-divider" }),
-                    _vm._v(" "),
-                    _c("a", { staticClass: "dropdown-item preview-item" }, [
-                      _c("div", { staticClass: "preview-thumbnail" }, [
-                        _c("img", {
-                          staticClass: "profile-pic",
-                          attrs: { src: "images/faces/face2.jpg", alt: "image" }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "preview-item-content d-flex align-items-start flex-column justify-content-center"
-                        },
-                        [
-                          _c(
-                            "h6",
-                            {
-                              staticClass:
-                                "preview-subject ellipsis mb-1 font-weight-normal"
-                            },
-                            [_vm._v("Cregh send you a message")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-gray mb-0" }, [
-                            _vm._v(" 15 Minutes ago ")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dropdown-divider" }),
-                    _vm._v(" "),
-                    _c("a", { staticClass: "dropdown-item preview-item" }, [
-                      _c("div", { staticClass: "preview-thumbnail" }, [
-                        _c("img", {
-                          staticClass: "profile-pic",
-                          attrs: { src: "images/faces/face3.jpg", alt: "image" }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "preview-item-content d-flex align-items-start flex-column justify-content-center"
-                        },
-                        [
-                          _c(
-                            "h6",
-                            {
-                              staticClass:
-                                "preview-subject ellipsis mb-1 font-weight-normal"
-                            },
-                            [_vm._v("Profile picture updated")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-gray mb-0" }, [
-                            _vm._v(" 18 Minutes ago ")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dropdown-divider" }),
-                    _vm._v(" "),
-                    _c("h6", { staticClass: "p-3 mb-0 text-center" }, [
-                      _vm._v("4 new messages")
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item dropdown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link count-indicator dropdown-toggle",
-                    attrs: {
-                      id: "notificationDropdown",
-                      href: "#",
-                      "data-toggle": "dropdown"
-                    }
-                  },
-                  [
-                    _c("i", { staticClass: "mdi mdi-bell-outline" }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "count-symbol bg-danger" })
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
+                  "h6",
                   {
                     staticClass:
-                      "dropdown-menu dropdown-menu-right navbar-dropdown preview-list",
-                    attrs: { "aria-labelledby": "notificationDropdown" }
+                      "preview-subject ellipsis mb-1 font-weight-normal"
                   },
-                  [
-                    _c("h6", { staticClass: "p-3 mb-0" }, [
-                      _vm._v("Notifications")
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dropdown-divider" }),
-                    _vm._v(" "),
-                    _c("a", { staticClass: "dropdown-item preview-item" }, [
-                      _c("div", { staticClass: "preview-thumbnail" }, [
-                        _c("div", { staticClass: "preview-icon bg-success" }, [
-                          _c("i", { staticClass: "mdi mdi-calendar" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "preview-item-content d-flex align-items-start flex-column justify-content-center"
-                        },
-                        [
-                          _c(
-                            "h6",
-                            {
-                              staticClass:
-                                "preview-subject font-weight-normal mb-1"
-                            },
-                            [_vm._v("Event today")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-gray ellipsis mb-0" }, [
-                            _vm._v(
-                              " Just a reminder that you have an event today "
-                            )
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dropdown-divider" }),
-                    _vm._v(" "),
-                    _c("a", { staticClass: "dropdown-item preview-item" }, [
-                      _c("div", { staticClass: "preview-thumbnail" }, [
-                        _c("div", { staticClass: "preview-icon bg-warning" }, [
-                          _c("i", { staticClass: "mdi mdi-settings" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "preview-item-content d-flex align-items-start flex-column justify-content-center"
-                        },
-                        [
-                          _c(
-                            "h6",
-                            {
-                              staticClass:
-                                "preview-subject font-weight-normal mb-1"
-                            },
-                            [_vm._v("Settings")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-gray ellipsis mb-0" }, [
-                            _vm._v(" Update dashboard ")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dropdown-divider" }),
-                    _vm._v(" "),
-                    _c("a", { staticClass: "dropdown-item preview-item" }, [
-                      _c("div", { staticClass: "preview-thumbnail" }, [
-                        _c("div", { staticClass: "preview-icon bg-info" }, [
-                          _c("i", { staticClass: "mdi mdi-link-variant" })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "preview-item-content d-flex align-items-start flex-column justify-content-center"
-                        },
-                        [
-                          _c(
-                            "h6",
-                            {
-                              staticClass:
-                                "preview-subject font-weight-normal mb-1"
-                            },
-                            [_vm._v("Launch Admin")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-gray ellipsis mb-0" }, [
-                            _vm._v(" New admin wow! ")
-                          ])
-                        ]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dropdown-divider" }),
-                    _vm._v(" "),
-                    _c("h6", { staticClass: "p-3 mb-0 text-center" }, [
-                      _vm._v("See all notifications")
-                    ])
-                  ]
-                )
+                  [_vm._v("Mark send you a message")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-gray mb-0" }, [
+                  _vm._v(" 1 Minutes ago ")
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dropdown-divider" }),
+          _vm._v(" "),
+          _c("a", { staticClass: "dropdown-item preview-item" }, [
+            _c("div", { staticClass: "preview-thumbnail" }, [
+              _c("img", {
+                staticClass: "profile-pic",
+                attrs: { src: "images/faces/face2.jpg", alt: "image" }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "preview-item-content d-flex align-items-start flex-column justify-content-center"
+              },
+              [
+                _c(
+                  "h6",
+                  {
+                    staticClass:
+                      "preview-subject ellipsis mb-1 font-weight-normal"
+                  },
+                  [_vm._v("Cregh send you a message")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-gray mb-0" }, [
+                  _vm._v(" 15 Minutes ago ")
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dropdown-divider" }),
+          _vm._v(" "),
+          _c("a", { staticClass: "dropdown-item preview-item" }, [
+            _c("div", { staticClass: "preview-thumbnail" }, [
+              _c("img", {
+                staticClass: "profile-pic",
+                attrs: { src: "images/faces/face3.jpg", alt: "image" }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "preview-item-content d-flex align-items-start flex-column justify-content-center"
+              },
+              [
+                _c(
+                  "h6",
+                  {
+                    staticClass:
+                      "preview-subject ellipsis mb-1 font-weight-normal"
+                  },
+                  [_vm._v("Profile picture updated")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-gray mb-0" }, [
+                  _vm._v(" 18 Minutes ago ")
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dropdown-divider" }),
+          _vm._v(" "),
+          _c("h6", { staticClass: "p-3 mb-0 text-center" }, [
+            _vm._v("4 new messages")
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item dropdown" }, [
+      _c(
+        "a",
+        {
+          staticClass: "nav-link count-indicator dropdown-toggle",
+          attrs: {
+            id: "notificationDropdown",
+            href: "#",
+            "data-toggle": "dropdown"
+          }
+        },
+        [
+          _c("i", { staticClass: "mdi mdi-bell-outline" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "count-symbol bg-danger" })
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass:
+            "dropdown-menu dropdown-menu-right navbar-dropdown preview-list",
+          attrs: { "aria-labelledby": "notificationDropdown" }
+        },
+        [
+          _c("h6", { staticClass: "p-3 mb-0" }, [_vm._v("Notifications")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dropdown-divider" }),
+          _vm._v(" "),
+          _c("a", { staticClass: "dropdown-item preview-item" }, [
+            _c("div", { staticClass: "preview-thumbnail" }, [
+              _c("div", { staticClass: "preview-icon bg-success" }, [
+                _c("i", { staticClass: "mdi mdi-calendar" })
               ])
             ]),
             _vm._v(" "),
             _c(
-              "button",
+              "div",
               {
                 staticClass:
-                  "navbar-toggler navbar-toggler-right d-lg-none align-self-center",
-                attrs: { type: "button", "data-toggle": "offcanvas" }
+                  "preview-item-content d-flex align-items-start flex-column justify-content-center"
               },
-              [_c("span", { staticClass: "mdi mdi-menu" })]
+              [
+                _c(
+                  "h6",
+                  { staticClass: "preview-subject font-weight-normal mb-1" },
+                  [_vm._v("Event today")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-gray ellipsis mb-0" }, [
+                  _vm._v(" Just a reminder that you have an event today ")
+                ])
+              ]
             )
-          ]
-        )
-      ]
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dropdown-divider" }),
+          _vm._v(" "),
+          _c("a", { staticClass: "dropdown-item preview-item" }, [
+            _c("div", { staticClass: "preview-thumbnail" }, [
+              _c("div", { staticClass: "preview-icon bg-warning" }, [
+                _c("i", { staticClass: "mdi mdi-settings" })
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "preview-item-content d-flex align-items-start flex-column justify-content-center"
+              },
+              [
+                _c(
+                  "h6",
+                  { staticClass: "preview-subject font-weight-normal mb-1" },
+                  [_vm._v("Settings")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-gray ellipsis mb-0" }, [
+                  _vm._v(" Update dashboard ")
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dropdown-divider" }),
+          _vm._v(" "),
+          _c("a", { staticClass: "dropdown-item preview-item" }, [
+            _c("div", { staticClass: "preview-thumbnail" }, [
+              _c("div", { staticClass: "preview-icon bg-info" }, [
+                _c("i", { staticClass: "mdi mdi-link-variant" })
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "preview-item-content d-flex align-items-start flex-column justify-content-center"
+              },
+              [
+                _c(
+                  "h6",
+                  { staticClass: "preview-subject font-weight-normal mb-1" },
+                  [_vm._v("Launch Admin")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-gray ellipsis mb-0" }, [
+                  _vm._v(" New admin wow! ")
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dropdown-divider" }),
+          _vm._v(" "),
+          _c("h6", { staticClass: "p-3 mb-0 text-center" }, [
+            _vm._v("See all notifications")
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass:
+          "navbar-toggler navbar-toggler-right d-lg-none align-self-center",
+        attrs: { type: "button", "data-toggle": "offcanvas" }
+      },
+      [_c("span", { staticClass: "mdi mdi-menu" })]
     )
   }
 ]
@@ -25317,6 +25362,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
     router: _router__WEBPACK_IMPORTED_MODULE_2__["router"],
     store: _store__WEBPACK_IMPORTED_MODULE_3__["default"],
     el: '#app',
+    data: {
+        logged: false,
+    }
 });
 
 

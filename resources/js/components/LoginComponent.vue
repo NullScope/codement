@@ -60,18 +60,19 @@ export default {
     };
   },
   methods: {
-    login() {
+    login()
+    {
       axios.post('http://localhost:8000/login',{ "email": this.Conta.email,"password": this.Conta.password,})
-      .then((response) => {
-          var x = document.getElementById("login");
-          x.style.display = "none";
-          try {document.getElementById("SI").remove();}  catch(err){}
-          document.getElementById('logTab').innerHTML = '<a id="SO" class="dropdown-item" href="/logout"><i  class="mdi mdi-logout mr-2 text-primary"></i> SignOut </a>';
-      }, (error) => {
-        alert("erro");
-      });
+      .then((response) =>
+      {
+        var x = document.getElementById("login");
+        x.style.display = "none";
+        this.$router.go();
+      }, (error) => {alert("erro");});
+
     },
-     showReg() {
+    showReg()
+     {
       var x = document.getElementById("login");
       x.style.display = "none";
       var y = document.getElementById("register");
@@ -79,11 +80,10 @@ export default {
     },
     me(){
       axios.get('api/me', {})
-      .then((response) => {
-          alert(JSON.stringify(response));
-      }, (error) => {
-        alert("erro");
-      });
+      .then((response) =>
+      {
+        alert(JSON.stringify(response));
+      }, (error) => {alert("erro");});
     }
   }
 }
