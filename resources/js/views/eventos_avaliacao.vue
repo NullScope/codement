@@ -44,8 +44,6 @@
     export default {
         mounted: function () {
             this.login()
-            this.getTipoDeUtilizador()
-            this.getDisciplinas()
         },
         methods: {
             async login() {
@@ -55,38 +53,61 @@
                     email: "filipe.quintal@staff.uma.pt",
                     password: "12345678"
                 });
+
+                this.getIdETipoDeUtilizador();
             },
-            async getDisciplinas() {
-                let url = '/api/disciplinas';
-                axios.get(url)
-                    .then((response) => {
-                        this.opcoes = response.data.data;
-                    });
-            },
-            async getEventosAvaliacaoDisciplina() {
-                let url = '/api/disciplinas/' + this.idDisciplina + '/eventos-de-avaliacao';
-                axios.get(url)
-                    .then((response) => {
-                        this.eventosAvaliacao = response.data.data;
-                    });
-                
-                if(this.professor)
-                    this.show = true;
-            },
-            criarEventoAvaliacao() {
-                this.$router.push({ path: `/criarAvaliacao/${this.idDisciplina}` })
-            },
-            async getTipoDeUtilizador() {
+
+            async getIdETipoDeUtilizador() {
                 await axios.get('/api/me').then((response) => {
-                    console.log(response.data.data)
                     if ("professor_id" in response.data.data){
                         this.professor = true;
+                        this.idUser = response.data.data.professor_id;
                     }
                     else if ("aluno_id" in response.data.data){
                         this.professor = false;
+                        this.idUser = response.data.data.aluno_id;
                     }
                 });;
-            }
+
+                this.getDisciplinas();
+            },
+
+
+            async getDisciplinas() {
+                if(this.professor){
+                    await axios.get('/api/me').then((response) => {
+                        Array.prototype.push.apply(response.data.data.disciplinas, response.data.data.regente);
+                        this.opcoes = response.data.data.disciplinas;
+                    });
+                }else{
+                    let url = '/api/alunos/'+ this.idUser + '/disciplinas';
+                    await axios.get(url)
+                        .then((response) => {
+                            this.opcoes = response.data.data;
+                        });
+                }
+            },
+
+
+            async getEventosAvaliacaoDisciplina() {
+                await axios.get('/api/disciplinas/' + this.idDisciplina)
+                    .then((response) => {
+                        if(this.idUser === response.data.data.regente.professor_id && this.professor)
+                            this.show = true;
+                    });
+
+                let url = '/api/disciplinas/' + this.idDisciplina + '/eventos-de-avaliacao';
+                await axios.get(url)
+                    .then((response) => {
+                        this.eventosAvaliacao = response.data.data;
+                    });
+            },
+
+
+            criarEventoAvaliacao() {
+                this.$router.push({ path: `/criarAvaliacao/${this.idDisciplina}` })
+            },
+            
         },
         computed: {
 
@@ -100,6 +121,7 @@
                 opcoes: [],
                 eventosAvaliacao: [],
                 professor: false,
+                idUser: null,
                 show: false
             }
         },

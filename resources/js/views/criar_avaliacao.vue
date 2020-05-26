@@ -41,9 +41,9 @@
         </div>
     </div>
     <div v-else class="container-fluid page-body-wrapper full-page-wrapper">
-        <div class="content-wrapper d-flex align-items-center text-center error-page bg-primary">
+        <div class="content-wrapper d-flex align-items-center text-center error-page">
           <div class="row flex-grow">
-            <div class="col-lg-7 mx-auto text-white">
+            <div class="col-lg-7 mx-auto">
               <div class="row align-items-center d-flex flex-row">
                 <div class="col-lg-6 text-lg-right pr-lg-4">
                   <h1 class="display-1 mb-0">404</h1>
@@ -56,7 +56,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 </template>
 
 <script>   
@@ -65,8 +65,6 @@
   export default {
     mounted: function () {
         this.login()
-        this.getTipoDeUtilizador()
-        this.getNomeDisciplina()
     },
     methods: {
         async login() {
@@ -76,7 +74,31 @@
                 email: "filipe.quintal@staff.uma.pt",
                 password: "12345678"
             });
+
+            this.getIdETipoDeUtilizador()
         },
+
+        async getIdETipoDeUtilizador() {
+            await axios.get('/api/me').then((response) => {
+                if ("professor_id" in response.data.data){
+                    this.idUser = response.data.data.professor_id;
+                    this.isRegente();
+                }
+                else if ("aluno_id" in response.data.data){
+                    this.professor = false;
+                }
+            });;
+        },
+
+        async isRegente() {
+            await axios.get('/api/disciplinas/' + this.$route.params.disciplina)
+                    .then((response) => {
+                        if(this.idUser === response.data.data.regente.professor_id)
+                            this.professor = true;
+                    });
+            this.getNomeDisciplina();
+        },
+
         async getNomeDisciplina() {
             let url = '/api/disciplinas/' + this.$route.params.disciplina;
             axios.get(url)
@@ -84,6 +106,7 @@
                     this.disciplina = response.data.data.nome;
                 });
         },
+
         async criarEventoAvaliacao() {
             let dataI = this.data_inicio + ' ' + this.hora_inicio;
             let dataF = this.data_fim + ' ' + this.hora_fim;
@@ -95,6 +118,7 @@
             });
             this.$router.push({ path: `/eventosAvaliacao` })
         },
+
         verificaForm(){
             if (this.data_inicio && this.hora_inicio) {
                 if (this.data_fim && this.hora_fim) {
@@ -123,17 +147,7 @@
                 this.errors.push('Hora Final é necessário');
             }
         },
-        async getTipoDeUtilizador() {
-            await axios.get('/api/me').then((response) => {
-                console.log(response.data.data)
-                if ("professor_id" in response.data.data){
-                    this.professor = true;
-                }
-                else if ("aluno_id" in response.data.data){
-                    this.professor = false;
-                }
-            });;
-        }
+        
     },
     computed: {
 
@@ -149,7 +163,8 @@
         hora_fim: '',
         disciplina: '',
         errors: [],
-        professor: false
+        professor: '',
+        idUser: null
       }
     },
     components: {

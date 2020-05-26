@@ -2845,11 +2845,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.login();
-    this.getTipoDeUtilizador();
-    this.getNomeDisciplina();
   },
   methods: {
     login: function login() {
+      var _this = this;
+
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
@@ -2866,6 +2866,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 4:
+                _this.getIdETipoDeUtilizador();
+
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -2873,21 +2876,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    getNomeDisciplina: function getNomeDisciplina() {
-      var _this = this;
+    getIdETipoDeUtilizador: function getIdETipoDeUtilizador() {
+      var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                url = '/api/disciplinas/' + _this.$route.params.disciplina;
-                axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
-                  _this.disciplina = response.data.data.nome;
+                _context2.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
+                  if ("professor_id" in response.data.data) {
+                    _this2.idUser = response.data.data.professor_id;
+
+                    _this2.isRegente();
+                  } else if ("aluno_id" in response.data.data) {
+                    _this2.professor = false;
+                  }
                 });
 
               case 2:
+                ;
+
+              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -2895,35 +2906,81 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }))();
     },
-    criarEventoAvaliacao: function criarEventoAvaliacao() {
-      var _this2 = this;
+    isRegente: function isRegente() {
+      var _this3 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
-        var dataI, dataF, url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                dataI = _this2.data_inicio + ' ' + _this2.hora_inicio;
-                dataF = _this2.data_fim + ' ' + _this2.hora_fim;
-                url = '/api/disciplinas/' + _this2.$route.params.disciplina + '/eventos-de-avaliacao';
-                _context3.next = 5;
+                _context3.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/disciplinas/' + _this3.$route.params.disciplina).then(function (response) {
+                  if (_this3.idUser === response.data.data.regente.professor_id) _this3.professor = true;
+                });
+
+              case 2:
+                _this3.getNomeDisciplina();
+
+              case 3:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    },
+    getNomeDisciplina: function getNomeDisciplina() {
+      var _this4 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        var url;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                url = '/api/disciplinas/' + _this4.$route.params.disciplina;
+                axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+                  _this4.disciplina = response.data.data.nome;
+                });
+
+              case 2:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }))();
+    },
+    criarEventoAvaliacao: function criarEventoAvaliacao() {
+      var _this5 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+        var dataI, dataF, url;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                dataI = _this5.data_inicio + ' ' + _this5.hora_inicio;
+                dataF = _this5.data_fim + ' ' + _this5.hora_fim;
+                url = '/api/disciplinas/' + _this5.$route.params.disciplina + '/eventos-de-avaliacao';
+                _context5.next = 5;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, {
                   data_inicio: dataI,
                   data_fim: dataF
                 });
 
               case 5:
-                _this2.$router.push({
+                _this5.$router.push({
                   path: "/eventosAvaliacao"
                 });
 
               case 6:
               case "end":
-                return _context3.stop();
+                return _context5.stop();
             }
           }
-        }, _callee3);
+        }, _callee5);
       }))();
     },
     verificaForm: function verificaForm() {
@@ -2956,36 +3013,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       if (!this.hora_fim) {
         this.errors.push('Hora Final é necessário');
       }
-    },
-    getTipoDeUtilizador: function getTipoDeUtilizador() {
-      var _this3 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                _context4.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
-                  console.log(response.data.data);
-
-                  if ("professor_id" in response.data.data) {
-                    _this3.professor = true;
-                  } else if ("aluno_id" in response.data.data) {
-                    _this3.professor = false;
-                  }
-                });
-
-              case 2:
-                ;
-
-              case 3:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4);
-      }))();
     }
   },
   computed: {},
@@ -2998,7 +3025,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       hora_fim: '',
       disciplina: '',
       errors: [],
-      professor: false
+      professor: '',
+      idUser: null
     };
   },
   components: {}
@@ -3086,11 +3114,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.login();
-    this.getTipoDeUtilizador();
-    this.getDisciplinas();
   },
   methods: {
     login: function login() {
+      var _this = this;
+
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
@@ -3107,6 +3135,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 4:
+                _this.getIdETipoDeUtilizador();
+
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -3114,21 +3145,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    getDisciplinas: function getDisciplinas() {
-      var _this = this;
+    getIdETipoDeUtilizador: function getIdETipoDeUtilizador() {
+      var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                url = '/api/disciplinas';
-                axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
-                  _this.opcoes = response.data.data;
+                _context2.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
+                  if ("professor_id" in response.data.data) {
+                    _this2.professor = true;
+                    _this2.idUser = response.data.data.professor_id;
+                  } else if ("aluno_id" in response.data.data) {
+                    _this2.professor = false;
+                    _this2.idUser = response.data.data.aluno_id;
+                  }
                 });
 
               case 2:
+                ;
+
+                _this2.getDisciplinas();
+
+              case 4:
               case "end":
                 return _context2.stop();
             }
@@ -3136,8 +3177,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }))();
     },
-    getEventosAvaliacaoDisciplina: function getEventosAvaliacaoDisciplina() {
-      var _this2 = this;
+    getDisciplinas: function getDisciplinas() {
+      var _this3 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
         var url;
@@ -3145,13 +3186,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                url = '/api/disciplinas/' + _this2.idDisciplina + '/eventos-de-avaliacao';
-                axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
-                  _this2.eventosAvaliacao = response.data.data;
+                if (!_this3.professor) {
+                  _context3.next = 5;
+                  break;
+                }
+
+                _context3.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
+                  Array.prototype.push.apply(response.data.data.disciplinas, response.data.data.regente);
+                  _this3.opcoes = response.data.data.disciplinas;
                 });
-                if (_this2.professor) _this2.show = true;
 
               case 3:
+                _context3.next = 8;
+                break;
+
+              case 5:
+                url = '/api/alunos/' + _this3.idUser + '/disciplinas';
+                _context3.next = 8;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+                  _this3.opcoes = response.data.data;
+                });
+
+              case 8:
               case "end":
                 return _context3.stop();
             }
@@ -3159,40 +3216,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee3);
       }))();
     },
-    criarEventoAvaliacao: function criarEventoAvaliacao() {
-      this.$router.push({
-        path: "/criarAvaliacao/".concat(this.idDisciplina)
-      });
-    },
-    getTipoDeUtilizador: function getTipoDeUtilizador() {
-      var _this3 = this;
+    getEventosAvaliacaoDisciplina: function getEventosAvaliacaoDisciplina() {
+      var _this4 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        var url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
                 _context4.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
-                  console.log(response.data.data);
-
-                  if ("professor_id" in response.data.data) {
-                    _this3.professor = true;
-                  } else if ("aluno_id" in response.data.data) {
-                    _this3.professor = false;
-                  }
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/disciplinas/' + _this4.idDisciplina).then(function (response) {
+                  if (_this4.idUser === response.data.data.regente.professor_id && _this4.professor) _this4.show = true;
                 });
 
               case 2:
-                ;
+                url = '/api/disciplinas/' + _this4.idDisciplina + '/eventos-de-avaliacao';
+                _context4.next = 5;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+                  _this4.eventosAvaliacao = response.data.data;
+                });
 
-              case 3:
+              case 5:
               case "end":
                 return _context4.stop();
             }
           }
         }, _callee4);
       }))();
+    },
+    criarEventoAvaliacao: function criarEventoAvaliacao() {
+      this.$router.push({
+        path: "/criarAvaliacao/".concat(this.idDisciplina)
+      });
     }
   },
   computed: {},
@@ -3203,6 +3259,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       opcoes: [],
       eventosAvaliacao: [],
       professor: false,
+      idUser: null,
       show: false
     };
   },
@@ -53022,11 +53079,11 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "content-wrapper d-flex align-items-center text-center error-page bg-primary"
+          "content-wrapper d-flex align-items-center text-center error-page"
       },
       [
         _c("div", { staticClass: "row flex-grow" }, [
-          _c("div", { staticClass: "col-lg-7 mx-auto text-white" }, [
+          _c("div", { staticClass: "col-lg-7 mx-auto" }, [
             _c(
               "div",
               { staticClass: "row align-items-center d-flex flex-row" },
