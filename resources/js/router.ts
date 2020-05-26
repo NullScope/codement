@@ -2,7 +2,6 @@ import Vue from "vue"
 import VueRouter, { RouteConfig } from "vue-router"
 import HomePage from "./views/home.vue"
 import DisciplinaPage from "./views/disciplina.vue"
-import AvaliacaoRootPage from "./views/root_eventos_avaliacao.vue"
 import AvaliacaoPage from "./views/eventos_avaliacao.vue"
 import CriarAvaliacaoPage from "./views/criar_avaliacao.vue"
 
