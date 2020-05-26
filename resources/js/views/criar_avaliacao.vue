@@ -64,10 +64,10 @@
 
   export default {
     mounted: function () {
-        this.login()
+        this.getIdETipoDeUtilizador()
     },
     methods: {
-        async login() {
+        /*async login() {
             await axios.get('http://localhost:8000/sanctum/csrf-cookie');
 
             await axios.post('http://localhost:8000/login', {
@@ -76,7 +76,7 @@
             });
 
             this.getIdETipoDeUtilizador()
-        },
+        },*/
 
         async getIdETipoDeUtilizador() {
             await axios.get('/api/me').then((response) => {
@@ -87,15 +87,15 @@
                 else if ("aluno_id" in response.data.data){
                     this.professor = false;
                 }
-            });;
+            });
         },
 
         async isRegente() {
             await axios.get('/api/disciplinas/' + this.$route.params.disciplina)
-                    .then((response) => {
-                        if(this.idUser === response.data.data.regente.professor_id)
-                            this.professor = true;
-                    });
+                .then((response) => {
+                    if(this.idUser === response.data.data.regente.professor_id)
+                        this.professor = true;
+                });
             this.getNomeDisciplina();
         },
 

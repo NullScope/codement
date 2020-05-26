@@ -67,7 +67,7 @@
                         this.professor = false;
                         this.idUser = response.data.data.aluno_id;
                     }
-                });;
+                });
 
                 this.getDisciplinas();
             },
@@ -94,6 +94,8 @@
                     .then((response) => {
                         if(this.idUser === response.data.data.regente.professor_id && this.professor)
                             this.show = true;
+                        else
+                            this.show = false;
                     });
 
                 let url = '/api/disciplinas/' + this.idDisciplina + '/eventos-de-avaliacao';

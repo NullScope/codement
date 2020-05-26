@@ -2844,10 +2844,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    this.login();
+    this.getIdETipoDeUtilizador();
   },
   methods: {
-    login: function login() {
+    /*async login() {
+        await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+         await axios.post('http://localhost:8000/login', {
+            email: "filipe.quintal@staff.uma.pt",
+            password: "12345678"
+        });
+         this.getIdETipoDeUtilizador()
+    },*/
+    getIdETipoDeUtilizador: function getIdETipoDeUtilizador() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -2856,19 +2864,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/sanctum/csrf-cookie');
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
+                  if ("professor_id" in response.data.data) {
+                    _this.idUser = response.data.data.professor_id;
 
-              case 2:
-                _context.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8000/login', {
-                  email: "filipe.quintal@staff.uma.pt",
-                  password: "12345678"
+                    _this.isRegente();
+                  } else if ("aluno_id" in response.data.data) {
+                    _this.professor = false;
+                  }
                 });
 
-              case 4:
-                _this.getIdETipoDeUtilizador();
-
-              case 5:
+              case 2:
               case "end":
                 return _context.stop();
             }
@@ -2876,7 +2882,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    getIdETipoDeUtilizador: function getIdETipoDeUtilizador() {
+    isRegente: function isRegente() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
@@ -2885,18 +2891,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
-                  if ("professor_id" in response.data.data) {
-                    _this2.idUser = response.data.data.professor_id;
-
-                    _this2.isRegente();
-                  } else if ("aluno_id" in response.data.data) {
-                    _this2.professor = false;
-                  }
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/disciplinas/' + _this2.$route.params.disciplina).then(function (response) {
+                  if (_this2.idUser === response.data.data.regente.professor_id) _this2.professor = true;
                 });
 
               case 2:
-                ;
+                _this2.getNomeDisciplina();
 
               case 3:
               case "end":
@@ -2906,23 +2906,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }))();
     },
-    isRegente: function isRegente() {
+    getNomeDisciplina: function getNomeDisciplina() {
       var _this3 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _context3.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/disciplinas/' + _this3.$route.params.disciplina).then(function (response) {
-                  if (_this3.idUser === response.data.data.regente.professor_id) _this3.professor = true;
+                url = '/api/disciplinas/' + _this3.$route.params.disciplina;
+                axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+                  _this3.disciplina = response.data.data.nome;
                 });
 
               case 2:
-                _this3.getNomeDisciplina();
-
-              case 3:
               case "end":
                 return _context3.stop();
             }
@@ -2930,57 +2928,35 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee3);
       }))();
     },
-    getNomeDisciplina: function getNomeDisciplina() {
+    criarEventoAvaliacao: function criarEventoAvaliacao() {
       var _this4 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
-        var url;
+        var dataI, dataF, url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                url = '/api/disciplinas/' + _this4.$route.params.disciplina;
-                axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
-                  _this4.disciplina = response.data.data.nome;
-                });
-
-              case 2:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4);
-      }))();
-    },
-    criarEventoAvaliacao: function criarEventoAvaliacao() {
-      var _this5 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
-        var dataI, dataF, url;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
-          while (1) {
-            switch (_context5.prev = _context5.next) {
-              case 0:
-                dataI = _this5.data_inicio + ' ' + _this5.hora_inicio;
-                dataF = _this5.data_fim + ' ' + _this5.hora_fim;
-                url = '/api/disciplinas/' + _this5.$route.params.disciplina + '/eventos-de-avaliacao';
-                _context5.next = 5;
+                dataI = _this4.data_inicio + ' ' + _this4.hora_inicio;
+                dataF = _this4.data_fim + ' ' + _this4.hora_fim;
+                url = '/api/disciplinas/' + _this4.$route.params.disciplina + '/eventos-de-avaliacao';
+                _context4.next = 5;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, {
                   data_inicio: dataI,
                   data_fim: dataF
                 });
 
               case 5:
-                _this5.$router.push({
+                _this4.$router.push({
                   path: "/eventosAvaliacao"
                 });
 
               case 6:
               case "end":
-                return _context5.stop();
+                return _context4.stop();
             }
           }
-        }, _callee5);
+        }, _callee4);
       }))();
     },
     verificaForm: function verificaForm() {
@@ -3165,11 +3141,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 2:
-                ;
-
                 _this2.getDisciplinas();
 
-              case 4:
+              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -3227,7 +3201,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context4.next = 2;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/disciplinas/' + _this4.idDisciplina).then(function (response) {
-                  if (_this4.idUser === response.data.data.regente.professor_id && _this4.professor) _this4.show = true;
+                  if (_this4.idUser === response.data.data.regente.professor_id && _this4.professor) _this4.show = true;else _this4.show = false;
                 });
 
               case 2:
