@@ -11,7 +11,7 @@ class Duvida extends Model
      *
      * @var array
      */
-    protected $fillable = ['aluno_id', 'disciplina_id'];
+    protected $fillable = ['aluno_id', 'disciplina_id', 'descricao'];
 
     public function aluno()
     {

@@ -4,6 +4,9 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+use App\Http\Resources\DisciplinaResource;
+use App\Http\Resources\FicheiroResource;
+
 class AulaResource extends JsonResource
 {
     /**
@@ -17,7 +20,8 @@ class AulaResource extends JsonResource
         return [
             'id' => $this->id,
             'descricao' => $this->descricao,
-            'disciplina' => $this->disciplina,
+            'ficheiros' => FicheiroResource::collection($this->ficheiros),
+            'disciplina' => new DisciplinaResource($this->disciplina),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

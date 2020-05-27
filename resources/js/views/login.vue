@@ -38,7 +38,7 @@ import axios, {AxiosResponse, AxiosError} from 'axios';
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
-export default class Sidebar extends Vue {
+export default class Login extends Vue {
   email = '';
   password = ''
   error = false

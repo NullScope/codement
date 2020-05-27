@@ -18,6 +18,8 @@ class FicheiroResource extends JsonResource
         return [
             'id' => $this->id,
             'user' => $this->user,
+            'nome' => $this->nome,
+            'descricao' => $this->descricao,
             'url' => $this->url,
             'extensao' => $this->extensao,
             'comentarios' => ComentarioResource::collection($this->comentarios),

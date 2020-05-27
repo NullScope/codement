@@ -1,0 +1,111 @@
+<template>
+  <div>
+    <div class="page-header">
+      <b-form-select v-model="idDisciplina" class="mb-3">
+        <b-form-select-option :value="0">Por favor escolha a disciplina</b-form-select-option>
+        <b-form-select-option v-for="(disciplina, index) in disciplinas" :key="index" :value="disciplina.id">{{disciplina.nome}}</b-form-select-option>
+      </b-form-select>
+    </div>
+    <div class="row">
+      <div class="col-12 grid-margin stretch-card">
+        <div class="card" :class="duvidas.length == 0 ? 'text-center' : ''">
+          <div class="card-body">
+            <router-link
+              id="criar"
+              class="btn btn-gradient-primary btn-fw"
+              v-if="idDisciplina != 0 && user && user.aluno_id"
+              :to="{ name: 'Criar Duvida', params: { disciplina: idDisciplina }}"
+            >
+              Nova Dúvida
+            </router-link>
+            <div class="table-responsive" v-if="duvidas.length > 0">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th v-if="user && !user.aluno_id">Aluno</th>
+                    <th>Descrição</th>
+                    <th>Ficheiro(s)</th>
+                    <th>Data de Criação</th>
+                    <th>Data de Atualização</th>
+                    <th>Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(duvida, index) in duvidas" :key="index">
+                    <td>{{index + 1}}</td>
+                    <td v-if="user && !user.aluno_id">{{duvida.aluno.user.name}}</td>
+                    <td>{{duvida.descricao}}</td>
+                    <td>
+                      <ul v-if="duvida.ficheiros.length > 0">
+                        <li v-for="(ficheiro, fileIndex) in duvida.ficheiros" :key="fileIndex">
+
+                          <a :href="ficheiro.url" download><i class="mdi mdi-file"></i>{{ficheiro.nome}}</a>
+                        </li>
+                      </ul>
+                      <span v-else>-</span>
+                    </td>
+                    <td>{{duvida.created_at | moment("DD/MM/YY hh:mm")}}</td>
+                    <td>{{duvida.updated_at | moment("DD/MM/YY hh:mm")}}</td>
+                    <td>
+                      <router-link
+                        class="btn btn-gradient-primary btn-fw"
+                        :to="{ name: 'Ver Duvida', params: { disciplina: idDisciplina, duvida: duvida.id }}"
+                        v-if="duvida.ficheiros.length > 0"
+                      >
+                        Visualizar
+                      </router-link>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div v-else>
+              <h3>{{idDisciplina == 0 ? "Selecione uma disciplina." : "Não existe dúvidas nesta disciplina."}}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import axios, { AxiosResponse, AxiosError } from 'axios';
+import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
+
+@Component
+export default class Duvidas extends Vue {
+  private user = null;
+  private idDisciplina = 0;
+  private disciplinas = new Array();
+  private duvidas = new Array();
+
+  mounted() {
+    axios.get('/api/me').then((response: AxiosResponse) => {
+      let disciplinas = response.data.data.disciplinas;
+
+      this.user = response.data.data;
+
+      if (response.data.data.regente) {
+        disciplinas = disciplinas.concat(response.data.data.regente);
+      }
+
+      disciplinas.forEach((disciplina: any) => {
+        this.disciplinas.push(disciplina);
+      });
+    });
+  }
+
+  @Watch('idDisciplina')
+  onIdDisciplinaChanged(newVal: Number, oldVal: Number) {
+    if (newVal != 0) {
+      axios.get(`/api/disciplinas/${newVal}/duvidas`).then((response: AxiosResponse) => {
+        this.duvidas = response.data.data;
+      });
+    } else {
+      this.duvidas = [];
+    }
+  }
+}
+</script>

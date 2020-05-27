@@ -57,16 +57,25 @@ class DuvidaController extends Controller
     {
         if (auth()->user()) {
             try {
-                $disciplina = Disciplina::findOrFail($disciplina_id);
-
-                $duvida = Duvida::create([
-                    'aluno_id' => auth()->user()->userable->id,
-                    'disciplina_id' => $disciplina_id
+                $validator = Validator::make($request->all(), [
+                    'descricao' => ['required', 'string', 'max:255'],
                 ]);
 
-                $disciplina->duvidas()->save($duvida);
+                if ($validator->fails()) {
+                    return $validator->messages();
+                } else {
+                    $disciplina = Disciplina::findOrFail($disciplina_id);
 
-                return new DuvidaResource($duvida);
+                    $duvida = Duvida::create([
+                        'aluno_id' => auth()->user()->userable->id,
+                        'disciplina_id' => $disciplina_id,
+                        'descricao' => $request->input('descricao')
+                    ]);
+
+                    $disciplina->duvidas()->save($duvida);
+
+                    return new DuvidaResource($duvida);
+                }
             } catch (ModelNotFoundException $e) {
                 /* Return Error Response */
                 return response()->json(array(

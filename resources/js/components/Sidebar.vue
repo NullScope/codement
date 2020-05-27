@@ -9,11 +9,11 @@
           <!--change to offline or busy as needed-->
         </div>
         <div class="nav-profile-text d-flex flex-column">
-          <span class="font-weight-bold mb-2">David Grey. H</span>
-          <span class="text-secondary text-small">Project Manager</span>
+          <span class="font-weight-bold mb-2">{{user.user ? user.user.name : ''}}</span>
+          <span class="text-secondary text-small">{{user.aluno_id ? 'Aluno' : 'Professor'}}</span>
         </div>
-        <!-- <i class="mdi mdi-teach text-success nav-profile-badge"></i> -->
-        <!-- <i class="mdi mdi-school text-success nav-profile-badge"></i> -->
+        <i v-if="!user.aluno_id" class="mdi mdi-teach text-success nav-profile-badge"></i>
+        <i v-else class="mdi mdi-school text-success nav-profile-badge"></i>
       </a>
     </li>
     <li class="nav-item" v-for="route in filteredRoutes" v-bind:key="route.name">
@@ -39,13 +39,21 @@
 </template>
 
 <script lang="ts">
+import axios, {AxiosResponse} from 'axios';
 import { routes } from '../router';
 import { Route, RouteConfig } from 'vue-router';
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class Sidebar extends Vue {
-  routes = routes;
+  private routes = routes;
+  private user = {};
+
+  mounted() {
+    axios.get('/api/me').then((response: AxiosResponse) => {
+      this.user = response.data.data;
+    });
+  }
 
   get filteredRoutes() {
     return routes.filter((route) => !route.meta || !route.meta.hidden);

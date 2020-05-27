@@ -4,6 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+use App\Http\Resources\FicheiroResource;
+
 class EventoDeAvaliacaoResource extends JsonResource
 {
     /**
@@ -18,7 +20,7 @@ class EventoDeAvaliacaoResource extends JsonResource
             'id' => $this->id,
             'disciplina' => $this->disciplina,
             'resolucoes' => $this->resolucoes,
-            'ficheiros' => $this->ficheiros,
+            'ficheiros' => FicheiroResource::collection($this->ficheiros),
             'data_inicio' => $this->data_inicio,
             'data_fim' => $this->data_fim,
             'created_at' => $this->created_at,

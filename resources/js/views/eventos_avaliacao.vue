@@ -1,5 +1,5 @@
 <template>
-    <div class="content-wrapper">
+    <div>
         <div class="page-header">
             <b-form-select v-model="idDisciplina" @change="getEventosAvaliacaoDisciplina()" class="mb-3">
                 <b-form-select-option :value="null">Por favor escolha a disciplina</b-form-select-option>
@@ -28,7 +28,7 @@
                                         <td>{{item.data_fim}}</td>
                                         <td>
                                             <ul v-if="item.ficheiros.length > 0">
-                                                <li v-for="ficheiro in item.ficheiros">
+                                                <li v-for="(ficheiro, fileIndex) in item.ficheiros" :key="fileIndex">
                                                     <a :href="ficheiro.url" download><i class="mdi mdi-file"></i>{{ficheiro.nome}}</a>
                                                 </li>
                                             </ul>
@@ -45,7 +45,7 @@
     </div>
 </template>
 
-<script>   
+<script>
     import axios from "axios";
 
     export default {
@@ -56,13 +56,13 @@
             async getIdETipoDeUtilizador() {
                 await axios.get('/api/me').then((response) => {
                     if ("professor_id" in response.data.data){
-                        this.professor = true;
-                        this.idUser = response.data.data.professor_id;
+                      this.professor = true;
                     }
                     else if ("aluno_id" in response.data.data){
-                        this.professor = false;
-                        this.idUser = response.data.data.aluno_id;
+                      this.professor = false;
                     }
+
+                    this.idUser = response.data.data.user.id;
                 });
 
                 this.getDisciplinas();
@@ -88,7 +88,7 @@
             async getEventosAvaliacaoDisciplina() {
                 await axios.get('/api/disciplinas/' + this.idDisciplina)
                     .then((response) => {
-                        if(this.idUser === response.data.data.regente.professor_id && this.professor)
+                        if(this.idUser === response.data.data.regente.user.id && this.professor)
                             this.show = true;
                         else
                             this.show = false;
@@ -105,7 +105,7 @@
             criarEventoAvaliacao() {
                 this.$router.push({ path: `/criarAvaliacao/${this.idDisciplina}` })
             },
-            
+
         },
         computed: {
 

@@ -1,5 +1,6 @@
 <template>
-    <div v-if="professor" class="content-wrapper">
+  <div>
+    <div v-if="professor">
         <div class="page-header">
             <h3 class="page-title">{{disciplina}}</h3>
         </div>
@@ -38,10 +39,10 @@
                             <button class="btn btn-light">Cancelar</button>
                         </div>
                         <div v-else>
-                            <p v-if="files.length">                            
+                            <p v-if="files.length">
                                 <b>Ficheiros do evento de avaliação:</b>
                                 <ul>
-                                    <li v-for="file in files">{{ file.nome }}</li>
+                                    <li v-for="(file, fileIndex) in files" v-bind:key=fileIndex>{{ file.nome }}</li>
                                 </ul>
                             </p>
                             <button @click="openModal()" type="button" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-upload btn-icon-prepend"></i> Upload do enunciado</button>
@@ -53,7 +54,7 @@
         </div>
         <modal-upload :uploadUrl="'/api/disciplinas/' + this.$route.params.disciplina + '/eventos-de-avaliacao/' + idEvento + '/ficheiros'" :afterUpload="getNomeFicheiro"></modal-upload>
     </div>
-    <div v-else class="container-fluid page-body-wrapper full-page-wrapper">
+    <div v-if="fetched && !professor" class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center text-center error-page">
           <div class="row flex-grow">
             <div class="col-lg-7 mx-auto">
@@ -70,9 +71,10 @@
           </div>
         </div>
     </div>
+  </div>
 </template>
 
-<script>   
+<script>
   import axios from "axios";
 
   export default {
@@ -81,21 +83,23 @@
     },
     methods: {
         async getIdETipoDeUtilizador() {
-            await axios.get('/api/me').then((response) => {
+            await axios.get('/api/me').then(async (response) => {
                 if ("professor_id" in response.data.data){
-                    this.idUser = response.data.data.professor_id;
-                    this.isRegente();
+                    this.idUser = response.data.data.user.id;
+                    await this.isRegente();
                 }
                 else if ("aluno_id" in response.data.data){
                     this.professor = false;
                 }
+
+                this.fetched = true;
             });
         },
 
         async isRegente() {
             await axios.get('/api/disciplinas/' + this.$route.params.disciplina)
                 .then((response) => {
-                    if(this.idUser === response.data.data.regente.professor_id)
+                    if(this.idUser === response.data.data.regente.user.id)
                         this.professor = true;
                 });
             this.getNomeDisciplina();
@@ -158,7 +162,7 @@
                 this.errors.push('Hora Final é necessário');
             }
         },
-        
+
         openModal() {
             this.$bvModal.show('modal-upload');
         },
@@ -184,7 +188,8 @@
         professor: '',
         idUser: null,
         idEvento: null,
-        files: []
+        files: [],
+        fetched: false
       }
     },
     components: {

@@ -8,6 +8,9 @@ import LoginPage from "./views/login.vue";
 import RegisterPage from "./views/register.vue";
 import AvaliacaoPage from "./views/eventos_avaliacao.vue"
 import CriarAvaliacaoPage from "./views/criar_avaliacao.vue"
+import DuvidasPage from "./views/duvidas.vue";
+import CriarDuvidaPage from "./views/criar_duvida.vue";
+import VerDuvidaPage from "./views/ver_duvida.vue";
 
 Vue.use(VueRouter);
 
@@ -36,7 +39,7 @@ export const routes: RouteConfig[] = [
     }
   },
   {
-    path: '/eventosAvaliacao',
+    path: '/eventos-de-avaliacao',
     name: 'Eventos de avaliação',
     component: AvaliacaoPage,
     meta: {
@@ -44,7 +47,7 @@ export const routes: RouteConfig[] = [
     }
   },
   {
-    path: '/criarAvaliacao/:disciplina',
+    path: '/eventos-de-avaliacao/:disciplina/criar',
     name: 'Criar evento de avaliação',
     component: CriarAvaliacaoPage,
     meta: {
@@ -71,6 +74,30 @@ export const routes: RouteConfig[] = [
       hideNavbar: true,
       hideSidebar: true,
     }
+  },
+  {
+    path:'/duvidas',
+    name: 'Duvidas',
+    component: DuvidasPage,
+    meta: {
+      icon: 'mdi-comment-question-outline',
+    }
+  },
+  {
+    path:'/duvidas/:disciplina/criar',
+    name: 'Criar Duvida',
+    component: CriarDuvidaPage,
+    meta: {
+      hidden: true,
+    }
+  },
+  {
+    path:'/duvidas/:disciplina/ver/:duvida',
+    name: 'Ver Duvida',
+    component: VerDuvidaPage,
+    meta: {
+      hidden: true,
+    }
   }
 ];
 
@@ -80,7 +107,6 @@ export const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log(to, from, next);
   if (to.path == '/login' || to.path == '/register') {
     next();
   } else if (to.path == '/logout') {

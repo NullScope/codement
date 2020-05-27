@@ -35,7 +35,7 @@
         </form>
       </div>
     </b-modal>
-    <div class="row justify-content-center" v-if="uploadUrl">
+    <div class="row justify-content-center" v-if="onSave">
       <div id="file-info" class="col-lg-7">
         <div class="card">
           <div class="card-body">
@@ -71,7 +71,7 @@
 
               <b-form-group>
                 <div class="input-group col-xs-12">
-                  <input type="file" ref="fileInput" v-on:change="onFileChange" name="file" required class="file-upload-default">
+                  <input type="file" ref="fileInput" v-on:change="onFileChange" name="file" :accept="acceptFileExtensions" required class="file-upload-default">
                   <label class="form-control" placeholder="" v-on:click="onClickUpload">{{fileLabel ? fileLabel : "Upload Ficheiro"}}</label>
                   <span class="input-group-append">
                     <button class="file-upload-browse btn btn-gradient-primary" type="button" v-on:click="onClickUpload">Upload</button>
@@ -102,10 +102,10 @@
             <p class="card-text">{{comment.comentario}}</p>
             <audio-player ref="audioPlayers" v-if="comment.audio && comment.audio.url" :src="comment.audio.url"/>
           </div>
-          <ul class="list-group list-group-flush" v-if="!uploadUrl">
+          <ul class="list-group list-group-flush" v-if="!onSave">
             <li class="list-group-item"><h4>Respostas</h4></li>
           </ul>
-          <div v-if="!uploadUrl">
+          <div v-if="!onSave">
             <div class="card-body subcomment" v-for="(subcomment, subindex) in comment.subcomentarios" v-bind:key="subindex">
               <h4 class="card-title">{{subcomment.user.name}}</h4>
               <h6 class="card-subtitle mb-2 text-muted">{{subcomment.created_at | moment("DD/MM/YYYY hh:mm:ss")}}</h6>
@@ -114,7 +114,7 @@
               <audio-player ref="audioPlayers" v-if="subcomment.audio_url" :src="subcomment.audio_url"/>
             </div>
           </div>
-          <div class="card-body" v-if="!uploadUrl">
+          <div class="card-body" v-if="!onSave">
             <b-button class="btn btn-gradient-primary mr-2" v-on:click="onReplyComment(comment)">Responder</b-button>
           </div>
         </div>
@@ -130,6 +130,7 @@
 
 <script>
   import axios from "axios";
+  import fileExtensions from './fileExtensions.js';
   import 'prismjs';
   import 'prismjs/themes/prism.css';
   import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.min';
@@ -141,8 +142,7 @@
   export default {
     props: {
       fileId: {type: Number},
-      uploadUrl: {type: String},
-      afterUpload: {type: Function},
+      onSave: {type: Function},
       afterDownload: {type: Function}
     },
 
@@ -237,7 +237,8 @@
         commentState: null,
         extension: '',
         lineNumbersRow: null,
-        user: null
+        user: null,
+        acceptFileExtensions: fileExtensions
       }
     },
 
@@ -323,42 +324,14 @@
       onSubmit(evt) {
         evt.preventDefault();
 
-        let fileFormData = new FormData();
-        fileFormData.append('nome', this.filename);
-        fileFormData.append('descricao', this.fileDescription);
-        fileFormData.append('ficheiro', this.file);
-
-        axios.post(this.uploadUrl, fileFormData, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }).then((response) => {
-          let id = response.data.data.id;
-
-          this.comments.forEach(comment => {
-            let commentFormData = new FormData();
-
-            commentFormData.append('comentario', comment.comentario);
-            commentFormData.append('linha_inicio', comment.lineStart);
-            commentFormData.append('linha_fim', comment.lineEnd);
-
-            if (comment.audio.blob) {
-              commentFormData.append('audio', comment.audio.blob);
-            }
-
-            axios.post(`/api/ficheiros/${id}/comentarios`, commentFormData, {
-              headers: {
-                'Content-Type': 'multipart/form-data'
-              }
-            }).then((response) => {
-              console.log(response);
-            });
+        if (this.onSave) {
+          this.onSave({
+            file: this.file,
+            filename: this.filename,
+            fileDescription: this.fileDescription,
+            comments: this.comments
           });
-
-          if (this.afterUpload) {
-            this.afterUpload(response.data.data);
-          }
-        });
+        }
       },
 
       onReplyComment(comment) {
@@ -499,7 +472,7 @@
           return;
         }
 
-        if (bvModalEvt.trigger !== "event" || !this.uploadUrl) {
+        if (bvModalEvt.trigger !== "event" || !this.onSave) {
           this.currentComment = null;
         } else {
           this.comments.push(this.currentComment);
@@ -519,7 +492,7 @@
           return
         }
 
-        if (this.uploadUrl) {
+        if (this.onSave) {
           this.$nextTick(() => {
             this.$bvModal.hide('insert-comment-modal');
           });
