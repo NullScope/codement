@@ -28,7 +28,7 @@
       </a>
       <div class="collapse" :id="getSubmenuId(route)" v-if="route.children">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item" v-for="child in route.children" v-bind:key="child.name">
+          <li class="nav-item" v-for="child in getFilteredNestedRoutes(route)" v-bind:key="child.name">
             <router-link class="nav-link" :to="child.path">{{child.name}}</router-link>
           </li>
         </ul>
@@ -40,7 +40,7 @@
 
 <script lang="ts">
 import { routes } from '../router';
-import { Route } from 'vue-router';
+import { Route, RouteConfig } from 'vue-router';
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
@@ -48,7 +48,15 @@ export default class Sidebar extends Vue {
   routes = routes;
 
   get filteredRoutes() {
-    return routes.filter((route) => !route.meta.hidden);
+    return routes.filter((route) => !route.meta || !route.meta.hidden);
+  }
+
+  getFilteredNestedRoutes(route: RouteConfig) {
+    if (route.children) {
+      return route.children.filter((subroute: RouteConfig) => !subroute.meta || !subroute.meta.hidden);
+    } else {
+      return [];
+    }
   }
 
   getSubmenuId(route: Route): String {

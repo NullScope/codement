@@ -67,7 +67,7 @@ class ProfessorDisciplinaController extends Controller
                 $professor = Professor::findOrFail($professor_id);
                 $disciplina = Disciplina::findOrFail($request->input("disciplina_id"));
 
-                $professor->disciplinas()->attach($disciplina);
+                $professor->user->disciplinas()->attach($disciplina);
 
                 return new DisciplinaResource($disciplina);
 
@@ -142,7 +142,7 @@ class ProfessorDisciplinaController extends Controller
             $professor = Professor::findOrFail($id);
             $disciplina = Disciplina::findOrFail($disciplina_id);
 
-            $professor->disciplinas()->detach($disciplina);
+            $professor->user->disciplinas()->detach($disciplina);
 
             /* Return Success Response */
             return response()->json(array(
