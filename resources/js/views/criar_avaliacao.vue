@@ -9,45 +9,49 @@
                     <div class="card-body">
                         <h4 class="card-title">Criar evento de avaliação</h4>
                         <hr>
-                        <p v-if="errors.length" class="text-danger">
-                            <b>Tenha em atenção:</b>
-                            <ul>
-                                <li v-for="error in errors" :key="error">{{ error }}</li>
-                            </ul>
-                        </p>
-                        <div class="form-group row">
-                            <label for="exampleInputName1" class="col-sm-12 col-form-label">Data de Início</label>
-                            <div class="col-sm-6">
-                                <b-form-datepicker id="datepicker-inicio" v-model="data_inicio" required></b-form-datepicker>
+                        <div v-if="idEvento === null">
+                            <p v-if="errors.length" class="text-danger">
+                                <b>Tenha em atenção:</b>
+                                <ul>
+                                    <li v-for="error in errors" :key="error">{{ error }}</li>
+                                </ul>
+                            </p>
+                            <div class="form-group row">
+                                <label for="exampleInputName1" class="col-sm-12 col-form-label">Data de Início</label>
+                                <div class="col-sm-6">
+                                    <b-form-datepicker id="datepicker-inicio" v-model="data_inicio" required></b-form-datepicker>
+                                </div>
+                                <div class="col-sm-6">
+                                    <b-form-timepicker v-model="hora_inicio" locale="de" required></b-form-timepicker>
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <b-form-timepicker v-model="hora_inicio" locale="de" required></b-form-timepicker>
+                            <div class="form-group row">
+                                <label for="exampleInputName1" class="col-sm-12 col-form-label">Data Final</label>
+                                <div class="col-sm-6">
+                                    <b-form-datepicker id="datepicker-fim" v-model="data_fim" required></b-form-datepicker>
+                                </div>
+                                <div class="col-sm-6">
+                                    <b-form-timepicker v-model="hora_fim" locale="de" required></b-form-timepicker>
+                                </div>
                             </div>
+                            <button @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
+                            <button class="btn btn-light">Cancelar</button>
                         </div>
-                        <div class="form-group row">
-                            <label for="exampleInputName1" class="col-sm-12 col-form-label">Data Final</label>
-                            <div class="col-sm-6">
-                                <b-form-datepicker id="datepicker-fim" v-model="data_fim" required></b-form-datepicker>
-                            </div>
-                            <div class="col-sm-6">
-                                <b-form-timepicker v-model="hora_fim" locale="de" required></b-form-timepicker>
-                            </div>
+                        <div v-else>
+                            <p v-if="files.length">                            
+                                <b>Ficheiros do evento de avaliação:</b>
+                                <ul>
+                                    <li v-for="file in files">{{ file.nome }}</li>
+                                </ul>
+                            </p>
+                            <button @click="openModal()" type="button" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-upload btn-icon-prepend"></i> Upload do enunciado</button>
+                            <button v-if="files.length" @click="voltar()" class="btn btn-light">Voltar para página de eventos de avaliação</button>
                         </div>
-                        <button v-if="idEvento === null" @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
-                        <button v-if="idEvento === null" class="btn btn-light">Cancelar</button>
-
-                        <button v-if="idEvento > 0" @click="openModal()" type="button" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-upload btn-icon-prepend"></i> Upload do enunciado</button>
-                        <p v-if="files.length">
-                            <b>Ficheiros do evento de avaliação:</b>
-                            <ul>
-                                <li v-for="file in files" :key="file">{{ file.name }}</li>
-                            </ul>
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <modal-upload></modal-upload>
+        <modal-upload :uploadUrl="'/api/disciplinas/' + this.$route.params.disciplina + '/eventos-de-avaliacao/' + idEvento + '/ficheiros'" :afterUpload="getNomeFicheiro"></modal-upload>
     </div>
     <div v-else class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center text-center error-page">
@@ -76,17 +80,6 @@
         this.getIdETipoDeUtilizador()
     },
     methods: {
-        /*async login() {
-            await axios.get('http://localhost:8000/sanctum/csrf-cookie');
-
-            await axios.post('http://localhost:8000/login', {
-                email: "filipe.quintal@staff.uma.pt",
-                password: "12345678"
-            });
-
-            this.getIdETipoDeUtilizador()
-        },*/
-
         async getIdETipoDeUtilizador() {
             await axios.get('/api/me').then((response) => {
                 if ("professor_id" in response.data.data){
@@ -125,10 +118,16 @@
                 data_inicio: dataI,
                 data_fim: dataF
             }).then((response) => {
-                    console.log(response.data.data);
                     this.idEvento = response.data.data.id;
                 });
-            //this.$router.push({ path: `/eventosAvaliacao` })
+        },
+
+        async getNomeFicheiro() {
+            let url = '/api/disciplinas/' + this.$route.params.disciplina + '/eventos-de-avaliacao/' + this.idEvento;
+            await axios.get(url)
+                .then((response) => {
+                    this.files = response.data.data.ficheiros;
+                });
         },
 
         verificaForm(){
@@ -162,6 +161,10 @@
         
         openModal() {
             this.$bvModal.show('modal-upload');
+        },
+
+        voltar(){
+            this.$router.push({ path: `/eventosAvaliacao` })
         }
     },
     computed: {

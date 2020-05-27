@@ -26,7 +26,14 @@
                                         <td>{{index + 1}}</td>
                                         <td>{{item.data_inicio}}</td>
                                         <td>{{item.data_fim}}</td>
-                                        <td></td>
+                                        <td>
+                                            <ul v-if="item.ficheiros.length > 0">
+                                                <li v-for="ficheiro in item.ficheiros">
+                                                    <a :href="ficheiro.url" download><i class="mdi mdi-file"></i>{{ficheiro.nome}}</a>
+                                                </li>
+                                            </ul>
+                                            <span v-else>-</span>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -43,20 +50,9 @@
 
     export default {
         mounted: function () {
-            this.login()
+            this.getIdETipoDeUtilizador();
         },
         methods: {
-            async login() {
-                await axios.get('http://localhost:8000/sanctum/csrf-cookie');
-
-                await axios.post('http://localhost:8000/login', {
-                    email: "filipe.quintal@staff.uma.pt",
-                    password: "12345678"
-                });
-
-                this.getIdETipoDeUtilizador();
-            },
-
             async getIdETipoDeUtilizador() {
                 await axios.get('/api/me').then((response) => {
                     if ("professor_id" in response.data.data){
@@ -136,5 +132,10 @@
 <style>
     #criar{
         margin-bottom: 20px;
+    }
+
+    ul{
+        list-style-type: none;
+        padding-left: 0px;
     }
 </style>

@@ -2772,9 +2772,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    uploadUrl: {
+      type: String
+    },
+    afterUpload: {
+      type: Function
+    }
+  },
   mounted: function () {
     var _mounted = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
@@ -2794,11 +2801,73 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     return mounted;
   }(),
-  methods: {},
+  methods: {
+    onFileChange: function onFileChange(e) {
+      var _this = this;
+
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      this.file = files[0];
+      var reader = new FileReader();
+      reader.readAsText(this.file, "UTF-8");
+
+      reader.onload = function (evt) {
+        _this.filename = _this.filename !== '' ? _this.filename : _this.file.name;
+        _this.fileLabel = _this.file.name;
+      };
+
+      reader.onerror = function (evt) {
+        console.error(evt);
+        _this.filename = '';
+        _this.fileLabel = '';
+      };
+    },
+    onClickUpload: function onClickUpload() {
+      this.$refs.fileInput.click();
+    },
+    onSubmit: function onSubmit(evt) {
+      var _this2 = this;
+
+      evt.preventDefault();
+      var fileFormData = new FormData();
+      fileFormData.append('nome', this.filename);
+      fileFormData.append('descricao', this.fileDescription);
+      fileFormData.append('ficheiro', this.file);
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(this.uploadUrl, fileFormData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(function () {
+        _this2.afterUpload();
+
+        _this2.$bvModal.hide('modal-upload');
+      });
+    },
+    onModalHide: function onModalHide(bvModalEvt) {
+      if (bvModalEvt.defaultPrevented) {
+        return;
+      }
+
+      this.file = null;
+      this.filename = '';
+      this.fileLabel = '';
+      this.fileDescription = '';
+      this.isUploadModalOpened = false;
+    },
+    onModalShow: function onModalShow() {
+      this.isUploadModalOpened = true;
+    }
+  },
   computed: {},
   watch: {},
   data: function data() {
-    return {};
+    return {
+      isUploadModalOpened: false,
+      file: null,
+      filename: '',
+      fileLabel: '',
+      fileDescription: ''
+    };
   },
   components: {}
 });
@@ -2946,20 +3015,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.getIdETipoDeUtilizador();
   },
   methods: {
-    /*async login() {
-        await axios.get('http://localhost:8000/sanctum/csrf-cookie');
-         await axios.post('http://localhost:8000/login', {
-            email: "filipe.quintal@staff.uma.pt",
-            password: "12345678"
-        });
-         this.getIdETipoDeUtilizador()
-    },*/
     getIdETipoDeUtilizador: function getIdETipoDeUtilizador() {
       var _this = this;
 
@@ -3050,7 +3115,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   data_inicio: dataI,
                   data_fim: dataF
                 }).then(function (response) {
-                  console.log(response.data.data);
                   _this4.idEvento = response.data.data.id;
                 });
 
@@ -3060,6 +3124,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             }
           }
         }, _callee4);
+      }))();
+    },
+    getNomeFicheiro: function getNomeFicheiro() {
+      var _this5 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+        var url;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                url = '/api/disciplinas/' + _this5.$route.params.disciplina + '/eventos-de-avaliacao/' + _this5.idEvento;
+                _context5.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+                  _this5.files = response.data.data.ficheiros;
+                });
+
+              case 3:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5);
       }))();
     },
     verificaForm: function verificaForm() {
@@ -3095,6 +3182,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     openModal: function openModal() {
       this.$bvModal.show('modal-upload');
+    },
+    voltar: function voltar() {
+      this.$router.push({
+        path: "/eventosAvaliacao"
+      });
     }
   },
   computed: {},
@@ -3194,13 +3286,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    this.login();
+    this.getIdETipoDeUtilizador();
   },
   methods: {
-    login: function login() {
+    getIdETipoDeUtilizador: function getIdETipoDeUtilizador() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
@@ -3209,19 +3308,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost:8000/sanctum/csrf-cookie');
-
-              case 2:
-                _context.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost:8000/login', {
-                  email: "filipe.quintal@staff.uma.pt",
-                  password: "12345678"
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
+                  if ("professor_id" in response.data.data) {
+                    _this.professor = true;
+                    _this.idUser = response.data.data.professor_id;
+                  } else if ("aluno_id" in response.data.data) {
+                    _this.professor = false;
+                    _this.idUser = response.data.data.aluno_id;
+                  }
                 });
 
-              case 4:
-                _this.getIdETipoDeUtilizador();
+              case 2:
+                _this.getDisciplinas();
 
-              case 5:
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -3229,29 +3329,38 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    getIdETipoDeUtilizador: function getIdETipoDeUtilizador() {
+    getDisciplinas: function getDisciplinas() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var url;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
+                if (!_this2.professor) {
+                  _context2.next = 5;
+                  break;
+                }
+
+                _context2.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
-                  if ("professor_id" in response.data.data) {
-                    _this2.professor = true;
-                    _this2.idUser = response.data.data.professor_id;
-                  } else if ("aluno_id" in response.data.data) {
-                    _this2.professor = false;
-                    _this2.idUser = response.data.data.aluno_id;
-                  }
+                  Array.prototype.push.apply(response.data.data.disciplinas, response.data.data.regente);
+                  _this2.opcoes = response.data.data.disciplinas;
                 });
 
-              case 2:
-                _this2.getDisciplinas();
-
               case 3:
+                _context2.next = 8;
+                break;
+
+              case 5:
+                url = '/api/alunos/' + _this2.idUser + '/disciplinas';
+                _context2.next = 8;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+                  _this2.opcoes = response.data.data;
+                });
+
+              case 8:
               case "end":
                 return _context2.stop();
             }
@@ -3259,7 +3368,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }))();
     },
-    getDisciplinas: function getDisciplinas() {
+    getEventosAvaliacaoDisciplina: function getEventosAvaliacaoDisciplina() {
       var _this3 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
@@ -3268,63 +3377,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                if (!_this3.professor) {
-                  _context3.next = 5;
-                  break;
-                }
-
-                _context3.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/me').then(function (response) {
-                  Array.prototype.push.apply(response.data.data.disciplinas, response.data.data.regente);
-                  _this3.opcoes = response.data.data.disciplinas;
+                _context3.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/disciplinas/' + _this3.idDisciplina).then(function (response) {
+                  if (_this3.idUser === response.data.data.regente.professor_id && _this3.professor) _this3.show = true;else _this3.show = false;
                 });
 
-              case 3:
-                _context3.next = 8;
-                break;
+              case 2:
+                url = '/api/disciplinas/' + _this3.idDisciplina + '/eventos-de-avaliacao';
+                _context3.next = 5;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+                  _this3.eventosAvaliacao = response.data.data;
+                });
 
               case 5:
-                url = '/api/alunos/' + _this3.idUser + '/disciplinas';
-                _context3.next = 8;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
-                  _this3.opcoes = response.data.data;
-                });
-
-              case 8:
               case "end":
                 return _context3.stop();
             }
           }
         }, _callee3);
-      }))();
-    },
-    getEventosAvaliacaoDisciplina: function getEventosAvaliacaoDisciplina() {
-      var _this4 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
-        var url;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                _context4.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/disciplinas/' + _this4.idDisciplina).then(function (response) {
-                  if (_this4.idUser === response.data.data.regente.professor_id && _this4.professor) _this4.show = true;else _this4.show = false;
-                });
-
-              case 2:
-                url = '/api/disciplinas/' + _this4.idDisciplina + '/eventos-de-avaliacao';
-                _context4.next = 5;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
-                  _this4.eventosAvaliacao = response.data.data;
-                });
-
-              case 5:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4);
       }))();
     },
     criarEventoAvaliacao: function criarEventoAvaliacao() {
@@ -44818,7 +44888,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#criar{\n    margin-bottom: 20px;\n}\n", ""]);
+exports.push([module.i, "\n#criar{\n    margin-bottom: 20px;\n}\nul{\n    list-style-type: none;\n    padding-left: 0px;\n}\n", ""]);
 
 // exports
 
@@ -52261,7 +52331,8 @@ var render = function() {
         id: "modal-upload",
         title: "Upload de ficheiro",
         "hide-footer": ""
-      }
+      },
+      on: { show: _vm.onModalShow, hide: _vm.onModalHide }
     },
     [
       _c(
@@ -53167,179 +53238,210 @@ var render = function() {
                   _vm._v(" "),
                   _c("hr"),
                   _vm._v(" "),
-                  _vm.errors.length
-                    ? _c("p", { staticClass: "text-danger" }, [
-                        _c("b", [_vm._v("Tenha em atenção:")]),
+                  _vm.idEvento === null
+                    ? _c("div", [
+                        _vm.errors.length
+                          ? _c("p", { staticClass: "text-danger" }, [
+                              _c("b", [_vm._v("Tenha em atenção:")]),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                _vm._l(_vm.errors, function(error) {
+                                  return _c("li", { key: error }, [
+                                    _vm._v(_vm._s(error))
+                                  ])
+                                }),
+                                0
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form-group row" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-sm-12 col-form-label",
+                              attrs: { for: "exampleInputName1" }
+                            },
+                            [_vm._v("Data de Início")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-6" },
+                            [
+                              _c("b-form-datepicker", {
+                                attrs: {
+                                  id: "datepicker-inicio",
+                                  required: ""
+                                },
+                                model: {
+                                  value: _vm.data_inicio,
+                                  callback: function($$v) {
+                                    _vm.data_inicio = $$v
+                                  },
+                                  expression: "data_inicio"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-6" },
+                            [
+                              _c("b-form-timepicker", {
+                                attrs: { locale: "de", required: "" },
+                                model: {
+                                  value: _vm.hora_inicio,
+                                  callback: function($$v) {
+                                    _vm.hora_inicio = $$v
+                                  },
+                                  expression: "hora_inicio"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "form-group row" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "col-sm-12 col-form-label",
+                              attrs: { for: "exampleInputName1" }
+                            },
+                            [_vm._v("Data Final")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-6" },
+                            [
+                              _c("b-form-datepicker", {
+                                attrs: { id: "datepicker-fim", required: "" },
+                                model: {
+                                  value: _vm.data_fim,
+                                  callback: function($$v) {
+                                    _vm.data_fim = $$v
+                                  },
+                                  expression: "data_fim"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-6" },
+                            [
+                              _c("b-form-timepicker", {
+                                attrs: { locale: "de", required: "" },
+                                model: {
+                                  value: _vm.hora_fim,
+                                  callback: function($$v) {
+                                    _vm.hora_fim = $$v
+                                  },
+                                  expression: "hora_fim"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
                         _vm._v(" "),
                         _c(
-                          "ul",
-                          _vm._l(_vm.errors, function(error) {
-                            return _c("li", { key: error }, [
-                              _vm._v(_vm._s(error))
+                          "button",
+                          {
+                            staticClass: "btn btn-gradient-primary mr-2",
+                            on: {
+                              click: function($event) {
+                                return _vm.verificaForm()
+                              }
+                            }
+                          },
+                          [_vm._v("Criar")]
+                        ),
+                        _vm._v(" "),
+                        _c("button", { staticClass: "btn btn-light" }, [
+                          _vm._v("Cancelar")
+                        ])
+                      ])
+                    : _c("div", [
+                        _vm.files.length
+                          ? _c("p", [
+                              _c("b", [
+                                _vm._v("Ficheiros do evento de avaliação:")
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                _vm._l(_vm.files, function(file) {
+                                  return _c("li", [_vm._v(_vm._s(file.nome))])
+                                }),
+                                0
+                              )
                             ])
-                          }),
-                          0
-                        )
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group row" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-sm-12 col-form-label",
-                        attrs: { for: "exampleInputName1" }
-                      },
-                      [_vm._v("Data de Início")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("b-form-datepicker", {
-                          attrs: { id: "datepicker-inicio", required: "" },
-                          model: {
-                            value: _vm.data_inicio,
-                            callback: function($$v) {
-                              _vm.data_inicio = $$v
-                            },
-                            expression: "data_inicio"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("b-form-timepicker", {
-                          attrs: { locale: "de", required: "" },
-                          model: {
-                            value: _vm.hora_inicio,
-                            callback: function($$v) {
-                              _vm.hora_inicio = $$v
-                            },
-                            expression: "hora_inicio"
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group row" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-sm-12 col-form-label",
-                        attrs: { for: "exampleInputName1" }
-                      },
-                      [_vm._v("Data Final")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("b-form-datepicker", {
-                          attrs: { id: "datepicker-fim", required: "" },
-                          model: {
-                            value: _vm.data_fim,
-                            callback: function($$v) {
-                              _vm.data_fim = $$v
-                            },
-                            expression: "data_fim"
-                          }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("b-form-timepicker", {
-                          attrs: { locale: "de", required: "" },
-                          model: {
-                            value: _vm.hora_fim,
-                            callback: function($$v) {
-                              _vm.hora_fim = $$v
-                            },
-                            expression: "hora_fim"
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm.idEvento === null
-                    ? _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-gradient-primary mr-2",
-                          on: {
-                            click: function($event) {
-                              return _vm.verificaForm()
-                            }
-                          }
-                        },
-                        [_vm._v("Criar")]
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.idEvento === null
-                    ? _c("button", { staticClass: "btn btn-light" }, [
-                        _vm._v("Cancelar")
-                      ])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.idEvento > 0
-                    ? _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-gradient-primary btn-icon-text",
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              return _vm.openModal()
-                            }
-                          }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "mdi mdi-upload btn-icon-prepend"
-                          }),
-                          _vm._v(" Upload do enunciado")
-                        ]
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.files.length
-                    ? _c("p", [
-                        _c("b", [_vm._v("Ficheiros do evento de avaliação:")]),
+                          : _vm._e(),
                         _vm._v(" "),
                         _c(
-                          "ul",
-                          _vm._l(_vm.files, function(file) {
-                            return _c("li", { key: file }, [
-                              _vm._v(_vm._s(file.name))
-                            ])
-                          }),
-                          0
-                        )
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-gradient-primary btn-icon-text",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                return _vm.openModal()
+                              }
+                            }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "mdi mdi-upload btn-icon-prepend"
+                            }),
+                            _vm._v(" Upload do enunciado")
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _vm.files.length
+                          ? _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-light",
+                                on: {
+                                  click: function($event) {
+                                    return _vm.voltar()
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "Voltar para página de eventos de avaliação"
+                                )
+                              ]
+                            )
+                          : _vm._e()
                       ])
-                    : _vm._e()
                 ])
               ])
             ])
           ]),
           _vm._v(" "),
-          _c("modal-upload")
+          _c("modal-upload", {
+            attrs: {
+              uploadUrl:
+                "/api/disciplinas/" +
+                this.$route.params.disciplina +
+                "/eventos-de-avaliacao/" +
+                _vm.idEvento +
+                "/ficheiros",
+              afterUpload: _vm.getNomeFicheiro
+            }
+          })
         ],
         1
       )
@@ -53513,7 +53615,31 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(item.data_fim))]),
                       _vm._v(" "),
-                      _c("td")
+                      _c("td", [
+                        item.ficheiros.length > 0
+                          ? _c(
+                              "ul",
+                              _vm._l(item.ficheiros, function(ficheiro) {
+                                return _c("li", [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        href: ficheiro.url,
+                                        download: ""
+                                      }
+                                    },
+                                    [
+                                      _c("i", { staticClass: "mdi mdi-file" }),
+                                      _vm._v(_vm._s(ficheiro.nome))
+                                    ]
+                                  )
+                                ])
+                              }),
+                              0
+                            )
+                          : _c("span", [_vm._v("-")])
+                      ])
                     ])
                   }),
                   0
@@ -75528,15 +75654,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************!*\
   !*** ./resources/js/components/ModalUpload.vue ***!
   \*************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ModalUpload_vue_vue_type_template_id_6a8042f3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModalUpload.vue?vue&type=template&id=6a8042f3& */ "./resources/js/components/ModalUpload.vue?vue&type=template&id=6a8042f3&");
 /* harmony import */ var _ModalUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalUpload.vue?vue&type=script&lang=js& */ "./resources/js/components/ModalUpload.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ModalUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ModalUpload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -75566,7 +75691,7 @@ component.options.__file = "resources/js/components/ModalUpload.vue"
 /*!**************************************************************************!*\
   !*** ./resources/js/components/ModalUpload.vue?vue&type=script&lang=js& ***!
   \**************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
