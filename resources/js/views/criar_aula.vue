@@ -9,7 +9,44 @@
                 <div class="card-body">
                     <h4 class="card-tittle">Criar aula</h4>
                     <hr>
-                    <p v-if="errors.length" class="text-danger">
+                    <div v-if="idAula === null">
+                        <p v-if="errors.length" class="text-danger">
+                            <b>Tenha em atenção:</b>
+                            <ul>
+                                <li v-for="error in errors" :key="error">{{ error }}</li>
+                            </ul>
+                        </p>
+                        <div class="form-group row">
+                            <label for="exampleInputName1" class="col-sm-12 col-form-label">Nome da aula</label>
+                            <div class="col-sm-6">
+                                <b-form-input id="nome-aula" v-model="nome_aula" required></b-form-input>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleInputName1" class="col-sm-12 col-form-label">Descrição da aula</label>
+                            <div class="col-sm-6">
+                                <b-form-textarea id="descricao-aula" v-model="descricao_aula" required></b-form-textarea>
+                            </div>
+                        </div>
+                        <button @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
+                        <button class="btn btn-light">Cancelar</button>
+                    </div>
+                    <div v-else>
+                        <p v-if="files.length">
+                            <b>Ficheiros da aula:</b>
+                            <ul>
+                                <!--<li v-for="file in files">{{ file.nome }}</li>-->
+                            </ul>
+                        </p>
+                        <button @click="openModal()" type="button" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-upload btn-icon-prepend"></i>Upload da aula</button>
+                        <button v-if="files.length" @click="voltar()" class="btn btn-light">Voltar para a página da disciplina</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <modal-upload :uploadUrl="'/api/disciplinas' + this.$route.params.disciplina + '/aula/' + idAula + '/ficheiros/'" :afterUpload="getNomeFicheiro"><modal-upload>
+    </div>
+                    <!--<p v-if="errors.length" class="text-danger">
                         <b>Tenha em atenção:</b>
                         <ul>
                             <li v-for="error in errors" :key="error">{{error}}</li>
@@ -35,7 +72,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div v-else class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center text-center error-page">
             <div class="row flex-grow">
@@ -60,42 +97,28 @@ import axios from "axios";
 
 export default {
     mounted: function() {
-        this.login()
+        this.getIdTipoDeUtilizador()
     },
-    
     methods: {
-        async login() {
-            await axios.get('http://localhost:8000/sanctum/csrf-cookie');
-
-            await axios.post('http://localhost:8000/login',{
-                email: "filipe.quintal@staff.uma.pt",
-                password: "12345678"
-            });
-
-            this.getIdETipoDeUtilizador()
-        },
-
-        async getIdETipoDeUtilizador(){
-            await axios.get('/api/me').then((response) => {
+        async getIdETipoDeUtilizador() {
+            await axios.get('api/me').then((response) => {
                 if ("professor_id" in response.data.data){
                     this.idUser = response.data.data.professor_id;
                     this.isRegente();
                 }
-                else if ("aluno_id" in response.data.data){
+                else if("aluno_id" in response.data.data){
                     this.professor = false;
                 }
             });
         },
-
-        async isRegente(){
-            await axios.get('/api/disciplinas/' + this.$route.params.disciplina)
+        async isRegente() {
+            await axios.get('/api/disciplinas/' + this-$route.params.disciplina)
                 .then((response) => {
                     if(this.idUser === response.data.data.regente.professor_id)
                         this.professor = true;
-            });
+                })
             this.getNomeDisciplina();
         },
-
         async getNomeDisciplina(){
             let url = '/api/disciplinas/' + this.$route.params.disciplina;
             axios.get(url)
@@ -103,47 +126,60 @@ export default {
                     this.disciplina = response.data.data.nome;
                 });
         },
+        async criarAula() {
+            let nomeA = this.nome_aula;
+            let descA = this.descricao_aula;
 
-        async criarAula(){
-            let nomeA = this.nomeAula
-            let descA = this.descricaoAula
-
-            let url = '/api/disciplinas/' + this.$route.params.disciplina + '/disciplina';
+            let url = '/api/disciplinas/' + this.$route.params.disciplina + '/aulas';
             await axios.post(url, {
-                nomeAula: nomeA,
-                descricaoAula: descA
-            });
-            this.$router.push({path: `/disciplina`}) 
+                nome_aula: nomeA,
+                descricao_aula: descA
+            }).then((response) => {
+                this.idAula = response.data.data.id;
+            })
+        },
+        async getNomeFicheiro() {
+            let url = '/api/disciplinas/' + this.$route.params.disciplina + '/aulas/' + this.idAula;
+            await axios.get(url)
+                .then((response) => {
+                    this.files = response.data.data.ficheiros;
+                });
         },
 
-        verificaForm (){
-            if(!this.nome){
-                this.errors.push('Nome da aula é necessário')
+        verificaForm(){
+            if(!this.nome_aula){
+                this.errors.push('Nome da aula é necessário');
             }
-        }, 
-    },
+            if(!this.descricao_aula){
+                this.errors.push('Descrição da aula é necessária');
+            }
+        },
 
+        openModal() {
+            this.$bvModal.show('modal-upload');
+        },
+
+        voltar(){
+            this.$router.push({ path: `/disciplina`})
+        }
+    },
     computed:{
 
     },
-
-    watch:{
+    watch: {
 
     },
-
-    data() {
-        return {
-            nomeAula: '',
-            descricaoAula: '',
+    data(){
+        return{
+            nome_aula: '',
+            descricao_aula: '',
             disciplina: '',
             errors: [],
             professor: '',
-            idUser: null
+            idUser: null,
+            idAula: null,
+            files:[]
         }
-    },
-
-    components: {
-        
     }
 }
 </script>
