@@ -33,12 +33,21 @@
                                 <b-form-timepicker v-model="hora_fim" locale="de" required></b-form-timepicker>
                             </div>
                         </div>
-                        <button @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
-                        <button class="btn btn-light">Cancelar</button>
+                        <button v-if="idEvento === null" @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
+                        <button v-if="idEvento === null" class="btn btn-light">Cancelar</button>
+
+                        <button v-if="idEvento > 0" @click="openModal()" type="button" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-upload btn-icon-prepend"></i> Upload do enunciado</button>
+                        <p v-if="files.length">
+                            <b>Ficheiros do evento de avaliação:</b>
+                            <ul>
+                                <li v-for="file in files" :key="file">{{ file.name }}</li>
+                            </ul>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+        <modal-upload></modal-upload>
     </div>
     <div v-else class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center text-center error-page">
@@ -115,8 +124,11 @@
             await axios.post(url, {
                 data_inicio: dataI,
                 data_fim: dataF
-            });
-            this.$router.push({ path: `/eventosAvaliacao` })
+            }).then((response) => {
+                    console.log(response.data.data);
+                    this.idEvento = response.data.data.id;
+                });
+            //this.$router.push({ path: `/eventosAvaliacao` })
         },
 
         verificaForm(){
@@ -148,6 +160,9 @@
             }
         },
         
+        openModal() {
+            this.$bvModal.show('modal-upload');
+        }
     },
     computed: {
 
@@ -164,7 +179,9 @@
         disciplina: '',
         errors: [],
         professor: '',
-        idUser: null
+        idUser: null,
+        idEvento: null,
+        files: []
       }
     },
     components: {
