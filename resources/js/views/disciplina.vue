@@ -13,7 +13,6 @@
                         <thead>
                             <tr>
                                 <th>Aula</th>
-                                <th>Nº de Ficheiros</th>
                                 <th>Link</th>
                                 <th>Data de criação</th>
                                 <th>Última atualização</th>
@@ -22,14 +21,12 @@
                         <tbody>
                             <tr>
                                 <td>Introdução</td>
-                                <td>2</td>
                                 <td>«Link à aula»</td>
                                 <td>2020-04-13</td>
                                 <td>2020-05-02</td>
                             </tr>
                             <tr>
                                 <td>Use Cases</td>
-                                <td>3</td>
                                 <td>«Link à aula»</td>
                                 <td>2020-05-05</td>
                                 <td>2020-05-05</td>

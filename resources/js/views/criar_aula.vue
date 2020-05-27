@@ -1,8 +1,9 @@
 <template>
     <div v-if="professor" class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-tittle">{{disciplina}}</h3>
+            <h2 class="page-tittle">{{disciplina}}</h2>
         </div>
+
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
                 <div class="card-body">
@@ -22,10 +23,13 @@
                         <label for="exampleInputName1" class="col-sm-12 col-form-label">Descrição da aula</label>
                         <input type="text" id="descricaoAula"><br><br>
                     </div>
-                    <!--<div class="form-group row">
-                        <label for="exampleInputName1" class="col-sm-12 col-form-label">Inserir ficheiro</label>
-                        <input type="file" id="file" 
-                    </div>-->
+                    <div class="input-group col-xs-12">
+                        <input type="file" ref="fileInput" v-on:change="onFlileChange" name="file" required class="file-upload-default">
+                        <label class="form-control" placeholder="" v-on:click="onClickUpload"> {{fileLabel ? fileLabel : "Upload Ficheiro"}}</label>
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-gradient-primary" type="button" v-on:click="onClickUpload">Upload</button>
+                        </span>
+                    </div>
                     <button @click="verificaForm()" class="btn btn-gradient-primary mr-2">Criar</button>
                     <button class="btn btn-light">Cancelar</button>
                 </div>
