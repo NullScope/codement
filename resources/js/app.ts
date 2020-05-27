@@ -21,6 +21,7 @@ import ExampleComponent from './components/ExampleComponent.vue';
 import CodeHighlighter from './components/CodeHighlighter.vue';
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue';
+import ModalUpload from './components/ModalUpload.vue';
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)
@@ -45,6 +46,7 @@ Vue.use(Moment);
 Vue.component('app', AppView);
 Vue.component('example-component', ExampleComponent);
 Vue.component('code-highlighter', CodeHighlighter);
+Vue.component('modal-upload', ModalUpload);
 Vue.component('navbar', Navbar);
 Vue.component('sidebar', Sidebar);
 

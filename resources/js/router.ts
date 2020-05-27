@@ -1,11 +1,13 @@
 import Vue from "vue";
 import axios, { AxiosResponse, AxiosError } from "axios";
-import VueRouter, { RouteConfig, Route } from "vue-router";
+import VueRouter, { RouteConfig } from "vue-router";
 
 import HomePage from "./views/home.vue";
 import DisciplinaPage from "./views/disciplina.vue";
 import LoginPage from "./views/login.vue";
 import RegisterPage from "./views/register.vue";
+import AvaliacaoPage from "./views/eventos_avaliacao.vue"
+import CriarAvaliacaoPage from "./views/criar_avaliacao.vue"
 
 Vue.use(VueRouter);
 
@@ -31,6 +33,23 @@ export const routes: RouteConfig[] = [
     component: DisciplinaPage,
     meta: {
       icon: 'mdi-home'
+    }
+  },
+  {
+    path: '/eventosAvaliacao',
+    name: 'Eventos de avaliação',
+    component: AvaliacaoPage,
+    meta: {
+      icon: 'mdi-certificate'
+    }
+  },
+  {
+    path: '/criarAvaliacao/:disciplina',
+    name: 'Criar evento de avaliação',
+    component: CriarAvaliacaoPage,
+    meta: {
+      icon: 'mdi-certificate',
+      hidden: true
     }
   },
   {
