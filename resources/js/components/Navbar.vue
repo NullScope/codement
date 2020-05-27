@@ -26,15 +26,14 @@
               <span class="availability-status online"></span>
             </div>
             <div class="nav-profile-text">
-              <p class="mb-1 text-black">David Greymaax</p>
+              <p class="mb-1 text-black">{{user.user ? user.user.name : ''}}</p>
             </div>
           </a>
           <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item" href="#">
+            <!-- <a class="dropdown-item" href="#">
               <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
+            <div class="dropdown-divider"></div> -->
+            <router-link class="dropdown-item" to="/logout"><i class="mdi mdi-logout mr-2 text-primary"></i> Logout </router-link>
           </div>
         </li>
         <li class="nav-item d-none d-lg-block full-screen-link">
@@ -139,11 +138,22 @@
 </template>
 
 <script lang="ts">
+import axios, {AxiosResponse} from 'axios';
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class Sidebar extends Vue {
+  private user = {};
 
+  logout() {
+    this.$router.push('/logout');
+  }
+
+  mounted() {
+    axios.get('/api/me').then((response: AxiosResponse) => {
+      this.user = response.data.data;
+    });
+  }
 }
 
 </script>
