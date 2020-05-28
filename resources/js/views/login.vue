@@ -7,15 +7,15 @@
         </div>
         <h4>Bem vindo ao CodeMent</h4>
         <h6 class="font-weight-light">Faça login para continuar</h6>
-        <form class="pt-3">
+        <form class="pt-3" method="POST" @submit.prevent="onSubmit">
           <div class="form-group">
-            <input type="email" class="form-control form-control-lg" id="email" v-model="email" placeholder="Email">
+            <input type="email" class="form-control form-control-lg" id="email" v-model="email" required placeholder="Email">
           </div>
           <div class="form-group">
-            <input type="password" class="form-control form-control-lg" id="password" v-model="password" placeholder="Password">
+            <input type="password" class="form-control form-control-lg" id="password" v-model="password" required placeholder="Password">
           </div>
           <div class="mt-3">
-            <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" v-on:click="login">ENTRAR</a>
+            <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">ENTRAR</button>
           </div>
           <div class="my-2 d-flex justify-content-between align-items-center" v-if="error">
             <p class="text-danger">Credenciais inválidas</p>
@@ -43,7 +43,7 @@ export default class Login extends Vue {
   password = '';
   error = false;
 
-  login() {
+  onSubmit() {
     this.error = false;
 
     axios.post('/login', {
