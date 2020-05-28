@@ -31,7 +31,7 @@
           <div class="card-body">
             <img src="/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
             <h4 class="font-weight-normal mb-3">
-              Dúvidas Totais <i class="mdi mdi-comment-question-outline mdi-24px float-right"></i>
+              Dúvidas <i class="mdi mdi-comment-question-outline mdi-24px float-right"></i>
             </h4>
             <h2 class="mb-5">{{duvidas.length}}</h2>
           </div>
@@ -95,6 +95,7 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class Home extends Vue {
+  private user:any;
   private disciplinas = new Array();
   private aulas = new Array();
   private duvidas = new Array();
@@ -104,18 +105,20 @@ export default class Home extends Vue {
 
   mounted() {
     axios.get(`/api/me`).then((response: AxiosResponse) => {
-      this.disciplinas = response.data.data.disciplinas;
+      this.user = response.data.data;
 
-      if (response.data.data.professor_id) {
-        this.disciplinas = this.disciplinas.concat(response.data.data.regente);
-        this.aulas = response.data.data.aulas;
+      this.disciplinas = this.user.disciplinas;
+
+      if (this.user.professor_id) {
+        this.disciplinas = this.disciplinas.concat(this.user.regente);
+        this.aulas = this.user.aulas;
       } else {
-        this.duvidas = response.data.data.duvidas;
+        this.duvidas = this.user.duvidas;
       }
 
-      this.comentarios = response.data.data.comentarios;
-      this.ficheiros = response.data.data.ficheiros;
-      this.eventos = response.data.data.eventos_de_avaliacao;
+      this.comentarios = this.user.comentarios;
+      this.ficheiros = this.user.ficheiros;
+      this.eventos = this.user.eventos_de_avaliacao;
     });
   }
 }
