@@ -20,8 +20,12 @@ class ProfessorResource extends JsonResource
             'user' => $this->user,
             'disciplinas' => $this->user->disciplinas,
             'regente' => $this->regente,
+            'comentarios' => $this->user->comentarios,
+            'ficheiros' => $this->user->ficheiros,
+            'aulas' => $this->aulas,
+            'eventos_de_avaliacao' => $this->user->eventosDeAvaliacao,
             'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'updated_at' => $this->updated_at,
         ];
     }
 }

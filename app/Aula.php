@@ -11,7 +11,7 @@ class Aula extends Model
      *
      * @var array
      */
-    protected $fillable = ['disciplina_id', 'descricao'];
+    protected $fillable = ['disciplina_id', 'descricao', 'nome'];
 
     public function disciplina()
     {

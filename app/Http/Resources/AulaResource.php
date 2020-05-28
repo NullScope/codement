@@ -19,6 +19,7 @@ class AulaResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'nome' => $this->nome,
             'descricao' => $this->descricao,
             'ficheiros' => FicheiroResource::collection($this->ficheiros),
             'disciplina' => new DisciplinaResource($this->disciplina),

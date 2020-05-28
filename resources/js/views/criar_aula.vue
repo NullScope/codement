@@ -1,7 +1,17 @@
 <template>
-    <div v-if="professor" class="content-wrapper">
+    <div>
         <div class="page-header">
-            <h3 class="page-tittle" v-if="disiplina">{{ disciplina.nome }}</h3>
+          <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white mr-2">
+              <i class="mdi mdi-projector-screen"></i>
+            </span>{{ disciplina ? disciplina.nome : '' }}</h3>
+          <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page">
+                <span></span>Criar Aula <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+              </li>
+            </ul>
+          </nav>
         </div>
 
         <div class="row">
@@ -57,23 +67,6 @@
         </div>
         <code-highlighter :on-save="onFileSave" v-if="fileUploadShow"></code-highlighter>
     </div>
-    <div v-else class="container-fluid page-body-wrapper full-page-wrapper">
-        <div class="content-wrapper d-flex align-items-center text-center error-page">
-            <div class="row flex-grow">
-                <div class="col-lg-7 mx-auto">
-                    <div class="row align-items-center d-flex flex-row">
-                        <div class="col-lg-6 text-lg-right pr-lg-4">
-                            <h1 class="display-1 mb-0">404</h1>
-                        </div>
-                        <div class="col-lg-6 error-page-divider text-lg-left pl-lg-4">
-                            <h2>DESCULPE!</h2>
-                            <h3 class="font-weight-light">A página que procura não foi encontrada.</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </template>
 
 <script lang="ts">
@@ -92,14 +85,15 @@ export default class CriarAula extends Vue {
     mounted() {
         axios.get('/api/me').then((response: AxiosResponse) => {
             if ('aluno_id' in response.data.data){
-                this.$router.push('404');
+                console.log('pushing')
+                this.$router.push('/404');
             } else {
-                axios.get(`/api/disciplina/${this.$route.params.disciplina}`)
+                axios.get(`/api/disciplinas/${this.$route.params.disciplina}`)
                 .then((response: AxiosResponse) => {
                     if(!response.data.data.error){
                         this.disciplina = response.data.data;
                     } else {
-                        this.$router.push('404');
+                        this.$router.push('/404');
                     }
                 });
             }
@@ -136,12 +130,32 @@ export default class CriarAula extends Vue {
                 fileFormData.append('descricao', file.fileDescription);
                 fileFormData.append('ficheiro', file.file);
 
-                axios.post(`/api/disciplinas/${this.$route.params.disciplina}/dúvidas/${id}/ficheiros`, fileFormData, {
+                axios.post(`/api/disciplinas/${this.$route.params.disciplina}/aulas/${id}/ficheiros`, fileFormData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
                 }).then((response) => {
-                    console.log(response);
+                    let id = response.data.data.id;
+
+                    file.comments.forEach((comment: any) => {
+                      let commentFormData = new FormData();
+
+                      commentFormData.append('comentario', comment.comentario);
+                      commentFormData.append('linha_inicio', comment.lineStart);
+                      commentFormData.append('linha_fim', comment.lineEnd);
+
+                      if (comment.audio.blob) {
+                        commentFormData.append('audio', comment.audio.blob);
+                      }
+
+                      axios.post(`/api/ficheiros/${id}/comentarios`, commentFormData, {
+                        headers: {
+                          'Content-Type': 'multipart/form-data'
+                        }
+                      }).then((response) => {
+                        console.log(response);
+                      });
+                    });
                 });
             });
         });

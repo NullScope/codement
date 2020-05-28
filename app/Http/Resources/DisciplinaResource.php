@@ -6,6 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 use App\Http\Resources\AlunoResource;
 use App\Http\Resources\ProfessorResource;
+use App\Http\Resources\EventoDeAvaliacaoResource;
 
 class DisciplinaResource extends JsonResource
 {
@@ -23,6 +24,7 @@ class DisciplinaResource extends JsonResource
             'alunos' => AlunoResource::collection($this->alunos),
             'regente' => new ProfessorResource($this->regente),
             'assistentes' => ProfessorResource::collection($this->assistentes),
+            'eventos_de_avaliacao' => EventoDeAvaliacaoResource::collection($this->eventosDeAvaliacao),
             'semestre_curricular' => $this->semestre_curricular,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at

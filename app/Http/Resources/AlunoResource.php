@@ -4,6 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+use App\Http\Resources\EventoDeAvaliacaoResource;
+
 class AlunoResource extends JsonResource
 {
     /**
@@ -25,6 +27,7 @@ class AlunoResource extends JsonResource
             'comentarios' => $this->user->comentarios,
             'ficheiros' => $this->user->ficheiros,
             'duvidas' => $this->duvidas,
+            'eventos_de_avaliacao' => EventoDeAvaliacaoResource::collection($this->user->eventosDeAvaliacao),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at
         ];

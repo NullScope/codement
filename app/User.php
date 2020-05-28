@@ -56,4 +56,15 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Ficheiro');
     }
+
+    public function getEventosDeAvaliacaoAttribute()
+    {
+        $disciplinas = $this->disciplinas()->get();
+
+        $eventosDeAvaliacao = $disciplinas->map(function ($disciplina, $key) {
+            return $disciplina->eventosDeAvaliacao()->get();
+        });
+
+        return $eventosDeAvaliacao->flatten(1);
+    }
 }

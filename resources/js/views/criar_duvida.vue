@@ -60,14 +60,14 @@ export default class CriarDuvida extends Vue {
   mounted() {
     axios.get('/api/me').then((response: AxiosResponse) => {
       if ('professor_id' in response.data.data){
-        this.$router.push('404');
+        this.$router.push('/404');
       } else {
         axios.get(`/api/disciplinas/${this.$route.params.disciplina}`)
         .then((response: AxiosResponse) => {
           if (!response.data.data.error) {
             this.disciplina = response.data.data;
           } else {
-            this.$router.push('404');
+            this.$router.push('/404');
           }
         });
       }

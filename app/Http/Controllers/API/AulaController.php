@@ -57,7 +57,8 @@ class AulaController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                'descricao' => ['required', 'string', 'max:255']
+                'descricao' => ['required', 'string', 'max:255'],
+                'nome' => ['required', 'string', 'max:255']
             ]);
 
             if ($validator->fails()) {
@@ -67,7 +68,8 @@ class AulaController extends Controller
 
                 $aula = Aula::create([
                     'disciplina_id' => $disciplina_id,
-                    'descricao' => $request->input('descricao')
+                    'descricao' => $request->input('descricao'),
+                    'nome' => $request->input('nome')
                 ]);
 
                 $disciplina->aulas()->save($aula);

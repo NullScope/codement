@@ -22,7 +22,7 @@
         <li class="nav-item nav-profile dropdown">
           <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
             <div class="nav-profile-img">
-              <img src="/images/faces/face1.jpg" alt="image">
+              <img :src="user.professor_id ? '/images/faces/face1.jpg' : '/images/faces/face11.jpg'" alt="image">
               <span class="availability-status online"></span>
             </div>
             <div class="nav-profile-text">

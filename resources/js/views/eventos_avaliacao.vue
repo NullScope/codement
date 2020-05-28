@@ -1,16 +1,38 @@
 <template>
     <div>
         <div class="page-header">
+          <h3 class="page-title">
+            <span class="page-title-icon bg-gradient-primary text-white mr-2">
+              <i class="mdi mdi-certificate"></i>
+            </span> Eventos de Avaliação </h3>
+          <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page">
+                <span></span>Lista de Eventos de Avaliação <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="row">
+          <div class="col-12 grid-margin stretch-card">
             <b-form-select v-model="idDisciplina" @change="getEventosAvaliacaoDisciplina()" class="mb-3">
-                <b-form-select-option :value="null">Por favor escolha a disciplina</b-form-select-option>
-                <b-form-select-option v-for="(item, index) in opcoes" :key="index" :value="item.id">{{item.nome}}</b-form-select-option>
+                <b-form-select-option :value="null">Por favor escolha uma disciplina</b-form-select-option>
+                <b-form-select-option v-for="(disciplina, index) in opcoes" :key="index" :value="disciplina.id">{{disciplina.nome}}</b-form-select-option>
             </b-form-select>
+          </div>
         </div>
         <div class="row">
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <button id="criar" v-if="show" @click="criarEventoAvaliacao()" class="btn btn-gradient-primary btn-fw">Novo Evento de Avaliação</button>
+                        <router-link
+                            id="criar"
+                            class="btn btn-gradient-primary btn-fw"
+                            v-if="show"
+                            :to="{ name: 'Criar evento de avaliação', params: {disciplina: idDisciplina}}"
+                        >
+                            Novo Evento de Avaliação
+                        </router-link>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -24,8 +46,8 @@
                                 <tbody>
                                     <tr v-for="(item, index) in eventosAvaliacao" :key="index">
                                         <td>{{index + 1}}</td>
-                                        <td>{{item.data_inicio}}</td>
-                                        <td>{{item.data_fim}}</td>
+                                        <td>{{item.data_inicio | moment("DD/MM/YY hh:mm")}}</td>
+                                        <td>{{item.data_fim | moment("DD/MM/YY hh:mm")}}</td>
                                         <td>
                                             <ul v-if="item.ficheiros.length > 0">
                                                 <li v-for="(ficheiro, fileIndex) in item.ficheiros" :key="fileIndex">
@@ -86,6 +108,7 @@
 
 
             async getEventosAvaliacaoDisciplina() {
+              if (this.idDisciplina) {
                 await axios.get('/api/disciplinas/' + this.idDisciplina)
                     .then((response) => {
                         if(this.idUser === response.data.data.regente.user.id && this.professor)
@@ -99,11 +122,16 @@
                     .then((response) => {
                         this.eventosAvaliacao = response.data.data;
                     });
+              } else {
+                this.show = false;
+                this.eventosAvaliacao = [];
+              }
+
             },
 
 
             criarEventoAvaliacao() {
-                this.$router.push({ name: 'Criar Avaliacao', params: { disciplina: this.idDisciplina }});
+                this.$router.push({ name: 'Criar evento de avaliação', params: { disciplina: this.idDisciplina }});
             },
 
         },

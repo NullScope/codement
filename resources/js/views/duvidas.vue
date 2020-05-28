@@ -1,10 +1,25 @@
 <template>
   <div>
     <div class="page-header">
-      <b-form-select v-model="idDisciplina" class="mb-3">
-        <b-form-select-option :value="0">Por favor escolha a disciplina</b-form-select-option>
-        <b-form-select-option v-for="(disciplina, index) in disciplinas" :key="index" :value="disciplina.id">{{disciplina.nome}}</b-form-select-option>
-      </b-form-select>
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+          <i class="mdi mdi-comment-question-outline"></i>
+        </span> Dúvidas </h3>
+      <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">
+            <span></span>Lista de Dúvidas <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="col-12 grid-margin stretch-card">
+        <b-form-select v-model="idDisciplina" class="mb-3">
+            <b-form-select-option :value="0">Por favor escolha uma disciplina</b-form-select-option>
+            <b-form-select-option v-for="(disciplina, index) in disciplinas" :key="index" :value="disciplina.id">{{disciplina.nome}}</b-form-select-option>
+        </b-form-select>
+      </div>
     </div>
     <div class="row">
       <div class="col-12 grid-margin stretch-card">
@@ -76,7 +91,7 @@ import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 
 @Component
 export default class Duvidas extends Vue {
-  private user = null;
+  private user: any;
   private idDisciplina = 0;
   private disciplinas = new Array();
   private duvidas = new Array();
@@ -101,7 +116,9 @@ export default class Duvidas extends Vue {
   onIdDisciplinaChanged(newVal: Number, oldVal: Number) {
     if (newVal != 0) {
       axios.get(`/api/disciplinas/${newVal}/duvidas`).then((response: AxiosResponse) => {
-        this.duvidas = response.data.data;
+        this.duvidas = response.data.data.filter((duvida: any) => {
+          return this.user.professor_id || duvida.aluno.id == this.user.id;
+        });
       });
     } else {
       this.duvidas = [];

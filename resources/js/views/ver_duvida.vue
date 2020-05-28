@@ -1,5 +1,18 @@
 <template>
   <div>
+    <div class="page-header">
+      <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white mr-2">
+          <i class="mdi mdi-comment-question-outline"></i>
+        </span>{{ disciplina ? disciplina.nome : '' }}</h3>
+      <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">
+            <span></span>Ver Dúvida <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <div class="row">
       <div class="col-12 grid-margin stretch-card">
         <div class="card" :class="ficheiros.length == 0 ? 'text-center' : ''">
@@ -51,10 +64,20 @@ export default class VerDuvida extends Vue {
   private duvida = null;
   private fileId = 0;
   private ficheiros = new Array();
+  private disciplina = null;
 
   mounted() {
     const disciplinaId = this.$route.params.disciplina;
     const duvidaId = this.$route.params.duvida;
+
+    axios.get(`/api/disciplinas/${this.$route.params.disciplina}`)
+      .then((response: AxiosResponse) => {
+          if(!response.data.data.error){
+              this.disciplina = response.data.data;
+          } else {
+              this.$router.push('/404');
+          }
+      });
 
     axios.get(`/api/disciplinas/${disciplinaId}/duvidas/${duvidaId}/ficheiros`)
       .then((response: AxiosResponse) => {

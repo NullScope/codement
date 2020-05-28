@@ -24,4 +24,9 @@ class Professor extends Model
     {
         return $this->hasMany('App\Disciplina', 'professor_id');
     }
+
+    public function aulas()
+    {
+        return $this->hasManyThrough('App\Aula', 'App\Disciplina');
+    }
 }
