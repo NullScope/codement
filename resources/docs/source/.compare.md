@@ -171,14 +171,14 @@ let headers = {
 };
 
 let body = {
-    "aluno_id": "hic",
-    "curso": "quia",
-    "data_de_matricula_inicial": "voluptatum",
-    "ano_curricular": 8,
-    "name": "modi",
-    "email": "est",
-    "password": "ut",
-    "password_confirmation": "qui"
+    "aluno_id": "ea",
+    "curso": "fuga",
+    "data_de_matricula_inicial": "maxime",
+    "ano_curricular": 18,
+    "name": "natus",
+    "email": "consequuntur",
+    "password": "sint",
+    "password_confirmation": "eligendi"
 }
 
 fetch(url, {
@@ -201,14 +201,14 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'aluno_id' => 'hic',
-            'curso' => 'quia',
-            'data_de_matricula_inicial' => 'voluptatum',
-            'ano_curricular' => 8,
-            'name' => 'modi',
-            'email' => 'est',
-            'password' => 'ut',
-            'password_confirmation' => 'qui',
+            'aluno_id' => 'ea',
+            'curso' => 'fuga',
+            'data_de_matricula_inicial' => 'maxime',
+            'ano_curricular' => 18,
+            'name' => 'natus',
+            'email' => 'consequuntur',
+            'password' => 'sint',
+            'password_confirmation' => 'eligendi',
         ],
     ]
 );
@@ -654,10 +654,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -669,10 +1010,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -712,7 +1394,7 @@ let headers = {
 };
 
 let body = {
-    "disciplina_id": "quisquam"
+    "disciplina_id": "minima"
 }
 
 fetch(url, {
@@ -735,7 +1417,7 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'disciplina_id' => 'quisquam',
+            'disciplina_id' => 'minima',
         ],
     ]
 );
@@ -751,10 +1433,351 @@ print_r(json_decode((string) $body));
     "data": {
         "id": 1,
         "nome": "Engenharia de Requisitos",
-        "alunos": [],
+        "alunos": [
+            {
+                "id": 1,
+                "aluno_id": "a2082214",
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                "ano_curricular": 3,
+                "disciplinas": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user_id": 1,
+                        "ficheiro_id": 13,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 2,
+                        "user_id": 1,
+                        "ficheiro_id": 14,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 3,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 4,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "olá!!!",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 18,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "nbvnbvnvbn",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:12:25.000000Z",
+                        "updated_at": "2020-05-25T00:12:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 19,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "gdgfdgdf",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:13:49.000000Z",
+                        "updated_at": "2020-05-25T00:13:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 20,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:25.000000Z",
+                        "updated_at": "2020-05-25T00:22:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 21,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:49.000000Z",
+                        "updated_at": "2020-05-25T00:22:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 22,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:23:33.000000Z",
+                        "updated_at": "2020-05-25T00:23:33.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 23,
+                        "user_id": 1,
+                        "ficheiro_id": 16,
+                        "comentario": "test",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 24,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "fdsfdsfs",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 25,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "vfsfds",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:57:04.000000Z",
+                        "updated_at": "2020-05-25T00:57:04.000000Z",
+                        "comentario_id": 24
+                    },
+                    {
+                        "id": 26,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "fsdfdsfsd",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 27,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "uma resposta",
+                        "audio_url": null,
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:58:03.000000Z",
+                        "updated_at": "2020-05-27T23:58:03.000000Z",
+                        "comentario_id": 26
+                    }
+                ],
+                "ficheiros": [
+                    {
+                        "id": 10,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:03.000000Z",
+                        "updated_at": "2020-05-24T18:33:03.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 11,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:26.000000Z",
+                        "updated_at": "2020-05-24T18:33:26.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 12,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:51.000000Z",
+                        "updated_at": "2020-05-24T18:33:51.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 13,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 14,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 15,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 16,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "user_id": 1,
+                        "nome": "exampleCode.js",
+                        "descricao": "yay"
+                    },
+                    {
+                        "id": 18,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 3,
+                        "ficheiroable_type": "App\\Duvida",
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "user_id": 1,
+                        "nome": "fdsfsd",
+                        "descricao": "fdsfsd"
+                    }
+                ],
+                "duvidas": [
+                    {
+                        "id": 1,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T18:20:59.000000Z",
+                        "updated_at": "2020-05-27T18:20:59.000000Z",
+                        "descricao": "blabla"
+                    },
+                    {
+                        "id": 2,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:13:44.000000Z",
+                        "updated_at": "2020-05-27T23:13:44.000000Z",
+                        "descricao": "ouioui"
+                    },
+                    {
+                        "id": 3,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:21:55.000000Z",
+                        "updated_at": "2020-05-27T23:21:55.000000Z",
+                        "descricao": "foobar"
+                    }
+                ],
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            }
+        ],
         "regente": {
             "id": 1,
             "professor_id": "p2984573",
+            "user": {
+                "id": 2,
+                "name": "Filipe Quintal",
+                "email": "filipe.quintal@staff.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "disciplinas": [],
+            "regente": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
             "created_at": "2020-05-22T13:34:29.000000Z",
             "updated_at": "2020-05-22T13:34:29.000000Z"
         },
@@ -828,10 +1851,351 @@ print_r(json_decode((string) $body));
     "data": {
         "id": 1,
         "nome": "Engenharia de Requisitos",
-        "alunos": [],
+        "alunos": [
+            {
+                "id": 1,
+                "aluno_id": "a2082214",
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                "ano_curricular": 3,
+                "disciplinas": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user_id": 1,
+                        "ficheiro_id": 13,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 2,
+                        "user_id": 1,
+                        "ficheiro_id": 14,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 3,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 4,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "olá!!!",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 18,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "nbvnbvnvbn",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:12:25.000000Z",
+                        "updated_at": "2020-05-25T00:12:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 19,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "gdgfdgdf",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:13:49.000000Z",
+                        "updated_at": "2020-05-25T00:13:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 20,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:25.000000Z",
+                        "updated_at": "2020-05-25T00:22:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 21,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:49.000000Z",
+                        "updated_at": "2020-05-25T00:22:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 22,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:23:33.000000Z",
+                        "updated_at": "2020-05-25T00:23:33.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 23,
+                        "user_id": 1,
+                        "ficheiro_id": 16,
+                        "comentario": "test",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 24,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "fdsfdsfs",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 25,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "vfsfds",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:57:04.000000Z",
+                        "updated_at": "2020-05-25T00:57:04.000000Z",
+                        "comentario_id": 24
+                    },
+                    {
+                        "id": 26,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "fsdfdsfsd",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 27,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "uma resposta",
+                        "audio_url": null,
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:58:03.000000Z",
+                        "updated_at": "2020-05-27T23:58:03.000000Z",
+                        "comentario_id": 26
+                    }
+                ],
+                "ficheiros": [
+                    {
+                        "id": 10,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:03.000000Z",
+                        "updated_at": "2020-05-24T18:33:03.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 11,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:26.000000Z",
+                        "updated_at": "2020-05-24T18:33:26.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 12,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:51.000000Z",
+                        "updated_at": "2020-05-24T18:33:51.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 13,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 14,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 15,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 16,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "user_id": 1,
+                        "nome": "exampleCode.js",
+                        "descricao": "yay"
+                    },
+                    {
+                        "id": 18,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 3,
+                        "ficheiroable_type": "App\\Duvida",
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "user_id": 1,
+                        "nome": "fdsfsd",
+                        "descricao": "fdsfsd"
+                    }
+                ],
+                "duvidas": [
+                    {
+                        "id": 1,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T18:20:59.000000Z",
+                        "updated_at": "2020-05-27T18:20:59.000000Z",
+                        "descricao": "blabla"
+                    },
+                    {
+                        "id": 2,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:13:44.000000Z",
+                        "updated_at": "2020-05-27T23:13:44.000000Z",
+                        "descricao": "ouioui"
+                    },
+                    {
+                        "id": 3,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:21:55.000000Z",
+                        "updated_at": "2020-05-27T23:21:55.000000Z",
+                        "descricao": "foobar"
+                    }
+                ],
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            }
+        ],
         "regente": {
             "id": 1,
             "professor_id": "p2984573",
+            "user": {
+                "id": 2,
+                "name": "Filipe Quintal",
+                "email": "filipe.quintal@staff.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "disciplinas": [],
+            "regente": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
             "created_at": "2020-05-22T13:34:29.000000Z",
             "updated_at": "2020-05-22T13:34:29.000000Z"
         },
@@ -911,10 +2275,351 @@ print_r(json_decode((string) $body));
     "data": {
         "id": 1,
         "nome": "Engenharia de Requisitos",
-        "alunos": [],
+        "alunos": [
+            {
+                "id": 1,
+                "aluno_id": "a2082214",
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                "ano_curricular": 3,
+                "disciplinas": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user_id": 1,
+                        "ficheiro_id": 13,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 2,
+                        "user_id": 1,
+                        "ficheiro_id": 14,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 3,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 4,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "olá!!!",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 18,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "nbvnbvnvbn",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:12:25.000000Z",
+                        "updated_at": "2020-05-25T00:12:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 19,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "gdgfdgdf",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:13:49.000000Z",
+                        "updated_at": "2020-05-25T00:13:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 20,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:25.000000Z",
+                        "updated_at": "2020-05-25T00:22:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 21,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:49.000000Z",
+                        "updated_at": "2020-05-25T00:22:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 22,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:23:33.000000Z",
+                        "updated_at": "2020-05-25T00:23:33.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 23,
+                        "user_id": 1,
+                        "ficheiro_id": 16,
+                        "comentario": "test",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 24,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "fdsfdsfs",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 25,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "vfsfds",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:57:04.000000Z",
+                        "updated_at": "2020-05-25T00:57:04.000000Z",
+                        "comentario_id": 24
+                    },
+                    {
+                        "id": 26,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "fsdfdsfsd",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 27,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "uma resposta",
+                        "audio_url": null,
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:58:03.000000Z",
+                        "updated_at": "2020-05-27T23:58:03.000000Z",
+                        "comentario_id": 26
+                    }
+                ],
+                "ficheiros": [
+                    {
+                        "id": 10,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:03.000000Z",
+                        "updated_at": "2020-05-24T18:33:03.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 11,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:26.000000Z",
+                        "updated_at": "2020-05-24T18:33:26.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 12,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:51.000000Z",
+                        "updated_at": "2020-05-24T18:33:51.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 13,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 14,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 15,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 16,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "user_id": 1,
+                        "nome": "exampleCode.js",
+                        "descricao": "yay"
+                    },
+                    {
+                        "id": 18,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 3,
+                        "ficheiroable_type": "App\\Duvida",
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "user_id": 1,
+                        "nome": "fdsfsd",
+                        "descricao": "fdsfsd"
+                    }
+                ],
+                "duvidas": [
+                    {
+                        "id": 1,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T18:20:59.000000Z",
+                        "updated_at": "2020-05-27T18:20:59.000000Z",
+                        "descricao": "blabla"
+                    },
+                    {
+                        "id": 2,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:13:44.000000Z",
+                        "updated_at": "2020-05-27T23:13:44.000000Z",
+                        "descricao": "ouioui"
+                    },
+                    {
+                        "id": 3,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:21:55.000000Z",
+                        "updated_at": "2020-05-27T23:21:55.000000Z",
+                        "descricao": "foobar"
+                    }
+                ],
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            }
+        ],
         "regente": {
             "id": 1,
             "professor_id": "p2984573",
+            "user": {
+                "id": 2,
+                "name": "Filipe Quintal",
+                "email": "filipe.quintal@staff.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "disciplinas": [],
+            "regente": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
             "created_at": "2020-05-22T13:34:29.000000Z",
             "updated_at": "2020-05-22T13:34:29.000000Z"
         },
@@ -1026,6 +2731,7 @@ print_r(json_decode((string) $body));
         {
             "id": null,
             "descricao": null,
+            "ficheiros": [],
             "disciplina": null,
             "created_at": null,
             "updated_at": null
@@ -1033,6 +2739,7 @@ print_r(json_decode((string) $body));
         {
             "id": null,
             "descricao": null,
+            "ficheiros": [],
             "disciplina": null,
             "created_at": null,
             "updated_at": null
@@ -1068,7 +2775,7 @@ let headers = {
 };
 
 let body = {
-    "descricao": "maiores"
+    "descricao": "velit"
 }
 
 fetch(url, {
@@ -1091,7 +2798,7 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'descricao' => 'maiores',
+            'descricao' => 'velit',
         ],
     ]
 );
@@ -1107,6 +2814,7 @@ print_r(json_decode((string) $body));
     "data": {
         "id": null,
         "descricao": null,
+        "ficheiros": [],
         "disciplina": null,
         "created_at": null,
         "updated_at": null
@@ -1176,6 +2884,7 @@ print_r(json_decode((string) $body));
     "data": {
         "id": null,
         "descricao": null,
+        "ficheiros": [],
         "disciplina": null,
         "created_at": null,
         "updated_at": null
@@ -1242,6 +2951,7 @@ print_r(json_decode((string) $body));
     "data": {
         "id": null,
         "descricao": null,
+        "ficheiros": [],
         "disciplina": null,
         "created_at": null,
         "updated_at": null
@@ -1319,6 +3029,7 @@ print_r(json_decode((string) $body));
     "data": {
         "id": null,
         "descricao": null,
+        "ficheiros": [],
         "disciplina": null,
         "created_at": null,
         "updated_at": null
@@ -1940,10 +3651,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -1955,10 +4007,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -1994,8 +4387,8 @@ let headers = {
 };
 
 let body = {
-    "nome": "et",
-    "semestre_curricular": "velit"
+    "nome": "amet",
+    "semestre_curricular": "assumenda"
 }
 
 fetch(url, {
@@ -2018,8 +4411,8 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'nome' => 'et',
-            'semestre_curricular' => 'velit',
+            'nome' => 'amet',
+            'semestre_curricular' => 'assumenda',
         ],
     ]
 );
@@ -2074,10 +4467,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -2089,10 +4823,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -2202,10 +5277,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -2217,10 +5633,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -2330,10 +6087,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -2345,10 +6443,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -2431,10 +6870,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -2446,10 +7226,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -2577,20 +7698,1372 @@ print_r(json_decode((string) $body));
 {
     "data": [
         {
-            "id": null,
-            "aluno": null,
-            "disciplina": null,
+            "id": 1,
+            "aluno": {
+                "id": 1,
+                "aluno_id": "a2082214",
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                "ano_curricular": 3,
+                "disciplinas": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user_id": 1,
+                        "ficheiro_id": 13,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 2,
+                        "user_id": 1,
+                        "ficheiro_id": 14,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 3,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 4,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "olá!!!",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 18,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "nbvnbvnvbn",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:12:25.000000Z",
+                        "updated_at": "2020-05-25T00:12:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 19,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "gdgfdgdf",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:13:49.000000Z",
+                        "updated_at": "2020-05-25T00:13:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 20,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:25.000000Z",
+                        "updated_at": "2020-05-25T00:22:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 21,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:49.000000Z",
+                        "updated_at": "2020-05-25T00:22:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 22,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:23:33.000000Z",
+                        "updated_at": "2020-05-25T00:23:33.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 23,
+                        "user_id": 1,
+                        "ficheiro_id": 16,
+                        "comentario": "test",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 24,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "fdsfdsfs",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 25,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "vfsfds",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:57:04.000000Z",
+                        "updated_at": "2020-05-25T00:57:04.000000Z",
+                        "comentario_id": 24
+                    },
+                    {
+                        "id": 26,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "fsdfdsfsd",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 27,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "uma resposta",
+                        "audio_url": null,
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:58:03.000000Z",
+                        "updated_at": "2020-05-27T23:58:03.000000Z",
+                        "comentario_id": 26
+                    }
+                ],
+                "ficheiros": [
+                    {
+                        "id": 10,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:03.000000Z",
+                        "updated_at": "2020-05-24T18:33:03.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 11,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:26.000000Z",
+                        "updated_at": "2020-05-24T18:33:26.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 12,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:51.000000Z",
+                        "updated_at": "2020-05-24T18:33:51.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 13,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 14,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 15,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 16,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "user_id": 1,
+                        "nome": "exampleCode.js",
+                        "descricao": "yay"
+                    },
+                    {
+                        "id": 18,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 3,
+                        "ficheiroable_type": "App\\Duvida",
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "user_id": 1,
+                        "nome": "fdsfsd",
+                        "descricao": "fdsfsd"
+                    }
+                ],
+                "duvidas": [
+                    {
+                        "id": 1,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T18:20:59.000000Z",
+                        "updated_at": "2020-05-27T18:20:59.000000Z",
+                        "descricao": "blabla"
+                    },
+                    {
+                        "id": 2,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:13:44.000000Z",
+                        "updated_at": "2020-05-27T23:13:44.000000Z",
+                        "descricao": "ouioui"
+                    },
+                    {
+                        "id": 3,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:21:55.000000Z",
+                        "updated_at": "2020-05-27T23:21:55.000000Z",
+                        "descricao": "foobar"
+                    }
+                ],
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            },
+            "disciplina": {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "alunos": [
+                    {
+                        "id": 1,
+                        "aluno_id": "a2082214",
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "curso": "Engenharia Informática",
+                        "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                        "ano_curricular": 3,
+                        "disciplinas": [
+                            {
+                                "id": 1,
+                                "nome": "Engenharia de Requisitos",
+                                "created_at": "2020-05-22T13:39:18.000000Z",
+                                "updated_at": "2020-05-22T13:39:18.000000Z",
+                                "semestre_curricular": "2020-10-10 00:00:00",
+                                "professor_id": 1
+                            }
+                        ],
+                        "comentarios": [
+                            {
+                                "id": 1,
+                                "user_id": 1,
+                                "ficheiro_id": 13,
+                                "comentario": "bem-vindos a mais uma aula digital requisitos",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                                "linha_inicio": 5,
+                                "linha_fim": 12,
+                                "created_at": "2020-05-24T18:34:38.000000Z",
+                                "updated_at": "2020-05-24T18:34:38.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 2,
+                                "user_id": 1,
+                                "ficheiro_id": 14,
+                                "comentario": "bem-vindos a mais uma aula digital requisitos",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                                "linha_inicio": 5,
+                                "linha_fim": 12,
+                                "created_at": "2020-05-24T18:34:52.000000Z",
+                                "updated_at": "2020-05-24T18:34:52.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 3,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 4,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "olá!!!",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                                "linha_inicio": 5,
+                                "linha_fim": 12,
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 18,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "nbvnbvnvbn",
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:12:25.000000Z",
+                                "updated_at": "2020-05-25T00:12:25.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 19,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "gdgfdgdf",
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:13:49.000000Z",
+                                "updated_at": "2020-05-25T00:13:49.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 20,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": null,
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:25.000000Z",
+                                "updated_at": "2020-05-25T00:22:25.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 21,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": null,
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:49.000000Z",
+                                "updated_at": "2020-05-25T00:22:49.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 22,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": null,
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:23:33.000000Z",
+                                "updated_at": "2020-05-25T00:23:33.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 23,
+                                "user_id": 1,
+                                "ficheiro_id": 16,
+                                "comentario": "test",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                                "linha_inicio": 16,
+                                "linha_fim": 21,
+                                "created_at": "2020-05-25T00:37:51.000000Z",
+                                "updated_at": "2020-05-25T00:37:51.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 24,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "fdsfdsfs",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                                "linha_inicio": 6,
+                                "linha_fim": 13,
+                                "created_at": "2020-05-25T00:56:55.000000Z",
+                                "updated_at": "2020-05-25T00:56:55.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 25,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "vfsfds",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                                "linha_inicio": 6,
+                                "linha_fim": 13,
+                                "created_at": "2020-05-25T00:57:04.000000Z",
+                                "updated_at": "2020-05-25T00:57:04.000000Z",
+                                "comentario_id": 24
+                            },
+                            {
+                                "id": 26,
+                                "user_id": 1,
+                                "ficheiro_id": 18,
+                                "comentario": "fsdfdsfsd",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                                "linha_inicio": 8,
+                                "linha_fim": 14,
+                                "created_at": "2020-05-27T23:21:56.000000Z",
+                                "updated_at": "2020-05-27T23:21:56.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 27,
+                                "user_id": 1,
+                                "ficheiro_id": 18,
+                                "comentario": "uma resposta",
+                                "audio_url": null,
+                                "linha_inicio": 8,
+                                "linha_fim": 14,
+                                "created_at": "2020-05-27T23:58:03.000000Z",
+                                "updated_at": "2020-05-27T23:58:03.000000Z",
+                                "comentario_id": 26
+                            }
+                        ],
+                        "ficheiros": [
+                            {
+                                "id": 10,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:33:03.000000Z",
+                                "updated_at": "2020-05-24T18:33:03.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 11,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:33:26.000000Z",
+                                "updated_at": "2020-05-24T18:33:26.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 12,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:33:51.000000Z",
+                                "updated_at": "2020-05-24T18:33:51.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 13,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:34:38.000000Z",
+                                "updated_at": "2020-05-24T18:34:38.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 14,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:34:52.000000Z",
+                                "updated_at": "2020-05-24T18:34:52.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 15,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 16,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-25T00:37:51.000000Z",
+                                "updated_at": "2020-05-25T00:37:51.000000Z",
+                                "user_id": 1,
+                                "nome": "exampleCode.js",
+                                "descricao": "yay"
+                            },
+                            {
+                                "id": 18,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 3,
+                                "ficheiroable_type": "App\\Duvida",
+                                "created_at": "2020-05-27T23:21:56.000000Z",
+                                "updated_at": "2020-05-27T23:21:56.000000Z",
+                                "user_id": 1,
+                                "nome": "fdsfsd",
+                                "descricao": "fdsfsd"
+                            }
+                        ],
+                        "duvidas": [
+                            {
+                                "id": 1,
+                                "aluno_id": 1,
+                                "disciplina_id": 1,
+                                "created_at": "2020-05-27T18:20:59.000000Z",
+                                "updated_at": "2020-05-27T18:20:59.000000Z",
+                                "descricao": "blabla"
+                            },
+                            {
+                                "id": 2,
+                                "aluno_id": 1,
+                                "disciplina_id": 1,
+                                "created_at": "2020-05-27T23:13:44.000000Z",
+                                "updated_at": "2020-05-27T23:13:44.000000Z",
+                                "descricao": "ouioui"
+                            },
+                            {
+                                "id": 3,
+                                "aluno_id": 1,
+                                "disciplina_id": 1,
+                                "created_at": "2020-05-27T23:21:55.000000Z",
+                                "updated_at": "2020-05-27T23:21:55.000000Z",
+                                "descricao": "foobar"
+                            }
+                        ],
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    }
+                ],
+                "regente": {
+                    "id": 1,
+                    "professor_id": "p2984573",
+                    "user": {
+                        "id": 2,
+                        "name": "Filipe Quintal",
+                        "email": "filipe.quintal@staff.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-22T13:34:29.000000Z",
+                        "updated_at": "2020-05-22T13:34:29.000000Z"
+                    },
+                    "disciplinas": [],
+                    "regente": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "assistentes": [],
+                "semestre_curricular": "2020-10-10 00:00:00",
+                "created_at": "2020-05-22T13:39:18.000000Z",
+                "updated_at": "2020-05-22T13:39:18.000000Z"
+            },
             "ficheiros": [],
-            "created_at": null,
-            "updated_at": null
+            "descricao": "blabla",
+            "created_at": "2020-05-27T18:20:59.000000Z",
+            "updated_at": "2020-05-27T18:20:59.000000Z"
         },
         {
-            "id": null,
-            "aluno": null,
-            "disciplina": null,
+            "id": 1,
+            "aluno": {
+                "id": 1,
+                "aluno_id": "a2082214",
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                "ano_curricular": 3,
+                "disciplinas": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user_id": 1,
+                        "ficheiro_id": 13,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 2,
+                        "user_id": 1,
+                        "ficheiro_id": 14,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 3,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 4,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "olá!!!",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 18,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "nbvnbvnvbn",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:12:25.000000Z",
+                        "updated_at": "2020-05-25T00:12:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 19,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "gdgfdgdf",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:13:49.000000Z",
+                        "updated_at": "2020-05-25T00:13:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 20,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:25.000000Z",
+                        "updated_at": "2020-05-25T00:22:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 21,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:49.000000Z",
+                        "updated_at": "2020-05-25T00:22:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 22,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:23:33.000000Z",
+                        "updated_at": "2020-05-25T00:23:33.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 23,
+                        "user_id": 1,
+                        "ficheiro_id": 16,
+                        "comentario": "test",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 24,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "fdsfdsfs",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 25,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "vfsfds",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:57:04.000000Z",
+                        "updated_at": "2020-05-25T00:57:04.000000Z",
+                        "comentario_id": 24
+                    },
+                    {
+                        "id": 26,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "fsdfdsfsd",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 27,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "uma resposta",
+                        "audio_url": null,
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:58:03.000000Z",
+                        "updated_at": "2020-05-27T23:58:03.000000Z",
+                        "comentario_id": 26
+                    }
+                ],
+                "ficheiros": [
+                    {
+                        "id": 10,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:03.000000Z",
+                        "updated_at": "2020-05-24T18:33:03.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 11,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:26.000000Z",
+                        "updated_at": "2020-05-24T18:33:26.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 12,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:51.000000Z",
+                        "updated_at": "2020-05-24T18:33:51.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 13,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 14,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 15,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 16,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "user_id": 1,
+                        "nome": "exampleCode.js",
+                        "descricao": "yay"
+                    },
+                    {
+                        "id": 18,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 3,
+                        "ficheiroable_type": "App\\Duvida",
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "user_id": 1,
+                        "nome": "fdsfsd",
+                        "descricao": "fdsfsd"
+                    }
+                ],
+                "duvidas": [
+                    {
+                        "id": 1,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T18:20:59.000000Z",
+                        "updated_at": "2020-05-27T18:20:59.000000Z",
+                        "descricao": "blabla"
+                    },
+                    {
+                        "id": 2,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:13:44.000000Z",
+                        "updated_at": "2020-05-27T23:13:44.000000Z",
+                        "descricao": "ouioui"
+                    },
+                    {
+                        "id": 3,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:21:55.000000Z",
+                        "updated_at": "2020-05-27T23:21:55.000000Z",
+                        "descricao": "foobar"
+                    }
+                ],
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            },
+            "disciplina": {
+                "id": 1,
+                "nome": "Engenharia de Requisitos",
+                "alunos": [
+                    {
+                        "id": 1,
+                        "aluno_id": "a2082214",
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "curso": "Engenharia Informática",
+                        "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                        "ano_curricular": 3,
+                        "disciplinas": [
+                            {
+                                "id": 1,
+                                "nome": "Engenharia de Requisitos",
+                                "created_at": "2020-05-22T13:39:18.000000Z",
+                                "updated_at": "2020-05-22T13:39:18.000000Z",
+                                "semestre_curricular": "2020-10-10 00:00:00",
+                                "professor_id": 1
+                            }
+                        ],
+                        "comentarios": [
+                            {
+                                "id": 1,
+                                "user_id": 1,
+                                "ficheiro_id": 13,
+                                "comentario": "bem-vindos a mais uma aula digital requisitos",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                                "linha_inicio": 5,
+                                "linha_fim": 12,
+                                "created_at": "2020-05-24T18:34:38.000000Z",
+                                "updated_at": "2020-05-24T18:34:38.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 2,
+                                "user_id": 1,
+                                "ficheiro_id": 14,
+                                "comentario": "bem-vindos a mais uma aula digital requisitos",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                                "linha_inicio": 5,
+                                "linha_fim": 12,
+                                "created_at": "2020-05-24T18:34:52.000000Z",
+                                "updated_at": "2020-05-24T18:34:52.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 3,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 4,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "olá!!!",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                                "linha_inicio": 5,
+                                "linha_fim": 12,
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 18,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "nbvnbvnvbn",
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:12:25.000000Z",
+                                "updated_at": "2020-05-25T00:12:25.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 19,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "gdgfdgdf",
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:13:49.000000Z",
+                                "updated_at": "2020-05-25T00:13:49.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 20,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": null,
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:25.000000Z",
+                                "updated_at": "2020-05-25T00:22:25.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 21,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": null,
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:49.000000Z",
+                                "updated_at": "2020-05-25T00:22:49.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 22,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": null,
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:23:33.000000Z",
+                                "updated_at": "2020-05-25T00:23:33.000000Z",
+                                "comentario_id": 3
+                            },
+                            {
+                                "id": 23,
+                                "user_id": 1,
+                                "ficheiro_id": 16,
+                                "comentario": "test",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                                "linha_inicio": 16,
+                                "linha_fim": 21,
+                                "created_at": "2020-05-25T00:37:51.000000Z",
+                                "updated_at": "2020-05-25T00:37:51.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 24,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "fdsfdsfs",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                                "linha_inicio": 6,
+                                "linha_fim": 13,
+                                "created_at": "2020-05-25T00:56:55.000000Z",
+                                "updated_at": "2020-05-25T00:56:55.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 25,
+                                "user_id": 1,
+                                "ficheiro_id": 15,
+                                "comentario": "vfsfds",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                                "linha_inicio": 6,
+                                "linha_fim": 13,
+                                "created_at": "2020-05-25T00:57:04.000000Z",
+                                "updated_at": "2020-05-25T00:57:04.000000Z",
+                                "comentario_id": 24
+                            },
+                            {
+                                "id": 26,
+                                "user_id": 1,
+                                "ficheiro_id": 18,
+                                "comentario": "fsdfdsfsd",
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                                "linha_inicio": 8,
+                                "linha_fim": 14,
+                                "created_at": "2020-05-27T23:21:56.000000Z",
+                                "updated_at": "2020-05-27T23:21:56.000000Z",
+                                "comentario_id": null
+                            },
+                            {
+                                "id": 27,
+                                "user_id": 1,
+                                "ficheiro_id": 18,
+                                "comentario": "uma resposta",
+                                "audio_url": null,
+                                "linha_inicio": 8,
+                                "linha_fim": 14,
+                                "created_at": "2020-05-27T23:58:03.000000Z",
+                                "updated_at": "2020-05-27T23:58:03.000000Z",
+                                "comentario_id": 26
+                            }
+                        ],
+                        "ficheiros": [
+                            {
+                                "id": 10,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:33:03.000000Z",
+                                "updated_at": "2020-05-24T18:33:03.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 11,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:33:26.000000Z",
+                                "updated_at": "2020-05-24T18:33:26.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 12,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:33:51.000000Z",
+                                "updated_at": "2020-05-24T18:33:51.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 13,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:34:38.000000Z",
+                                "updated_at": "2020-05-24T18:34:38.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 14,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:34:52.000000Z",
+                                "updated_at": "2020-05-24T18:34:52.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 15,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            {
+                                "id": 16,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-25T00:37:51.000000Z",
+                                "updated_at": "2020-05-25T00:37:51.000000Z",
+                                "user_id": 1,
+                                "nome": "exampleCode.js",
+                                "descricao": "yay"
+                            },
+                            {
+                                "id": 18,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 3,
+                                "ficheiroable_type": "App\\Duvida",
+                                "created_at": "2020-05-27T23:21:56.000000Z",
+                                "updated_at": "2020-05-27T23:21:56.000000Z",
+                                "user_id": 1,
+                                "nome": "fdsfsd",
+                                "descricao": "fdsfsd"
+                            }
+                        ],
+                        "duvidas": [
+                            {
+                                "id": 1,
+                                "aluno_id": 1,
+                                "disciplina_id": 1,
+                                "created_at": "2020-05-27T18:20:59.000000Z",
+                                "updated_at": "2020-05-27T18:20:59.000000Z",
+                                "descricao": "blabla"
+                            },
+                            {
+                                "id": 2,
+                                "aluno_id": 1,
+                                "disciplina_id": 1,
+                                "created_at": "2020-05-27T23:13:44.000000Z",
+                                "updated_at": "2020-05-27T23:13:44.000000Z",
+                                "descricao": "ouioui"
+                            },
+                            {
+                                "id": 3,
+                                "aluno_id": 1,
+                                "disciplina_id": 1,
+                                "created_at": "2020-05-27T23:21:55.000000Z",
+                                "updated_at": "2020-05-27T23:21:55.000000Z",
+                                "descricao": "foobar"
+                            }
+                        ],
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    }
+                ],
+                "regente": {
+                    "id": 1,
+                    "professor_id": "p2984573",
+                    "user": {
+                        "id": 2,
+                        "name": "Filipe Quintal",
+                        "email": "filipe.quintal@staff.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-22T13:34:29.000000Z",
+                        "updated_at": "2020-05-22T13:34:29.000000Z"
+                    },
+                    "disciplinas": [],
+                    "regente": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "assistentes": [],
+                "semestre_curricular": "2020-10-10 00:00:00",
+                "created_at": "2020-05-22T13:39:18.000000Z",
+                "updated_at": "2020-05-22T13:39:18.000000Z"
+            },
             "ficheiros": [],
-            "created_at": null,
-            "updated_at": null
+            "descricao": "blabla",
+            "created_at": "2020-05-27T18:20:59.000000Z",
+            "updated_at": "2020-05-27T18:20:59.000000Z"
         }
     ]
 }
@@ -2682,12 +9155,688 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "aluno": null,
-        "disciplina": null,
+        "id": 1,
+        "aluno": {
+            "id": 1,
+            "aluno_id": "a2082214",
+            "user": {
+                "id": 1,
+                "name": "Bruno Ribeiro",
+                "email": "2082214@student.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            },
+            "curso": "Engenharia Informática",
+            "data_de_matricula_inicial": "2020-01-01 00:00:00",
+            "ano_curricular": 3,
+            "disciplinas": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
+            "comentarios": [
+                {
+                    "id": 1,
+                    "user_id": 1,
+                    "ficheiro_id": 13,
+                    "comentario": "bem-vindos a mais uma aula digital requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:34:38.000000Z",
+                    "updated_at": "2020-05-24T18:34:38.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 2,
+                    "user_id": 1,
+                    "ficheiro_id": 14,
+                    "comentario": "bem-vindos a mais uma aula digital requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:34:52.000000Z",
+                    "updated_at": "2020-05-24T18:34:52.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 3,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 4,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "olá!!!",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 18,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "nbvnbvnvbn",
+                    "audio_url": null,
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:12:25.000000Z",
+                    "updated_at": "2020-05-25T00:12:25.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 19,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "gdgfdgdf",
+                    "audio_url": null,
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:13:49.000000Z",
+                    "updated_at": "2020-05-25T00:13:49.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 20,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:22:25.000000Z",
+                    "updated_at": "2020-05-25T00:22:25.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 21,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:22:49.000000Z",
+                    "updated_at": "2020-05-25T00:22:49.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 22,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:23:33.000000Z",
+                    "updated_at": "2020-05-25T00:23:33.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 23,
+                    "user_id": 1,
+                    "ficheiro_id": 16,
+                    "comentario": "test",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                    "linha_inicio": 16,
+                    "linha_fim": 21,
+                    "created_at": "2020-05-25T00:37:51.000000Z",
+                    "updated_at": "2020-05-25T00:37:51.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 24,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "fdsfdsfs",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                    "linha_inicio": 6,
+                    "linha_fim": 13,
+                    "created_at": "2020-05-25T00:56:55.000000Z",
+                    "updated_at": "2020-05-25T00:56:55.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 25,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "vfsfds",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                    "linha_inicio": 6,
+                    "linha_fim": 13,
+                    "created_at": "2020-05-25T00:57:04.000000Z",
+                    "updated_at": "2020-05-25T00:57:04.000000Z",
+                    "comentario_id": 24
+                },
+                {
+                    "id": 26,
+                    "user_id": 1,
+                    "ficheiro_id": 18,
+                    "comentario": "fsdfdsfsd",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                    "linha_inicio": 8,
+                    "linha_fim": 14,
+                    "created_at": "2020-05-27T23:21:56.000000Z",
+                    "updated_at": "2020-05-27T23:21:56.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 27,
+                    "user_id": 1,
+                    "ficheiro_id": 18,
+                    "comentario": "uma resposta",
+                    "audio_url": null,
+                    "linha_inicio": 8,
+                    "linha_fim": 14,
+                    "created_at": "2020-05-27T23:58:03.000000Z",
+                    "updated_at": "2020-05-27T23:58:03.000000Z",
+                    "comentario_id": 26
+                }
+            ],
+            "ficheiros": [
+                {
+                    "id": 10,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:03.000000Z",
+                    "updated_at": "2020-05-24T18:33:03.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 11,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:26.000000Z",
+                    "updated_at": "2020-05-24T18:33:26.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 12,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:51.000000Z",
+                    "updated_at": "2020-05-24T18:33:51.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 13,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:34:38.000000Z",
+                    "updated_at": "2020-05-24T18:34:38.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 14,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:34:52.000000Z",
+                    "updated_at": "2020-05-24T18:34:52.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 15,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 16,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-25T00:37:51.000000Z",
+                    "updated_at": "2020-05-25T00:37:51.000000Z",
+                    "user_id": 1,
+                    "nome": "exampleCode.js",
+                    "descricao": "yay"
+                },
+                {
+                    "id": 18,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 3,
+                    "ficheiroable_type": "App\\Duvida",
+                    "created_at": "2020-05-27T23:21:56.000000Z",
+                    "updated_at": "2020-05-27T23:21:56.000000Z",
+                    "user_id": 1,
+                    "nome": "fdsfsd",
+                    "descricao": "fdsfsd"
+                }
+            ],
+            "duvidas": [
+                {
+                    "id": 1,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T18:20:59.000000Z",
+                    "updated_at": "2020-05-27T18:20:59.000000Z",
+                    "descricao": "blabla"
+                },
+                {
+                    "id": 2,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T23:13:44.000000Z",
+                    "updated_at": "2020-05-27T23:13:44.000000Z",
+                    "descricao": "ouioui"
+                },
+                {
+                    "id": 3,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T23:21:55.000000Z",
+                    "updated_at": "2020-05-27T23:21:55.000000Z",
+                    "descricao": "foobar"
+                }
+            ],
+            "created_at": "2020-05-20T02:35:58.000000Z",
+            "updated_at": "2020-05-20T02:35:58.000000Z"
+        },
+        "disciplina": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "assistentes": [],
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
+        },
         "ficheiros": [],
-        "created_at": null,
-        "updated_at": null
+        "descricao": "blabla",
+        "created_at": "2020-05-27T18:20:59.000000Z",
+        "updated_at": "2020-05-27T18:20:59.000000Z"
     }
 }
 ```
@@ -2777,12 +9926,688 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "aluno": null,
-        "disciplina": null,
+        "id": 1,
+        "aluno": {
+            "id": 1,
+            "aluno_id": "a2082214",
+            "user": {
+                "id": 1,
+                "name": "Bruno Ribeiro",
+                "email": "2082214@student.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            },
+            "curso": "Engenharia Informática",
+            "data_de_matricula_inicial": "2020-01-01 00:00:00",
+            "ano_curricular": 3,
+            "disciplinas": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
+            "comentarios": [
+                {
+                    "id": 1,
+                    "user_id": 1,
+                    "ficheiro_id": 13,
+                    "comentario": "bem-vindos a mais uma aula digital requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:34:38.000000Z",
+                    "updated_at": "2020-05-24T18:34:38.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 2,
+                    "user_id": 1,
+                    "ficheiro_id": 14,
+                    "comentario": "bem-vindos a mais uma aula digital requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:34:52.000000Z",
+                    "updated_at": "2020-05-24T18:34:52.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 3,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 4,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "olá!!!",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 18,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "nbvnbvnvbn",
+                    "audio_url": null,
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:12:25.000000Z",
+                    "updated_at": "2020-05-25T00:12:25.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 19,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "gdgfdgdf",
+                    "audio_url": null,
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:13:49.000000Z",
+                    "updated_at": "2020-05-25T00:13:49.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 20,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:22:25.000000Z",
+                    "updated_at": "2020-05-25T00:22:25.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 21,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:22:49.000000Z",
+                    "updated_at": "2020-05-25T00:22:49.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 22,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:23:33.000000Z",
+                    "updated_at": "2020-05-25T00:23:33.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 23,
+                    "user_id": 1,
+                    "ficheiro_id": 16,
+                    "comentario": "test",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                    "linha_inicio": 16,
+                    "linha_fim": 21,
+                    "created_at": "2020-05-25T00:37:51.000000Z",
+                    "updated_at": "2020-05-25T00:37:51.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 24,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "fdsfdsfs",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                    "linha_inicio": 6,
+                    "linha_fim": 13,
+                    "created_at": "2020-05-25T00:56:55.000000Z",
+                    "updated_at": "2020-05-25T00:56:55.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 25,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "vfsfds",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                    "linha_inicio": 6,
+                    "linha_fim": 13,
+                    "created_at": "2020-05-25T00:57:04.000000Z",
+                    "updated_at": "2020-05-25T00:57:04.000000Z",
+                    "comentario_id": 24
+                },
+                {
+                    "id": 26,
+                    "user_id": 1,
+                    "ficheiro_id": 18,
+                    "comentario": "fsdfdsfsd",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                    "linha_inicio": 8,
+                    "linha_fim": 14,
+                    "created_at": "2020-05-27T23:21:56.000000Z",
+                    "updated_at": "2020-05-27T23:21:56.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 27,
+                    "user_id": 1,
+                    "ficheiro_id": 18,
+                    "comentario": "uma resposta",
+                    "audio_url": null,
+                    "linha_inicio": 8,
+                    "linha_fim": 14,
+                    "created_at": "2020-05-27T23:58:03.000000Z",
+                    "updated_at": "2020-05-27T23:58:03.000000Z",
+                    "comentario_id": 26
+                }
+            ],
+            "ficheiros": [
+                {
+                    "id": 10,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:03.000000Z",
+                    "updated_at": "2020-05-24T18:33:03.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 11,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:26.000000Z",
+                    "updated_at": "2020-05-24T18:33:26.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 12,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:51.000000Z",
+                    "updated_at": "2020-05-24T18:33:51.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 13,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:34:38.000000Z",
+                    "updated_at": "2020-05-24T18:34:38.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 14,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:34:52.000000Z",
+                    "updated_at": "2020-05-24T18:34:52.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 15,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 16,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-25T00:37:51.000000Z",
+                    "updated_at": "2020-05-25T00:37:51.000000Z",
+                    "user_id": 1,
+                    "nome": "exampleCode.js",
+                    "descricao": "yay"
+                },
+                {
+                    "id": 18,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 3,
+                    "ficheiroable_type": "App\\Duvida",
+                    "created_at": "2020-05-27T23:21:56.000000Z",
+                    "updated_at": "2020-05-27T23:21:56.000000Z",
+                    "user_id": 1,
+                    "nome": "fdsfsd",
+                    "descricao": "fdsfsd"
+                }
+            ],
+            "duvidas": [
+                {
+                    "id": 1,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T18:20:59.000000Z",
+                    "updated_at": "2020-05-27T18:20:59.000000Z",
+                    "descricao": "blabla"
+                },
+                {
+                    "id": 2,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T23:13:44.000000Z",
+                    "updated_at": "2020-05-27T23:13:44.000000Z",
+                    "descricao": "ouioui"
+                },
+                {
+                    "id": 3,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T23:21:55.000000Z",
+                    "updated_at": "2020-05-27T23:21:55.000000Z",
+                    "descricao": "foobar"
+                }
+            ],
+            "created_at": "2020-05-20T02:35:58.000000Z",
+            "updated_at": "2020-05-20T02:35:58.000000Z"
+        },
+        "disciplina": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "assistentes": [],
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
+        },
         "ficheiros": [],
-        "created_at": null,
-        "updated_at": null
+        "descricao": "blabla",
+        "created_at": "2020-05-27T18:20:59.000000Z",
+        "updated_at": "2020-05-27T18:20:59.000000Z"
     }
 }
 ```
@@ -2873,12 +10698,688 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "aluno": null,
-        "disciplina": null,
+        "id": 1,
+        "aluno": {
+            "id": 1,
+            "aluno_id": "a2082214",
+            "user": {
+                "id": 1,
+                "name": "Bruno Ribeiro",
+                "email": "2082214@student.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            },
+            "curso": "Engenharia Informática",
+            "data_de_matricula_inicial": "2020-01-01 00:00:00",
+            "ano_curricular": 3,
+            "disciplinas": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
+            "comentarios": [
+                {
+                    "id": 1,
+                    "user_id": 1,
+                    "ficheiro_id": 13,
+                    "comentario": "bem-vindos a mais uma aula digital requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:34:38.000000Z",
+                    "updated_at": "2020-05-24T18:34:38.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 2,
+                    "user_id": 1,
+                    "ficheiro_id": 14,
+                    "comentario": "bem-vindos a mais uma aula digital requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:34:52.000000Z",
+                    "updated_at": "2020-05-24T18:34:52.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 3,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 4,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "olá!!!",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 18,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "nbvnbvnvbn",
+                    "audio_url": null,
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:12:25.000000Z",
+                    "updated_at": "2020-05-25T00:12:25.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 19,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "gdgfdgdf",
+                    "audio_url": null,
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:13:49.000000Z",
+                    "updated_at": "2020-05-25T00:13:49.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 20,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:22:25.000000Z",
+                    "updated_at": "2020-05-25T00:22:25.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 21,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:22:49.000000Z",
+                    "updated_at": "2020-05-25T00:22:49.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 22,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:23:33.000000Z",
+                    "updated_at": "2020-05-25T00:23:33.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 23,
+                    "user_id": 1,
+                    "ficheiro_id": 16,
+                    "comentario": "test",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                    "linha_inicio": 16,
+                    "linha_fim": 21,
+                    "created_at": "2020-05-25T00:37:51.000000Z",
+                    "updated_at": "2020-05-25T00:37:51.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 24,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "fdsfdsfs",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                    "linha_inicio": 6,
+                    "linha_fim": 13,
+                    "created_at": "2020-05-25T00:56:55.000000Z",
+                    "updated_at": "2020-05-25T00:56:55.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 25,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "vfsfds",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                    "linha_inicio": 6,
+                    "linha_fim": 13,
+                    "created_at": "2020-05-25T00:57:04.000000Z",
+                    "updated_at": "2020-05-25T00:57:04.000000Z",
+                    "comentario_id": 24
+                },
+                {
+                    "id": 26,
+                    "user_id": 1,
+                    "ficheiro_id": 18,
+                    "comentario": "fsdfdsfsd",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                    "linha_inicio": 8,
+                    "linha_fim": 14,
+                    "created_at": "2020-05-27T23:21:56.000000Z",
+                    "updated_at": "2020-05-27T23:21:56.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 27,
+                    "user_id": 1,
+                    "ficheiro_id": 18,
+                    "comentario": "uma resposta",
+                    "audio_url": null,
+                    "linha_inicio": 8,
+                    "linha_fim": 14,
+                    "created_at": "2020-05-27T23:58:03.000000Z",
+                    "updated_at": "2020-05-27T23:58:03.000000Z",
+                    "comentario_id": 26
+                }
+            ],
+            "ficheiros": [
+                {
+                    "id": 10,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:03.000000Z",
+                    "updated_at": "2020-05-24T18:33:03.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 11,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:26.000000Z",
+                    "updated_at": "2020-05-24T18:33:26.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 12,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:51.000000Z",
+                    "updated_at": "2020-05-24T18:33:51.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 13,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:34:38.000000Z",
+                    "updated_at": "2020-05-24T18:34:38.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 14,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:34:52.000000Z",
+                    "updated_at": "2020-05-24T18:34:52.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 15,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 16,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-25T00:37:51.000000Z",
+                    "updated_at": "2020-05-25T00:37:51.000000Z",
+                    "user_id": 1,
+                    "nome": "exampleCode.js",
+                    "descricao": "yay"
+                },
+                {
+                    "id": 18,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 3,
+                    "ficheiroable_type": "App\\Duvida",
+                    "created_at": "2020-05-27T23:21:56.000000Z",
+                    "updated_at": "2020-05-27T23:21:56.000000Z",
+                    "user_id": 1,
+                    "nome": "fdsfsd",
+                    "descricao": "fdsfsd"
+                }
+            ],
+            "duvidas": [
+                {
+                    "id": 1,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T18:20:59.000000Z",
+                    "updated_at": "2020-05-27T18:20:59.000000Z",
+                    "descricao": "blabla"
+                },
+                {
+                    "id": 2,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T23:13:44.000000Z",
+                    "updated_at": "2020-05-27T23:13:44.000000Z",
+                    "descricao": "ouioui"
+                },
+                {
+                    "id": 3,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T23:21:55.000000Z",
+                    "updated_at": "2020-05-27T23:21:55.000000Z",
+                    "descricao": "foobar"
+                }
+            ],
+            "created_at": "2020-05-20T02:35:58.000000Z",
+            "updated_at": "2020-05-20T02:35:58.000000Z"
+        },
+        "disciplina": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "assistentes": [],
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
+        },
         "ficheiros": [],
-        "created_at": null,
-        "updated_at": null
+        "descricao": "blabla",
+        "created_at": "2020-05-27T18:20:59.000000Z",
+        "updated_at": "2020-05-27T18:20:59.000000Z"
     }
 }
 ```
@@ -2951,12 +11452,688 @@ print_r(json_decode((string) $body));
 ```json
 {
     "data": {
-        "id": null,
-        "aluno": null,
-        "disciplina": null,
+        "id": 1,
+        "aluno": {
+            "id": 1,
+            "aluno_id": "a2082214",
+            "user": {
+                "id": 1,
+                "name": "Bruno Ribeiro",
+                "email": "2082214@student.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            },
+            "curso": "Engenharia Informática",
+            "data_de_matricula_inicial": "2020-01-01 00:00:00",
+            "ano_curricular": 3,
+            "disciplinas": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
+            "comentarios": [
+                {
+                    "id": 1,
+                    "user_id": 1,
+                    "ficheiro_id": 13,
+                    "comentario": "bem-vindos a mais uma aula digital requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:34:38.000000Z",
+                    "updated_at": "2020-05-24T18:34:38.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 2,
+                    "user_id": 1,
+                    "ficheiro_id": 14,
+                    "comentario": "bem-vindos a mais uma aula digital requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:34:52.000000Z",
+                    "updated_at": "2020-05-24T18:34:52.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 3,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 4,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "olá!!!",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                    "linha_inicio": 5,
+                    "linha_fim": 12,
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 18,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "nbvnbvnvbn",
+                    "audio_url": null,
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:12:25.000000Z",
+                    "updated_at": "2020-05-25T00:12:25.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 19,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "gdgfdgdf",
+                    "audio_url": null,
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:13:49.000000Z",
+                    "updated_at": "2020-05-25T00:13:49.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 20,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:22:25.000000Z",
+                    "updated_at": "2020-05-25T00:22:25.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 21,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:22:49.000000Z",
+                    "updated_at": "2020-05-25T00:22:49.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 22,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": null,
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                    "linha_inicio": 29,
+                    "linha_fim": 38,
+                    "created_at": "2020-05-25T00:23:33.000000Z",
+                    "updated_at": "2020-05-25T00:23:33.000000Z",
+                    "comentario_id": 3
+                },
+                {
+                    "id": 23,
+                    "user_id": 1,
+                    "ficheiro_id": 16,
+                    "comentario": "test",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                    "linha_inicio": 16,
+                    "linha_fim": 21,
+                    "created_at": "2020-05-25T00:37:51.000000Z",
+                    "updated_at": "2020-05-25T00:37:51.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 24,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "fdsfdsfs",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                    "linha_inicio": 6,
+                    "linha_fim": 13,
+                    "created_at": "2020-05-25T00:56:55.000000Z",
+                    "updated_at": "2020-05-25T00:56:55.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 25,
+                    "user_id": 1,
+                    "ficheiro_id": 15,
+                    "comentario": "vfsfds",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                    "linha_inicio": 6,
+                    "linha_fim": 13,
+                    "created_at": "2020-05-25T00:57:04.000000Z",
+                    "updated_at": "2020-05-25T00:57:04.000000Z",
+                    "comentario_id": 24
+                },
+                {
+                    "id": 26,
+                    "user_id": 1,
+                    "ficheiro_id": 18,
+                    "comentario": "fsdfdsfsd",
+                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                    "linha_inicio": 8,
+                    "linha_fim": 14,
+                    "created_at": "2020-05-27T23:21:56.000000Z",
+                    "updated_at": "2020-05-27T23:21:56.000000Z",
+                    "comentario_id": null
+                },
+                {
+                    "id": 27,
+                    "user_id": 1,
+                    "ficheiro_id": 18,
+                    "comentario": "uma resposta",
+                    "audio_url": null,
+                    "linha_inicio": 8,
+                    "linha_fim": 14,
+                    "created_at": "2020-05-27T23:58:03.000000Z",
+                    "updated_at": "2020-05-27T23:58:03.000000Z",
+                    "comentario_id": 26
+                }
+            ],
+            "ficheiros": [
+                {
+                    "id": 10,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:03.000000Z",
+                    "updated_at": "2020-05-24T18:33:03.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 11,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:26.000000Z",
+                    "updated_at": "2020-05-24T18:33:26.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 12,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:33:51.000000Z",
+                    "updated_at": "2020-05-24T18:33:51.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 13,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:34:38.000000Z",
+                    "updated_at": "2020-05-24T18:34:38.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 14,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:34:52.000000Z",
+                    "updated_at": "2020-05-24T18:34:52.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 15,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                    "user_id": 1,
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse"
+                },
+                {
+                    "id": 16,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 1,
+                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                    "created_at": "2020-05-25T00:37:51.000000Z",
+                    "updated_at": "2020-05-25T00:37:51.000000Z",
+                    "user_id": 1,
+                    "nome": "exampleCode.js",
+                    "descricao": "yay"
+                },
+                {
+                    "id": 18,
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                    "extensao": "js",
+                    "ficheiroable_id": 3,
+                    "ficheiroable_type": "App\\Duvida",
+                    "created_at": "2020-05-27T23:21:56.000000Z",
+                    "updated_at": "2020-05-27T23:21:56.000000Z",
+                    "user_id": 1,
+                    "nome": "fdsfsd",
+                    "descricao": "fdsfsd"
+                }
+            ],
+            "duvidas": [
+                {
+                    "id": 1,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T18:20:59.000000Z",
+                    "updated_at": "2020-05-27T18:20:59.000000Z",
+                    "descricao": "blabla"
+                },
+                {
+                    "id": 2,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T23:13:44.000000Z",
+                    "updated_at": "2020-05-27T23:13:44.000000Z",
+                    "descricao": "ouioui"
+                },
+                {
+                    "id": 3,
+                    "aluno_id": 1,
+                    "disciplina_id": 1,
+                    "created_at": "2020-05-27T23:21:55.000000Z",
+                    "updated_at": "2020-05-27T23:21:55.000000Z",
+                    "descricao": "foobar"
+                }
+            ],
+            "created_at": "2020-05-20T02:35:58.000000Z",
+            "updated_at": "2020-05-20T02:35:58.000000Z"
+        },
+        "disciplina": {
+            "id": 1,
+            "nome": "Engenharia de Requisitos",
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
+            "regente": {
+                "id": 1,
+                "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "assistentes": [],
+            "semestre_curricular": "2020-10-10 00:00:00",
+            "created_at": "2020-05-22T13:39:18.000000Z",
+            "updated_at": "2020-05-22T13:39:18.000000Z"
+        },
         "ficheiros": [],
-        "created_at": null,
-        "updated_at": null
+        "descricao": "blabla",
+        "created_at": "2020-05-27T18:20:59.000000Z",
+        "updated_at": "2020-05-27T18:20:59.000000Z"
     }
 }
 ```
@@ -3330,7 +12507,500 @@ print_r(json_decode((string) $body));
                 "professor_id": 1
             },
             "resolucoes": [],
-            "ficheiros": [],
+            "ficheiros": [
+                {
+                    "id": 10,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                    "extensao": "js",
+                    "comentarios": [],
+                    "created_at": "2020-05-24T18:33:03.000000Z",
+                    "updated_at": "2020-05-24T18:33:03.000000Z"
+                },
+                {
+                    "id": 11,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                    "extensao": "js",
+                    "comentarios": [],
+                    "created_at": "2020-05-24T18:33:26.000000Z",
+                    "updated_at": "2020-05-24T18:33:26.000000Z"
+                },
+                {
+                    "id": 12,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                    "extensao": "js",
+                    "comentarios": [],
+                    "created_at": "2020-05-24T18:33:51.000000Z",
+                    "updated_at": "2020-05-24T18:33:51.000000Z"
+                },
+                {
+                    "id": 13,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                    "extensao": "js",
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user": {
+                                "id": 1,
+                                "name": "Bruno Ribeiro",
+                                "email": "2082214@student.uma.pt",
+                                "email_verified_at": null,
+                                "created_at": "2020-05-20T02:35:58.000000Z",
+                                "updated_at": "2020-05-20T02:35:58.000000Z"
+                            },
+                            "ficheiro": {
+                                "id": 13,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:34:38.000000Z",
+                                "updated_at": "2020-05-24T18:34:38.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "subcomentarios": [],
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z"
+                        }
+                    ],
+                    "created_at": "2020-05-24T18:34:38.000000Z",
+                    "updated_at": "2020-05-24T18:34:38.000000Z"
+                },
+                {
+                    "id": 14,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                    "extensao": "js",
+                    "comentarios": [
+                        {
+                            "id": 2,
+                            "user": {
+                                "id": 1,
+                                "name": "Bruno Ribeiro",
+                                "email": "2082214@student.uma.pt",
+                                "email_verified_at": null,
+                                "created_at": "2020-05-20T02:35:58.000000Z",
+                                "updated_at": "2020-05-20T02:35:58.000000Z"
+                            },
+                            "ficheiro": {
+                                "id": 14,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:34:52.000000Z",
+                                "updated_at": "2020-05-24T18:34:52.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "subcomentarios": [],
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z"
+                        }
+                    ],
+                    "created_at": "2020-05-24T18:34:52.000000Z",
+                    "updated_at": "2020-05-24T18:34:52.000000Z"
+                },
+                {
+                    "id": 15,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                    "extensao": "js",
+                    "comentarios": [
+                        {
+                            "id": 3,
+                            "user": {
+                                "id": 1,
+                                "name": "Bruno Ribeiro",
+                                "email": "2082214@student.uma.pt",
+                                "email_verified_at": null,
+                                "created_at": "2020-05-20T02:35:58.000000Z",
+                                "updated_at": "2020-05-20T02:35:58.000000Z"
+                            },
+                            "ficheiro": {
+                                "id": 15,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "subcomentarios": [
+                                {
+                                    "id": 4,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": "olá!!!",
+                                    "subcomentarios": [],
+                                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                                    "linha_inicio": 5,
+                                    "linha_fim": 12,
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z"
+                                },
+                                {
+                                    "id": 18,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": "nbvnbvnvbn",
+                                    "subcomentarios": [],
+                                    "audio_url": null,
+                                    "linha_inicio": 29,
+                                    "linha_fim": 38,
+                                    "created_at": "2020-05-25T00:12:25.000000Z",
+                                    "updated_at": "2020-05-25T00:12:25.000000Z"
+                                },
+                                {
+                                    "id": 19,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": "gdgfdgdf",
+                                    "subcomentarios": [],
+                                    "audio_url": null,
+                                    "linha_inicio": 29,
+                                    "linha_fim": 38,
+                                    "created_at": "2020-05-25T00:13:49.000000Z",
+                                    "updated_at": "2020-05-25T00:13:49.000000Z"
+                                },
+                                {
+                                    "id": 20,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": null,
+                                    "subcomentarios": [],
+                                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                                    "linha_inicio": 29,
+                                    "linha_fim": 38,
+                                    "created_at": "2020-05-25T00:22:25.000000Z",
+                                    "updated_at": "2020-05-25T00:22:25.000000Z"
+                                },
+                                {
+                                    "id": 21,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": null,
+                                    "subcomentarios": [],
+                                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                                    "linha_inicio": 29,
+                                    "linha_fim": 38,
+                                    "created_at": "2020-05-25T00:22:49.000000Z",
+                                    "updated_at": "2020-05-25T00:22:49.000000Z"
+                                },
+                                {
+                                    "id": 22,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": null,
+                                    "subcomentarios": [],
+                                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                                    "linha_inicio": 29,
+                                    "linha_fim": 38,
+                                    "created_at": "2020-05-25T00:23:33.000000Z",
+                                    "updated_at": "2020-05-25T00:23:33.000000Z"
+                                }
+                            ],
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z"
+                        },
+                        {
+                            "id": 24,
+                            "user": {
+                                "id": 1,
+                                "name": "Bruno Ribeiro",
+                                "email": "2082214@student.uma.pt",
+                                "email_verified_at": null,
+                                "created_at": "2020-05-20T02:35:58.000000Z",
+                                "updated_at": "2020-05-20T02:35:58.000000Z"
+                            },
+                            "ficheiro": {
+                                "id": 15,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            "comentario": "fdsfdsfs",
+                            "subcomentarios": [
+                                {
+                                    "id": 25,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": "vfsfds",
+                                    "subcomentarios": [],
+                                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                                    "linha_inicio": 6,
+                                    "linha_fim": 13,
+                                    "created_at": "2020-05-25T00:57:04.000000Z",
+                                    "updated_at": "2020-05-25T00:57:04.000000Z"
+                                }
+                            ],
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z"
+                        }
+                    ],
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z"
+                },
+                {
+                    "id": 16,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "exampleCode.js",
+                    "descricao": "yay",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                    "extensao": "js",
+                    "comentarios": [
+                        {
+                            "id": 23,
+                            "user": {
+                                "id": 1,
+                                "name": "Bruno Ribeiro",
+                                "email": "2082214@student.uma.pt",
+                                "email_verified_at": null,
+                                "created_at": "2020-05-20T02:35:58.000000Z",
+                                "updated_at": "2020-05-20T02:35:58.000000Z"
+                            },
+                            "ficheiro": {
+                                "id": 16,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-25T00:37:51.000000Z",
+                                "updated_at": "2020-05-25T00:37:51.000000Z",
+                                "user_id": 1,
+                                "nome": "exampleCode.js",
+                                "descricao": "yay"
+                            },
+                            "comentario": "test",
+                            "subcomentarios": [],
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z"
+                        }
+                    ],
+                    "created_at": "2020-05-25T00:37:51.000000Z",
+                    "updated_at": "2020-05-25T00:37:51.000000Z"
+                }
+            ],
             "data_inicio": "2020-10-10 00:00:00",
             "data_fim": "2020-10-11 00:00:00",
             "created_at": "2020-05-22T13:44:01.000000Z",
@@ -3347,7 +13017,500 @@ print_r(json_decode((string) $body));
                 "professor_id": 1
             },
             "resolucoes": [],
-            "ficheiros": [],
+            "ficheiros": [
+                {
+                    "id": 10,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                    "extensao": "js",
+                    "comentarios": [],
+                    "created_at": "2020-05-24T18:33:03.000000Z",
+                    "updated_at": "2020-05-24T18:33:03.000000Z"
+                },
+                {
+                    "id": 11,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                    "extensao": "js",
+                    "comentarios": [],
+                    "created_at": "2020-05-24T18:33:26.000000Z",
+                    "updated_at": "2020-05-24T18:33:26.000000Z"
+                },
+                {
+                    "id": 12,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                    "extensao": "js",
+                    "comentarios": [],
+                    "created_at": "2020-05-24T18:33:51.000000Z",
+                    "updated_at": "2020-05-24T18:33:51.000000Z"
+                },
+                {
+                    "id": 13,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                    "extensao": "js",
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user": {
+                                "id": 1,
+                                "name": "Bruno Ribeiro",
+                                "email": "2082214@student.uma.pt",
+                                "email_verified_at": null,
+                                "created_at": "2020-05-20T02:35:58.000000Z",
+                                "updated_at": "2020-05-20T02:35:58.000000Z"
+                            },
+                            "ficheiro": {
+                                "id": 13,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:34:38.000000Z",
+                                "updated_at": "2020-05-24T18:34:38.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "subcomentarios": [],
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z"
+                        }
+                    ],
+                    "created_at": "2020-05-24T18:34:38.000000Z",
+                    "updated_at": "2020-05-24T18:34:38.000000Z"
+                },
+                {
+                    "id": 14,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                    "extensao": "js",
+                    "comentarios": [
+                        {
+                            "id": 2,
+                            "user": {
+                                "id": 1,
+                                "name": "Bruno Ribeiro",
+                                "email": "2082214@student.uma.pt",
+                                "email_verified_at": null,
+                                "created_at": "2020-05-20T02:35:58.000000Z",
+                                "updated_at": "2020-05-20T02:35:58.000000Z"
+                            },
+                            "ficheiro": {
+                                "id": 14,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:34:52.000000Z",
+                                "updated_at": "2020-05-24T18:34:52.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "subcomentarios": [],
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z"
+                        }
+                    ],
+                    "created_at": "2020-05-24T18:34:52.000000Z",
+                    "updated_at": "2020-05-24T18:34:52.000000Z"
+                },
+                {
+                    "id": 15,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "fesfesfs",
+                    "descricao": "fefesfse",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                    "extensao": "js",
+                    "comentarios": [
+                        {
+                            "id": 3,
+                            "user": {
+                                "id": 1,
+                                "name": "Bruno Ribeiro",
+                                "email": "2082214@student.uma.pt",
+                                "email_verified_at": null,
+                                "created_at": "2020-05-20T02:35:58.000000Z",
+                                "updated_at": "2020-05-20T02:35:58.000000Z"
+                            },
+                            "ficheiro": {
+                                "id": 15,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "subcomentarios": [
+                                {
+                                    "id": 4,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": "olá!!!",
+                                    "subcomentarios": [],
+                                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                                    "linha_inicio": 5,
+                                    "linha_fim": 12,
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z"
+                                },
+                                {
+                                    "id": 18,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": "nbvnbvnvbn",
+                                    "subcomentarios": [],
+                                    "audio_url": null,
+                                    "linha_inicio": 29,
+                                    "linha_fim": 38,
+                                    "created_at": "2020-05-25T00:12:25.000000Z",
+                                    "updated_at": "2020-05-25T00:12:25.000000Z"
+                                },
+                                {
+                                    "id": 19,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": "gdgfdgdf",
+                                    "subcomentarios": [],
+                                    "audio_url": null,
+                                    "linha_inicio": 29,
+                                    "linha_fim": 38,
+                                    "created_at": "2020-05-25T00:13:49.000000Z",
+                                    "updated_at": "2020-05-25T00:13:49.000000Z"
+                                },
+                                {
+                                    "id": 20,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": null,
+                                    "subcomentarios": [],
+                                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                                    "linha_inicio": 29,
+                                    "linha_fim": 38,
+                                    "created_at": "2020-05-25T00:22:25.000000Z",
+                                    "updated_at": "2020-05-25T00:22:25.000000Z"
+                                },
+                                {
+                                    "id": 21,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": null,
+                                    "subcomentarios": [],
+                                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                                    "linha_inicio": 29,
+                                    "linha_fim": 38,
+                                    "created_at": "2020-05-25T00:22:49.000000Z",
+                                    "updated_at": "2020-05-25T00:22:49.000000Z"
+                                },
+                                {
+                                    "id": 22,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": null,
+                                    "subcomentarios": [],
+                                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                                    "linha_inicio": 29,
+                                    "linha_fim": 38,
+                                    "created_at": "2020-05-25T00:23:33.000000Z",
+                                    "updated_at": "2020-05-25T00:23:33.000000Z"
+                                }
+                            ],
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z"
+                        },
+                        {
+                            "id": 24,
+                            "user": {
+                                "id": 1,
+                                "name": "Bruno Ribeiro",
+                                "email": "2082214@student.uma.pt",
+                                "email_verified_at": null,
+                                "created_at": "2020-05-20T02:35:58.000000Z",
+                                "updated_at": "2020-05-20T02:35:58.000000Z"
+                            },
+                            "ficheiro": {
+                                "id": 15,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z",
+                                "user_id": 1,
+                                "nome": "fesfesfs",
+                                "descricao": "fefesfse"
+                            },
+                            "comentario": "fdsfdsfs",
+                            "subcomentarios": [
+                                {
+                                    "id": 25,
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Bruno Ribeiro",
+                                        "email": "2082214@student.uma.pt",
+                                        "email_verified_at": null,
+                                        "created_at": "2020-05-20T02:35:58.000000Z",
+                                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                                    },
+                                    "ficheiro": {
+                                        "id": 15,
+                                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                        "extensao": "js",
+                                        "ficheiroable_id": 1,
+                                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                        "created_at": "2020-05-24T18:36:07.000000Z",
+                                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                                        "user_id": 1,
+                                        "nome": "fesfesfs",
+                                        "descricao": "fefesfse"
+                                    },
+                                    "comentario": "vfsfds",
+                                    "subcomentarios": [],
+                                    "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                                    "linha_inicio": 6,
+                                    "linha_fim": 13,
+                                    "created_at": "2020-05-25T00:57:04.000000Z",
+                                    "updated_at": "2020-05-25T00:57:04.000000Z"
+                                }
+                            ],
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z"
+                        }
+                    ],
+                    "created_at": "2020-05-24T18:36:07.000000Z",
+                    "updated_at": "2020-05-24T18:36:07.000000Z"
+                },
+                {
+                    "id": 16,
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "nome": "exampleCode.js",
+                    "descricao": "yay",
+                    "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                    "extensao": "js",
+                    "comentarios": [
+                        {
+                            "id": 23,
+                            "user": {
+                                "id": 1,
+                                "name": "Bruno Ribeiro",
+                                "email": "2082214@student.uma.pt",
+                                "email_verified_at": null,
+                                "created_at": "2020-05-20T02:35:58.000000Z",
+                                "updated_at": "2020-05-20T02:35:58.000000Z"
+                            },
+                            "ficheiro": {
+                                "id": 16,
+                                "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                                "extensao": "js",
+                                "ficheiroable_id": 1,
+                                "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                "created_at": "2020-05-25T00:37:51.000000Z",
+                                "updated_at": "2020-05-25T00:37:51.000000Z",
+                                "user_id": 1,
+                                "nome": "exampleCode.js",
+                                "descricao": "yay"
+                            },
+                            "comentario": "test",
+                            "subcomentarios": [],
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z"
+                        }
+                    ],
+                    "created_at": "2020-05-25T00:37:51.000000Z",
+                    "updated_at": "2020-05-25T00:37:51.000000Z"
+                }
+            ],
             "data_inicio": "2020-10-10 00:00:00",
             "data_fim": "2020-10-11 00:00:00",
             "created_at": "2020-05-22T13:44:01.000000Z",
@@ -3384,8 +13547,8 @@ let headers = {
 };
 
 let body = {
-    "data_inicio": "quia",
-    "data_fim": "et"
+    "data_inicio": "debitis",
+    "data_fim": "soluta"
 }
 
 fetch(url, {
@@ -3408,8 +13571,8 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'data_inicio' => 'quia',
-            'data_fim' => 'et',
+            'data_inicio' => 'debitis',
+            'data_fim' => 'soluta',
         ],
     ]
 );
@@ -3465,7 +13628,500 @@ print_r(json_decode((string) $body));
             "professor_id": 1
         },
         "resolucoes": [],
-        "ficheiros": [],
+        "ficheiros": [
+            {
+                "id": 10,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:03.000000Z",
+                "updated_at": "2020-05-24T18:33:03.000000Z"
+            },
+            {
+                "id": 11,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:26.000000Z",
+                "updated_at": "2020-05-24T18:33:26.000000Z"
+            },
+            {
+                "id": 12,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:51.000000Z",
+                "updated_at": "2020-05-24T18:33:51.000000Z"
+            },
+            {
+                "id": 13,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:34:38.000000Z",
+                "updated_at": "2020-05-24T18:34:38.000000Z"
+            },
+            {
+                "id": 14,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 2,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:34:52.000000Z",
+                "updated_at": "2020-05-24T18:34:52.000000Z"
+            },
+            {
+                "id": 15,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 3,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "subcomentarios": [
+                            {
+                                "id": 4,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "olá!!!",
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                                "linha_inicio": 5,
+                                "linha_fim": 12,
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z"
+                            },
+                            {
+                                "id": 18,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "nbvnbvnvbn",
+                                "subcomentarios": [],
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:12:25.000000Z",
+                                "updated_at": "2020-05-25T00:12:25.000000Z"
+                            },
+                            {
+                                "id": 19,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "gdgfdgdf",
+                                "subcomentarios": [],
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:13:49.000000Z",
+                                "updated_at": "2020-05-25T00:13:49.000000Z"
+                            },
+                            {
+                                "id": 20,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:25.000000Z",
+                                "updated_at": "2020-05-25T00:22:25.000000Z"
+                            },
+                            {
+                                "id": 21,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:49.000000Z",
+                                "updated_at": "2020-05-25T00:22:49.000000Z"
+                            },
+                            {
+                                "id": 22,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:23:33.000000Z",
+                                "updated_at": "2020-05-25T00:23:33.000000Z"
+                            }
+                        ],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z"
+                    },
+                    {
+                        "id": 24,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "fdsfdsfs",
+                        "subcomentarios": [
+                            {
+                                "id": 25,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "vfsfds",
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                                "linha_inicio": 6,
+                                "linha_fim": 13,
+                                "created_at": "2020-05-25T00:57:04.000000Z",
+                                "updated_at": "2020-05-25T00:57:04.000000Z"
+                            }
+                        ],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:36:07.000000Z",
+                "updated_at": "2020-05-24T18:36:07.000000Z"
+            },
+            {
+                "id": 16,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "exampleCode.js",
+                "descricao": "yay",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 23,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        "comentario": "test",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-25T00:37:51.000000Z",
+                "updated_at": "2020-05-25T00:37:51.000000Z"
+            }
+        ],
         "data_inicio": "2020-10-10 00:00:00",
         "data_fim": "2020-10-11 00:00:00",
         "created_at": "2020-05-22T13:44:01.000000Z",
@@ -3577,7 +14233,500 @@ print_r(json_decode((string) $body));
             "professor_id": 1
         },
         "resolucoes": [],
-        "ficheiros": [],
+        "ficheiros": [
+            {
+                "id": 10,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:03.000000Z",
+                "updated_at": "2020-05-24T18:33:03.000000Z"
+            },
+            {
+                "id": 11,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:26.000000Z",
+                "updated_at": "2020-05-24T18:33:26.000000Z"
+            },
+            {
+                "id": 12,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:51.000000Z",
+                "updated_at": "2020-05-24T18:33:51.000000Z"
+            },
+            {
+                "id": 13,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:34:38.000000Z",
+                "updated_at": "2020-05-24T18:34:38.000000Z"
+            },
+            {
+                "id": 14,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 2,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:34:52.000000Z",
+                "updated_at": "2020-05-24T18:34:52.000000Z"
+            },
+            {
+                "id": 15,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 3,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "subcomentarios": [
+                            {
+                                "id": 4,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "olá!!!",
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                                "linha_inicio": 5,
+                                "linha_fim": 12,
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z"
+                            },
+                            {
+                                "id": 18,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "nbvnbvnvbn",
+                                "subcomentarios": [],
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:12:25.000000Z",
+                                "updated_at": "2020-05-25T00:12:25.000000Z"
+                            },
+                            {
+                                "id": 19,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "gdgfdgdf",
+                                "subcomentarios": [],
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:13:49.000000Z",
+                                "updated_at": "2020-05-25T00:13:49.000000Z"
+                            },
+                            {
+                                "id": 20,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:25.000000Z",
+                                "updated_at": "2020-05-25T00:22:25.000000Z"
+                            },
+                            {
+                                "id": 21,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:49.000000Z",
+                                "updated_at": "2020-05-25T00:22:49.000000Z"
+                            },
+                            {
+                                "id": 22,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:23:33.000000Z",
+                                "updated_at": "2020-05-25T00:23:33.000000Z"
+                            }
+                        ],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z"
+                    },
+                    {
+                        "id": 24,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "fdsfdsfs",
+                        "subcomentarios": [
+                            {
+                                "id": 25,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "vfsfds",
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                                "linha_inicio": 6,
+                                "linha_fim": 13,
+                                "created_at": "2020-05-25T00:57:04.000000Z",
+                                "updated_at": "2020-05-25T00:57:04.000000Z"
+                            }
+                        ],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:36:07.000000Z",
+                "updated_at": "2020-05-24T18:36:07.000000Z"
+            },
+            {
+                "id": 16,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "exampleCode.js",
+                "descricao": "yay",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 23,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        "comentario": "test",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-25T00:37:51.000000Z",
+                "updated_at": "2020-05-25T00:37:51.000000Z"
+            }
+        ],
         "data_inicio": "2020-10-10 00:00:00",
         "data_fim": "2020-10-11 00:00:00",
         "created_at": "2020-05-22T13:44:01.000000Z",
@@ -3685,7 +14834,500 @@ print_r(json_decode((string) $body));
             "professor_id": 1
         },
         "resolucoes": [],
-        "ficheiros": [],
+        "ficheiros": [
+            {
+                "id": 10,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:03.000000Z",
+                "updated_at": "2020-05-24T18:33:03.000000Z"
+            },
+            {
+                "id": 11,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:26.000000Z",
+                "updated_at": "2020-05-24T18:33:26.000000Z"
+            },
+            {
+                "id": 12,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:51.000000Z",
+                "updated_at": "2020-05-24T18:33:51.000000Z"
+            },
+            {
+                "id": 13,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:34:38.000000Z",
+                "updated_at": "2020-05-24T18:34:38.000000Z"
+            },
+            {
+                "id": 14,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 2,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:34:52.000000Z",
+                "updated_at": "2020-05-24T18:34:52.000000Z"
+            },
+            {
+                "id": 15,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 3,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "subcomentarios": [
+                            {
+                                "id": 4,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "olá!!!",
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                                "linha_inicio": 5,
+                                "linha_fim": 12,
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z"
+                            },
+                            {
+                                "id": 18,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "nbvnbvnvbn",
+                                "subcomentarios": [],
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:12:25.000000Z",
+                                "updated_at": "2020-05-25T00:12:25.000000Z"
+                            },
+                            {
+                                "id": 19,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "gdgfdgdf",
+                                "subcomentarios": [],
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:13:49.000000Z",
+                                "updated_at": "2020-05-25T00:13:49.000000Z"
+                            },
+                            {
+                                "id": 20,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:25.000000Z",
+                                "updated_at": "2020-05-25T00:22:25.000000Z"
+                            },
+                            {
+                                "id": 21,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:49.000000Z",
+                                "updated_at": "2020-05-25T00:22:49.000000Z"
+                            },
+                            {
+                                "id": 22,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:23:33.000000Z",
+                                "updated_at": "2020-05-25T00:23:33.000000Z"
+                            }
+                        ],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z"
+                    },
+                    {
+                        "id": 24,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "fdsfdsfs",
+                        "subcomentarios": [
+                            {
+                                "id": 25,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "vfsfds",
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                                "linha_inicio": 6,
+                                "linha_fim": 13,
+                                "created_at": "2020-05-25T00:57:04.000000Z",
+                                "updated_at": "2020-05-25T00:57:04.000000Z"
+                            }
+                        ],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:36:07.000000Z",
+                "updated_at": "2020-05-24T18:36:07.000000Z"
+            },
+            {
+                "id": 16,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "exampleCode.js",
+                "descricao": "yay",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 23,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        "comentario": "test",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-25T00:37:51.000000Z",
+                "updated_at": "2020-05-25T00:37:51.000000Z"
+            }
+        ],
         "data_inicio": "2020-10-10 00:00:00",
         "data_fim": "2020-10-11 00:00:00",
         "created_at": "2020-05-22T13:44:01.000000Z",
@@ -3772,7 +15414,500 @@ print_r(json_decode((string) $body));
             "professor_id": 1
         },
         "resolucoes": [],
-        "ficheiros": [],
+        "ficheiros": [
+            {
+                "id": 10,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:03.000000Z",
+                "updated_at": "2020-05-24T18:33:03.000000Z"
+            },
+            {
+                "id": 11,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:26.000000Z",
+                "updated_at": "2020-05-24T18:33:26.000000Z"
+            },
+            {
+                "id": 12,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                "extensao": "js",
+                "comentarios": [],
+                "created_at": "2020-05-24T18:33:51.000000Z",
+                "updated_at": "2020-05-24T18:33:51.000000Z"
+            },
+            {
+                "id": 13,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:34:38.000000Z",
+                "updated_at": "2020-05-24T18:34:38.000000Z"
+            },
+            {
+                "id": 14,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 2,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:34:52.000000Z",
+                "updated_at": "2020-05-24T18:34:52.000000Z"
+            },
+            {
+                "id": 15,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "fesfesfs",
+                "descricao": "fefesfse",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 3,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "subcomentarios": [
+                            {
+                                "id": 4,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "olá!!!",
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                                "linha_inicio": 5,
+                                "linha_fim": 12,
+                                "created_at": "2020-05-24T18:36:07.000000Z",
+                                "updated_at": "2020-05-24T18:36:07.000000Z"
+                            },
+                            {
+                                "id": 18,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "nbvnbvnvbn",
+                                "subcomentarios": [],
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:12:25.000000Z",
+                                "updated_at": "2020-05-25T00:12:25.000000Z"
+                            },
+                            {
+                                "id": 19,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "gdgfdgdf",
+                                "subcomentarios": [],
+                                "audio_url": null,
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:13:49.000000Z",
+                                "updated_at": "2020-05-25T00:13:49.000000Z"
+                            },
+                            {
+                                "id": 20,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:25.000000Z",
+                                "updated_at": "2020-05-25T00:22:25.000000Z"
+                            },
+                            {
+                                "id": 21,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:22:49.000000Z",
+                                "updated_at": "2020-05-25T00:22:49.000000Z"
+                            },
+                            {
+                                "id": 22,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": null,
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                                "linha_inicio": 29,
+                                "linha_fim": 38,
+                                "created_at": "2020-05-25T00:23:33.000000Z",
+                                "updated_at": "2020-05-25T00:23:33.000000Z"
+                            }
+                        ],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z"
+                    },
+                    {
+                        "id": 24,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        "comentario": "fdsfdsfs",
+                        "subcomentarios": [
+                            {
+                                "id": 25,
+                                "user": {
+                                    "id": 1,
+                                    "name": "Bruno Ribeiro",
+                                    "email": "2082214@student.uma.pt",
+                                    "email_verified_at": null,
+                                    "created_at": "2020-05-20T02:35:58.000000Z",
+                                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                                },
+                                "ficheiro": {
+                                    "id": 15,
+                                    "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                                    "extensao": "js",
+                                    "ficheiroable_id": 1,
+                                    "ficheiroable_type": "App\\EventoDeAvaliacao",
+                                    "created_at": "2020-05-24T18:36:07.000000Z",
+                                    "updated_at": "2020-05-24T18:36:07.000000Z",
+                                    "user_id": 1,
+                                    "nome": "fesfesfs",
+                                    "descricao": "fefesfse"
+                                },
+                                "comentario": "vfsfds",
+                                "subcomentarios": [],
+                                "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                                "linha_inicio": 6,
+                                "linha_fim": 13,
+                                "created_at": "2020-05-25T00:57:04.000000Z",
+                                "updated_at": "2020-05-25T00:57:04.000000Z"
+                            }
+                        ],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-24T18:36:07.000000Z",
+                "updated_at": "2020-05-24T18:36:07.000000Z"
+            },
+            {
+                "id": 16,
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "nome": "exampleCode.js",
+                "descricao": "yay",
+                "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                "extensao": "js",
+                "comentarios": [
+                    {
+                        "id": 23,
+                        "user": {
+                            "id": 1,
+                            "name": "Bruno Ribeiro",
+                            "email": "2082214@student.uma.pt",
+                            "email_verified_at": null,
+                            "created_at": "2020-05-20T02:35:58.000000Z",
+                            "updated_at": "2020-05-20T02:35:58.000000Z"
+                        },
+                        "ficheiro": {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        "comentario": "test",
+                        "subcomentarios": [],
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z"
+                    }
+                ],
+                "created_at": "2020-05-25T00:37:51.000000Z",
+                "updated_at": "2020-05-25T00:37:51.000000Z"
+            }
+        ],
         "data_inicio": "2020-10-10 00:00:00",
         "data_fim": "2020-10-11 00:00:00",
         "created_at": "2020-05-22T13:44:01.000000Z",
@@ -4407,11 +16542,11 @@ let headers = {
 };
 
 let body = {
-    "professor_id": "cupiditate",
-    "name": "consequatur",
-    "email": "incidunt",
-    "password": "voluptate",
-    "password_confirmation": "voluptas"
+    "professor_id": "architecto",
+    "name": "quia",
+    "email": "porro",
+    "password": "exercitationem",
+    "password_confirmation": "accusantium"
 }
 
 fetch(url, {
@@ -4434,11 +16569,11 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'professor_id' => 'cupiditate',
-            'name' => 'consequatur',
-            'email' => 'incidunt',
-            'password' => 'voluptate',
-            'password_confirmation' => 'voluptas',
+            'professor_id' => 'architecto',
+            'name' => 'quia',
+            'email' => 'porro',
+            'password' => 'exercitationem',
+            'password_confirmation' => 'accusantium',
         ],
     ]
 );
@@ -4966,10 +17101,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -4981,10 +17457,351 @@ print_r(json_decode((string) $body));
         {
             "id": 1,
             "nome": "Engenharia de Requisitos",
-            "alunos": [],
+            "alunos": [
+                {
+                    "id": 1,
+                    "aluno_id": "a2082214",
+                    "user": {
+                        "id": 1,
+                        "name": "Bruno Ribeiro",
+                        "email": "2082214@student.uma.pt",
+                        "email_verified_at": null,
+                        "created_at": "2020-05-20T02:35:58.000000Z",
+                        "updated_at": "2020-05-20T02:35:58.000000Z"
+                    },
+                    "curso": "Engenharia Informática",
+                    "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                    "ano_curricular": 3,
+                    "disciplinas": [
+                        {
+                            "id": 1,
+                            "nome": "Engenharia de Requisitos",
+                            "created_at": "2020-05-22T13:39:18.000000Z",
+                            "updated_at": "2020-05-22T13:39:18.000000Z",
+                            "semestre_curricular": "2020-10-10 00:00:00",
+                            "professor_id": 1
+                        }
+                    ],
+                    "comentarios": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "ficheiro_id": 13,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 2,
+                            "user_id": 1,
+                            "ficheiro_id": 14,
+                            "comentario": "bem-vindos a mais uma aula digital requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 3,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 4,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "olá!!!",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                            "linha_inicio": 5,
+                            "linha_fim": 12,
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 18,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "nbvnbvnvbn",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:12:25.000000Z",
+                            "updated_at": "2020-05-25T00:12:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 19,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "gdgfdgdf",
+                            "audio_url": null,
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:13:49.000000Z",
+                            "updated_at": "2020-05-25T00:13:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 20,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:25.000000Z",
+                            "updated_at": "2020-05-25T00:22:25.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 21,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:22:49.000000Z",
+                            "updated_at": "2020-05-25T00:22:49.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 22,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": null,
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                            "linha_inicio": 29,
+                            "linha_fim": 38,
+                            "created_at": "2020-05-25T00:23:33.000000Z",
+                            "updated_at": "2020-05-25T00:23:33.000000Z",
+                            "comentario_id": 3
+                        },
+                        {
+                            "id": 23,
+                            "user_id": 1,
+                            "ficheiro_id": 16,
+                            "comentario": "test",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                            "linha_inicio": 16,
+                            "linha_fim": 21,
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 24,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "fdsfdsfs",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:56:55.000000Z",
+                            "updated_at": "2020-05-25T00:56:55.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 25,
+                            "user_id": 1,
+                            "ficheiro_id": 15,
+                            "comentario": "vfsfds",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                            "linha_inicio": 6,
+                            "linha_fim": 13,
+                            "created_at": "2020-05-25T00:57:04.000000Z",
+                            "updated_at": "2020-05-25T00:57:04.000000Z",
+                            "comentario_id": 24
+                        },
+                        {
+                            "id": 26,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "fsdfdsfsd",
+                            "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "comentario_id": null
+                        },
+                        {
+                            "id": 27,
+                            "user_id": 1,
+                            "ficheiro_id": 18,
+                            "comentario": "uma resposta",
+                            "audio_url": null,
+                            "linha_inicio": 8,
+                            "linha_fim": 14,
+                            "created_at": "2020-05-27T23:58:03.000000Z",
+                            "updated_at": "2020-05-27T23:58:03.000000Z",
+                            "comentario_id": 26
+                        }
+                    ],
+                    "ficheiros": [
+                        {
+                            "id": 10,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:03.000000Z",
+                            "updated_at": "2020-05-24T18:33:03.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 11,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:26.000000Z",
+                            "updated_at": "2020-05-24T18:33:26.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 12,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:33:51.000000Z",
+                            "updated_at": "2020-05-24T18:33:51.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 13,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:38.000000Z",
+                            "updated_at": "2020-05-24T18:34:38.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 14,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:34:52.000000Z",
+                            "updated_at": "2020-05-24T18:34:52.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 15,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-24T18:36:07.000000Z",
+                            "updated_at": "2020-05-24T18:36:07.000000Z",
+                            "user_id": 1,
+                            "nome": "fesfesfs",
+                            "descricao": "fefesfse"
+                        },
+                        {
+                            "id": 16,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 1,
+                            "ficheiroable_type": "App\\EventoDeAvaliacao",
+                            "created_at": "2020-05-25T00:37:51.000000Z",
+                            "updated_at": "2020-05-25T00:37:51.000000Z",
+                            "user_id": 1,
+                            "nome": "exampleCode.js",
+                            "descricao": "yay"
+                        },
+                        {
+                            "id": 18,
+                            "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                            "extensao": "js",
+                            "ficheiroable_id": 3,
+                            "ficheiroable_type": "App\\Duvida",
+                            "created_at": "2020-05-27T23:21:56.000000Z",
+                            "updated_at": "2020-05-27T23:21:56.000000Z",
+                            "user_id": 1,
+                            "nome": "fdsfsd",
+                            "descricao": "fdsfsd"
+                        }
+                    ],
+                    "duvidas": [
+                        {
+                            "id": 1,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T18:20:59.000000Z",
+                            "updated_at": "2020-05-27T18:20:59.000000Z",
+                            "descricao": "blabla"
+                        },
+                        {
+                            "id": 2,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:13:44.000000Z",
+                            "updated_at": "2020-05-27T23:13:44.000000Z",
+                            "descricao": "ouioui"
+                        },
+                        {
+                            "id": 3,
+                            "aluno_id": 1,
+                            "disciplina_id": 1,
+                            "created_at": "2020-05-27T23:21:55.000000Z",
+                            "updated_at": "2020-05-27T23:21:55.000000Z",
+                            "descricao": "foobar"
+                        }
+                    ],
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                }
+            ],
             "regente": {
                 "id": 1,
                 "professor_id": "p2984573",
+                "user": {
+                    "id": 2,
+                    "name": "Filipe Quintal",
+                    "email": "filipe.quintal@staff.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-22T13:34:29.000000Z",
+                    "updated_at": "2020-05-22T13:34:29.000000Z"
+                },
+                "disciplinas": [],
+                "regente": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
                 "created_at": "2020-05-22T13:34:29.000000Z",
                 "updated_at": "2020-05-22T13:34:29.000000Z"
             },
@@ -5024,7 +17841,7 @@ let headers = {
 };
 
 let body = {
-    "disciplina_id": "similique"
+    "disciplina_id": "accusamus"
 }
 
 fetch(url, {
@@ -5047,7 +17864,7 @@ $response = $client->post(
             'Accept' => 'application/json',
         ],
         'json' => [
-            'disciplina_id' => 'similique',
+            'disciplina_id' => 'accusamus',
         ],
     ]
 );
@@ -5135,10 +17952,351 @@ print_r(json_decode((string) $body));
     "data": {
         "id": 1,
         "nome": "Engenharia de Requisitos",
-        "alunos": [],
+        "alunos": [
+            {
+                "id": 1,
+                "aluno_id": "a2082214",
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                "ano_curricular": 3,
+                "disciplinas": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user_id": 1,
+                        "ficheiro_id": 13,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 2,
+                        "user_id": 1,
+                        "ficheiro_id": 14,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 3,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 4,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "olá!!!",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 18,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "nbvnbvnvbn",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:12:25.000000Z",
+                        "updated_at": "2020-05-25T00:12:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 19,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "gdgfdgdf",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:13:49.000000Z",
+                        "updated_at": "2020-05-25T00:13:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 20,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:25.000000Z",
+                        "updated_at": "2020-05-25T00:22:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 21,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:49.000000Z",
+                        "updated_at": "2020-05-25T00:22:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 22,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:23:33.000000Z",
+                        "updated_at": "2020-05-25T00:23:33.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 23,
+                        "user_id": 1,
+                        "ficheiro_id": 16,
+                        "comentario": "test",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 24,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "fdsfdsfs",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 25,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "vfsfds",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:57:04.000000Z",
+                        "updated_at": "2020-05-25T00:57:04.000000Z",
+                        "comentario_id": 24
+                    },
+                    {
+                        "id": 26,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "fsdfdsfsd",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 27,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "uma resposta",
+                        "audio_url": null,
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:58:03.000000Z",
+                        "updated_at": "2020-05-27T23:58:03.000000Z",
+                        "comentario_id": 26
+                    }
+                ],
+                "ficheiros": [
+                    {
+                        "id": 10,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:03.000000Z",
+                        "updated_at": "2020-05-24T18:33:03.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 11,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:26.000000Z",
+                        "updated_at": "2020-05-24T18:33:26.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 12,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:51.000000Z",
+                        "updated_at": "2020-05-24T18:33:51.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 13,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 14,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 15,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 16,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "user_id": 1,
+                        "nome": "exampleCode.js",
+                        "descricao": "yay"
+                    },
+                    {
+                        "id": 18,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 3,
+                        "ficheiroable_type": "App\\Duvida",
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "user_id": 1,
+                        "nome": "fdsfsd",
+                        "descricao": "fdsfsd"
+                    }
+                ],
+                "duvidas": [
+                    {
+                        "id": 1,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T18:20:59.000000Z",
+                        "updated_at": "2020-05-27T18:20:59.000000Z",
+                        "descricao": "blabla"
+                    },
+                    {
+                        "id": 2,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:13:44.000000Z",
+                        "updated_at": "2020-05-27T23:13:44.000000Z",
+                        "descricao": "ouioui"
+                    },
+                    {
+                        "id": 3,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:21:55.000000Z",
+                        "updated_at": "2020-05-27T23:21:55.000000Z",
+                        "descricao": "foobar"
+                    }
+                ],
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            }
+        ],
         "regente": {
             "id": 1,
             "professor_id": "p2984573",
+            "user": {
+                "id": 2,
+                "name": "Filipe Quintal",
+                "email": "filipe.quintal@staff.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "disciplinas": [],
+            "regente": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
             "created_at": "2020-05-22T13:34:29.000000Z",
             "updated_at": "2020-05-22T13:34:29.000000Z"
         },
@@ -5212,10 +18370,351 @@ print_r(json_decode((string) $body));
     "data": {
         "id": 1,
         "nome": "Engenharia de Requisitos",
-        "alunos": [],
+        "alunos": [
+            {
+                "id": 1,
+                "aluno_id": "a2082214",
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                "ano_curricular": 3,
+                "disciplinas": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user_id": 1,
+                        "ficheiro_id": 13,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 2,
+                        "user_id": 1,
+                        "ficheiro_id": 14,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 3,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 4,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "olá!!!",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 18,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "nbvnbvnvbn",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:12:25.000000Z",
+                        "updated_at": "2020-05-25T00:12:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 19,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "gdgfdgdf",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:13:49.000000Z",
+                        "updated_at": "2020-05-25T00:13:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 20,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:25.000000Z",
+                        "updated_at": "2020-05-25T00:22:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 21,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:49.000000Z",
+                        "updated_at": "2020-05-25T00:22:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 22,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:23:33.000000Z",
+                        "updated_at": "2020-05-25T00:23:33.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 23,
+                        "user_id": 1,
+                        "ficheiro_id": 16,
+                        "comentario": "test",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 24,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "fdsfdsfs",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 25,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "vfsfds",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:57:04.000000Z",
+                        "updated_at": "2020-05-25T00:57:04.000000Z",
+                        "comentario_id": 24
+                    },
+                    {
+                        "id": 26,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "fsdfdsfsd",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 27,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "uma resposta",
+                        "audio_url": null,
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:58:03.000000Z",
+                        "updated_at": "2020-05-27T23:58:03.000000Z",
+                        "comentario_id": 26
+                    }
+                ],
+                "ficheiros": [
+                    {
+                        "id": 10,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:03.000000Z",
+                        "updated_at": "2020-05-24T18:33:03.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 11,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:26.000000Z",
+                        "updated_at": "2020-05-24T18:33:26.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 12,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:51.000000Z",
+                        "updated_at": "2020-05-24T18:33:51.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 13,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 14,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 15,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 16,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "user_id": 1,
+                        "nome": "exampleCode.js",
+                        "descricao": "yay"
+                    },
+                    {
+                        "id": 18,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 3,
+                        "ficheiroable_type": "App\\Duvida",
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "user_id": 1,
+                        "nome": "fdsfsd",
+                        "descricao": "fdsfsd"
+                    }
+                ],
+                "duvidas": [
+                    {
+                        "id": 1,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T18:20:59.000000Z",
+                        "updated_at": "2020-05-27T18:20:59.000000Z",
+                        "descricao": "blabla"
+                    },
+                    {
+                        "id": 2,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:13:44.000000Z",
+                        "updated_at": "2020-05-27T23:13:44.000000Z",
+                        "descricao": "ouioui"
+                    },
+                    {
+                        "id": 3,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:21:55.000000Z",
+                        "updated_at": "2020-05-27T23:21:55.000000Z",
+                        "descricao": "foobar"
+                    }
+                ],
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            }
+        ],
         "regente": {
             "id": 1,
             "professor_id": "p2984573",
+            "user": {
+                "id": 2,
+                "name": "Filipe Quintal",
+                "email": "filipe.quintal@staff.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "disciplinas": [],
+            "regente": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
             "created_at": "2020-05-22T13:34:29.000000Z",
             "updated_at": "2020-05-22T13:34:29.000000Z"
         },
@@ -5295,10 +18794,351 @@ print_r(json_decode((string) $body));
     "data": {
         "id": 1,
         "nome": "Engenharia de Requisitos",
-        "alunos": [],
+        "alunos": [
+            {
+                "id": 1,
+                "aluno_id": "a2082214",
+                "user": {
+                    "id": 1,
+                    "name": "Bruno Ribeiro",
+                    "email": "2082214@student.uma.pt",
+                    "email_verified_at": null,
+                    "created_at": "2020-05-20T02:35:58.000000Z",
+                    "updated_at": "2020-05-20T02:35:58.000000Z"
+                },
+                "curso": "Engenharia Informática",
+                "data_de_matricula_inicial": "2020-01-01 00:00:00",
+                "ano_curricular": 3,
+                "disciplinas": [
+                    {
+                        "id": 1,
+                        "nome": "Engenharia de Requisitos",
+                        "created_at": "2020-05-22T13:39:18.000000Z",
+                        "updated_at": "2020-05-22T13:39:18.000000Z",
+                        "semestre_curricular": "2020-10-10 00:00:00",
+                        "professor_id": 1
+                    }
+                ],
+                "comentarios": [
+                    {
+                        "id": 1,
+                        "user_id": 1,
+                        "ficheiro_id": 13,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/JAap5AuhpRtXjDKDdfbfZsN93pQisxXQ64gylv4V.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 2,
+                        "user_id": 1,
+                        "ficheiro_id": 14,
+                        "comentario": "bem-vindos a mais uma aula digital requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/qZBAdTAtxeELVWURbwjlMxIMpsmdtE2R1nksGEkc.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 3,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "bem-vindos a mais uma aula de Engenharia de requisitos",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/i6Pc6A5UTJllomOV4FWP3FwYmFhGjp5XZA72BKeh.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 4,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "olá!!!",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/AHDPq60EjidKj516SKEn6CWm0NOjcfhUOYTJ6zKL.mpga",
+                        "linha_inicio": 5,
+                        "linha_fim": 12,
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 18,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "nbvnbvnvbn",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:12:25.000000Z",
+                        "updated_at": "2020-05-25T00:12:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 19,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "gdgfdgdf",
+                        "audio_url": null,
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:13:49.000000Z",
+                        "updated_at": "2020-05-25T00:13:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 20,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ES6Way0TINwIWx3xK5sqygwRhnBBlC0ProKx0bn7.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:25.000000Z",
+                        "updated_at": "2020-05-25T00:22:25.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 21,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/vbjOTEmsQwmIXHQbdCW5xIszvrKAe7zxT5VmlnNl.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:22:49.000000Z",
+                        "updated_at": "2020-05-25T00:22:49.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 22,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": null,
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/fi3XtgJXcHrgjHylmp6tnjIx9PfaBCrzKDTAPLC0.mpga",
+                        "linha_inicio": 29,
+                        "linha_fim": 38,
+                        "created_at": "2020-05-25T00:23:33.000000Z",
+                        "updated_at": "2020-05-25T00:23:33.000000Z",
+                        "comentario_id": 3
+                    },
+                    {
+                        "id": 23,
+                        "user_id": 1,
+                        "ficheiro_id": 16,
+                        "comentario": "test",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/ZhWGsVr2TAkVg5wmgbWU2XqIQyTaHZ3gVdzsKp3C.mpga",
+                        "linha_inicio": 16,
+                        "linha_fim": 21,
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 24,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "fdsfdsfs",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/nUP6pRi6h51GGF5isaNkc5nEJ50sjzv6TiZJosUE.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:56:55.000000Z",
+                        "updated_at": "2020-05-25T00:56:55.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 25,
+                        "user_id": 1,
+                        "ficheiro_id": 15,
+                        "comentario": "vfsfds",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/yjaTqV8EY7psXor7d9he0xBWv1asqaFtmX1yGgLY.mpga",
+                        "linha_inicio": 6,
+                        "linha_fim": 13,
+                        "created_at": "2020-05-25T00:57:04.000000Z",
+                        "updated_at": "2020-05-25T00:57:04.000000Z",
+                        "comentario_id": 24
+                    },
+                    {
+                        "id": 26,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "fsdfdsfsd",
+                        "audio_url": "http:\/\/localhost:8000\/uploads\/files\/CV0sgNTQDEkCrU7I8J36QjcxX2FKDCy1erQICM9g.mpga",
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "comentario_id": null
+                    },
+                    {
+                        "id": 27,
+                        "user_id": 1,
+                        "ficheiro_id": 18,
+                        "comentario": "uma resposta",
+                        "audio_url": null,
+                        "linha_inicio": 8,
+                        "linha_fim": 14,
+                        "created_at": "2020-05-27T23:58:03.000000Z",
+                        "updated_at": "2020-05-27T23:58:03.000000Z",
+                        "comentario_id": 26
+                    }
+                ],
+                "ficheiros": [
+                    {
+                        "id": 10,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/qq6vde5NxkMd3pAXDMTCRwv5IWxQfYkGvGxJY6bD.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:03.000000Z",
+                        "updated_at": "2020-05-24T18:33:03.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 11,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/xO4NMU087H5BbBkn8CEnlYMMwCTOEuNryKYqROUY.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:26.000000Z",
+                        "updated_at": "2020-05-24T18:33:26.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 12,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/iQYjgzBpDVwrCvYEDC2SuC1WbgdjW57qsDZGNUMX.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:33:51.000000Z",
+                        "updated_at": "2020-05-24T18:33:51.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 13,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/8sEL4hKdzZjXxzAHv89liMXahFJJapH5bEJpIVHx.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:38.000000Z",
+                        "updated_at": "2020-05-24T18:34:38.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 14,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/wQ1woIaYcjg72N01hocv8XhbH3O2r7ktx8KIjaPQ.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:34:52.000000Z",
+                        "updated_at": "2020-05-24T18:34:52.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 15,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/zUVaDdtACXwn2uqU27d91UJyfRNCewFTpwBxhQ0v.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-24T18:36:07.000000Z",
+                        "updated_at": "2020-05-24T18:36:07.000000Z",
+                        "user_id": 1,
+                        "nome": "fesfesfs",
+                        "descricao": "fefesfse"
+                    },
+                    {
+                        "id": 16,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/4UrgyG9sSboWzK1nogbgCV9sp5zCpC0JD2JHChtl.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 1,
+                        "ficheiroable_type": "App\\EventoDeAvaliacao",
+                        "created_at": "2020-05-25T00:37:51.000000Z",
+                        "updated_at": "2020-05-25T00:37:51.000000Z",
+                        "user_id": 1,
+                        "nome": "exampleCode.js",
+                        "descricao": "yay"
+                    },
+                    {
+                        "id": 18,
+                        "url": "http:\/\/localhost:8000\/uploads\/files\/skL93wZKZBdNHwPLSYEdvvLQDXxIdKrazQhVn4dU.txt",
+                        "extensao": "js",
+                        "ficheiroable_id": 3,
+                        "ficheiroable_type": "App\\Duvida",
+                        "created_at": "2020-05-27T23:21:56.000000Z",
+                        "updated_at": "2020-05-27T23:21:56.000000Z",
+                        "user_id": 1,
+                        "nome": "fdsfsd",
+                        "descricao": "fdsfsd"
+                    }
+                ],
+                "duvidas": [
+                    {
+                        "id": 1,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T18:20:59.000000Z",
+                        "updated_at": "2020-05-27T18:20:59.000000Z",
+                        "descricao": "blabla"
+                    },
+                    {
+                        "id": 2,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:13:44.000000Z",
+                        "updated_at": "2020-05-27T23:13:44.000000Z",
+                        "descricao": "ouioui"
+                    },
+                    {
+                        "id": 3,
+                        "aluno_id": 1,
+                        "disciplina_id": 1,
+                        "created_at": "2020-05-27T23:21:55.000000Z",
+                        "updated_at": "2020-05-27T23:21:55.000000Z",
+                        "descricao": "foobar"
+                    }
+                ],
+                "created_at": "2020-05-20T02:35:58.000000Z",
+                "updated_at": "2020-05-20T02:35:58.000000Z"
+            }
+        ],
         "regente": {
             "id": 1,
             "professor_id": "p2984573",
+            "user": {
+                "id": 2,
+                "name": "Filipe Quintal",
+                "email": "filipe.quintal@staff.uma.pt",
+                "email_verified_at": null,
+                "created_at": "2020-05-22T13:34:29.000000Z",
+                "updated_at": "2020-05-22T13:34:29.000000Z"
+            },
+            "disciplinas": [],
+            "regente": [
+                {
+                    "id": 1,
+                    "nome": "Engenharia de Requisitos",
+                    "created_at": "2020-05-22T13:39:18.000000Z",
+                    "updated_at": "2020-05-22T13:39:18.000000Z",
+                    "semestre_curricular": "2020-10-10 00:00:00",
+                    "professor_id": 1
+                }
+            ],
             "created_at": "2020-05-22T13:34:29.000000Z",
             "updated_at": "2020-05-22T13:34:29.000000Z"
         },

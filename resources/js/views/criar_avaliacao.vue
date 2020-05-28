@@ -85,7 +85,7 @@
         async getIdETipoDeUtilizador() {
             await axios.get('/api/me').then(async (response) => {
                 if ("professor_id" in response.data.data){
-                    this.idUser = response.data.data.user.id;
+                    this.idUser = response.data.data.id;
                     await this.isRegente();
                 }
                 else if ("aluno_id" in response.data.data){
@@ -99,7 +99,7 @@
         async isRegente() {
             await axios.get('/api/disciplinas/' + this.$route.params.disciplina)
                 .then((response) => {
-                    if(this.idUser === response.data.data.regente.user.id)
+                    if(this.idUser === response.data.data.regente.id)
                         this.professor = true;
                 });
             this.getNomeDisciplina();

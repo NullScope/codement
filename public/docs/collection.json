@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "Codement API",
-        "_postman_id": "ce90ebef-eef2-4aa6-b145-30feb4803438",
+        "_postman_id": "4cc4396f-b2b3-4c72-a9f5-b61c2fd6ea9c",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -61,7 +61,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"aluno_id\": \"hic\",\n    \"curso\": \"quia\",\n    \"data_de_matricula_inicial\": \"voluptatum\",\n    \"ano_curricular\": 8,\n    \"name\": \"modi\",\n    \"email\": \"est\",\n    \"password\": \"ut\",\n    \"password_confirmation\": \"qui\"\n}"
+                            "raw": "{\n    \"aluno_id\": \"ea\",\n    \"curso\": \"fuga\",\n    \"data_de_matricula_inicial\": \"maxime\",\n    \"ano_curricular\": 18,\n    \"name\": \"natus\",\n    \"email\": \"consequuntur\",\n    \"password\": \"sint\",\n    \"password_confirmation\": \"eligendi\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -241,7 +241,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"disciplina_id\": \"quisquam\"\n}"
+                            "raw": "{\n    \"disciplina_id\": \"minima\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -403,7 +403,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"descricao\": \"maiores\"\n}"
+                            "raw": "{\n    \"descricao\": \"velit\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -877,7 +877,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"nome\": \"et\",\n    \"semestre_curricular\": \"velit\"\n}"
+                            "raw": "{\n    \"nome\": \"amet\",\n    \"semestre_curricular\": \"assumenda\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1407,7 +1407,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"data_inicio\": \"quia\",\n    \"data_fim\": \"et\"\n}"
+                            "raw": "{\n    \"data_inicio\": \"debitis\",\n    \"data_fim\": \"soluta\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1853,7 +1853,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"professor_id\": \"cupiditate\",\n    \"name\": \"consequatur\",\n    \"email\": \"incidunt\",\n    \"password\": \"voluptate\",\n    \"password_confirmation\": \"voluptas\"\n}"
+                            "raw": "{\n    \"professor_id\": \"architecto\",\n    \"name\": \"quia\",\n    \"email\": \"porro\",\n    \"password\": \"exercitationem\",\n    \"password_confirmation\": \"accusantium\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -1993,7 +1993,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"disciplina_id\": \"similique\"\n}"
+                            "raw": "{\n    \"disciplina_id\": \"accusamus\"\n}"
                         },
                         "description": "",
                         "response": []

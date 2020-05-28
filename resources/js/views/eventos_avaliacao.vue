@@ -62,7 +62,7 @@
                       this.professor = false;
                     }
 
-                    this.idUser = response.data.data.user.id;
+                    this.idUser = response.data.data.id;
                 });
 
                 this.getDisciplinas();
@@ -103,7 +103,7 @@
 
 
             criarEventoAvaliacao() {
-                this.$router.push({ path: `/criarAvaliacao/${this.idDisciplina}` })
+                this.$router.push({ name: 'Criar Avaliacao', params: { disciplina: this.idDisciplina }});
             },
 
         },
