@@ -11,6 +11,8 @@ import CriarAvaliacaoPage from "./views/criar_avaliacao.vue"
 import DuvidasPage from "./views/duvidas.vue";
 import CriarDuvidaPage from "./views/criar_duvida.vue";
 import VerDuvidaPage from "./views/ver_duvida.vue";
+import AulaPage from "./views/aula.vue";
+import CriarAulaPage from "./views/criar_aula.vue";
 
 Vue.use(VueRouter);
 
@@ -97,6 +99,23 @@ export const routes: RouteConfig[] = [
     component: VerDuvidaPage,
     meta: {
       hidden: true,
+    }
+  },
+  {
+    path:'/aula',
+    name: 'Aula',
+    component: AulaPage,
+    meta: {
+      icon: 'mdi-home'
+    }
+  },
+  {
+    path: '/criar_aula',
+    name: 'Criar aula',
+    component: CriarAulaPage,
+    meta: {
+      icon: 'mdi-home',
+      //hidden: true
     }
   }
 ];
