@@ -51,7 +51,7 @@
       </div>
     </div>
 
-    <code-highlighter :file-id="fileId" v-if="fileId != 0"></code-highlighter>
+    <code-highlighter v-if="user && fileId != 0" :file-id="fileId" :allow-commenting="'professor_id' in user"></code-highlighter>
   </div>
 </template>
 
@@ -61,6 +61,7 @@ import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 
 @Component
 export default class VerDuvida extends Vue {
+  private user:any = null;
   private duvida = null;
   private fileId = 0;
   private ficheiros = new Array();
@@ -69,6 +70,11 @@ export default class VerDuvida extends Vue {
   mounted() {
     const disciplinaId = this.$route.params.disciplina;
     const duvidaId = this.$route.params.duvida;
+
+    axios.get('/api/me')
+      .then((response: AxiosResponse) => {
+        this.user = response.data.data;
+      });
 
     axios.get(`/api/disciplinas/${this.$route.params.disciplina}`)
       .then((response: AxiosResponse) => {

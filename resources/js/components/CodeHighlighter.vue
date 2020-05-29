@@ -85,7 +85,7 @@
       </div>
     </div>
     <div class="row justify-content-center" v-if="code">
-      <h4> Para comentar código, clique e arraste na coluna dos números de linhas </h4>
+      <h4 v-if="allowCommenting"> Para comentar código, clique e arraste na coluna dos números de linhas </h4>
     </div>
     <div class="row justify-content-center">
       <div class="col-lg-4 card-columns" id="comments" v-if="code && comments.length > 0">
@@ -114,13 +114,13 @@
               <audio-player ref="audioPlayers" v-if="subcomment.audio_url" :src="subcomment.audio_url"/>
             </div>
           </div>
-          <div class="card-body" v-if="!onSave">
+          <div class="card-body" v-if="!onSave && allowCommenting">
             <b-button class="btn btn-gradient-primary mr-2" v-on:click="onReplyComment(comment)">Responder</b-button>
           </div>
         </div>
       </div>
       <div class="col-lg-7 grid-margin">
-        <prism-component v-if="code !== ''" id="prism" language="js" :data-line="dataLine" class="line-numbers">
+        <prism-component v-if="code !== ''" id="prism" language="js" :data-line="dataLine" class="line-numbers" :class="!allowCommenting ? 'view-only' : ''">
           {{ code }}
         </prism-component>
       </div>
@@ -143,7 +143,8 @@
     props: {
       fileId: {type: Number},
       onSave: {type: Function},
-      afterDownload: {type: Function}
+      afterDownload: {type: Function},
+      allowCommenting: {type: Boolean, default: true}
     },
 
     mounted: function () {
@@ -377,7 +378,7 @@
 
           for (const [key, line] of lineNumbersChildren.entries()) {
             line.onmousedown = () => {
-              if (this.isDragging)
+              if (this.isDragging || !this.allowCommenting)
                 return false;
 
               let foundComment = this.comments.find(comment => {
@@ -727,11 +728,13 @@
         Prism.hooks.add('complete', completeHook);
 
         window.addEventListener('resize', () => {
-          let actions = [];
-          this.$$('pre[data-line]').forEach((pre) => {
-            actions.push(this.highlightLines(pre));
-          });
-          actions.forEach(this.callFunction);
+          if (this.dataLine !== '') {
+            let actions = [];
+            this.$$('pre[data-line]').forEach((pre) => {
+              actions.push(this.highlightLines(pre));
+            });
+            actions.forEach(this.callFunction);
+          }
         });
       }
     },
@@ -760,6 +763,10 @@
   .line-numbers-rows > * {
     pointer-events: all !important;
     cursor: pointer;
+  }
+
+  #prism.view-only .line-numbers-rows > * {
+    cursor: initial !important;
   }
 
   .ar__rm {
