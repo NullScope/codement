@@ -17,8 +17,11 @@
           <div class="mt-3">
             <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">ENTRAR</button>
           </div>
-          <div class="my-2 d-flex justify-content-between align-items-center" v-if="error">
+          <div class="my-2 d-flex justify-content-between align-items-center" v-if="credentialsError">
             <p class="text-danger">Credenciais inválidas</p>
+          </div>
+          <div class="my-2 d-flex justify-content-between align-items-center" v-if="genericError">
+            <p class="text-danger">Ocurreu um erro, por favor tente novamente ou contacte os administradores.</p>
           </div>
           <div class="my-2 d-flex justify-content-between align-items-center">
             <div class="form-check">
@@ -41,10 +44,12 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 export default class Login extends Vue {
   email = '';
   password = '';
-  error = false;
+  credentialsError = false;
+  genericError = false;
 
   onSubmit() {
-    this.error = false;
+    this.credentialsError = false;
+    this.genericError = false;
 
     axios.post('/login', {
       email: this.email,
@@ -52,8 +57,11 @@ export default class Login extends Vue {
     }).then((response: AxiosResponse) => {
       this.$router.push('/');
     }).catch((error: AxiosError) => {
-      console.log(error);
-      this.error = true;
+      if (error.code == "422") {
+        this.credentialsError = true;
+      } else {
+        this.genericError = true;
+      }
     })
   }
 }
