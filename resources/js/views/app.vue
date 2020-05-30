@@ -25,21 +25,22 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
-  computed: {
-    isNavbarVisible() {
-      return this.$route.meta && !this.$route.meta.hideNavbar;
-    },
+@Component
+export default class App extends Vue {
 
-    isSidebarVisible() {
-      return this.$route.meta && !this.$route.meta.hideSidebar;
-    },
+  get isNavbarVisible() {
+    return this.$route.path !== '/' && this.$route.meta && !this.$route.meta.hideNavbar;
+  }
 
-    isFooterVisible() {
-      return this.$route.meta && !this.$route.meta.hideFooter;
-    }
+  get isSidebarVisible() {
+    return this.$route.path !== '/' && this.$route.meta && !this.$route.meta.hideSidebar;
+  }
+
+  get isFooterVisible() {
+    return this.$route.path !== '/' && this.$route.meta && !this.$route.meta.hideFooter;
   }
 }
 </script>

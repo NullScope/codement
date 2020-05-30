@@ -20,9 +20,12 @@ Vue.use(VueRouter);
 export const routes: RouteConfig[] = [
   {
     path: '/',
+    name: 'Root',
     redirect: '/dashboard',
     meta: {
-      hidden: true
+      hidden: true,
+      hideNavbar: true,
+      hideSidebar: true,
     }
   },
   {
