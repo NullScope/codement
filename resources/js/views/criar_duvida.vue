@@ -35,7 +35,7 @@
             </div>
             <p class="text-danger" v-if="filesError">É obrigatório inserir pelo menos um ficheiro.</p>
             <button @click="onAddFileToggle" class="btn mr-2" :class="fileUploadShow ? 'btn-gradient-info' : 'btn-outline-info'">Adicionar Ficheiro</button>
-            <button @click="onSubmit" class="btn btn-gradient-primary mr-2">Criar Dúvida</button>
+            <button @click="onSubmit" id="criarDuvida" class="btn btn-gradient-primary mr-2 btn-icon-text" :class="loading ? 'disabled' : ''"><i class="mdi btn-icon-prepend" :class="loading ? 'mdi-loading' : 'mdi-upload'"></i>Criar Dúvida</button>
           </div>
         </div>
       </div>
@@ -56,6 +56,7 @@ export default class CriarDuvida extends Vue {
   private fileUploadShow = false;
   private files = new Array();
   private filesError = false;
+  private loading = false;
 
   mounted() {
     axios.get('/api/me').then((response: AxiosResponse) => {
@@ -84,7 +85,11 @@ export default class CriarDuvida extends Vue {
     this.filesError = false;
   }
 
-  onSubmit() {
+  async onSubmit() {
+    if (this.loading) {
+      return;
+    }
+
     if (this.files.length === 0) {
       this.filesError = true;
       return;
@@ -92,25 +97,29 @@ export default class CriarDuvida extends Vue {
       this.filesError = false;
     }
 
-    axios.post(`/api/disciplinas/${this.$route.params.disciplina}/duvidas`, {
+    this.loading = true;
+
+    await axios.post(`/api/disciplinas/${this.$route.params.disciplina}/duvidas`, {
       descricao: this.descricao
-    }).then((response: AxiosResponse) => {
+    }).then(async (response: AxiosResponse) => {
       let id = response.data.data.id;
 
-      this.files.forEach((file: any) => {
+      for (const file of this.files) {
         let fileFormData = new FormData();
         fileFormData.append('nome', file.filename);
         fileFormData.append('descricao', file.fileDescription);
         fileFormData.append('ficheiro', file.file);
 
-        axios.post(`/api/disciplinas/${this.$route.params.disciplina}/duvidas/${id}/ficheiros`, fileFormData, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
+        await axios.post(`/api/disciplinas/${this.$route.params.disciplina}/duvidas/${id}/ficheiros`,
+          fileFormData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
           }
-        }).then((response) => {
+        ).then(async (response) => {
           let id = response.data.data.id;
 
-          file.comments.forEach((comment: any) => {
+          for (const comment of file.comments) {
             let commentFormData = new FormData();
 
             commentFormData.append('comentario', comment.comentario);
@@ -121,21 +130,33 @@ export default class CriarDuvida extends Vue {
               commentFormData.append('audio', comment.audio.blob);
             }
 
-            axios.post(`/api/ficheiros/${id}/comentarios`, commentFormData, {
+            await axios.post(`/api/ficheiros/${id}/comentarios`, commentFormData, {
               headers: {
                 'Content-Type': 'multipart/form-data'
               }
-            }).then((response) => {
-              console.log(response);
             });
-          });
+          }
         });
-      });
+      }
     });
+
+    this.loading = false;
   }
 }
 </script>
 
 <style>
+  #criarDuvida i.mdi-loading {
+    animation: spin-animation 0.5s infinite;
+    display: inline-block;
+  }
 
+  @keyframes spin-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }
 </style>

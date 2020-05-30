@@ -159,7 +159,7 @@
         },
 
         voltar(){
-            this.$router.push({ path: `/eventosAvaliacao` })
+            this.$router.push({ path: `/eventos-de-avaliacao` })
         }
     },
     computed: {

@@ -103,7 +103,7 @@ export default class Sidebar extends Vue {
         });
       }
     }).catch((error) => {
-      if (error.response.data.errors && error.response.data.errors.email) {
+      if (error.response.data.errors?.email) {
         this.emailExists = true;
       } else {
         this.genericError = true;

@@ -298,6 +298,7 @@
         if (!files.length)
           return;
 
+        const oldFile = this.file;
         this.file = files[0];
 
         var reader = new FileReader();
@@ -308,7 +309,10 @@
 
           this.code = evt.target.result;
 
-          this.filename = this.filename !== '' ? this.filename : this.file.name;
+          if (this.filename === '' || (oldFile && this.filename === oldFile.name)) {
+            this.filename = this.file.name;
+          }
+
           this.fileLabel = this.file.name;
         }
 
@@ -319,6 +323,7 @@
           this.code = '';
           this.filename = '';
           this.fileLabel = '';
+          this.file = null;
         }
       },
 

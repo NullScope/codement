@@ -51,7 +51,7 @@
       </div>
     </div>
 
-    <code-highlighter v-if="user && fileId != 0" :file-id="fileId" :allow-commenting="'professor_id' in user"></code-highlighter>
+    <code-highlighter v-if="user && fileId != 0" :file-id="fileId"></code-highlighter>
   </div>
 </template>
 

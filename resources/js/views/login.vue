@@ -57,7 +57,7 @@ export default class Login extends Vue {
     }).then((response: AxiosResponse) => {
       this.$router.push('/');
     }).catch((error: AxiosError) => {
-      if (error.code == "422") {
+      if (error.response?.status == 422) {
         this.credentialsError = true;
       } else {
         this.genericError = true;

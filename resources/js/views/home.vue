@@ -43,7 +43,7 @@
           <div class="card-body">
             <img src="/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image">
             <h4 class="font-weight-normal mb-3">
-              Aulas <i class="mdi mdi-comment-question-outline mdi-24px float-right"></i>
+              Aulas <i class="mdi mdi-projector-screen mdi-24px float-right"></i>
             </h4>
             <h2 class="mb-5">{{aulas.length}}</h2>
           </div>
@@ -95,7 +95,7 @@ import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class Home extends Vue {
-  private user:any;
+  private user:any = null;
   private disciplinas = new Array();
   private aulas = new Array();
   private duvidas = new Array();
