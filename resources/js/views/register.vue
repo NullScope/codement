@@ -98,7 +98,7 @@ export default class Sidebar extends Vue {
             email: this.email,
             password: this.password
           }).then((response: AxiosResponse) => {
-            this.$router.push('/home');
+            this.$router.push('/');
           });
         });
       }
