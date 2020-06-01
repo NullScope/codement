@@ -60,7 +60,7 @@
                         </div>
                         <p class="text-danger" v-if="filesError">É obrigatório inserir pelo menos um ficheiro.</p>
                         <button @click="onAddFileToggle" class="btn mr-2" :class="fileUploadShow ? 'btn-gradient-info' : 'btn-outline-info'">Adicionar Ficheiro</button>
-                        <button @click="onSubmit" id="criarDuvida" class="btn btn-gradient-primary mr-2 btn-icon-text" :class="loading ? 'disabled' : ''"><i class="mdi btn-icon-prepend" :class="loading ? 'mdi-loading' : 'mdi-upload'"></i>Criar Aula</button>
+                        <button @click="onSubmit" id="criarAula" class="btn btn-gradient-primary mr-2 btn-icon-text" :class="loading ? 'disabled' : ''"><i class="mdi btn-icon-prepend" :class="loading ? 'mdi-loading' : 'mdi-upload'"></i>Criar Aula</button>
                     </div>
                 </div>
             </div>
@@ -171,5 +171,17 @@ export default class CriarAula extends Vue {
 </script>
 
 <style>
+  #criarAula i.mdi-loading {
+    animation: spin-animation 0.5s infinite;
+    display: inline-block;
+  }
 
+  @keyframes spin-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }
 </style>
