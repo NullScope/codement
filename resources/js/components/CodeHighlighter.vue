@@ -99,7 +99,7 @@
             <h4 class="card-title">{{comment.user.name}}</h4>
             <h6 class="card-subtitle mb-2 text-muted">{{comment.created_at | moment("DD/MM/YYYY hh:mm:ss")}}</h6>
             <br/>
-            <p class="card-text">{{comment.comentario}}</p>
+            <p class="card-text" v-html="comment.comentario" v-linkified></p>
             <audio-player ref="audioPlayers" v-if="comment.audio && comment.audio.url" :src="comment.audio.url"/>
           </div>
           <ul class="list-group list-group-flush" v-if="!onSave">

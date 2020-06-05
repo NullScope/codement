@@ -12,6 +12,7 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import AudioRecorder from 'vue-audio-recorder';
 import VueSpeech from 'vue-speech';
 import Moment from 'vue-moment';
+import linkify from 'vue-linkify';
 
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
@@ -33,6 +34,8 @@ Vue.use(AudioRecorder);
 Vue.use(VueSpeech);
 
 Vue.use(Moment);
+
+Vue.directive('linkified', linkify);
 
 /**
  * The following block of code may be used to automatically register your
