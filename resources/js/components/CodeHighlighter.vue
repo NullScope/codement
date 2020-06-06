@@ -110,7 +110,7 @@
               <h4 class="card-title">{{subcomment.user.name}}</h4>
               <h6 class="card-subtitle mb-2 text-muted">{{subcomment.created_at | moment("DD/MM/YYYY hh:mm:ss")}}</h6>
               <br/>
-              <p class="card-text">{{subcomment.comentario}}</p>
+              <p class="card-text" v-html="subcomment.comentario" v-linkified></p>
               <audio-player ref="audioPlayers" v-if="subcomment.audio_url" :src="subcomment.audio_url"/>
             </div>
           </div>
