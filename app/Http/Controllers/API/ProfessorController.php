@@ -11,6 +11,7 @@ use Illuminate\Http\Response;
 
 use App\User;
 use App\Professor;
+use App\Disciplina;
 use App\Http\Resources\ProfessorResource;
 
 /**
@@ -68,6 +69,12 @@ class ProfessorController extends Controller
                 'email' => $request->input('email'),
                 'password' => Hash::make($request->input('password'))
             ]);
+
+            $disciplinas = Disciplina::all();
+
+            foreach ($disciplinas as $disciplina) {
+                $professor->user->disciplinas()->attach($disciplina);
+            }
 
             return new ProfessorResource($professor);
         }

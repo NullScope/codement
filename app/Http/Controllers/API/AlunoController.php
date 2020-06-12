@@ -11,6 +11,7 @@ use Illuminate\Http\Response;
 
 use App\User;
 use App\Aluno;
+use App\Disciplina;
 use App\Http\Resources\AlunoResource;
 
 /**
@@ -77,6 +78,12 @@ class AlunoController extends Controller
                 'email' => $request->input('email'),
                 'password' => Hash::make($request->input('password'))
             ]);
+
+            $disciplinas = Disciplina::all();
+
+            foreach ($disciplinas as $disciplina) {
+                $aluno->user->disciplinas()->attach($disciplina);
+            }
 
             return new AlunoResource($aluno);
         }
