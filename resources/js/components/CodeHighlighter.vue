@@ -20,6 +20,7 @@
               v-model="currentComment.comentario"
               :state="commentState"
               required
+              :readonly="isRecordingComment"
               placeholder="Comentário"
             ></b-form-input>
             <audio-recorder
@@ -443,7 +444,6 @@
         this.speechRecognition = new SpeechRecognition();
 
         this.speechRecognition.lang = this.language;
-        this.speechRecognition.interimResults = true;
         this.speechRecognition.continuous = true;
 
         this.speechRecognition.onresult = event => {
