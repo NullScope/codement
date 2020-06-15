@@ -28,7 +28,7 @@
                         <router-link
                             id="criar"
                             class="btn btn-gradient-primary btn-fw"
-                            v-if="idDisciplina != 0 && user && user.professor_id"
+                            v-if="idDisciplina != 0 && user && user.professor_id && disciplina && disciplina.regente.id == user.id"
                             :to="{ name: 'Criar Aula', params: {disciplina: idDisciplina}}"
                         >
                             Nova Aula
@@ -91,6 +91,7 @@ import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
     export default class Aulas extends Vue {
         private user = null;
         private idDisciplina = 0;
+        private disciplina = null;
         private disciplinas = new Array();
         private aulas = new Array();
 
@@ -113,6 +114,10 @@ import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
         @Watch('idDisciplina')
         onIdDisciplinaChanged(newVal: Number, oldVal: Number) {
             if(newVal != 0){
+                axios.get(`/api/disciplinas/${newVal}`).then((response: AxiosResponse) => {
+                    this.disciplina = response.data.data;
+                });
+
                 axios.get(`/api/disciplinas/${newVal}/aulas`).then((response: AxiosResponse) => {
                     this.aulas = response.data.data
                 });
