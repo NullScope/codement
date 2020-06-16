@@ -126,7 +126,7 @@ export default class CriarDuvida extends Vue {
             commentFormData.append('linha_inicio', comment.lineStart);
             commentFormData.append('linha_fim', comment.lineEnd);
 
-            if (comment.audio.blob) {
+            if (comment.audio && comment.audio.blob) {
               commentFormData.append('audio', comment.audio.blob);
             }
 
